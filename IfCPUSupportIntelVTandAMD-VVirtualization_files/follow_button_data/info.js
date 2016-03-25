@@ -1,0 +1,1 @@
+/**/__twttr.setFollowersCountAndFollowing([{"following":false,"id":"17484680","screen_name":"nixcraft","name":"nixCraft","protected":false,"followers_count":55361,"formatted_followers_count":"55.4K followers","age_gated":false}]);
