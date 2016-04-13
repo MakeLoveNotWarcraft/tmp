@@ -1,0 +1,1204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bcwm_002" async="" type="text/javascript"></script><script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bcwm" async="" type="text/javascript"></script><script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/getRecommendList.html" async=""></script>   
+   
+
+    <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script><script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/repoAddr2.js"></script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="#">
+
+    <title>Android APK反编译详解（附图） - IT-Homer
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="南京工程学院数控原理与系统的数控专业课程设计，刀具补偿vb模拟程序设计，直线-直线">
+    <script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/jquery_002.js" type="text/javascript"></script>
+      <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/jquery-version.js"></script>
+    <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/index.css">
+        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/tracking_002.js"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/style_003.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/sunboy_2050/rss/list">
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/blue_green.css">
+ 
+
+
+<script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/share.js"></script><link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/job_reco.css" type="text/css" rel="stylesheet"><script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/main_002.js" charset="utf-8" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/style_002.css"><link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/style.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/get_ads.php"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/share_style0_16.css" rel="stylesheet"><script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/logger.js"></script><link type="text/css" rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bdsstyle.css"></head>
+<body><div style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;" id="BAIDU_DUP_fp_wrapper"><iframe style="width: 0px; height: 0px; visibility: hidden; display: none;" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/o.html" id="BAIDU_DUP_fp_iframe"></iframe></div><iframe style="display: none;" frameborder="0"></iframe><div style="display: none;" id="MathJax_Message"></div>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/html.js" type="text/javascript"></script><div class="csdn-toolbar csdn-toolbar-skin-black ">        <div class="container row center-block ">          <div class="col-md-3 pull-left logo clearfix"><a href="http://www.csdn.net/?ref=toolbar" title="CSDN首页" target="_blank" class="icon"></a><a title="频道首页" href="http://blog.csdn.net/?ref=toolbar_logo" class="img blog-icon"></a></div>          <div class="pull-right login-wrap unlogin">            <ul class="btns">              <li class="loginlink"><a href="https://passport.csdn.net/account/login?ref=toolbar" target="_top">登录&nbsp;</a>|<a target="_top" href="http://passport.csdn.net/account/mobileregister?ref=toolbar&amp;action=mobileRegister">&nbsp;注册</a></li>              <li class="search">                <div class="icon on-search-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <form action="http://so.csdn.net/search" method="get" target="_blank">                      <input value="toolbar" name="ref" accesskey="2" type="hidden">                      <div class="border">                        <input placeholder="搜索" name="q" accesskey="2" type="text"><span class="icon-enter-sm"></span>                      </div>                    </form>                  </div>                </div>              </li>              <li class="favor">                <div class="icon on-favor-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div style="display:none;" class="favor-success"><span class="msg">收藏成功</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <div style="display:none;" class="favor-failed"><span class="icon-danger-lg"></span><span class="msg">收藏失败，请重新收藏</span>                      <div class="btns"><span class="btn btn-primary ok">确定</span></div>                    </div>                    <form role="form" class="form-horizontal favor-form">                      <div class="form-group">                        <div class="clearfix">                          <label for="input-title" class="col-sm-2 control-label">标题</label>                          <div class="col-sm-10">                            <input value="Android APK反编译详解（附图） - IT-Homer - 博客频道 - CSDN.NET" id="inputTitle" placeholder="" class="title form-control" type="text">                          </div>                        </div>                        <div class="alert alert-danger"><strong></strong>标题不能为空</div>                      </div>                      <div class="form-group">                        <label for="input-url" class="col-sm-2 control-label">网址</label>                        <div class="col-sm-10">                          <input value="http://blog.csdn.net/sunboy_2050/article/details/6727581" id="input-url" placeholder="" class="url form-control" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-tag" class="col-sm-2 tag control-label">标签</label>                        <div class="col-sm-10">                          <input id="input-tag" class="form-control tag" type="text">                        </div>                      </div>                      <div class="form-group">                        <label for="input-description" class="description col-sm-2 control-label">摘要</label>                        <div class="col-sm-10">                          <textarea id="input-description" class="form-control description"></textarea>                        </div>                      </div>                      <div class="form-group">                        <div class="col-sm-offset-2 col-sm-10 ft">                          <div class="col-sm-4 pull-left">                            <div class="checkbox">                              <label>                                <input name="share" checked="checked" class="share" type="checkbox">公开                              </label>                            </div>                          </div>                          <div class="col-sm-8 pull-right favor-btns">                            <button type="button" class="cancel btn btn-default">取消</button>                            <button type="submit" class="submit btn btn-primary">收藏</button>                          </div>                        </div>                      </div>                    </form>                  </div>                </div>              </li>              <li class="notify">                <div style="display:none" class="number"></div>                <div style="display:none" class="icon-hasnotes-sm"></div>                <div id="header_notice_num"></div>                <div class="icon on-notify-icon">                  <div class="wrap">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div id="note1" class="csdn_note">                      <div class="box"></div>                    <iframe src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/a.html" allowtransparency="true" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe></div>                  </div>                </div>              </li>              <li class="ugc">                <div class="icon on-ugc-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <dl>                      <dt><a href="http://geek.csdn.net/news/expert?ref=toolbar" target="_blank" class="p-news clearfix" style="display:none;"><em class="icon"></em><span>分享资讯</span></a></dt>                      <dt style="border: none;"><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-doc clearfix"><em class="icon"></em><span>传PPT/文档</span></a></dt>                      <dt><a href="http://bbs.csdn.net/topics/new?ref=toolbar" target="_blank" class="p-ask clearfix"><em class="icon"></em><span>提问题</span></a></dt>                      <dt><a href="http://write.blog.csdn.net/postedit?ref=toolbar" target="_blank" class="p-blog clearfix"><em class="icon"></em><span>写博客</span></a></dt>                      <dt><a href="http://u.download.csdn.net/upload?ref=toolbar" target="_blank" class="p-src clearfix"><em class="icon"></em><span>传资源</span></a></dt>                      <dt><a href="https://code.csdn.net/projects/new?ref=toolbar" target="_blank" class="c-obj clearfix"><em class="icon"></em><span>创建项目</span></a></dt>                      <dt><a href="https://code.csdn.net/snippets/new?ref=toolbar" target="_blank" class="c-code clearfix"><em class="icon"></em><span>创建代码片</span></a></dt>                    </dl>                  </div>                </div>              </li>              <li class="profile">                <div class="icon on-profile-icon"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/100x100.jpg" class="curr-icon-img">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                    <div class="bd">                      <dl class="clearfix">                        <dt class="pull-left img"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="avatar"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/100x100.jpg"></a></dt>                        <dd class="info" style="border: none;"><a target="_blank" href="http://my.csdn.net/?ref=toolbar" class="nickname"></a><a class="set-nick" href="https://passport.csdn.net/account/profile">设置昵称<span class="write-icon"></span></a><span class="dec"><a class="fill-dec" href="http://my.csdn.net/" target="_blank">编辑自我介绍，让更多人了解你<span class="write-icon"></span></a></span></dd>                      </dl>                    </div>                    <div class="ft clearfix"><a target="_blank" href="http://my.csdn.net/my/account/changepwd?ref=toolbar" class="pull-left"><span class="icon-cog"></span>帐号设置</a><a href="https://passport.csdn.net/account/logout?ref=toolbar" target="_top" class="pull-left" style="margin-left:132px; width:18px; height:27px; white-space:nowrap; overflow:hidden;"><span class="icon-signout"></span><span class="out">退出</span></a></div>                  </div>                </div>              </li>              <li class="apps">                <div style="display: none;" id="chasnew123" class="hasnew"></div>                <div id="cappsarea123" class="icon on-apps-icon">                  <div class="wrap clearfix">                    <div class="curr-icon-wrap">                      <div class="curr-icon"></div>                    </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>社区</h5>                      </dt>                      <dd> <a href="http://blog.csdn.net/?ref=toolbar" target="_blank">博客</a></dd>                      <dd> <a href="http://bbs.csdn.net/?ref=toolbar" target="_blank">论坛</a></dd>                      <dd> <a href="http://download.csdn.net/?ref=toolbar" target="_blank">下载</a></dd>                      <dd><a href="http://ask.csdn.net/?ref=toolbar" target="_blank">技术问答</a></dd>                      <dd><a href="http://geek.csdn.net/?ref=toolbar" target="_blank">极客头条</a></dd>                      <dd style="display:none"> <a href="http://hero.csdn.net/?ref=toolbar" target="_blank">英雄会</a></dd>                    </dl>                  </div>                  <div class="detail">                    <dl>                      <dt>                        <h5>服务</h5>                      </dt>                      <dd style="display:none"> <a href="http://job.csdn.net/?ref=toolbar" target="_blank">JOB<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="http://edu.csdn.net/?ref=toolbar" target="_blank">学院<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                      <dd> <a href="https://code.csdn.net/?ref=toolbar" target="_blank">CODE</a></dd>                      <dd> <a href="http://huiyi.csdn.net/?ref=toolbar" target="_blank">活动</a></dd>                      <dd> <a href="http://www.csto.com/?ref=toolbar" target="_blank">CSTO</a></dd>                      <dd> <a href="http://mall.csdn.net/?ref=toolbar" target="_blank">C币兑换<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/new.gif" style="display: none; margin-top: -26px; width: 23px;"></a></dd>                    </dl>                  </div>                  <div class="detail last">                    <dl>                      <dt>                        <h5>俱乐部</h5>                      </dt>                      <dd> <a href="http://cto.csdn.net/?ref=toolbar" target="_blank">CTO俱乐部</a></dd>                      <dd> <a href="http://student.csdn.net/?ref=toolbar" target="_blank">高校俱乐部</a></dd>                    </dl>                  </div>                </div>              </div>            </li>            </ul>          </div>        </div>    </div>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/sunboy_2050">IT-Homer</a></h2>
+            <h3>欢迎访问我的新博客： http://blog.mimvp.com</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/sunboy_2050?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/sunboy_2050?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/sunboy_2050/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "sunboy_2050";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/sunboy_2050";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a target="_blank" href="http://bbs.csdn.net/topics/391926027">
+<font color="red">2016攒课第二期之你听课我买单，快来攒你想听的课！
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a target="_blank" href="http://bss.csdn.net/cview/reg/?project_id=2875&amp;identy_id=1652">
+<font color="blue">2016大数据应用调查</font></a>
+&nbsp;&nbsp;&nbsp;
+<a target="_blank" href="http://blog.csdn.net/blogdevteam/article/details/51073018">
+<font color="red">2016年7月微软MVP申请开始了!
+</font></a>
+
+
+</div>                        </div>
+                        
+
+
+
+<!-- 广告位开始 -->
+<div class="J_adv" data-con="ad_content_217" data-order="40" data-mtp="40" data-mod="ad_popu_72" data-view="true" style="padding: 0px; margin: 0px; border: medium none; width: 1px; height: 1px; position: fixed; right: 10px; bottom: 10px; background-color: transparent;"><div id="location_parent"></div><script>document.getElementById('location_parent').parentNode.style.height='1px';document.getElementById('location_parent').parentNode.style.width='1px';document.getElementById('location_parent').parentNode.style.position='fixed';document.getElementById('location_parent').parentNode.style.right='10px';document.getElementById('location_parent').parentNode.style.bottom='10px';document.getElementById('location_parent').parentNode.style.backgroundColor='transparent';</script><!-- 广告占位容器 --><div style="box-sizing: content-box; width: 311px; height: 286px; overflow: hidden; z-index: 2147483647; position: fixed; bottom: 10px; right: 10px;" id="cpro_u2392861"><div style="box-sizing: content-box;width:300px;height:250px;padding:4px;border:#acacac 1px solid;overflow:hidden;position:absolute;left:0;top:25px;"><iframe id="cpro_u2392861_iframe" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bcwm.html" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true" frameborder="0" height="250" width="300" align="center,center"></iframe></div><div id="cpro_u2392861_closebtn" style="box-sizing: content-box;position:absolute;width:61px;height:20px;top:0;left:250px;margin:0;padding:0;margin-bottom:5px;cursor:pointer;overflow:hidden;"><div style="box-sizing: content-box;width:40px;height:20px;background-color:#999999;color:#fff;float:left;margin-right:1px;font-size:12px;font-family:微软雅黑;text-align: center;line-height:20px;">关闭</div><a style="maring:0;padding:0;display:inline-block;border:none;overflow:hidden;height:20px;line-height:20px;cursor:pointer;width:20px;background:url('http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/xuanfu_close.png') no-repeat 0 0;margin-bottom:3px;float:left"></a></div></div><!-- 投放代码 --><script type="text/javascript">(window['cproStyleApi'] = window['cproStyleApi'] || {})['u2392861']={at:'3',rsi0:'300',rsi1:'250',pat:'17',tn:'baiduCustNativeAD_xuanfu',rss1:'#FFFFFF',conBW:'1',adp:'1',ptt:'0',titFF:'%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91',titFS:'14',rss2:'#000000',titSU:'0'};/*服务器频道首页置顶Banner960*90，创建于2014-7-3*/(window.cproArray = window.cproArray || []).push({id:'u2392861'});  </script>  <script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/f.js" type="text/javascript"></script></div>
+<!-- 广告位结束 -->
+
+  
+<link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/jquery.js"></script>
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/main.js"></script>
+<link rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/markdown_views.css">
+<link rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/category.css">
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/MathJax.js"></script>
+
+ <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/web-storage-cache.js"></script>
+
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/web-storage-cache.js"></script>
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="http://blog.csdn.net/sunboy_2050/article/details/6727581">
+        Android APK反编译详解（附图）            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href="http://www.csdn.net/tag/android" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">android</a><a href="http://www.csdn.net/tag/%e5%8f%8d%e7%bc%96%e8%af%91%e5%b7%a5%e5%85%b7" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">反编译工具</a><a href="http://www.csdn.net/tag/jar" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">jar</a><a href="http://www.csdn.net/tag/%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">下载工具</a><a href="http://www.csdn.net/tag/java" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">java</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2011-08-28 22:42</span>
+            <span class="link_view" title="阅读次数">810963人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(502)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a target="_blank" href="javascript:void(0);" onclick="javascript:collectArticle('Android APK反编译详解（附图）','6727581');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(6727581,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody" style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var lib = eval("("+$("#lib").attr("value")+")");
+            var html = "";
+            if (lib.err == 0) {
+                $.each(lib.data, function (i) {
+                    var obj = lib.data[i];
+                    //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                    html += ' <a href="' + obj.url + '" target="_blank">';
+                    html += ' <img src="' + obj.logo + '">';
+                    html += ' <em><b>' + obj.name + '</b></em>';
+                    html += ' </a>';
+                });
+                if (html != "") {
+                    setTimeout(function () {
+                        $("#lib").html(html);
+                        /*
+                        var testhtml = "";
+                        testhtml += '<a href="#">';
+                        testhtml += '<img src="http://img.knowledge.csdn.net/upload/base/1455589744328_328.jpg">';
+                        testhtml += '<em>Android知识库</em>';
+                        testhtml += '</a>';
+                        $(".embody_c").html(testhtml);
+                        */
+                        $("#embody").show();
+                    }, 100);
+                }
+            }          
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label onclick="GetCategoryArticles('853274','sunboy_2050','top','6727581');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Android<em>（95）</em></span>
+                      <img class="arrow-down" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/arrow_triangle%2520_down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a href="http://blog.csdn.net/sunboy_2050/article/category/853274" target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_853274">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/category.js"></script>  
+        <div class="bog_copyright">         
+            <p class="copyright_p">版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+<span style="font-family:Arial; color:#686e55; line-height:18px"></span><p>这段时间在学Android应用开发，在想既然是用Java开发的应该很好反编译从而得到源代码吧，google了一下，确实很简单，以下是我的实践过程。</p><p>在此郑重声明，贴出来的目的不是为了去破解人家的软件，完全是一种学习的态度，不过好像通过这种方式也可以去汉化一些外国软件。</p><p><strong></strong></p><p><span style="color: rgb(255, 0, 0); "><strong><br></strong></span></p><p><strong>本文Android反编译教程，测试环境：</strong></p><p><span style="color: rgb(255, 0, 0); ">Win7 Ultimate x64</span></p><p><span style="color:#ff0000;">Ubuntu 12.04 x86_x64</span></p><p><strong><span style="color:#cc0000;">反编译工具包</span></strong>&nbsp;<a target="_blank" href="http://download.csdn.net/detail/sunboy_2050/4633436"><strong>下载</strong></a>&nbsp;（2012-10-10更新）</p><br><p><strong>一、Apk<strong>反编译</strong>得到Java源代码</strong><br></p><p>下载上述反编译工具包，打开<span style="color:#ff0000;">apk2java</span>目录下的<span style="color:#ff0000;">dex2jar-0.0.9.9</span>文件夹，内含apk反编译成java源码工具，以及源码查看工具。</p><p>apk反编译工具dex2jar，是将apk中的classes.dex转化成jar文件</p><p>源码查看工具jdgui，是一个反编译工具，可以直接查看反编译后的jar包源代码</p><p><br></p><p>dex2jar 和 jdgui 最新版本下载，分别见google code：</p><p><a target="_blank" href="http://code.google.com/p/dex2jar/downloads/list">dex2jar</a>（google code）</p><p><a target="_blank" href="http://code.google.com/p/innlab/downloads/list">jdgui</a>（google code），最新版本请见&nbsp;<a target="_blank" href="http://java.decompiler.free.fr/?q=jdgui">官方</a></p><p><br></p><p><strong>具体步骤：</strong></p><p>首先将apk文件后缀改为zip并解压，得到其中的classes.dex，它就是java文件编译再通过dx工具打包而成的，将classes.dex复制到dex2jar.bat所在目录<span style="color: rgb(102, 0, 204); ">dex2jar-0.0.9.9</span>文件夹。</p><p>在命令行下定位到dex2jar.bat所在目录，运行</p><p><span style="color:#3333ff;"><strong>dex2jar.bat&nbsp;&nbsp;&nbsp; classes.dex</strong></span></p><p>生成</p><p><span style="color:#cc0000;">classes_dex2jar.jar</span></p><p><span style="color:#cc0000;"><br></span></p><p>然后，进入jdgui文件夹双击<span style="color:#ff0000;">jd-gui.exe</span>，打开上面生成的jar包<span style="color: rgb(204, 0, 0); ">classes_dex2jar.jar</span>，即可看到源代码了，如下图：</p><p><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/0_1314542895t80o.gif" alt=""><br><br></p><p>HelloAndroid源码在反编译前后的对照如下：</p><p>&nbsp;<strong><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/0_1314542945u7Th.gif" alt=""></strong></p><p><strong><br></strong></p><p><strong><br></strong></p><p><strong>二、apk<strong>反编译</strong>生成程序的源代码和图片、XML配置、语言资源等文件</strong></p><p>如果是汉化软件，这将特别有用</p><p>首先还是要下载上述反编译工具包，其中最新的apktool，请到google code下载</p><p><a target="_blank" href="https://code.google.com/p/android-apktool/downloads/list">apktool</a>（google code）</p><p><strong><br></strong></p><p><strong>具体步骤：</strong></p><p>下载上述反编译工具包，打开<span style="color:#ff0000;">apk2java</span>目录下的<span style="color: rgb(255, 0, 0); ">apktool1.4.1</span>文件夹，内含三个文件：<span style="color: rgb(255, 0, 0); ">aapt.exe</span>，<span style="color: rgb(255, 0, 0); ">apktool.bat</span>，<span style="color: rgb(255, 0, 0); ">apktool.jar&nbsp;</span></p><p>注：里面的apktool_bk.jar是备份的老版本，最好用最新的apktool.jar</p><p><br></p><p>在命令行下定位到apktool.bat文件夹，输入以下命令：<span style="color:#3333ff;"><strong>apktool.bat &nbsp;d &nbsp;-f &nbsp; abc123.apk &nbsp; abc123</strong></span>，如下图：</p><p>&nbsp;<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/0_1314543082NXJ7.gif" alt=""></p><p>上图中，apktool.bat 命令行解释：apktool.bat &nbsp; d &nbsp;-f &nbsp; &nbsp;[apk文件 ]&nbsp;&nbsp; [输出文件夹]</p><p><br></p><p>反编译的文件如下（AndroidManifest.xml为例）：</p><p><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/0_131454313515no.gif" alt=""><br></p><p><br></p><p>将反编译完的文件重新打包成apk，很简单，输入<span style="color:#3333ff;"><strong>apktool.bat &nbsp; b &nbsp; &nbsp;abc123</strong></span>（你编译出来文件夹）即可，命令如下：</p><p>&nbsp;<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/0_1314543163UrUV.gif" alt=""></p><p>打包apk后的文件在目录C:\HelloAndroid下，生成了两个文件夹：</p><p><span style="color:#3333ff;">build</span></p><p><span style="color:#3333ff;">dist</span></p><p>其中，打包生成的HelloAndroid.apk，在上面的dist文件夹下，Ok<br></p><p><br></p><p><br></p><p><strong>三、 图形化反编译apk</strong></p><p>上述步骤一、二讲述了命令行反编译apk，现在提供一种图形化反编译工具：<span style="color:#ff0000;">Androidfby</span></p><p>首先，下载上述反编译工具包，打开<span style="color: rgb(255, 0, 0); ">Androidfby</span>目录，双击Android反编译工具.exe，就可以浏览打开要反编译的apk</p><p><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/1349869942_8653.png" alt=""><br></p><br><p><br></p><p><br>本文反编译工具包整理历史版本：<br></p><p><a target="_blank" href="http://download.csdn.net/detail/sunboy_2050/4633436">Android反编译工具包（升级）</a>&nbsp;&nbsp;（2012-10-10）</p><p><a target="_blank" href="http://download.csdn.net/detail/sunboy_2050/4515626">Android反编译工具</a>&nbsp;（2012-08-21）<br></p><p><a target="_blank" href="http://download.csdn.net/detail/sunboy_2050/3556426">android反编译工具</a>&nbsp;（2011-08-28）<br></p><p><br></p><p><br></p><p><span style="color:#cc0000;">本博客反编译方法，仅供参考学习使用，禁止用于非法和商业等用途，谢谢！</span></p><p><br></p>   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div data-bd-bind="1460173618998" class="bdsharebuttonbox tracking-ad bdshare-button-style0-16" style="float: right;" data-mod="popu_172">
+<a target="_blank" href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a target="_blank" href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a target="_blank" href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a target="_blank" href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a target="_blank" href="#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a target="_blank" href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/blog_detail.css">
+
+    
+<!--172.16.140.13-->
+
+<!-- Baidu Button BEGIN -->
+<script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bds_s_v2.js" type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434"></script>
+
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" articleid="6727581">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>339</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>25</dd>
+            </dl>
+        </div>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/sunboy_2050/article/details/6723473';">上一篇</span><a href="http://blog.csdn.net/sunboy_2050/article/details/6723473" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">android LinearLayout和RelativeLayout实现精确布局</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/sunboy_2050/article/details/6727640';">下一篇</span><a href="http://blog.csdn.net/sunboy_2050/article/details/6727640" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Android如何防止apk程序被反编译</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article" style="">
+                <h4>我的同类文章</h4>
+                <div class="similar_c" style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span style="cursor:pointer" onclick="GetCategoryArticles('853274','sunboy_2050','foot','6727581');">Android<em>（95）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141" style="max-height:195px;">
+                        <a target="_blank" href="http://blog.csdn.net/" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl"><li><em>•</em><a title="Android 项目编译过程" href="http://blog.csdn.net/sunboy_2050/article/details/8940010" id="foot_aritcle_8940010undefined0879642912345151" target="_blank">Android 项目编译过程</a><span>2013-05-17</span><label><i>阅读</i><b>4490</b></label></li> <li><em>•</em><a title="Android 编译工具 Ant" href="http://blog.csdn.net/sunboy_2050/article/details/8875826" id="foot_aritcle_8875826undefined5368683004243643" target="_blank">Android 编译工具 Ant</a><span>2013-05-12</span><label><i>阅读</i><b>8666</b></label></li> <li><em>•</em><a title="Android中visibility属性" href="http://blog.csdn.net/sunboy_2050/article/details/8756028" id="foot_aritcle_8756028undefined31862676506677245" target="_blank">Android中visibility属性</a><span>2013-04-04</span><label><i>阅读</i><b>7577</b></label></li> <li><em>•</em><a title="Intent 和 PendingIntent 区别" href="http://blog.csdn.net/sunboy_2050/article/details/8333593" id="foot_aritcle_8333593undefined927456064402986" target="_blank">Intent 和 PendingIntent 区别</a><span>2012-12-23</span><label><i>阅读</i><b>8451</b></label></li> <li><em>•</em><a title="libgdx 图形绘制" href="http://blog.csdn.net/sunboy_2050/article/details/8292619" id="foot_aritcle_8292619undefined7938460903746501" target="_blank">libgdx 图形绘制</a><span>2012-12-15</span><label><i>阅读</i><b>7136</b></label></li> </ul>
+
+                        <ul class="similar_list fr"><li><em>•</em><a title="GitHub Android 开源项目汇总" href="http://blog.csdn.net/sunboy_2050/article/details/8882236" id="foot_aritcle_8882236undefined7764338363136065" target="_blank">GitHub Android 开源项目汇总</a><span>2013-05-09</span><label><i>阅读</i><b>24709</b></label></li> <li><em>•</em><a title="Android MotionEvent 坐标获取" href="http://blog.csdn.net/sunboy_2050/article/details/8757240" id="foot_aritcle_8757240undefined07656842015396503" target="_blank">Android MotionEvent 坐标获取</a><span>2013-04-05</span><label><i>阅读</i><b>8318</b></label></li> <li><em>•</em><a title="Android与js交互实例" href="http://blog.csdn.net/sunboy_2050/article/details/8737999" id="foot_aritcle_8737999undefined3380878591260231" target="_blank">Android与js交互实例</a><span>2013-03-29</span><label><i>阅读</i><b>12828</b></label></li> <li><em>•</em><a title="Google Play In-app Billing" href="http://blog.csdn.net/sunboy_2050/article/details/8315275" id="foot_aritcle_8315275undefined28012668194766266" target="_blank">Google Play In-app Billing</a><span>2012-12-19</span><label><i>阅读</i><b>24219</b></label></li> <li><em>•</em><a title="libgdx 环境搭建" href="http://blog.csdn.net/sunboy_2050/article/details/8290433" id="foot_aritcle_8290433undefined27433602936289125" target="_blank">libgdx 环境搭建</a><span>2012-12-13</span><label><i>阅读</i><b>15990</b></label></li> </ul>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/853274" class="MoreArticle">更多文章</a></div>
+                </div>
+            </div>    
+    <script type="text/javascript">
+        $(function () {
+            GetCategoryArticles('853274', 'sunboy_2050','foot','6727581');
+        });
+    </script>
+      
+</div>
+<div id="suggest">
+
+</div>
+         <script language="javascript" type="text/javascript">     
+             $(function(){
+                 $.get("/sunboy_2050/svc/GetSuggestContent/6727581",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived"> 
+    <div class="embody embody_b" id="libkeyparent" style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "6727581",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    <div class="tracking-ad" data-mod="popu_84"><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;"><a href="http://edu.csdn.net/course/detail/1176" title="Python编程基础视频教程(第三季)" strategy="v4:hot" target="_blank">Python编程基础视频教程(第三季)</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;"><a href="http://edu.csdn.net/course/detail/299" title="从此不求人:自主研发一套PHP前端开发框架" strategy="v4:hot" target="_blank">从此不求人:自主研发一套PHP前端开发框架</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;"><a href="http://edu.csdn.net/course/detail/1203" title="Hadoop生态系统零基础入门" strategy="v4:hot" target="_blank">Hadoop生态系统零基础入门</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;"><a href="http://edu.csdn.net/course/detail/1154" title="Swift视频教程(第六季)" strategy="v4:hot" target="_blank">Swift视频教程(第六季)</a></dd><dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px; white-space: nowrap;"><a href="http://edu.csdn.net/course/detail/1155" title="Swift视频教程(第七季)" strategy="v4:hot" target="_blank">Swift视频教程(第七季)</a></dd></div></div>  
+
+    
+     <div id="res" data-mod="popu_36" class="tracking-ad" style="width: 42%; float: left; margin-right: 30px; display: none;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Android APK反编译详解（附图）' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!-- 广告位开始 -->
+<div class="J_adv" data-con="ad_content_216" data-order="40" data-mtp="36" data-mod="ad_popu_71" data-view="true" style="padding: 0px; margin: 0px; border: medium none; width: 728px; height: 90px;"><!-- 广告占位容器 --><div id="cpro_u1607657"><iframe id="iframeu1607657_0" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/bcwm_002.html" vspace="0" hspace="0" marginwidth="0" marginheight="0" scrolling="no" style="border:0; vertical-align:bottom;margin:0;" allowtransparency="true" frameborder="0" height="90" width="728" align="center,center"></iframe></div><!-- 投放代码 --><script type="text/javascript">(window['cproStyleApi'] = window['cproStyleApi'] ||{})['u1607657']={at:'3',rsi0:'728',rsi1:'90',pat:'6',tn:'baiduCustNativeAD',rss1:'#FFFFFF',conBW:'1',adp:'1',ptt:'0',titFF:'%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91',titFS:'',rss2:'#000000',titSU:'0',ptbg:'90',piw:'0',pih:'0',ptp:'0'};/*服务器频道首页置顶Banner960*90，创建于2014-7-3*/(window.cproArray = window.cproArray || []).push({id:'u1607657'});  </script>  <script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/c.js" type="text/javascript"></script></div>
+<!-- 广告位结束 -->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_5963495"><dt class="comment_head" floor="461">461楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_24905073" target="_blank">qq_24905073</a> <span class="ptime">2016-03-31 13:28发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5963495" username="qq_24905073"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_24905073" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_24905073.gif" height="40" width="40"></a></dd><dd class="comment_body">好东西，我现在只是吧XML编译出来了，但是dex2.jar用jd-gui.exe打开什么都没有，这个怎么搞？</dd></dl><dl class="comment_item comment_topic" id="comment_item_5854059"><dt class="comment_head" floor="460">460楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_14925795" target="_blank">艾边程</a> <span class="ptime">2016-01-25 13:56发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5854059" username="qq_14925795"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_14925795" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_14925795.gif" height="40" width="40"></a></dd><dd class="comment_body">不知廉耻的知字写错了</dd></dl><dl class="comment_item comment_topic" id="comment_item_5717721"><dt class="comment_head" floor="459">459楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_31530769" target="_blank">qq_31530769</a> <span class="ptime">2015-12-14 10:11发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5717721" username="qq_31530769"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_31530769" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_31530769.gif" height="40" width="40"></a></dd><dd class="comment_body">一点用没有还要这么多积分，真是不直廉耻</dd><dl class="comment_item comment_reply" id="comment_item_5742442"><dt class="comment_head" floor="459">Re: <span class="user"><a class="username" href="http://blog.csdn.net/k112358" target="_blank">k112358</a> <span class="ptime">2015-12-25 16:58发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5742442" username="k112358"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/k112358" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_k112358.gif" height="40" width="40"></a></dd><dd class="comment_body">回复qq_31530769：自己不会用，还要在这里骂人。我参照作者的方法可以反编译出来。<br>出了问题自己要先搜索原因，找不到原因就把问题发出来让大家帮你（别人完全没有义务帮你，如果帮你解答了那是他出于好心），张口就骂人对你自己一点好处都没有。</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_5677369"><dt class="comment_head" floor="458">458楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012975705" target="_blank">z_zhaojun1</a> <span class="ptime">2015-12-01 11:23发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5677369" username="u012975705"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012975705" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u012975705.jpg" height="40" width="40"></a></dd><dd class="comment_body">给力</dd></dl><dl class="comment_item comment_topic" id="comment_item_5515607"><dt class="comment_head" floor="457">457楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_20995599" target="_blank">qq_20995599</a> <span class="ptime">2015-10-18 20:00发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5515607" username="qq_20995599"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_20995599" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_20995599.gif" height="40" width="40"></a></dd><dd class="comment_body">博主你好，我是刚接触反编译，您提到的在命令行定位到文件目录，在哪的命令行啊？</dd></dl><dl class="comment_item comment_topic" id="comment_item_5498909"><dt class="comment_head" floor="456">456楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_30350981" target="_blank">qq_30350981</a> <span class="ptime">2015-10-11 16:32发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5498909" username="qq_30350981"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_30350981" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_30350981.gif" height="40" width="40"></a></dd><dd class="comment_body">大赞！！！</dd><dl class="comment_item comment_reply" id="comment_item_5515613"><dt class="comment_head" floor="456">Re: <span class="user"><a class="username" href="http://blog.csdn.net/qq_20995599" target="_blank">qq_20995599</a> <span class="ptime">2015-10-18 20:02发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5515613" username="qq_20995599"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_20995599" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_20995599.gif" height="40" width="40"></a></dd><dd class="comment_body">回复qq_30350981：那个命令行怎么定位啊</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_5320607"><dt class="comment_head" floor="455">455楼 <span class="user"><a class="username" href="http://blog.csdn.net/wuxiangxin77" target="_blank">wuxiangxin77</a> <span class="ptime">2015-08-20 21:55发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5320607" username="wuxiangxin77"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/wuxiangxin77" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_wuxiangxin77.gif" height="40" width="40"></a></dd><dd class="comment_body">挺好用的，成功了</dd></dl><dl class="comment_item comment_topic" id="comment_item_5147169"><dt class="comment_head" floor="454">454楼 <span class="user"><a class="username" href="http://blog.csdn.net/auyeungkw" target="_blank">auyeungkw</a> <span class="ptime">2015-06-16 21:57发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5147169" username="auyeungkw"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/auyeungkw" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_auyeungkw.gif" height="40" width="40"></a></dd><dd class="comment_body">頂, 不懂. 要實戰才能明白.</dd></dl><dl class="comment_item comment_topic" id="comment_item_5057785"><dt class="comment_head" floor="453">453楼 <span class="user"><a class="username" href="http://blog.csdn.net/zlb824" target="_blank">游趣吧</a> <span class="ptime">2015-05-18 10:32发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5057785" username="zlb824"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zlb824" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zlb824.jpg" height="40" width="40"></a></dd><dd class="comment_body">报错了，求解！！！<br><br>2015-05-18 10:27:54 (App.java:141) [INFO ]:工具已启动<br>2015-05-18 10:27:59 (App.java:292) [DEBUG]:开始反编译xml文件<br>2015-05-18 10:27:59 (App.java:330) [ERROR]:<br>brut.androlib.AndrolibException: Could not decode arsc file …………（省略N个字）</dd></dl><dl class="comment_item comment_topic" id="comment_item_5052917"><dt class="comment_head" floor="452">452楼 <span class="user"><a class="username" href="http://blog.csdn.net/xkg6330069" target="_blank">xkg6330069</a> <span class="ptime">2015-05-15 15:18发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="5052917" username="xkg6330069"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xkg6330069" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_xkg6330069.gif" height="40" width="40"></a></dd><dd class="comment_body">新手一个，来学习一下....</dd></dl><dl class="comment_item comment_topic" id="comment_item_4871303"><dt class="comment_head" floor="451">451楼 <span class="user"><a class="username" href="http://blog.csdn.net/jijiaxin1989" target="_blank">若凉_季</a> <span class="ptime">2015-03-23 22:31发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4871303" username="jijiaxin1989"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/jijiaxin1989" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_jijiaxin1989.jpg" height="40" width="40"></a></dd><dd class="comment_body">要这么多记分，我靠</dd></dl><dl class="comment_item comment_topic" id="comment_item_4854061"><dt class="comment_head" floor="450">450楼 <span class="user"><a class="username" href="http://blog.csdn.net/zou5126309" target="_blank">zou5126309</a> <span class="ptime">2015-03-17 14:03发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4854061" username="zou5126309"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zou5126309" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zou5126309.gif" height="40" width="40"></a></dd><dd class="comment_body">新手，积分不顾啊，不过谢谢，学习学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4803293"><dt class="comment_head" floor="449">449楼 <span class="user"><a class="username" href="http://blog.csdn.net/liuleiputi" target="_blank">liuleiputi</a> <span class="ptime">2015-02-22 19:40发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4803293" username="liuleiputi"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/liuleiputi" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_liuleiputi.gif" height="40" width="40"></a></dd><dd class="comment_body">在命令行下定位到dex2jar.bat所在目录，运行<br>dex2jar.bat    classes.dex<br>如何一起运行这个啊，运行dex文件老是出现运行出错，没有找到运行方法</dd></dl><dl class="comment_item comment_topic" id="comment_item_4792465"><dt class="comment_head" floor="448">448楼 <span class="user"><a class="username" href="http://blog.csdn.net/refgdgn" target="_blank">refgdgn</a> <span class="ptime">2015-02-11 06:19发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4792465" username="refgdgn"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/refgdgn" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_refgdgn.gif" height="40" width="40"></a></dd><dd class="comment_body">我推荐一个一体化的反编译工具,什么功能都集成了<br>http://bbs.skyfz.com/forum.php?mod=viewthread&amp;tid=10</dd></dl><dl class="comment_item comment_topic" id="comment_item_4710911"><dt class="comment_head" floor="447">447楼 <span class="user"><a class="username" href="http://blog.csdn.net/ab657323134" target="_blank">ab657323134</a> <span class="ptime">2015-01-15 09:39发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4710911" username="ab657323134"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/ab657323134" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_ab657323134.gif" height="40" width="40"></a></dd><dd class="comment_body">积分不够怎么下</dd></dl><dl class="comment_item comment_topic" id="comment_item_4697981"><dt class="comment_head" floor="446">446楼 <span class="user"><a class="username" href="http://blog.csdn.net/u011313929" target="_blank">Zy-听心</a> <span class="ptime">2015-01-09 17:37发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4697981" username="u011313929"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u011313929" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u011313929.jpg" height="40" width="40"></a></dd><dd class="comment_body">没看到分享的链接，东拼西凑的积分啊。<br>反编译没有混淆过的apk还是很给力的~</dd></dl><dl class="comment_item comment_topic" id="comment_item_4688985"><dt class="comment_head" floor="445">445楼 <span class="user"><a class="username" href="http://blog.csdn.net/gejun2008" target="_blank">gejun2008</a> <span class="ptime">2015-01-06 19:04发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4688985" username="gejun2008"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/gejun2008" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_gejun2008.gif" height="40" width="40"></a></dd><dd class="comment_body">已经有人分享云盘了，别用积分下了。<br>http://pan.baidu.com/s/1qWFcueC</dd></dl><dl class="comment_item comment_topic" id="comment_item_4686479"><dt class="comment_head" floor="444">444楼 <span class="user"><a class="username" href="http://blog.csdn.net/michaellys" target="_blank">michaellys</a> <span class="ptime">2015-01-06 00:52发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4686479" username="michaellys"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/michaellys" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_michaellys.gif" height="40" width="40"></a></dd><dd class="comment_body">积分不够</dd></dl><dl class="comment_item comment_topic" id="comment_item_4651555"><dt class="comment_head" floor="443">443楼 <span class="user"><a class="username" href="http://blog.csdn.net/xueyunvhai" target="_blank">Queen小天</a> <span class="ptime">2014-12-30 15:25发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4651555" username="xueyunvhai"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xueyunvhai" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_xueyunvhai.jpg" height="40" width="40"></a></dd><dd class="comment_body">谢谢分享，很好用，很清楚</dd></dl><dl class="comment_item comment_topic" id="comment_item_4581627"><dt class="comment_head" floor="442">442楼 <span class="user"><a class="username" href="http://blog.csdn.net/zibohe0" target="_blank">zibohe0</a> <span class="ptime">2014-12-03 20:34发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4581627" username="zibohe0"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zibohe0" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zibohe0.gif" height="40" width="40"></a></dd><dd class="comment_body">谢谢楼主，楼主好人！</dd></dl><dl class="comment_item comment_topic" id="comment_item_4554725"><dt class="comment_head" floor="441">441楼 <span class="user"><a class="username" href="http://blog.csdn.net/misha463500" target="_blank">misha463500</a> <span class="ptime">2014-11-27 13:41发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4554725" username="misha463500"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/misha463500" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_misha463500.gif" height="40" width="40"></a></dd><dd class="comment_body">么有  积分  下载真是无语了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4554705"><dt class="comment_head" floor="440">440楼 <span class="user"><a class="username" href="http://blog.csdn.net/misha463500" target="_blank">misha463500</a> <span class="ptime">2014-11-27 13:35发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4554705" username="misha463500"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/misha463500" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_misha463500.gif" height="40" width="40"></a></dd><dd class="comment_body">XINSHOU  积分不够</dd></dl><dl class="comment_item comment_topic" id="comment_item_4540861"><dt class="comment_head" floor="439">439楼 <span class="user"><a class="username" href="http://blog.csdn.net/xojinq" target="_blank">xojinq</a> <span class="ptime">2014-11-23 18:01发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4540861" username="xojinq"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xojinq" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_xojinq.gif" height="40" width="40"></a></dd><dd class="comment_body">aaaaaaaaaaaaswwwa111a1</dd></dl><dl class="comment_item comment_topic" id="comment_item_4538097"><dt class="comment_head" floor="438">438楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014540459" target="_blank">小辛_81</a> <span class="ptime">2014-11-22 14:48发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4538097" username="u014540459"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014540459" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014540459.gif" height="40" width="40"></a></dd><dd class="comment_body">谢谢！</dd></dl><dl class="comment_item comment_topic" id="comment_item_4517175"><dt class="comment_head" floor="437">437楼 <span class="user"><a class="username" href="http://blog.csdn.net/tyhjhb" target="_blank">yaya_tydu</a> <span class="ptime">2014-11-14 22:05发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4517175" username="tyhjhb"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/tyhjhb" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_tyhjhb.jpg" height="40" width="40"></a></dd><dd class="comment_body">hen感谢啊，值得值得</dd></dl><dl class="comment_item comment_topic" id="comment_item_4506745"><dt class="comment_head" floor="436">436楼 <span class="user"><a class="username" href="http://blog.csdn.net/dong_ge2014" target="_blank">dong_ge2014</a> <span class="ptime">2014-11-11 17:16发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4506745" username="dong_ge2014"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/dong_ge2014" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_dong_ge2014.jpg" height="40" width="40"></a></dd><dd class="comment_body">赞一个,学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4491151"><dt class="comment_head" floor="435">435楼 <span class="user"><a class="username" href="http://blog.csdn.net/fish_ell" target="_blank">fish_ell</a> <span class="ptime">2014-11-06 11:51发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4491151" username="fish_ell"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/fish_ell" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_fish_ell.gif" height="40" width="40"></a></dd><dd class="comment_body">好东西，学习了~帮顶~</dd></dl><dl class="comment_item comment_topic" id="comment_item_4408925"><dt class="comment_head" floor="434">434楼 <span class="user"><a class="username" href="http://blog.csdn.net/missing616" target="_blank">missing616</a> <span class="ptime">2014-10-18 15:54发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4408925" username="missing616"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/missing616" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_missing616.jpg" height="40" width="40"></a></dd><dd class="comment_body">路过，学习，谢谢。</dd></dl><dl class="comment_item comment_topic" id="comment_item_4397933"><dt class="comment_head" floor="433">433楼 <span class="user"><a class="username" href="http://blog.csdn.net/qianguming" target="_blank">zolaZhang</a> <span class="ptime">2014-10-15 10:03发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4397933" username="qianguming"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qianguming" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qianguming.jpg" height="40" width="40"></a></dd><dd class="comment_body">真的呢，</dd></dl><dl class="comment_item comment_topic" id="comment_item_4391597"><dt class="comment_head" floor="432">432楼 <span class="user"><a class="username" href="http://blog.csdn.net/Ralvesu" target="_blank">Ralvesu</a> <span class="ptime">2014-10-13 15:15发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4391597" username="Ralvesu"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/Ralvesu" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_ralvesu.jpg" height="40" width="40"></a></dd><dd class="comment_body">无法生成classes_dex2jar.jar啊，老是说“Invalid inout file'E:\dex2jar-0.0.9.9\classes.dex”,求解</dd></dl><dl class="comment_item comment_topic" id="comment_item_4390969"><dt class="comment_head" floor="431">431楼 <span class="user"><a class="username" href="http://blog.csdn.net/green_123456" target="_blank">green_123456</a> <span class="ptime">2014-10-13 12:20发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4390969" username="green_123456"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/green_123456" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_green_123456.gif" height="40" width="40"></a></dd><dd class="comment_body">好阳光的岛主  解说的很明白  谢谢你</dd></dl><dl class="comment_item comment_topic" id="comment_item_4386707"><dt class="comment_head" floor="430">430楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013476751" target="_blank">某种意境</a> <span class="ptime">2014-10-11 17:02发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4386707" username="u013476751"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013476751" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013476751.jpg" height="40" width="40"></a></dd><dd class="comment_body">确实可以啊  直接就编译出来  只不过是被混淆过的</dd></dl><dl class="comment_item comment_topic" id="comment_item_4385565"><dt class="comment_head" floor="429">429楼 <span class="user"><a class="username" href="http://blog.csdn.net/crazymus" target="_blank">crazymus</a> <span class="ptime">2014-10-11 11:45发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4385565" username="crazymus"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/crazymus" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_crazymus.gif" height="40" width="40"></a></dd><dd class="comment_body">很好用的工具，代码反编译出来基本上正确，稍加修改就可以正常运行了。另外，感觉对布局文件的反编译更为准确。</dd></dl><dl class="comment_item comment_topic" id="comment_item_4330117"><dt class="comment_head" floor="428">428楼 <span class="user"><a class="username" href="http://blog.csdn.net/baidu12580" target="_blank">baidu12580</a> <span class="ptime">2014-09-27 11:04发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4330117" username="baidu12580"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/baidu12580" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_baidu12580.gif" height="40" width="40"></a></dd><dd class="comment_body">楼主真搞笑，若是真心分享文章给大家，干嘛收那么多积分呢？？？<br>心黑啊~~~~~~~~~~~</dd></dl><dl class="comment_item comment_topic" id="comment_item_4303723"><dt class="comment_head" floor="427">427楼 <span class="user"><a class="username" href="http://blog.csdn.net/aduovip" target="_blank">aduovip</a> <span class="ptime">2014-09-19 15:12发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4303723" username="aduovip"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/aduovip" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_aduovip.jpg" height="40" width="40"></a></dd><dd class="comment_body">dex2jar.bat    classes.dex  命令行不止这样</dd></dl><dl class="comment_item comment_topic" id="comment_item_4283925"><dt class="comment_head" floor="426">426楼 <span class="user"><a class="username" href="http://blog.csdn.net/c2007810083" target="_blank">c2007810083</a> <span class="ptime">2014-09-16 15:48发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4283925" username="c2007810083"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/c2007810083" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_c2007810083.gif" height="40" width="40"></a></dd><dd class="comment_body">反编译出来的代码难易阅读！没有太大用处啊！</dd></dl><dl class="comment_item comment_topic" id="comment_item_4268177"><dt class="comment_head" floor="425">425楼 <span class="user"><a class="username" href="http://blog.csdn.net/anikaka" target="_blank">TeamBlanks</a> <span class="ptime">2014-09-11 13:58发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4268177" username="anikaka"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/anikaka" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_anikaka.jpg" height="40" width="40"></a></dd><dd class="comment_body">你的最后一步只说了如果反编译图形界面,但是查看呢</dd></dl><dl class="comment_item comment_topic" id="comment_item_4262239"><dt class="comment_head" floor="424">424楼 <span class="user"><a class="username" href="http://blog.csdn.net/yuanmengxi" target="_blank">此去经年</a> <span class="ptime">2014-09-09 18:06发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4262239" username="yuanmengxi"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yuanmengxi" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_yuanmengxi.gif" height="40" width="40"></a></dd><dd class="comment_body">不错  很强大</dd></dl><dl class="comment_item comment_topic" id="comment_item_4257455"><dt class="comment_head" floor="423">423楼 <span class="user"><a class="username" href="http://blog.csdn.net/hidekylin" target="_blank">hidekylin</a> <span class="ptime">2014-09-07 14:06发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4257455" username="hidekylin"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/hidekylin" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_hidekylin.gif" height="40" width="40"></a></dd><dd class="comment_body">来看看。学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4244371"><dt class="comment_head" floor="422">422楼 <span class="user"><a class="username" href="http://blog.csdn.net/zjy1074" target="_blank">zjy1074</a> <span class="ptime">2014-09-03 10:17发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4244371" username="zjy1074"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zjy1074" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zjy1074.jpg" height="40" width="40"></a></dd><dd class="comment_body">资源分不够，无法下载，路过了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4207469"><dt class="comment_head" floor="421">421楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_20005115" target="_blank">qq_20005115</a> <span class="ptime">2014-08-24 11:42发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4207469" username="qq_20005115"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_20005115" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_20005115.gif" height="40" width="40"></a></dd><dd class="comment_body">接地</dd></dl><dl class="comment_item comment_topic" id="comment_item_4207467"><dt class="comment_head" floor="420">420楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_20005115" target="_blank">qq_20005115</a> <span class="ptime">2014-08-24 11:42发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4207467" username="qq_20005115"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_20005115" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_20005115.gif" height="40" width="40"></a></dd><dd class="comment_body">接地</dd></dl><dl class="comment_item comment_topic" id="comment_item_4155371"><dt class="comment_head" floor="419">419楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013797947" target="_blank">Big-Heart</a> <span class="ptime">2014-08-09 11:25发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4155371" username="u013797947"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013797947" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013797947.jpg" height="40" width="40"></a></dd><dd class="comment_body">命令行显示找不到classes.dex耶。。。我明明就放进去了啊？</dd></dl><dl class="comment_item comment_topic" id="comment_item_4078439"><dt class="comment_head" floor="418">418楼 <span class="user"><a class="username" href="http://blog.csdn.net/TianXinsuper" target="_blank">TianXinsuper</a> <span class="ptime">2014-07-24 09:33发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4078439" username="TianXinsuper"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/TianXinsuper" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_tianxinsuper.gif" height="40" width="40"></a></dd><dd class="comment_body">又学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4054299"><dt class="comment_head" floor="417">417楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012566958" target="_blank">Dingo妹</a> <span class="ptime">2014-07-16 15:54发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4054299" username="u012566958"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012566958" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u012566958.gif" height="40" width="40"></a></dd><dd class="comment_body">又学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_4051073"><dt class="comment_head" floor="416">416楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013343401" target="_blank">yl彬</a> <span class="ptime">2014-07-15 14:46发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4051073" username="u013343401"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013343401" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013343401.gif" height="40" width="40"></a></dd><dd class="comment_body">对于混淆过的代码反编译不出来</dd></dl><dl class="comment_item comment_topic" id="comment_item_4051071"><dt class="comment_head" floor="415">415楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013343401" target="_blank">yl彬</a> <span class="ptime">2014-07-15 14:46发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4051071" username="u013343401"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013343401" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013343401.gif" height="40" width="40"></a></dd><dd class="comment_body">混淆过的代码反编译不出</dd></dl><dl class="comment_item comment_topic" id="comment_item_4047545"><dt class="comment_head" floor="414">414楼 <span class="user"><a class="username" href="http://blog.csdn.net/guangegwi" target="_blank">张青志</a> <span class="ptime">2014-07-14 14:10发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4047545" username="guangegwi"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/guangegwi" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_guangegwi.jpg" height="40" width="40"></a></dd><dd class="comment_body">怒赞啊，解决了目前我学习过程想实现非常有意思控件的愿望。<br><br>不过针对不同版本的JDK ，比如1.7.0以后需要升级dex2jar包，可以升级到dex2jar-0.0.9.9 连接：http://pan.baidu.com/s/1jI4j0</dd></dl><dl class="comment_item comment_topic" id="comment_item_4039701"><dt class="comment_head" floor="413">413楼 <span class="user"><a class="username" href="http://blog.csdn.net/lowprofile_coding" target="_blank">lowprofile_coding</a> <span class="ptime">2014-07-11 17:12发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4039701" username="lowprofile_coding"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/lowprofile_coding" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_lowprofile_coding.jpg" height="40" width="40"></a></dd><dd class="comment_body">学习了 谢谢楼主</dd></dl><dl class="comment_item comment_topic" id="comment_item_4033003"><dt class="comment_head" floor="412">412楼 <span class="user"><a class="username" href="http://blog.csdn.net/shaojila8888" target="_blank">shaojila8888</a> <span class="ptime">2014-07-10 15:07发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4033003" username="shaojila8888"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/shaojila8888" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_shaojila8888.jpg" height="40" width="40"></a></dd><dd class="comment_body">我表示你狠强大!!</dd></dl><dl class="comment_item comment_topic" id="comment_item_4026367"><dt class="comment_head" floor="411">411楼 <span class="user"><a class="username" href="http://blog.csdn.net/u011492706" target="_blank">lupin3age</a> <span class="ptime">2014-07-07 19:37发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4026367" username="u011492706"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u011492706" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u011492706.gif" height="40" width="40"></a></dd><dd class="comment_body">顶一个</dd></dl><dl class="comment_item comment_topic" id="comment_item_4018015"><dt class="comment_head" floor="410">410楼 <span class="user"><a class="username" href="http://blog.csdn.net/qq_17218599" target="_blank">qq_17218599</a> <span class="ptime">2014-07-03 23:10发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4018015" username="qq_17218599"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qq_17218599" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qq_17218599.gif" height="40" width="40"></a></dd><dd class="comment_body">楼主好牛，跟你学习</dd></dl><dl class="comment_item comment_topic" id="comment_item_3989683"><dt class="comment_head" floor="409">409楼 <span class="user"><a class="username" href="http://blog.csdn.net/baidu_16901673" target="_blank">baidu_16901673</a> <span class="ptime">2014-06-25 19:26发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3989683" username="baidu_16901673"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/baidu_16901673" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_baidu_16901673.gif" height="40" width="40"></a></dd><dd class="comment_body">新手 进来学习学习</dd></dl><dl class="comment_item comment_topic" id="comment_item_3965909"><dt class="comment_head" floor="408">408楼 <span class="user"><a class="username" href="http://blog.csdn.net/u011370871" target="_blank">kingdawin</a> <span class="ptime">2014-06-18 20:52发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3965909" username="u011370871"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u011370871" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u011370871.jpg" height="40" width="40"></a></dd><dd class="comment_body">反编译出来的代码根本没用！和源码差远了，有意义吗</dd></dl><dl class="comment_item comment_topic" id="comment_item_3950333"><dt class="comment_head" floor="407">407楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012958235" target="_blank">1242456214</a> <span class="ptime">2014-06-12 14:06发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3950333" username="u012958235"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012958235" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u012958235.gif" height="40" width="40"></a></dd><dd class="comment_body">楼主，为什么我的反编译不出来啊，它报空指计异常啊</dd></dl><dl class="comment_item comment_topic" id="comment_item_3940901"><dt class="comment_head" floor="406">406楼 <span class="user"><a class="username" href="http://blog.csdn.net/yunqia" target="_blank">yunqia</a> <span class="ptime">2014-06-09 17:43发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3940901" username="yunqia"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yunqia" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_yunqia.gif" height="40" width="40"></a></dd><dd class="comment_body">可以反编译出来，得到自己想看到的代码，谢谢楼主</dd></dl><dl class="comment_item comment_topic" id="comment_item_3930969"><dt class="comment_head" floor="405">405楼 <span class="user"><a class="username" href="http://blog.csdn.net/kaxier5000" target="_blank">苍月惊羽</a> <span class="ptime">2014-06-05 23:41发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3930969" username="kaxier5000"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/kaxier5000" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_kaxier5000.jpg" height="40" width="40"></a></dd><dd class="comment_body"><fieldset><legend>引用“airhuang”的评论：</legend>回复mthhk008：赞！</fieldset><br>怒赞！要分也是可以理解的！人各有志，和谐共处</dd></dl><dl class="comment_item comment_topic" id="comment_item_3930045"><dt class="comment_head" floor="404">404楼 <span class="user"><a class="username" href="http://blog.csdn.net/chuanwei2007" target="_blank">chuanwei2007</a> <span class="ptime">2014-06-05 18:22发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3930045" username="chuanwei2007"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/chuanwei2007" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_chuanwei2007.jpg" height="40" width="40"></a></dd><dd class="comment_body">Ubuntu 下打不开图形化反编译apk ？</dd></dl><dl class="comment_item comment_topic" id="comment_item_3926449"><dt class="comment_head" floor="403">403楼 <span class="user"><a class="username" href="http://blog.csdn.net/yp321" target="_blank">玉vs璞</a> <span class="ptime">2014-06-04 23:09发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3926449" username="yp321"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yp321" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_yp321.jpg" height="40" width="40"></a></dd><dd class="comment_body">第二种方法很好，反编译的比较准确</dd></dl><dl class="comment_item comment_topic" id="comment_item_3883825"><dt class="comment_head" floor="402">402楼 <span class="user"><a class="username" href="http://blog.csdn.net/xuqingfeng77" target="_blank">xuqingfeng77</a> <span class="ptime">2014-05-27 12:15发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3883825" username="xuqingfeng77"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xuqingfeng77" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_xuqingfeng77.jpg" height="40" width="40"></a></dd><dd class="comment_body">楼主逗比呀  <br>apktool.bat  d  -f   abc123.apk   abc123<br>这个命令搞得我的资料都被删除了 <br><br>apktool.bat  d  abc123.apk   abc123 这个条命令才算对的</dd></dl><dl class="comment_item comment_topic" id="comment_item_3866437"><dt class="comment_head" floor="401">401楼 <span class="user"><a class="username" href="http://blog.csdn.net/mthhk008" target="_blank">明天花会开</a> <span class="ptime">2014-05-23 15:24发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3866437" username="mthhk008"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/mthhk008" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_mthhk008.gif" height="40" width="40"></a></dd><dd class="comment_body">http://pan.baidu.com/s/1qWFcueC<br>这里是反编译软件的下载地址，楼主这种要分的做法真的很恶心</dd><dl class="comment_item comment_reply" id="comment_item_3884171"><dt class="comment_head" floor="401">Re: <span class="user"><a class="username" href="http://blog.csdn.net/airhuang" target="_blank">airhuang</a> <span class="ptime">2014-05-27 14:38发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3884171" username="airhuang"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/airhuang" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_airhuang.gif" height="40" width="40"></a></dd><dd class="comment_body">回复mthhk008：赞！</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_3834345"><dt class="comment_head" floor="400">400楼 <span class="user"><a class="username" href="http://blog.csdn.net/cmzNO1" target="_blank">forever_blue_blood</a> <span class="ptime">2014-05-12 22:57发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3834345" username="cmzNO1"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/cmzNO1" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_cmzno1.gif" height="40" width="40"></a></dd><dd class="comment_body">我按照apktool.bat   d  -f    [apk文件 ]   [输出文件夹]命令执行却不能得到教程中的结果……求解答</dd></dl><dl class="comment_item comment_topic" id="comment_item_3784691"><dt class="comment_head" floor="399">399楼 <span class="user"><a class="username" href="http://blog.csdn.net/libing1991_" target="_blank">libing52</a> <span class="ptime">2014-04-28 21:08发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3784691" username="libing1991_"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/libing1991_" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_libing1991_.jpg" height="40" width="40"></a></dd><dd class="comment_body">非常值得学习，谢谢分享</dd></dl><dl class="comment_item comment_topic" id="comment_item_3750593"><dt class="comment_head" floor="398">398楼 <span class="user"><a class="username" href="http://blog.csdn.net/zhao_120" target="_blank">创客征途</a> <span class="ptime">2014-04-17 20:58发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3750593" username="zhao_120"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zhao_120" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zhao_120.jpg" height="40" width="40"></a></dd><dd class="comment_body">下载了反编译出错 ，还把目标目录里的所有文件都删了 啊<br>谁来救回我的资料啊！！！！！</dd><dl class="comment_item comment_reply" id="comment_item_3820625"><dt class="comment_head" floor="398">Re: <span class="user"><a class="username" href="http://blog.csdn.net/wangjiang_qianmo" target="_blank">麦田里的守望者-Rye</a> <span class="ptime">2014-05-07 20:09发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3820625" username="wangjiang_qianmo"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/wangjiang_qianmo" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_wangjiang_qianmo.jpg" height="40" width="40"></a></dd><dd class="comment_body">回复zhao_120：文件可以找回来吗？我的一下也删除了。</dd><dl class="comment_item comment_reply" id="comment_item_4081245"><dt class="comment_head" floor="1">Re: <span class="user"><a class="username" href="http://blog.csdn.net/zhao_120" target="_blank">创客征途</a> <span class="ptime">2014-07-24 22:53发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4081245" username="zhao_120"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zhao_120" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zhao_120.jpg" height="40" width="40"></a></dd><dd class="comment_body">回复wangjiang_qianmo：我的没有找回来，那你先可以试一下恢复软件。</dd></dl></dl></dl><dl class="comment_item comment_topic" id="comment_item_3732027"><dt class="comment_head" floor="397">397楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014449884" target="_blank">herdLHC</a> <span class="ptime">2014-04-12 15:18发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3732027" username="u014449884"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014449884" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014449884.gif" height="40" width="40"></a></dd><dd class="comment_body">yuu6y 一 也一样</dd></dl><dl class="comment_item comment_topic" id="comment_item_3731985"><dt class="comment_head" floor="396">396楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014449884" target="_blank">herdLHC</a> <span class="ptime">2014-04-12 15:11发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3731985" username="u014449884"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014449884" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014449884.gif" height="40" width="40"></a></dd><dd class="comment_body">超好噢噢噢噢</dd></dl><dl class="comment_item comment_topic" id="comment_item_3731243"><dt class="comment_head" floor="395">395楼 <span class="user"><a class="username" href="http://blog.csdn.net/u010044811" target="_blank">Angrywhite</a> <span class="ptime">2014-04-12 09:41发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3731243" username="u010044811"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u010044811" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u010044811.jpg" height="40" width="40"></a></dd><dd class="comment_body">学习了         谢谢楼主</dd></dl><dl class="comment_item comment_topic" id="comment_item_3721721"><dt class="comment_head" floor="394">394楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014631514" target="_blank">a39663wq3</a> <span class="ptime">2014-04-10 01:38发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3721721" username="u014631514"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014631514" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014631514.gif" height="40" width="40"></a></dd><dd class="comment_body">aaaaaaaaaaaaaaaaaaaa</dd></dl><dl class="comment_item comment_topic" id="comment_item_3721263"><dt class="comment_head" floor="393">393楼 <span class="user"><a class="username" href="http://blog.csdn.net/k605726828" target="_blank">klioen</a> <span class="ptime">2014-04-09 21:14发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3721263" username="k605726828"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/k605726828" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_k605726828.jpg" height="40" width="40"></a></dd><dd class="comment_body">谢谢分享，受教了</dd></dl><dl class="comment_item comment_topic" id="comment_item_3720805"><dt class="comment_head" floor="392">392楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012866680" target="_blank">歇斯底里_星辰</a> <span class="ptime">2014-04-09 18:25发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3720805" username="u012866680"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012866680" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u012866680.jpg" height="40" width="40"></a></dd><dd class="comment_body">如何编程实现反汇编过程？</dd></dl><dl class="comment_item comment_topic" id="comment_item_3695513"><dt class="comment_head" floor="391">391楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014488844" target="_blank">u014488844</a> <span class="ptime">2014-04-01 16:07发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3695513" username="u014488844"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014488844" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014488844.gif" height="40" width="40"></a></dd><dd class="comment_body">谢谢</dd></dl><dl class="comment_item comment_topic" id="comment_item_3679603"><dt class="comment_head" floor="390">390楼 <span class="user"><a class="username" href="http://blog.csdn.net/love100628" target="_blank">love100628</a> <span class="ptime">2014-03-31 00:01发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3679603" username="love100628"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/love100628" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_love100628.gif" height="40" width="40"></a></dd><dd class="comment_body">混淆过的代码反编译出来实在坑爹，方法、实例、变量、类、参数等基本都是a,b,c,d,。。。<br>要理解很不容易!目前有没有什么办法呢···</dd></dl><dl class="comment_item comment_topic" id="comment_item_3658371"><dt class="comment_head" floor="389">389楼 <span class="user"><a class="username" href="http://blog.csdn.net/php_icedragon" target="_blank">笑天游</a> <span class="ptime">2014-03-27 11:25发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3658371" username="php_icedragon"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/php_icedragon" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_php_icedragon.jpg" height="40" width="40"></a></dd><dd class="comment_body">相当不错！可以用，多谢楼主，支持楼主！</dd></dl><dl class="comment_item comment_topic" id="comment_item_3646367"><dt class="comment_head" floor="388">388楼 <span class="user"><a class="username" href="http://blog.csdn.net/jiangzhanchang" target="_blank">Eric_Jiang</a> <span class="ptime">2014-03-25 18:37发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3646367" username="jiangzhanchang"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/jiangzhanchang" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_jiangzhanchang.jpg" height="40" width="40"></a></dd><dd class="comment_body">可以用，不过遇到混淆之后的apk就没招了。</dd></dl><dl class="comment_item comment_topic" id="comment_item_3641413"><dt class="comment_head" floor="387">387楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014327060" target="_blank">萨满aa</a> <span class="ptime">2014-03-24 19:20发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3641413" username="u014327060"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014327060" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014327060.gif" height="40" width="40"></a></dd><dd class="comment_body">好东西 谢谢LZ分享</dd></dl><dl class="comment_item comment_topic" id="comment_item_3640621"><dt class="comment_head" floor="386">386楼 <span class="user"><a class="username" href="http://blog.csdn.net/taotao19880301" target="_blank">taotao19880301</a> <span class="ptime">2014-03-24 15:39发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3640621" username="taotao19880301"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/taotao19880301" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_taotao19880301.jpg" height="40" width="40"></a></dd><dd class="comment_body">好，学习了</dd></dl><dl class="comment_item comment_topic" id="comment_item_3630413"><dt class="comment_head" floor="385">385楼 <span class="user"><a class="username" href="http://blog.csdn.net/u012311361" target="_blank">liangtianyun</a> <span class="ptime">2014-03-22 17:43发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3630413" username="u012311361"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u012311361" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u012311361.gif" height="40" width="40"></a></dd><dd class="comment_body">可以用，谢谢。</dd></dl><dl class="comment_item comment_topic" id="comment_item_3609497"><dt class="comment_head" floor="384">384楼 <span class="user"><a class="username" href="http://blog.csdn.net/luoxianli2011" target="_blank">问苍茫大地</a> <span class="ptime">2014-03-19 16:49发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3609497" username="luoxianli2011"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/luoxianli2011" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_luoxianli2011.gif" height="40" width="40"></a></dd><dd class="comment_body">太好了</dd></dl><dl class="comment_item comment_topic" id="comment_item_3607053"><dt class="comment_head" floor="383">383楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014209091" target="_blank">hoceteyu</a> <span class="ptime">2014-03-19 08:49发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3607053" username="u014209091"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014209091" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014209091.gif" height="40" width="40"></a></dd><dd class="comment_body">D:\&gt;D:\A反编译\apk2java\dex2jar-0.0.9.9\dex2jar.bat classes.dex<br>this cmd is deprecated, use the d2j-dex2jar if possible<br>dex2jar version: translator-0.0.9.9<br>dex2jar classes.dex -&gt; classes_dex2jar.jar<br>. while process file: [classes.dex]<br>.. ROOT cause:<br>java.io.FileNotFoundException: File 'classes.dex' does not exist<br>        at org.apache.commons.io.FileUtils.openInputStream(FileUtils.java:56)<br>        at org.apache.commons.io.FileUtils.readFileToByteArray(FileUtils.java:40<br>)<br>        at com.googlecode.dex2jar.reader.DexFileReader.readDex(DexFileReader.jav<br>a:149)<br>        at com.googlecode.dex2jar.v3.Main.doFile(Main.java:63)<br>        at com.googlecode.dex2jar.v3.Main.main(Main.java:86)<br>Done.<br><br>D:\&gt;</dd></dl><dl class="comment_item comment_topic" id="comment_item_3604417"><dt class="comment_head" floor="382">382楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014200174" target="_blank">qinguang119</a> <span class="ptime">2014-03-18 21:09发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3604417" username="u014200174"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014200174" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014200174.gif" height="40" width="40"></a></dd><dd class="comment_body">你好。<br>我生成不了classes_dex2jar.jar<br>是不是java不对。<br>指教一下。先谢了</dd></dl><dl class="comment_item comment_topic" id="comment_item_3597331"><dt class="comment_head" floor="381">381楼 <span class="user"><a class="username" href="http://blog.csdn.net/qijian0503" target="_blank">我是树的种子</a> <span class="ptime">2014-03-17 10:37发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3597331" username="qijian0503"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/qijian0503" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_qijian0503.jpg" height="40" width="40"></a></dd><dd class="comment_body">此文件不能打开，所以看不到效果</dd></dl><dl class="comment_item comment_topic" id="comment_item_3596189"><dt class="comment_head" floor="380">380楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014158377" target="_blank">求878就</a> <span class="ptime">2014-03-16 22:26发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3596189" username="u014158377"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014158377" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014158377.gif" height="40" width="40"></a></dd><dd class="comment_body">谢谢</dd></dl><dl class="comment_item comment_topic" id="comment_item_3575837"><dt class="comment_head" floor="379">379楼 <span class="user"><a class="username" href="http://blog.csdn.net/u014066879" target="_blank">u014066879</a> <span class="ptime">2014-03-12 20:54发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3575837" username="u014066879"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u014066879" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u014066879.gif" height="40" width="40"></a></dd><dd class="comment_body">必须要赞~\(≧▽≦)/~<br>那个如果在命令行下定位到dex2jar.bat所在目录，运行<br>dex2jar.bat    classes.dex  有错误的话 可以直接直接把classes.dex拖到dex2jar.bat上就可以生成了</dd><dl class="comment_item comment_reply" id="comment_item_3744703"><dt class="comment_head" floor="379">Re: <span class="user"><a class="username" href="http://blog.csdn.net/chungehenyy" target="_blank">Selson</a> <span class="ptime">2014-04-16 10:21发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3744703" username="chungehenyy"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/chungehenyy" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_chungehenyy.jpg" height="40" width="40"></a></dd><dd class="comment_body">回复u014066879：这个说得正确~~</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_3573999"><dt class="comment_head" floor="378">378楼 <span class="user"><a class="username" href="http://blog.csdn.net/chunqinglangzi" target="_blank">花心只为寻真情</a> <span class="ptime">2014-03-12 14:29发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3573999" username="chunqinglangzi"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/chunqinglangzi" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_chunqinglangzi.jpg" height="40" width="40"></a></dd><dd class="comment_body">感谢楼主，学习中</dd></dl><dl class="comment_item comment_topic" id="comment_item_3572123"><dt class="comment_head" floor="377">377楼 <span class="user"><a class="username" href="http://blog.csdn.net/tianya201311" target="_blank">tianya201311</a> <span class="ptime">2014-03-11 21:24发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3572123" username="tianya201311"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/tianya201311" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_tianya201311.gif" height="40" width="40"></a></dd><dd class="comment_body">感谢分享 下载试试</dd></dl><dl class="comment_item comment_topic" id="comment_item_3543469"><dt class="comment_head" floor="376">376楼 <span class="user"><a class="username" href="http://blog.csdn.net/a479781030" target="_blank">a479781030</a> <span class="ptime">2014-03-02 14:48发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3543469" username="a479781030"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/a479781030" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_a479781030.gif" height="40" width="40"></a></dd><dd class="comment_body">的开发和贷款首付款华东数控粉红色的方式</dd></dl><dl class="comment_item comment_topic" id="comment_item_3520397"><dt class="comment_head" floor="375">375楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013796089" target="_blank">羊会武术</a> <span class="ptime">2014-02-26 20:38发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3520397" username="u013796089"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013796089" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013796089.gif" height="40" width="40"></a></dd><dd class="comment_body">弄弄看好不好。。。。。</dd></dl><dl class="comment_item comment_topic" id="comment_item_3517729"><dt class="comment_head" floor="374">374楼 <span class="user"><a class="username" href="http://blog.csdn.net/u010208914" target="_blank">PetterYang</a> <span class="ptime">2014-02-26 11:24发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3517729" username="u010208914"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u010208914" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u010208914.gif" height="40" width="40"></a></dd><dd class="comment_body">编译自己的项目出来，发现怎么类少了很多呢？</dd></dl><dl class="comment_item comment_topic" id="comment_item_3498939"><dt class="comment_head" floor="373">373楼 <span class="user"><a class="username" href="http://blog.csdn.net/zqs62761130" target="_blank">1点01的365次方</a> <span class="ptime">2014-02-20 11:35发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3498939" username="zqs62761130"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zqs62761130" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zqs62761130.jpg" height="40" width="40"></a></dd><dd class="comment_body">代码的资源文件 怎么弄的呀？</dd></dl><dl class="comment_item comment_topic" id="comment_item_3498619"><dt class="comment_head" floor="372">372楼 <span class="user"><a class="username" href="http://blog.csdn.net/u010023457" target="_blank">我的尾巴</a> <span class="ptime">2014-02-20 10:30发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3498619" username="u010023457"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u010023457" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u010023457.jpg" height="40" width="40"></a></dd><dd class="comment_body">在命令行下定位到dex2jar.bat所在目录，运行<br><br>dex2jar.bat    classes.dex<br>这个是怎么运行呀？</dd></dl><dl class="comment_item comment_topic" id="comment_item_3475743"><dt class="comment_head" floor="371">371楼 <span class="user"><a class="username" href="http://blog.csdn.net/yebai" target="_blank">yebai</a> <span class="ptime">2014-02-12 20:33发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3475743" username="yebai"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yebai" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_yebai.gif" height="40" width="40"></a></dd><dd class="comment_body">调好了</dd></dl><dl class="comment_item comment_topic" id="comment_item_3470053"><dt class="comment_head" floor="370">370楼 <span class="user"><a class="username" href="http://blog.csdn.net/u010569495" target="_blank">u010569495</a> <span class="ptime">2014-02-10 20:29发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3470053" username="u010569495"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u010569495" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u010569495.gif" height="40" width="40"></a></dd><dd class="comment_body">谢谢分享</dd></dl><dl class="comment_item comment_topic" id="comment_item_3464989"><dt class="comment_head" floor="369">369楼 <span class="user"><a class="username" href="http://blog.csdn.net/zhangzhilai8" target="_blank">张志来</a> <span class="ptime">2014-02-08 15:33发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3464989" username="zhangzhilai8"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zhangzhilai8" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_zhangzhilai8.jpg" height="40" width="40"></a></dd><dd class="comment_body">很有用，谢谢分享。</dd></dl><dl class="comment_item comment_topic" id="comment_item_3462311"><dt class="comment_head" floor="368">368楼 <span class="user"><a class="username" href="http://blog.csdn.net/u013606579" target="_blank">u013606579</a> <span class="ptime">2014-02-07 10:16发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3462311" username="u013606579"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/u013606579" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/3_u013606579.gif" height="40" width="40"></a></dd><dd class="comment_body">有问题有问题</dd></dl><div class="clear"></div></div>
+    <div id="comment_bar"><div id="load_comments" page="2">查看更多评论</div></div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:loginbox();">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fsunboy_2050%2Farticle%2Fdetails%2F6727581">[注册]</a></div></div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '6727581';
+    var commentscount = 502;
+    var islock = false
+</script>
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])">         
+         <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="">
+
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+
+</div>
+  <script language="javascript" type="text/javascript">     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/sunboy_2050/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/async_new.js"></script>      
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/sunboy_2050" target="_blank">
+    <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/1_sunboy_2050.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/sunboy_2050" class="user_name" target="_blank">阳光岛主</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=sunboy_2050','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                       <div class="ico_expert" onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" title="CSDN认证专家" style="cursor:pointer;width:60px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhuanjiamiddle.png') no-repeat"></div>
+                <div id="bms_box">
+                                            <a target="_blank">
+                                                    <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="2">
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>8646480次</span></li>
+    <li>积分：<span>72888</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/blog9.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：72888 </div>
+        </span>  </li>
+    <li>排名：<span>第12名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>673篇</span></li>
+    <li>转载：<span>169篇</span></li>
+    <li>译文：<span>16篇</span></li>
+    <li>评论：<span>2866条</span></li>
+</ul>
+</ul>
+</div>
+
+
+
+
+<div id="custom_column_21039684" class="panel">
+<ul class="panel_head"><span>学习经历</span></ul>
+<ul class="panel_body">
+<div style="margin-top: 2px; margin-bottom: 5px; color: #000000; line-height:24px;">
+ 中科院、百度、创新工场、小米
+<br>
+系统架构设计师（2013）
+<br>
+软件设计师（2008）
+<br>
+
+CSDN创业<a target="_blank" href="http://www.csdn.net/article/2013-01-21/2813843"><font color="blue">专访</font></a>
+
+
+
+
+<br>
+<br>
+<b>
+<font color="#FF1493">
+程序员创业邦
+</font><br>
+QQ群：
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=e035a782424d40dd579686246911532bf14fa0529506e15c9a967538a6595971">
+<font color="red">239292073</font></a>
+<br></b>
+青春，每一个有梦想的人
+
+
+
+<br>
+<br>
+<b>
+<font color="#FF1493">
+资深产品经理人
+</font><br>
+QQ群：
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=c482e21de6e77a16560a8a790c907ce86cf59799476e52e611b8e0f9f8f88879">
+<font color="red">338142405</font></a>
+<br></b>
+思与行，人人都是产品经理
+
+
+
+
+
+<br>
+<br>
+<b>
+<font color="#FF1493">
+爱脚本，爱技术
+</font><br>
+QQ群：
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=0c37d52f358651d34be98faf0ed1f08ab0b29388ca545c27e3780f31c5ecdda5">
+<font color="red">320296250</font></a>
+</b>（已满）
+<br>
+python、ruby、awk、shell
+
+
+
+<br>
+<br>
+<b>
+<font color="#FF1493">
+程序人生的平凡生活
+</font><br>
+QQ群：
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=e01accc253cf07c5461fb3982376c52697c47bd0a77b700c4c54c8d85cad79e3">
+<font color="red">282297696</font></a>
+</b>（已满）
+<br>
+汇聚百度、小米、微软、腾讯、<br>
+创新工场、阿里巴巴、日本雅虎
+
+
+
+
+</div>
+</ul>
+</div>
+
+<div id="custom_column_22041892" class="panel">
+<ul class="panel_head"><span>米扑代理</span></ul>
+<ul class="panel_body">
+<div style="line-height: 24px;">
+
+<div>
+<a target="_blank" title="米扑科技" href="http://proxy.mimvp.com/">
+<img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/1438614243_6780.png" height="180" width="180">
+</a>
+</div>
+
+<div style="text-align: center; margin: 5px auto; line-height: 24px;">
+<a target="_blank" title="米扑科技" href="http://proxy.mimvp.com/"><font color="#B22222" size="3">
+<b>每天免费送20个</b>
+</font></a>
+</div>
+
+</div>
+</ul>
+</div>
+
+<div id="custom_column_26666015" class="panel">
+<ul class="panel_head"><span>个人博客</span></ul>
+<ul class="panel_body">
+<div style="line-height:24px;">
+<div style="align: center; text-align: center; vertical-algin: middle; padding-bottom: 5px;">
+<a target="_blank" href="http://blog.mimvp.com/"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/20150111193803959.png" title="点击图片，进入米扑博客" alt="点击，进入米扑博客" height="70" width="120"></a>
+</div>
+
+ <font color="black"> 新博客：</font><a href="http://blog.mimvp.com/" target="_blank" title="米扑博客"><font color="blue"><u>http://blog.mimvp.com</u></font></a>
+
+<br><br>
+本CSDN博客，已全部移到了我的<a target="_blank" href="http://blog.mimvp.com/category/csdn_blog/"><font color="blue">米扑博客</font></a>；
+开源出脚本<a target="_blank" href="http://blog.mimvp.com/2015/12/csdn-blog-moved-to-wordpress/"><font color="blue">转换工具</font></a>，供大家参考。
+
+<!--
+<br>
+<div style="height:8px;"></div>
+ <font color="red"> 论坛</font>：<a href="http://forum.mimvp.com" target="_blank"><font color="blue"><u>forum.mimvp.com</u></font></a>
+-->
+
+
+<!--
+<br>
+<br>
+<b>
+<font color="#FF1493">
+爱黑客，爱技术
+</font><br>
+QQ交流群：
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=a30763a40af51c4bdd330c63295957807f3c237cf15068b832da01b9812a6caa">
+<font color="red">320296250</font></a>
+<br></b>
+python、ruby、awk、shell
+
+
+<br>
+<br>
+<b>
+<font color="#FF1493">
+程序人生的平凡生活
+</font><br>
+QQ交流群：
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=d9b2709ee7786771e5e6487b38e5f184c221544ed85d80323f208f160354d8d5">
+<font color="red">282297696</font></a>
+<br></b>
+汇聚百度、小米、微软、腾讯、<br>
+创新工场、阿里巴巴、日本雅虎
+<div style="height:5px;">
+-->
+
+
+
+<!--
+<br><br>
+<b><font color="#FF1493">
+微信公众账号：
+</font></b>
+<br>
+<a href="http://www.ithomer.net" target="_blank">
+<img src="http://img.my.csdn.net/uploads/201401/26/1390701376_9741.jpg" width="180" height="180">
+</a>
+-->
+
+
+</div>
+</ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/learn-clojure.html" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/20151123175638739.jpeg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/learn-clojure.html" target="_blank">Clojure 学习总结</a>
+    <p>文章：18篇</p>
+    <span>阅读：137644</span>
+    </td>
+    </tr></tbody></table>
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/python-learning.html" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/20151123175627380.jpeg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/python-learning.html" target="_blank">Python 学习入门</a>
+    <p>文章：52篇</p>
+    <span>阅读：465834</span>
+    </td>
+    </tr></tbody></table>
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/design-pattern-homer.html" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/20151123175106145.jpeg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/design-pattern-homer.html" target="_blank">设计模式</a>
+    <p>文章：3篇</p>
+    <span>阅读：42487</span>
+    </td>
+    </tr></tbody></table>
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/androidboy.html" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/20151123175045442.jpeg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/androidboy.html" target="_blank">Android开发的点点滴滴</a>
+    <p>文章：32篇</p>
+    <span>阅读：1877132</span>
+    </td>
+    </tr></tbody></table>
+    </ul>
+</div>
+
+<div id="custom_column_20758878" class="panel">
+<ul class="panel_head"><span>博客公告</span></ul>
+<ul class="panel_body">
+<div style="line-height:24px;">
+<font color="red"><strong>本博客内容，由本人精心整理</strong><br>
+欢迎交流，欢迎转载，大家转载注明出处，禁止用于商业目的。</font><br>
+
+</div>
+</ul>
+</div><div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="button">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/694821" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Algorithm</a><span>(86)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/600130" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">C/C++/C#</a><span>(114)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/655460" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux/Shell</a><span>(140)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/809006" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">QT</a><span>(13)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/694817" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Script</a><span>(145)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/698436" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">NetWork</a><span>(29)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/581634" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">SQL Index</a><span>(63)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/708773" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">SoftWare</a><span>(33)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/730435" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java/JSP</a><span>(47)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/632423" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Learn</a><span>(55)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/632431" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">IT Trend</a><span>(58)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/853274" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Android</a><span>(96)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/1398664" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Cloud</a><span>(11)</span>
+                </li>
+                 <li>
+                    <a href="http://blog.csdn.net/sunboy_2050/article/category/1256697" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">iOS</a><span>(4)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2016/03">2016年03月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2016/02">2016年02月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2016/01">2016年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/12">2015年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/11">2015年11月</a><span>(1)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/10">2015年10月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/09">2015年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/08">2015年08月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/07">2015年07月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/06">2015年06月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/05">2015年05月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/04">2015年04月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2015/01">2015年01月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/12">2014年12月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/08">2014年08月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/07">2014年07月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/06">2014年06月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/05">2014年05月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/04">2014年04月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/03">2014年03月</a><span>(4)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/02">2014年02月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2014/01">2014年01月</a><span>(8)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/12">2013年12月</a><span>(45)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/11">2013年11月</a><span>(13)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/10">2013年10月</a><span>(20)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/09">2013年09月</a><span>(18)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/08">2013年08月</a><span>(20)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/07">2013年07月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/06">2013年06月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/05">2013年05月</a><span>(20)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/04">2013年04月</a><span>(50)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/03">2013年03月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/02">2013年02月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2013/01">2013年01月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/12">2012年12月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/11">2012年11月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/10">2012年10月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/09">2012年09月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/08">2012年08月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/07">2012年07月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/06">2012年06月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/05">2012年05月</a><span>(14)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/04">2012年04月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/03">2012年03月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/02">2012年02月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2012/01">2012年01月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/12">2011年12月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/11">2011年11月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/10">2011年10月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/09">2011年09月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/08">2011年08月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/07">2011年07月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/06">2011年06月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/05">2011年05月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/04">2011年04月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/03">2011年03月</a><span>(10)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/02">2011年02月</a><span>(11)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2011/01">2011年01月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/12">2010年12月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/11">2010年11月</a><span>(15)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/10">2010年10月</a><span>(31)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/09">2010年09月</a><span>(17)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/08">2010年08月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/07">2010年07月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/06">2010年06月</a><span>(45)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/05">2010年05月</a><span>(16)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/04">2010年04月</a><span>(6)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/03">2010年03月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/02">2010年02月</a><span>(12)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2010/01">2010年01月</a><span>(27)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2009/12">2009年12月</a><span>(53)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2009/09">2009年09月</a><span>(2)</span></li><li><a href="http://blog.csdn.net/sunboy_2050/article/month/2009/08">2009年08月</a><span>(11)</span></li></span><div style="display: none;" id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/6727581" title="Android APK反编译详解（附图）">Android APK反编译详解（附图）</a><span>(810846)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/6187464" title="SVN常用命令">SVN常用命令</a><span>(172521)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/6688883" title="Android 获取屏幕尺寸与密度">Android 获取屏幕尺寸与密度</a><span>(170434)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/7529022" title="Git 常用命令详解（二）">Git 常用命令详解（二）</a><span>(167436)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/7364024" title="Android Service 服务（一）—— Service">Android Service 服务（一）—— Service</a><span>(122932)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/6960989" title="Ubuntu搭建Eclipse+JDK+SDK的Android">Ubuntu搭建Eclipse+JDK+SDK的Android</a><span>(120068)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/7635301" title="Linux 抓取网页实例（shell+awk）">Linux 抓取网页实例（shell+awk）</a><span>(117753)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/6336480" title="Windows搭建Eclipse+JDK+SDK的Android">Windows搭建Eclipse+JDK+SDK的Android</a><span>(97648)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/5645831" title="各种基本算法实现小结（五）—— 排序算法">各种基本算法实现小结（五）—— 排序算法</a><span>(91066)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sunboy_2050/article/details/7497435" title="Android 创建与解析XML（一）—— 概述">Android 创建与解析XML（一）—— 概述</a><span>(90291)</span>
+</li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/cnick.js"></script>
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/newblog.js"></script>
+
+
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/showblogmedal.ashx"></script>
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/JavaScript1.js"></script><link rel="stylesheet" type="text/css" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/pub_footer_2014.css"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2355263776&amp;site=qq&amp;menu=yes" target="_blank" class="qq">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2251809102&amp;site=qq&amp;menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;09002463&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2014, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><div id="note1" class="csdn_note" style="display:none; position:absolute; z-index:9999; width:440px">  <span class="notice_top_arrow"><span class="inner"></span></span>  <div class="box"></div></div><div class="csdn_notice_tip" style="display:none; position:absolute; z-index:9990; width:170px">  <iframe src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/a_002.html" scrolling="no" style="z-index:-1;position:absolute;top:0;left:0;width:100%;height:100%;background:transparent" frameborder="0"></iframe>  <div class="tip_text">您有<strong>0</strong>条新通知</div>  <a href="javascript:void%200" class="close2"></a></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/notify.js"></script>
+
+    <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/login.js"></script>
+    <script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/tongji.js"></script><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/tongji.html" height="1" width="1" border="0"><a href="http://tongji.linezing.com/report.html?unit_id=2955225" target="_blank">量子统计</a>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/pv.asc" height="0" width="0" border="0">
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/msg.js"></script>
+<script type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div><input id="aa_g_data_ids" type="hidden">
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/toolbar.js"></script>
+     <!--new top-->
+   
+    <link href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ask_float_block.css" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/wmd.js"></script>
+    <script language="JavaScript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/showdown.js"></script>
+    <script language="JavaScript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/prettify.js"></script>
+    <script language="JavaScript" type="text/javascript" src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ask_float_block.js"></script>
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/52b5334.js" id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+
+   
+ <div id="tag-suggest-pop">
+  <div class="relative">
+    <div class="close"></div>
+    <div class="content"></div>
+  </div>
+</div><link rel="stylesheet" type="text/css" media="screen" href="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/ask_float_fonts_css-6b30a53970eb5c3a2a045e3df585b475.css"><div data-mod="popu_64" class="tracking-ad" chg-blk="0"><a id="com-quick-reply" title="快速回复" style="top:443px"></a><a id="com-d-top-a" style="top: 481px; display: inline;" title="返回顶部" onclick=""></a> </div><div class="pop_edit ask_second comm_ask_second"><h3>提问</h3><span class="ask_float_span">您的问题将会被发布在“<a class="ask_float_channel" href="http://ask.csdn.net/" target="_blank" style="cursor:pointer">技术问答</a>”频道</span><a href="#" nodetype="close" class="close">×</a><div class="context"><div class="err_div"><span class="err_ico"></span><span class="err_txt">该问题已存在，请勿重复提问</span></div><div class="input_div"><input id="askInputSecond" style="font-size:14px;" placeholder="问题标题" type="text"></div><div class="cm_box"><div class="cm_dialog"></div> <div class="pop_cm cm_add_link"><input placeholder="链接内容" id="af_cm_link_txt" type="text"><input placeholder="链接地址" id="af_cm_link_url" type="text"><input placeholder="链接提示" id="af_cm_link_tit" type="text"><div class="text-right"><span class="btn btn-default btn-sm" id="add_link_btn">插入链接</span> </div> </div><div class="pop_cm cm_add_img"><div class="nav-tabs"><a class="img_tab active" href="#tab_upload">本地上传</a><a class="img_tab" href="#tab_weburl">网络图片</a></div><div class="tab_panel active" id="tab_upload"><div class="set_img"><iframe src="AndroidAPK%E5%8F%8D%E7%BC%96%E8%AF%91%E8%AF%A6%E8%A7%A3_files/upload.html"></iframe></div></div><div class="tab_panel" id="tab_weburl"><input placeholder="图片地址" id="af_cm_img_url" type="text"><input placeholder="图片说明" id="af_cm_img_alt" type="text"><div class="text-right"><span class="btn btn-default btn-sm" id="add_img_btn">插入图片</span> </div></div> </div></div> <textarea style="display: none;" id="editor_all" rows="8"></textarea><div class="editor-toolbar"><i class="separator">|</i><a title="标题一（Ctrl+Alt+1）" class="icon-headline"></a><a title="标题二（Ctrl+Alt+2）" class="icon-heading"></a><a title="粗体（Ctrl+B）" class="icon-bold"></a><a title="斜体（Ctrl+I）" class="icon-italic"></a><i class="separator">|</i><a title="引用（Ctrl+’）" class="icon-quote-left"></a><a title="插入代码片（Ctrl+,）" class="icon-code"></a><a title="无序列表（Ctrl+L）" class="icon-list-ul"></a><a title="有序列表（Ctrl+Alt+L）" class="icon-list-ol"></a><i class="separator">|</i><a title="添加链接（Ctrl+K）" class="icon-link"></a><a title="添加图片（Ctrl+Alt+I）" class="icon-picture"></a><i class="separator">|</i><a title="撤退（Ctrl+Z）" class="icon-reply"></a><a title="前进（Ctrl+Shift+Z）" class="icon-share-alt"></a><i class="separator">|</i><a title="markdown语法参考" target="_blank" href="http://ask.csdn.net/pages/markdown" class="icon-info"></a><a title="预览" class="icon-preview"></a><i class="separator">|</i></div><div class="CodeMirror cm-s-paper CodeMirror-focused"><div style="overflow: hidden; position: relative; width: 3px; height: 0px;"><textarea tabindex="0" spellcheck="false" autocapitalize="off" autocorrect="off" style="position: absolute; padding: 0px; width: 1px; height: 1em; outline: medium none; font-size: 4px;" wrap="off"></textarea></div><div class="CodeMirror-hscrollbar"><div style="height: 1px;"></div></div><div class="CodeMirror-vscrollbar"><div style="width: 1px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div draggable="true" tabindex="-1" class="CodeMirror-scroll"><div style="min-width: 33px;" class="CodeMirror-sizer"><div style="position: relative;"><div class="CodeMirror-lines"><div style="position: relative; outline: medium none;"><div class="CodeMirror-measure"><pre>&nbsp;<span style="display: inline-block; width: 1px; margin-right: -1px;">&nbsp;</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code"></div><div style="" class="CodeMirror-cursor">&nbsp;</div><div style="" class="CodeMirror-cursor CodeMirror-secondarycursor">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px;"></div><div style="display: none;" class="CodeMirror-gutters"></div></div></div><div class="editor-statusbar"><span class="lines">0</span><span class="words">0</span><span class="cursor">0:0</span></div><div class="div_tags clearfix"><div id="divSearchTags" class="tags_con"><input type="text"></div><input name="txtSearchTags" type="hidden"></div><div id="ask2_tagRecomm_div" class="drt_tagRecomm tracking-ad" data-mod="popu_73"><span class="drt_tit">推荐标签：</span></div></div><div class="success"><div class="left_area"><input id="chk_cb" type="checkbox"><span class="wyxs">我要悬赏</span><input id="cb_num" class="cb_num" readonly="true"><span class="phib_rii"><span> 币</span></span></div><a href="#" nodetype="cancel" class="cancel">取消</a><a href="#" nodetype="ok" class="ok">发布</a></div></div><div id="common_ask_div_sc" class="searchContainer"><div class="sTitle">可能存在类似的问题：</div><div class="sFooter"><a class="sFirstNewAsk">我想提一个新问题</a></div></div></body></html>

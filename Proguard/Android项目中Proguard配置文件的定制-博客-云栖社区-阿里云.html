@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <title>Android项目中Proguard配置文件的定制-博客-云栖社区-阿里云</title>
+    <meta name="keywords" content="移动开发与客户端,android">
+    <meta name="description" content="
+简介
+默认的Proguard配置文件在$ANDROID_HOME\sdk\tools\proguard 目录下。1.  proguard-android.txt      默认的Proguard配置文件（未优化）
+1.  proguard-android-optimize.txt      默认的...">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=1100, maximum-scale=1.0, user-scalable=yes">
+    <meta name="csrf-param" content="yunqi_csrf">
+    <meta name="csrf-token" content="BP3XN6201G">
+    <meta name="data-spm" content="5176">
+    <link rel="stylesheet" href="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/app-877188826fb2acef322aa029e338e004b483147e.css">
+    <script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/index.js" async="" type="text/javascript"></script><script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/agp_heat.js" async="" type="text/javascript"></script><script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/core_002.js" charset="utf-8" async="" type="text/javascript"></script><script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/core.js" charset="utf-8" async="" type="text/javascript"></script><script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/app-b24619cdc5da7ec3b26d2704aa8fdd693be3668f.js" data-main="article/show"></script>
+    <script>require('main')</script>
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv-3.7.0.min.js"></script>
+    <script src="/js/respond-1.4.2.min.js"></script>
+    <![endif]-->
+    <style>
+   .aliyun>li>a{color:#fff !important;}
+   .navbar-nav>li>a{
+      font-size:16px;
+   }
+   .aliyun>li>a{
+      font-size:12px;
+   }
+   .nav>li>a {
+      display: inline-block;
+   }
+   .aliyun>li>a:hover,visited,active{
+      color:#00a2ca;
+      background-color:transparent!important;
+   }
+   .navbar-nav>li.divider{
+      margin-top:23px !important;
+   }
+   .dividera {
+      padding-top: 14px;
+      border-left: 1px #1aabcf solid;
+      margin-top: 8px;
+      display: inline-block;
+   }
+   .dividerb {
+      padding-top: 14px;
+      border-left: 1px #ddd solid;
+      margin-top: 5px;
+      display: inline-block;
+   }
+   header .index-nav {
+    margin-top: 35px;
+   }
+   .dropdown-menu {top:80% !important;}
+   .alert {margin-left: -15px;margin-right: -15px;}
+   .modal {
+    overflow-y: hidden;
+    top: 150px;
+    }
+    .modalcheckin {
+    overflow-y: hidden;
+    top: 20px;
+    }
+</style>
+  <script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/aplus_v2.js" exparams="category=&amp;userid=&amp;aplus&amp;yunid=&amp;yunpk=" id="tb-beacon-aplus" async="" type="text/javascript"></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body class="" data-spm="blog5063"><div style="display: none;" id="MathJax_Message"></div>
+<script type="text/javascript">
+(function (d) {
+var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=&aplus&yunid=&yunpk=");
+t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script>
+              <header>
+  <div style="height:30px;line-height:30px;background-color:#008EB7;color:#fff">
+    <div class="container">
+      <ul class="nav navbar-nav aliyun">
+          <li><a href="https://www.aliyun.com/" target="_blank">阿里云官网</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right cnzz-event aliyun" id="index-right-nav">
+	  <li><a href="http://promotion.aliyun.com/tmsact/aliyun/2015/newbes.html" target="_blank">新手礼包</a></li>
+          <li class="dividera"></li>
+          <li><a href="http://home.console.aliyun.com/" target="_blank">管理控制台</a></li>
+          <li class="dividera"></li>
+	  <li><a href="http://help.aliyun.com/" target="_blank">帮助与文档</a></li>
+          <li class="dividera"></li>
+	  <li><a href="http://beian.aliyun.com/" target="_blank">备案</a></li>
+          <li class="dividera"></li>
+	  <li><a href="http://wanwang.aliyun.com/" target="_blank">万网</a></li>
+	  <li class="dividera"></li>
+	  <li><a href="http://www.aliyun.com/app" target="_blank">手机APP</a></li>
+	  <li class="dividera"></li>
+	  <li><a href="https://mail.aliyun.com/" target="_blank">云邮箱</a></li>
+          
+      </ul>
+    </div>
+  </div>
+  <div class="navbar navbar-default" style="min-height:60px;line-height:60px;">
+    <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a href="https://yq.aliyun.com/">社区首页</a></li>
+          <li><a href="https://yq.aliyun.com/articles/?sort=top">博客</a></li>
+          <li><a href="https://yq.aliyun.com/ask">问答</a></li>
+	  <li><a href="https://yq.aliyun.com/edu/lesson/">云栖学院</a></li>
+	  <li><a href="https://bbs.aliyun.com/" target="_blank">论坛</a></li>
+          <li class="divider"></li>
+          <li><a href="https://yq.aliyun.com/groups/">圈子</a></li>
+          <li><a href="https://yq.aliyun.com/teams/">公众号</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+          
+                    <li><a href="https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin">登录</a></li>
+          <li class="divider"></li>
+          <li><a href="https://account.aliyun.com/register/register.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin">注册</a></li>
+                    <li class="dropdown quick-search">
+            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span></button>
+            <div class="dropdown-menu form-group" role="menu">
+              <form action="/search" method="get" class="quick-form js-active-on-valid">
+                    <input name="type" value="ARTICLE" type="hidden">
+                    <input name="q" class="form-control" placeholder="全站搜索" required="" type="text">
+                    <button type="submit" class="quick_btn"></button>
+              </form>
+            </div>
+          </li>
+        </ul>
+    </div>
+  </div>
+  
+  </header>
+                <div class="container">
+          </div>
+    
+    <link href="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/prism.css" rel="stylesheet">
+<style>
+._article .content p{margin: 0px;padding: 0px;}
+.weixinicon{
+    margin-top: 50px;
+    position:fixed;
+    width: 46px;
+    height:46px;
+    line-height:46px;
+    font-size: 16px;
+    border-left: 4px solid #7f9fc6;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #eee;
+    text-align: center;
+}
+.weixinicon1{
+    margin-top: 50px;
+    position:fixed;
+    width: 130px;
+    height:130px;
+    line-height:130px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #7f9fc6;
+    text-align: center;
+    display: none;
+}
+.weiboicon{
+    margin-top: 1px;
+    position:fixed;
+    width: 46px;
+    height:46px;
+    line-height:46px;
+    font-size: 16px;
+    border-left: 4px solid #e2a999;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: #eee;
+    text-align: center;
+}
+.rec_art_ul{
+    float:left;width:96%;min-height: 80px;
+}
+.rec_art_li{
+    width:48%;float:left;padding: 0 0 10px 0;
+}
+</style>
+<script> 
+function hideshare(){ 
+    if(document.activeElement.id!="weixin1"){
+        $('#weixin1').show();
+        $('#weixin2').hide();
+    } 
+} 
+window.document.onclick= hideshare; 
+</script> 
+
+
+<div class="container" data-spm="yqblogcon1"><div class="_article-container" style="margin-left:-15px;margin-right:-15px;">
+    <div class="_article-ribbons hidden-xs">
+            <div class="_article-ribbon _article-ribbon-info">
+            <span class="glyphicon glyphicon-leaf"></span>
+      <span class="_article-ribbon-text">作者原创</span>
+    </div>
+        <div class="weixinicon" id="weixin1" onmouseover="$('#weixin2').show();$('#weixin1').hide();">
+      <img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/weixin.png" style="width: 35px;">
+    </div>
+    <div style="display: none;" class="weixinicon1" id="weixin2">
+      <img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/qrcode.png" style="width: 110px;">
+    </div>
+    <div class="weiboicon" id="weibo">
+      <a href="http://service.weibo.com/share/share.php?title=Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6+%0A%E7%AE%80%E4%BB%8B%0A%E9%BB%98%E8%AE%A4%E7%9A%84Proguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%9C%A8%24ANDROID_HOME%5Csdk%5Ctools%5Cproguard+%E7%9B%AE%E5%BD%95%E4%B8%8B%E3%80%821.++proguard-android.txt++++++%E9%BB%98%E8%AE%A4%E7%9A%84Proguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%88%E6%9C%AA%E4%BC%98%E5%8C%96%EF%BC%89%0A1.++proguard-android-optimize.txt++++++%E9%BB%98%E8%AE%A4%E7%9A%84...&amp;url=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063" target="_blank"><img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/weibo.png" style="width: 35px;" border="0"></a>
+    </div>
+  </div>
+  <div class="_article-box" role="main">
+    <article class="_article">
+      <header class="heading">
+        <h1 class="title clearfix unsafe">
+          <span class="highlight">
+          Android项目中Proguard配置文件的定制
+                      </span>
+        </h1>
+        <div class="infos clearfix">
+          <a href="https://yq.aliyun.com/users/30710776" class="info" title="snowdream86"><img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/img_b3f7f83c32e3c635aeac36e6302bb069.JPG" alt="snowdream86" class="img-user" height="32" width="32"><span>&nbsp;snowdream86</span></a><span name="icon_30710776" uid="30710776" size="middle" style="margin-left: -8px;position: relative;bottom: 2px;"></span>                    <span class="info">浏览 449</span>
+          <span class="info">
+                        <time class="" datetime="2016-02-04T17:11:10+08:00">2016-02-04 17:11:10</time>
+          </span>
+                          <span class="info">发表于：<a href="https://yq.aliyun.com/groups/6">Android</a></span>
+                    
+                    <div class="pull-right">
+                        
+                        
+                        
+                      </div>
+                  </div>
+
+        
+        <div class="labels">
+        
+  <div>
+    <a href="https://yq.aliyun.com/search?q=%E7%A7%BB%E5%8A%A8%E5%BC%80%E5%8F%91%E4%B8%8E%E5%AE%A2%E6%88%B7%E7%AB%AF&amp;type=INSIDE_ARTICLE_TAG" class="label label-ata">移动开发与客户端</a><a href="https://yq.aliyun.com/search?q=android&amp;type=INSIDE_ARTICLE_TAG" class="label label-ata">android</a>              </div>
+</div>
+      </header>
+      <div style="border:solid 1.5px #ccc;padding:20px 20px 10px 20px;margin-bottom: 20px;border-radius: 6px;">
+          <span style="position: relative;padding: 5px 15px 5px 15px;background-color: white;bottom: 30px;font-size: 16px;font-weight: bolder;">摘要</span>
+          <span style="position: relative;display: block;bottom: 15px;">
+简介
+默认的Proguard配置文件在$ANDROID_HOME\sdk\tools\proguard 目录下。1.  proguard-android.txt      默认的Proguard配置文件（未优化）
+1.  proguard-android-optimize.txt      默认的...</span>
+      </div>
+      <div class="content unsafe">
+        
+<h2 id="0">简介</h2>
+<p>默认的Proguard配置文件在$ANDROID_HOME\sdk\tools\proguard 目录下。<br>1.  proguard-android.txt      默认的Proguard配置文件（未优化）<br>
+1.  proguard-android-optimize.txt      默认的Proguard配置文件（已优化）<br>
+1.  proguard-project.txt       默认的用户定制Proguard配置文件。</p>
+<p>最近，我通过对Proguard文档的学习，以及各种开源项目Proguard配置文件的分析，总结了几个加强版本的Proguard配置文件。</p>
+<p>项目主页：<a href="https://github.com/SnowdreamFramework/android-proguard-configs">https://github.com/SnowdreamFramework/android-proguard-configs</a></p>
+<h2 id="1">Proguard配置文件列表</h2>
+<ol>
+<li>proguard-android-all.txt    android项目中可能用到的Proguard配置，仅供参考</li>
+<li>proguard-android-lib.txt        android library工程的Proguard配置（未优化）</li>
+<li>proguard-android-lib-optimize.txt       android library工程的Proguard配置（已优化）</li>
+<li>proguard-android-app.txt       android app工程的Proguard配置（未优化）</li>
+<li>proguard-android-app-optimize.txt       android app工程的Proguard配置（已优化）</li>
+</ol>
+<h2 id="2">使用方法（Gradle）</h2>
+<p>下载项目中的Proguard配置文件，然后拷贝到$ANDROID_HOME\sdk\tools\proguard 目录下。   </p>
+<pre><code class="hljs nginx" data-language="java">    <span class="hljs-title">buildTypes</span> {
+        <span class="hljs-title">release</span> {
+            <span class="hljs-title">minifyEnabled</span> <span class="hljs-built_in">true</span>
+            proguardFiles getDefaultProguardFile(<span class="hljs-string">'proguard-android-app-optimize.txt'</span>), <span class="hljs-string">'proguard-rules.txt'</span>
+        }
+    }
+</code></pre>
+<p>注：对于lib项目，推荐使用proguard-android-lib.txt<br>
+对于app项目，推荐使用proguard-android-app-optimize.txt </p>
+<h2 id="3">Reference</h2>
+<ol>
+<li><a href="http://proguard.sourceforge.net/index.html#manual/usage.html">http://proguard.sourceforge.net/index.html#manual/usage.html</a></li>
+<li><a href="http://proguard.sourceforge.net/index.html#manual/examples.html">http://proguard.sourceforge.net/index.html#manual/examples.html</a></li>
+<li><a href="http://developer.android.com/tools/help/proguard.html">http://developer.android.com/tools/help/proguard.html</a></li>
+<li><a href="https://chromium.googlesource.com/external/google-cache-invalidation-api/+/master/src/example-app-build/proguard.cfg">https://chromium.googlesource.com/external/google-cache-invalidation-api/+/master/src/example-app-build/proguard.cfg</a></li>
+<li><a href="https://google-gson.googlecode.com/svn/trunk/examples/android-proguard-example/proguard.cfg">https://google-gson.googlecode.com/svn/trunk/examples/android-proguard-example/proguard.cfg</a></li>
+<li><a href="https://github.com/47deg/translate-bubble-android/blob/master/proguard-sbt.txt">https://github.com/47deg/translate-bubble-android/blob/master/proguard-sbt.txt</a></li>
+<li><a href="http://sourceforge.net/p/proguard/discussion/182456/thread/32de9f92/">http://sourceforge.net/p/proguard/discussion/182456/thread/32de9f92/</a></li>
+<li><a href="http://www.cnblogs.com/royi123/archive/2013/02/28/2937657.html">http://www.cnblogs.com/royi123/archive/2013/02/28/2937657.html</a></li>
+<li><a href="https://code.google.com/p/csipsimple/source/browse/trunk/CSipSimple/proguard.cfg">https://code.google.com/p/csipsimple/source/browse/trunk/CSipSimple/proguard.cfg</a></li>
+<li><a href="http://blog.csdn.net/lovexjyong/article/details/24652085">http://blog.csdn.net/lovexjyong/article/details/24652085</a></li>
+</ol>
+<br><p style="color: #999;padding-top:15px">声明：<a href="https://yq.aliyun.com/">云栖社区</a>站内文章，未经作者本人允许或特别声明，严禁转载，但欢迎分享。</p>
+      </div>
+            
+      <div class="_article-float hidden-xs" data-fixed="false">
+        <div class="container">
+          <div class="_article-float-inner">
+          <aside class="_article-side">
+                      <a href="#modal-login" class="btn btn-primary btn-block" data-toggle="modal">关注</a>
+            <section class="_article-followers">
+    <h6 class="heading text-center">0人关注该文章</h6>
+    <ul class="list-inline">
+          </ul>
+  </section>
+</aside>
+          </div>
+        </div>
+      </div>
+      
+      <footer class="actions">
+        <a href="#comment" class="btn btn-primary js-scroll-to">评论文章
+                      (0)
+                  </a>
+                    
+            <a href="#modal-login" title="赞" class="btn btn-default" data-toggle="modal">
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+              0
+            </a>
+                
+	<!-- 收藏 -->
+                    <a href="#modal-login" title="收藏" class="btn btn-default" data-toggle="modal">
+              <span class="glyphicon glyphicon-star"></span>
+              1
+            </a>
+              </footer>
+     
+    </article>
+
+    <hr style="width:100%">
+    
+
+    <div id="voters">
+          </div>
+
+        <div class="clearfix">
+    <div style="width:15px;float: left;font-weight: bold;">相关文章</div>
+    <ul class="rec_art_ul">
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/6385">Android开发之内存管理</a></li>
+    
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/20063">Android开发规范实战</a></li>
+    
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/18291">如何简单高效地做APP推广</a></li>
+    
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/15307">代理服务器设置 - Shadowsocks &amp;&amp; XX-Net</a></li>
+    
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/11128">Webview/H5场景下如何使用HTTPDNS进行域名解析</a></li>
+    
+        
+    <li class="rec_art_li" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;"><a href="https://yq.aliyun.com/articles/8958">AppStore审核被拒绝？看看问题出在哪儿</a></li>
+    
+        </ul> 
+    </div>
+    <hr>
+    
+
+    <section class="comments-box clearfix">
+      <div class="media-list comments" id="comments">
+        
+
+<div class="pages comment-tip">
+        
+    
+</div>
+      </div>
+      
+      
+      
+      <form accept-charset="UTF-8" action="/comments" method="POST" data-remote="true" data-target="#comments" class="js-comment-create js-active-on-valid">
+        <input name="type" value="article" type="hidden">
+        <input name="yunqi_csrf" value="BP3XN6201G" type="hidden">
+        <input name="isCheck" value="1" type="hidden">
+        <input name="pid" value="5063" type="hidden">
+	
+        <div class="form-group">
+          <div class="editor">
+	  	    <div class="login_tips" id="comment">登录后可评论，请 <a id="fast_login" href="https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin" class="s4" hidefocus="true" rel="nofollow">登录</a> 或 <a href="https://account.aliyun.com/register/register.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin" target="_blank" class="s4" hidefocus="true" rel="nofollow">注册</a></div>
+                  </div><!-- /.editor  -->
+        </div>
+	
+	
+        <div class="form-group text-right">
+                            <a href="#modal-login" class="btn btn-default" data-toggle="modal">评论</a>
+                    </div>
+      </form>
+     
+    </section><!-- /.comments -->
+
+  </div><!-- /._article-box -->
+</div></div><!-- /.container -->
+        <footer class="footer" role="contentinfo">
+	<div class="container text-center">
+	  <p class="big">
+	    <a href="https://www.aliyun.com/about" target="_blank">关于我们</a>
+	    <a href="https://www.aliyun.com/law" target="_blank">法律声明</a>
+	    <a href="http://jubao.alibaba.com/internet/readme.htm" target="_blank">廉正举报</a>
+	    <a href="https://www.aliyun.com/jubao" target="_blank">互联网不良信息举报</a>
+	    <a href="https://www.aliyun.com/links" target="_blank">友情链接</a>
+	  </p>
+	  <p class="link-wrap">
+	    <a class="link-item" href="http://www.alibabagroup.com/cn/global/home" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8001">阿里巴巴集团</a>
+	    <a class="link-item" href="https://www.taobao.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8002">淘宝网</a>
+	    <a class="link-item" href="https://www.tmall.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8003">天猫</a>
+	    <a class="link-item" href="https://ju.taobao.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8004">聚划算</a>
+	    <a class="link-item" href="http://www.aliexpress.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8005">全球速卖通</a>
+	    <a class="link-item" href="http://www.alibaba.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8006">阿里巴巴国际交易市场</a>
+	    <a class="link-item" href="http://www.1688.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8007">1688</a>
+	    <a class="link-item" href="http://www.alimama.com/index.htm" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8008">阿里妈妈</a>
+	    <a class="link-item" href="https://www.alitrip.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8009">阿里旅行・去啊</a>
+	    <a class="link-item" href="http://www.aliyun.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8010">阿里云计算</a>
+	    <a class="link-item" href="http://www.yunos.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8011">YunOS</a>
+	    <a class="link-item" href="https://aliqin.tmall.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8012">阿里通信</a>
+	    <a class="link-item" href="http://wanwang.aliyun.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8013">万网</a>
+	    <a class="link-item" href="http://www.autonavi.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8014">高德</a>
+	    <a class="link-item" href="http://www.uc.cn/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8015">UC</a>
+	    <a class="link-item" href="http://www.umeng.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8016">友盟</a>
+	    <a class="link-item" href="http://www.xiami.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8018">虾米</a>
+	    <a class="link-item" href="http://www.ttpod.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8019">天天动听</a>
+	    <a class="link-item" href="http://www.laiwang.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8020">来往</a>
+	    <a class="link-item" href="http://www.dingtalk.com/?lwfrom=20150205111943449" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8021">钉钉</a>
+	    <a class="link-item" href="https://www.alipay.com/" target="_blank" data-spm-click="gostr=/aliyun;locaid=d8023">支付宝</a>
+	  </p>
+	  <p>
+	    © 2009-2015 Aliyun.com 版权所有 ICP证：浙B2-20080101
+	  </p>
+	  <p>
+	    <a href="http://idinfo.zjaic.gov.cn/bscx.do?method=hddoc&amp;id=33010800001867" target="_blank" data-spm-click="gostr=/aliyun;locaid=d3338">
+	      <img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/TB1dG7pJXXXXXXCXVXXiC47GVXX-44-44.png" style="display:inline-block;width: 22px;">
+	    </a>
+	    <a href="http://www.aliyun.com/djcp" target="_blank">
+	      <img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/TB18_.png" style="display:inline-block;width: 22px;">
+	    </a>
+	  </p>
+	</div>
+</footer>
+          <div id="modal-followers" class="modal fade" role="dialog" aria-labelledby="followers" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">关注者</h4>
+      </div>
+      <div class="modal-body"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">分享</button>
+      </div>
+    </div>
+  </div>
+</div><!-- /#modal-share -->  <div id="modal-tag-history" class="modal fade" role="dialog" aria-labelledby="tag history" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">标签历史</h4>
+      </div>
+      <div class="modal-body">      
+        <p class="text-muted">Loading...</p>
+      </div>
+    </div>
+  </div>
+</div><!-- /#modal-share -->
+  <div id="modal-article-modify-history" class="modal fade" role="dialog" aria-labelledby="article modify history" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">编辑历史</h4>
+      </div>
+      <div class="modal-body">      
+        <p class="text-muted">Loading...</p>
+      </div>
+    </div>
+  </div>
+</div><!-- /#modal-share -->
+  <div id="modal-login" class="modal fade" role="dialog" aria-labelledby="login" aria-hidden="true">
+  <div class="modal-dialog">
+    <form data-remote="true" data-done="$(this).closest('.modal').modal('hide');" class="js-active-on-valid" novalidate="">
+    <input name="yunqi_csrf" value="BP3XN6201G" type="hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">登录</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div style="padding-bottom:20px;text-align: center;">登录云栖社区，认识更多朋友</div>
+          <div style="margin-left:auto;margin-right:auto;text-align: center;"><button type="submit" class="btn btn-primary" onclick="window.location.href='https://account.aliyun.com/login/login.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin'" style="width:100px">登  录</button>  或  <button type="submit" class="btn btn-primary" onclick="window.location.href='https://account.aliyun.com/register/register.htm?oauth_callback=https%3A%2F%2Fyq.aliyun.com%2Farticles%2F5063%3Fdo%3Dlogin'" style="width:100px">注  册</button></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        
+      </div>
+    </div>
+    </form>
+  </div>
+</div><!-- /#modal-share -->
+    
+      <script data-group-id="6" data-user-id="30710776">require('module/mention')</script>  <script data-group-id="6" data-user-id="30710776">require('module/user-complete')</script>  <script>require('module/tag-complete')</script>
+  <script>require('module/editor')</script>
+  <script>require('comments')</script>
+      <script>hljs.initHighlightingOnLoad();//require('module/highlight')</script>
+    <script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/swfobject_modified.js"></script>
+    <script>
+  var _czc = _czc || [];
+  var statistics_obj = {
+  "article-recommend": ["文章", "相似文章"]
+  };
+  $('.cnzz-event a').on('click', function(){
+    var id = $(this).parents('.cnzz-event').attr('id');
+  _czc.push(["_trackEvent", statistics_obj[id][0], statistics_obj[id][1], "", "", id]);
+  })
+  </script>
+    <script>
+  $('.js-video').on('click', function(){
+
+    if ($('#taobao-online-video').length > 0)
+    {
+      swfobject.registerObject("taobao-online-video");
+    }
+    
+          setTimeout(function(){
+        _czc.push(["_trackEvent", '文章', "Android项目中Proguard配置文件的定制", "", "", 'article-5063']);
+      }, 1000);
+      })
+
+  $(function(){
+
+    $('body').append('<div id="article-outline"><div style="height:15px;"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div></div><style>#article-outline{display:none;min-width:140p;max-width: 200px; max-height: 350px;position:absolute;top:150px;left:-999px;border:1px solid #ccc;box-shadow:5px 5px 2px #ccc;padding: 5px 10px;background-color: #fff;overflow-y: auto;scroll-x: auto;}#article-outline ul{margin:5px 0 5px 0;padding-left:30px;font-size:12px;border-left:1px dotted #ccc;}#article-outline ul:first-child{padding-left:15px;border:none;}#article-outline li{list-style-type:decimal;margin:3px 0;}</style>')
+    var jOutline = $('#article-outline');
+
+    var jContent = $('article .content');
+    var jContentHeight = jContent.height();
+    jOutline.find('.close').on('click', function(){
+      jOutline.hide();
+    })
+
+    updateOutline();
+
+    var top = jOutline.offset().top;
+    scrollOutline();
+    $(window).on('scroll', scrollOutline);
+    function scrollOutline() {
+      var scrollTop = $(document).scrollTop();
+      var maxTop = jContent.offset().top + jContent.height() - jOutline.height();
+      if (scrollTop >= top && scrollTop <= maxTop)
+      {
+        jOutline.css({'position': 'fixed', 'top': 0});
+      }
+      else if(scrollTop < top)
+      {
+        jOutline.css({'position': 'absolute', 'top': '150px'});
+      }
+      else
+      {
+        jOutline.css({'position': 'absolute', 'top': maxTop+'px'});
+      }
+
+    }
+
+    function updateOutline() {
+        var arrAllHeader = jContent.find("h1,h2,h3,h4,h5,h6");
+        var arrOutline = ['<ul>'];
+        var header, headerText;
+        var id = 0;
+        var level = 0,
+            lastLevel = 1;
+        var levelCount = 0;
+        for (var i = 0, c = arrAllHeader.length; i < c; i++) {
+            header = arrAllHeader[i];
+            headerText = $(header).text();
+
+            header.setAttribute('id', id);
+
+            level = header.tagName.match(/^h(\d)$/i)[1];
+            levelCount = level - lastLevel;
+
+            if (levelCount > 0) {
+                for (var j = 0; j < levelCount; j++) {
+                    arrOutline.push('<ul>');
+                }
+            } else if (levelCount < 0) {
+                levelCount *= -1;
+                for (var j = 0; j < levelCount; j++) {
+                    arrOutline.push('</ul>');
+                }
+            };
+            arrOutline.push('<li>');
+            arrOutline.push('<a href="#' + id + '">' + headerText + '</a>');
+            arrOutline.push('</li>');
+            lastLevel = level;
+            id++;
+        }
+        arrOutline.push('</ul>')
+        if(arrOutline.length > 2){
+            jOutline.append(arrOutline.join(''));
+            jOutline.find('ul').each(function(i,n){
+                var jThis = $(this);
+                if(jThis.children('li').length === 0){
+                    jThis.replaceWith(jThis.children());
+                }
+            });
+            showOutline();
+        }
+        else {
+            hideOutline();
+        }
+    }
+
+    function showOutline() {
+        var offset = jContent.offset();
+
+        jOutline.css({
+            left: offset.left + jContent.width() + 10 + 'px',
+        }).show();
+    }
+
+    function hideOutline(){
+        jOutline.hide();
+    }
+});
+  </script>
+  <style>
+.login_tips {
+    z-index: 0;
+    text-align: center;
+    width:100%;
+    height: 139px;
+    line-height: 139px;
+    background: #fff;
+    border: 1px solid;
+    border-color: #aaa #ddd #ddd #aaa;
+}
+</style>
+
+
+<script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/MathJax.js"></script>
+<script type="MathJax/config">
+MathJax.Hub.Config({
+  jax: ["input/TeX","output/HTML-CSS"],
+  displayAlign: "left"
+});
+</script>
+<script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/getIcons.js"></script>
+    <a href="#" class="go-top" style="display: none;"><span class="glyphicon glyphicon-arrow-up"></span></a>
+<script>require('module/go-top')</script>        <div style="position:fixed;right:30px;bottom:76px;display: none;" id="yqmob">
+<div style="padding: 8px; background-color: #fff; border:1px solid #ccc;">
+<img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/yunqi.png" style="width: 120px;">
+<div style="text-align: center;padding-top: 10px;">手机扫描访问社区</div>
+</div>
+</div>
+
+<div style="position:fixed;right:0;bottom:210px;">
+<div style="float: left;cursor: pointer;" onmouseover="$('#yqmob').show();" onmouseout="$('#yqmob').hide();">
+<img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/icon_mobileweb.png" alt="手机访问云栖社区">
+</div>
+</div>
+
+<div>
+<a href="mailto:zhaoyunqi@list.alibaba-inc.com" target="_blank" title="为云栖社区提供反馈" style="position:fixed;right:0;bottom:100px;" class="hidden-xs">
+  <img src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/go-top.png" alt="">
+</a>
+</div>        <script type="text/javascript">
+    $('.form-submit-btn').click(function(){
+      var form = $(this).parents('form');
+      form.find('input').focus();
+      form.submit();
+      console.log(2);
+    });
+    //导航 dropdown
+    (function(){
+    var t;
+    $('.dropdown').hover(function(){
+      var that = $(this);
+      that.siblings().find('.dropdown-menu').hide();
+      that.children('.dropdown-menu').show();
+      clearTimeout(t);
+    }, function(){
+      var that = $(this);
+      t = setTimeout(function(){
+        that.children('.dropdown-menu').hide();
+      }, 500)
+      
+    })
+    }())
+    </script>
+        <script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/c_002.js" language="JavaScript"></script>
+    <script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/c.js" language="JavaScript"></script>
+      
+
+<div class="alert-container"></div><div style="left: 1072.5px; display: block; position: absolute; top: 150px;" id="article-outline"><div style="height:15px;"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button></div><ul><li><a href="#0">简介</a></li><li><a href="#1">Proguard配置文件列表</a></li><li><a href="#2">使用方法（Gradle）</a></li><li><a href="#3">Reference</a></li></ul></div><style>#article-outline{display:none;min-width:140p;max-width: 200px; max-height: 350px;position:absolute;top:150px;left:-999px;border:1px solid #ccc;box-shadow:5px 5px 2px #ccc;padding: 5px 10px;background-color: #fff;overflow-y: auto;scroll-x: auto;}#article-outline ul{margin:5px 0 5px 0;padding-left:30px;font-size:12px;border-left:1px dotted #ccc;}#article-outline ul:first-child{padding-left:15px;border:none;}#article-outline li{list-style-type:decimal;margin:3px 0;}</style><script src="Android%E9%A1%B9%E7%9B%AE%E4%B8%ADProguard%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%AE%9A%E5%88%B6-%E5%8D%9A%E5%AE%A2-%E4%BA%91%E6%A0%96%E7%A4%BE%E5%8C%BA-%E9%98%BF%E9%87%8C%E4%BA%91_files/index_002.js"></script></body></html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+<meta name="Description" content="Use ProGuard to shrink, optimize, and obfuscate your code prior to release.">
+<link rel="shortcut icon" type="image/x-icon" href="http://developer.android.com/favicon.ico">
+<link rel="alternate" href="http://developer.android.com/tools/help/proguard.html" hreflang="en">
+<link rel="alternate" href="http://developer.android.com/intl/es/tools/help/proguard.html" hreflang="es">
+<link rel="alternate" href="http://developer.android.com/intl/id/tools/help/proguard.html" hreflang="id">
+<link rel="alternate" href="http://developer.android.com/intl/ja/tools/help/proguard.html" hreflang="ja">
+<link rel="alternate" href="http://developer.android.com/intl/ko/tools/help/proguard.html" hreflang="ko">
+<link rel="alternate" href="http://developer.android.com/intl/pt-br/tools/help/proguard.html" hreflang="pt-br">
+<link rel="alternate" href="http://developer.android.com/intl/ru/tools/help/proguard.html" hreflang="ru">
+<link rel="alternate" href="http://developer.android.com/intl/vi/tools/help/proguard.html" hreflang="vi">
+<link rel="alternate" href="http://developer.android.com/intl/zh-cn/tools/help/proguard.html" hreflang="zh-cn">
+<link rel="alternate" href="http://developer.android.com/intl/zh-tw/tools/help/proguard.html" hreflang="zh-tw">
+
+<title>ProGuard | Android Developers</title>
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="ProGuardAndroidDevelopers_files/css.css">
+<link rel="stylesheet" href="ProGuardAndroidDevelopers_files/css_002.css" title="roboto">
+
+<link href="ProGuardAndroidDevelopers_files/default.css" rel="stylesheet" type="text/css">
+
+
+
+<!-- JAVASCRIPT -->
+<script async="" src="ProGuardAndroidDevelopers_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="ProGuardAndroidDevelopers_files/plusone.js" async="" type="text/javascript"></script><script src="ProGuardAndroidDevelopers_files/analytics.js" async=""></script><script src="ProGuardAndroidDevelopers_files/jsapi" type="text/javascript"></script>
+<script src="ProGuardAndroidDevelopers_files/android_3p-bundle.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var toRoot = "/";
+  var metaTags = [];
+  var devsite = false;
+  var useUpdatedTemplates = false;
+</script>
+<script src="ProGuardAndroidDevelopers_files/docs.js" type="text/javascript"></script>
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5831155-1', 'android.com');
+  ga('create', 'UA-49880327-2', 'android.com', {'name': 'universal'});  // New tracker);
+  ga('send', 'pageview');
+  ga('universal.send', 'pageview'); // Send page view for new tracker.
+</script>
+
+</head>
+
+<body class="gc-documentation
+
+
+develop" itemscope="" itemtype="http://schema.org/Article">
+<a name="top"></a>
+
+<!-- dialog to prompt lang pref change when loaded from hardcoded URL
+<div id="langMessage" style="display:none">
+  <div>
+    <div class="lang en">
+      <p>You requested a page in English, would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang es">
+      <p>You requested a page in Spanish (Español), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ja">
+      <p>You requested a page in Japanese (日本語), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ko">
+      <p>You requested a page in Korean (한국어), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang ru">
+      <p>You requested a page in Russian (Русский), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-cn">
+      <p>You requested a page in Simplified Chinese (简体中文), would you like to proceed with this language setting?</p>
+    </div>
+    <div class="lang zh-tw">
+      <p>You requested a page in Traditional Chinese (繁體中文), would you like to proceed with this language setting?</p>
+    </div>
+    <a href="#" class="button yes" onclick="return false;">
+      <span class="lang en">Yes</span>
+      <span class="lang es">Sí</span>
+      <span class="lang ja">Yes</span>
+      <span class="lang ko">Yes</span>
+      <span class="lang ru">Yes</span>
+      <span class="lang zh-cn">是的</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+    <a href="#" class="button" onclick="$('#langMessage').hide();return false;">
+      <span class="lang en">No</span>
+      <span class="lang es">No</span>
+      <span class="lang ja">No</span>
+      <span class="lang ko">No</span>
+      <span class="lang ru">No</span>
+      <span class="lang zh-cn">没有</span>
+      <span class="lang zh-tw">没有</span>
+    </a>
+  </div>
+</div> -->
+
+
+  <!-- Header -->
+  <div id="header-wrapper">
+    <div class="dac-header is-sticky" id="header">
+
+
+
+
+      <div class="dac-header-inner">
+        <a class="dac-nav-toggle" data-dac-toggle-nav="" href="javascript:;" title="Open navigation">
+          <span class="dac-nav-hamburger">
+            <span class="dac-nav-hamburger-top"></span>
+            <span class="dac-nav-hamburger-mid"></span>
+            <span class="dac-nav-hamburger-bot"></span>
+          </span>
+        </a>
+        <a class="dac-header-logo" href="http://developer.android.com/index.html">
+          <img class="dac-header-logo-image" src="ProGuardAndroidDevelopers_files/android_logo.png" srcset="/assets/images/android_logo@2x.png 2x" alt="Android" height="36" width="32"> Developers
+          </a>
+
+        <ul class="dac-header-crumbs"><li class="dac-header-crumbs-item"><a class="dac-header-crumbs-link" href="http://developer.android.com/develop/index.html" zh-tw-lang="開發" zh-cn-lang="开发" ru-lang="Разработка" ko-lang="개발" ja-lang="開発" es-lang="Desarrollar">開發</a></li><li class="dac-header-crumbs-item"><a class="dac-header-crumbs-link" href="http://developer.android.com/sdk/index.html" zh-tw-lang="相關工具" zh-cn-lang="工具" ru-lang="Инструменты" ko-lang="도구" ja-lang="ツール" es-lang="Herramientas">相關工具</a></li>
+          
+          <li class="dac-header-crumbs-item"><span class="dac-header-crumbs-link current ">ProGuard</span></li>
+        </ul>
+
+        
+        
+        
+  <div class="dac-header-search" id="search-container">
+    <div class="dac-header-search-inner">
+      <div class="dac-sprite dac-search dac-header-search-btn" id="search-btn"></div>
+      <form class="dac-header-search-form" onsubmit="return submit_search()">
+        <input id="search_autocomplete" autocomplete="off" name="q" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)" onkeydown="return search_changed(event, true, '/')" onkeyup="return search_changed(event, false, '/')" class="dac-header-search-input" placeholder="Search" type="text">
+          <a class="dac-header-search-close hide" id="search-close">close</a>
+      </form>
+    </div><!-- end dac-header-search-inner -->
+  </div><!-- end dac-header-search -->
+
+  <div class="search_filtered_wrapper">
+    <div class="suggest-card reference no-display">
+      <ul class="search_filtered">
+      </ul>
+    </div>
+    <div class="suggest-card develop no-display">
+      <ul class="search_filtered">
+      </ul>
+      <div class="child-card guides no-display">
+      </div>
+      <div class="child-card training no-display">
+      </div>
+      <div class="child-card samples no-display">
+      </div>
+    </div>
+    <div class="suggest-card design no-display">
+      <ul class="search_filtered">
+      </ul>
+    </div>
+    <div class="suggest-card distribute no-display">
+      <ul class="search_filtered">
+      </ul>
+    </div>
+  </div>
+
+        
+
+        <a class="dac-header-console-btn" href="https://play.google.com/apps/publish/">
+          <span class="dac-sprite dac-google-play"></span>
+          <span class="dac-visible-desktop-inline">Developer</span>
+          Console
+        </a>
+
+      </div><!-- end header-wrap.wrap -->
+    </div><!-- end header -->
+
+    <div id="searchResults" class="wrap" style="display:none;">
+      <h2 style="margin-bottom: 0px;" id="searchTitle">Results</h2><hr>
+      <div id="leftSearchControl" class="search-control">Loading...</div>
+    </div>
+  </div> <!--end header-wrapper -->
+
+  
+  <!-- Navigation-->
+  <nav class="dac-nav">
+    <div class="dac-nav-dimmer" data-dac-toggle-nav=""></div>
+
+    <ul class="dac-nav-list" data-dac-nav="">
+      <li class="dac-nav-item dac-nav-head">
+        <a class="dac-nav-link dac-nav-logo" data-dac-toggle-nav="" href="javascript:;" title="Close navigation">
+          <img class="dac-logo-image" src="ProGuardAndroidDevelopers_files/android_logo.png" srcset="/assets/images/android_logo@2x.png 2x" alt="Android" height="36" width="32"> Developers
+        </a>
+      </li>
+      <li class="dac-nav-item home">
+        <a class="dac-nav-link dac-visible-mobile-block" href="http://developer.android.com/index.html">Home</a>
+        <ul class="dac-nav-secondary about">
+          <li class="dac-nav-item about">
+            <a class="dac-nav-link" href="http://developer.android.com/about/index.html">Android</a>
+          </li>
+          <li class="dac-nav-item wear">
+            <a class="dac-nav-link" href="http://developer.android.com/wear/index.html">Wear</a>
+          </li>
+          <li class="dac-nav-item tv">
+            <a class="dac-nav-link" href="http://developer.android.com/tv/index.html">TV</a>
+          </li>
+          <li class="dac-nav-item auto">
+            <a class="dac-nav-link" href="http://developer.android.com/auto/index.html">Auto</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dac-nav-item design">
+        <a class="dac-nav-link" href="http://developer.android.com/design/index.html" zh-tw-lang="設計" zh-cn-lang="设计" ru-lang="Проектирование" ko-lang="디자인" ja-lang="設計" es-lang="Diseñar">設計</a>
+      </li>
+      <li class="dac-nav-item develop">
+        <a class="dac-nav-link has-subnav" href="http://developer.android.com/develop/index.html" zh-tw-lang="開發" zh-cn-lang="开发" ru-lang="Разработка" ko-lang="개발" ja-lang="開発" es-lang="Desarrollar">開發</a>
+        <ul class="dac-nav-secondary develop">
+          <li class="dac-nav-item training">
+            <a class="dac-nav-link" href="http://developer.android.com/training/index.html" zh-tw-lang="訓練課程" zh-cn-lang="培训" ru-lang="Курсы" ko-lang="교육" ja-lang="トレーニング" es-lang="Capacitación">訓練課程</a>
+          </li>
+          <li class="dac-nav-item guide">
+            <a class="dac-nav-link" href="http://developer.android.com/guide/index.html" zh-tw-lang="API 指南" zh-cn-lang="API 指南" ru-lang="Руководства по API" ko-lang="API 가이드" ja-lang="API ガイド" es-lang="Guías de la API">API 指南</a>
+          </li>
+          <li class="dac-nav-item reference">
+            <a class="dac-nav-link" href="http://developer.android.com/reference/packages.html" zh-tw-lang="參考資源" zh-cn-lang="参考" ru-lang="Справочник" ko-lang="참조문서" ja-lang="リファレンス" es-lang="Referencia">參考資源</a>
+          </li>
+          <li class="dac-nav-item tools">
+            <a class="dac-nav-link selected" href="http://developer.android.com/sdk/index.html" zh-tw-lang="相關工具" zh-cn-lang="工具" ru-lang="Инструменты" ko-lang="도구" ja-lang="ツール" es-lang="Herramientas">相關工具</a></li>
+          <li class="dac-nav-item google">
+            <a class="dac-nav-link" href="http://developer.android.com/google/index.html">Google Services</a>
+          </li>
+          
+          <li class="dac-nav-item samples">
+            <a class="dac-nav-link" href="http://developer.android.com/samples/index.html">Samples</a>
+          </li>
+          <li class="dac-nav-item preview">
+            <a class="dac-nav-link" href="http://developer.android.com/preview/index.html">Preview</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dac-nav-item distribute">
+        <a class="dac-nav-link" href="http://developer.android.com/distribute/index.html" zh-tw-lang="發佈" zh-cn-lang="分发" ru-lang="Распространение" ko-lang="배포" ja-lang="配布" es-lang="Distribuir">發佈</a>
+        <ul class="dac-nav-secondary distribute">
+          <li class="dac-nav-item googleplay">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/googleplay/index.html">Google Play</a></li>
+          <li class="dac-nav-item essentials">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/essentials/index.html">Essentials</a></li>
+          <li class="dac-nav-item users">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/users/index.html">Get Users</a></li>
+          <li class="dac-nav-item engage">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/engage/index.html">Engage &amp; Retain</a></li>
+          <li class="dac-nav-item monetize">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/monetize/index.html">Earn</a>
+          </li>
+          <li class="dac-nav-item analyze">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/analyze/index.html">Analyze</a>
+          </li>
+          <li class="dac-nav-item stories">
+            <a class="dac-nav-link" href="http://developer.android.com/distribute/stories/index.html">Stories</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <!-- end navigation-->
+  
+
+
+
+
+  <div class="wrap clearfix" id="body-content"><div class="cols">
+    <div class="col-3 dac-toggle dac-mobile" id="side-nav" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+      
+  <div class="dac-visible-mobile-block" data-toggle="section">
+    <span class="dac-toggle-expand dac-devdoc-toggle"><i class="dac-sprite dac-expand-more-black"></i> Show navigation</span>
+    <span class="dac-toggle-collapse dac-devdoc-toggle" data-toggle-section=""><i class="dac-sprite dac-expand-less-black"></i> Hide navigation</span>
+  </div>
+
+      <div style="height: 750px; left: 162.5px; width: 160px;" class="dac-toggle-content fixed" id="devdoc-nav">
+        <div style="overflow: hidden; padding: 0px; width: 160px;" class="scroll-pane jspScrollable">
+<div style="width: 160px; height: 750px;" class="jspContainer"><div style="padding: 0px; top: 0px; width: 156px;" class="jspPane"><ul id="nav">
+
+  <li class="nav-section">
+    <div class="nav-section-header"><a href="http://developer.android.com/sdk/index.html"><span class="en">Download</span></a></div>
+    <ul>
+      <li><a href="http://developer.android.com/sdk/installing/index.html">
+          <span class="en">Install Android Studio</span></a></li>
+    </ul>
+  </li>
+
+
+<!-- Workflow menu-->
+
+  <li class="nav-section">
+    <div class="nav-section-header">
+        <a href="http://developer.android.com/tools/workflow/index.html"><span class="en">Workflow</span></a>
+    </div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/projects/index.html">
+          <span class="en">Projects</span></a>
+      </li>
+      <li><a href="http://developer.android.com/tools/building/index.html">
+          <span class="en">Build and Run</span></a>
+      </li>
+      <li><a href="http://developer.android.com/tools/devices/index.html">
+        <span class="en">Virtual Devices</span></a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/device.html">
+          <span class="en">Hardware Devices</span></a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/extras/oem-usb.html">
+            <span class="en">USB Drivers</span></a></li>
+        </ul>
+      </li>
+
+      <li><a href="http://developer.android.com/tools/testing/index.html">
+        <span class="en">Testing</span></a>
+      </li>
+
+      <li><a href="http://developer.android.com/tools/debugging/index.html">
+          <span class="en">Debugging</span></a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/publishing/publishing_overview.html" zh-cn-lang="发布概述"><span class="en">Publishing</span></a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/publishing/preparing.html" zh-cn-lang="准备发布"><span class="en">Preparing for Release</span></a></li>
+          <li><a href="http://developer.android.com/tools/publishing/versioning.html"><span class="en">Versioning Your Apps</span></a></li>
+          <li><a href="http://developer.android.com/tools/publishing/app-signing.html"><span class="en">Signing Your Apps</span></a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </li> <!-- end of Workflow -->
+
+
+<!-- Android Studio menu-->
+
+ <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="http://developer.android.com/tools/studio/index.html"><span class="en">Android Studio</span></a>
+    </div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/studio/studio-features.html">
+          Features</a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/studio/studio-config.html">
+          Configuration</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/help/sdk-manager.html">SDK Manager</a></li>
+          </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/sdk/installing/create-project.html">
+          Project Tools</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/help/project-mgmt.html">
+              <span class="en">Project Structure Management</span></a></li>
+            <li><a href="http://developer.android.com/tools/projects/templates.html">
+              <span class="en">Using Code Templates</span></a></li>
+            <li><a href="http://developer.android.com/tools/building/building-studio.html">
+              <span class="en">Building and Running</span></a></li>
+          </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/studio/code-tools.html">
+          Code Tools</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/debugging/improving-w-lint.html">
+              <span class="en">Improving Your Code with lint</span></a></li>
+            <li><a href="http://developer.android.com/tools/debugging/annotations.html">
+              <span class="en">Improving Code Inspection with Annotations</span></a></li>
+            <li><a href="http://developer.android.com/tools/help/app-link-indexing.html">
+              <span class="en">Supporting URLs and App Indexing in Android Studio</span></a></li>
+          </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/studio/ui-tools.html">
+          UI Tools</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/sdk/installing/studio-layout.html">
+              <span class="en">Layout Editor</span></a></li>
+            <li><a href="http://developer.android.com/tools/help/theme-editor.html">
+              <span class="en">Theme Editor</span></a></li>
+            <li><a href="http://developer.android.com/tools/help/translations-editor.html">
+              <span class="en">Translations Editor</span></a>
+            </li><li><a href="http://developer.android.com/tools/help/vector-asset-studio.html">
+              <span class="en">Vector Asset Studio</span></a></li>
+            <li><a href="http://developer.android.com/tools/help/image-asset-studio.html">
+              <span class="en">Image Asset Studio</span></a></li>
+          </ul>
+      </li>
+
+      <li><a href="http://developer.android.com/tools/devices/managing-avds.html">
+        <span class="en">AVD Manager</span></a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/devices/emulator.html">
+            <span class="en">Android Emulator</span></a></div>
+         <ul>
+           <li><a href="http://developer.android.com/tools/help/emulator.html">Android Emulator
+           Command-Line Features</a></li>
+         </ul>
+       </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/debugging/debugging-studio.html">
+            <span class="en">Debugging Tools</span></a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/debugging/ddms.html">
+              <span class="en">DDMS</span></a></li>
+          </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/help/android-monitor.html">Android Monitor</a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/help/am-logcat.html"><span class="en">logcat Monitor</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/help/am-memory.html"><span class="en">Memory Monitor</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/help/am-cpu.html"><span class="en">CPU Monitor</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/help/am-gpu.html"><span class="en">GPU Monitor</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/help/am-network.html"><span class="en">Network Monitor</span></a>
+          </li>
+        </ul>
+      </li>
+
+      <li><a href="http://developer.android.com/sdk/installing/studio-tips.html">
+          Tips and Tricks</a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/sdk/installing/migrate.html">
+        <span class="en">
+          Migrating from Eclipse ADT</span></a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/studio/eclipse-transition-guide.html">
+            <span class="en">Transition Guide</span></a></li>
+          </ul>
+      </li>
+    </ul>
+
+ </li><!-- End of Android Studio menu -->
+
+
+  <li class="nav-section expanded">
+    <div class="nav-section-header"><a href="http://developer.android.com/tools/help/index.html"><span class="en">Tools Help</span></a></div>
+    <ul style="display: block;">
+      <li><a href="http://developer.android.com/tools/help/adb.html">adb</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/help/android.html">android</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/devices/managing-avds-cmdline.html"><span class="en">
+              Managing AVDs</span></a></li>
+            <li><a href="http://developer.android.com/tools/projects/projects-cmdline.html"><span class="en">
+              Managing Projects</span></a></li>
+          </ul>
+      </li>
+      <li><a href="http://developer.android.com/tools/help/avd-manager.html">AVD Manager</a></li>
+      <li><a href="http://developer.android.com/tools/help/bmgr.html">bmgr</a>
+      </li><li><a href="http://developer.android.com/tools/help/desktop-head-unit.html">Desktop Head Unit</a></li>
+      <li><a href="http://developer.android.com/tools/help/monitor.html">Device Monitor</a></li>
+      <li><a href="http://developer.android.com/tools/help/dmtracedump.html">dmtracedump</a></li>
+      <li><a href="http://developer.android.com/tools/help/draw9patch.html">Draw 9-Patch</a></li>
+
+      <li><a href="http://developer.android.com/tools/help/etc1tool.html">etc1tool</a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/help/hierarchy-viewer.html">
+            <span class="en">Hierarchy Viewer</span></a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/debugging/debugging-ui.html">
+              <span class="en">Optimizing your UI</span></a></li>
+          </ul>
+      </li>
+
+      <li><a href="http://developer.android.com/tools/help/hprof-conv.html">hprof-conv</a></li>
+      <li><a href="http://developer.android.com/tools/help/jobb.html">jobb</a></li>
+      <li><a href="http://developer.android.com/tools/help/lint.html">lint</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/help/logcat.html">logcat</a></div>
+          <ul>
+            <li><a href="http://developer.android.com/tools/debugging/debugging-log.html">
+              <span class="en">Reading and Writing Logs</span></a></li>
+          </ul>
+      </li>
+      <li><a href="http://developer.android.com/tools/help/mksdcard.html">mksdcard</a></li>
+       <li class="selected"><a href="http://developer.android.com/tools/help/proguard.html" zh-cn-lang="ProGuard">ProGuard</a></li>
+       <li><a href="http://developer.android.com/tools/help/gltracer.html">Tracer for OpenGL ES</a></li>
+
+
+       <li><a href="http://developer.android.com/tools/help/zipalign.html">zipalign</a></li>
+
+    </ul>
+  </li>
+
+  <!-- end of tools help -->
+
+
+<!-- Build System menu-->
+
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="http://developer.android.com/sdk/installing/studio-build.html">Build System</a>
+    </div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/building/building-cmdline.html">
+        <span class="en">Running Gradle Builds</span></a></li>
+      <li><a href="http://developer.android.com/tools/building/configuring-gradle.html">
+        <span class="en">Configuring Gradle Builds</span></a></li>
+      <li><a href="http://developer.android.com/tools/building/plugin-for-gradle.html">
+        <span class="en">Android Plugin for Gradle</span></a></li>
+      <li><a href="http://developer.android.com/tools/building/manifest-merge.html">
+        <span class="en">Manifest Merging</span></a></li>
+      <li><a href="http://developer.android.com/tools/building/multidex.html">
+        <span class="en">Apps Over 64K Methods</span></a></li>
+      </ul>
+  </li><!-- end of build system -->
+
+
+<!-- Performance Tools menu-->
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="http://developer.android.com/tools/performance/index.html">Performance Tools</a>
+    </div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/performance/debug-gpu-overdraw/index.html">
+        Overdraw Debugger</a>
+      </li>
+      <li><a href="http://developer.android.com/tools/performance/profile-gpu-rendering/index.html">
+        Rendering Profiler</a>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/performance/hierarchy-viewer/index.html">
+          Hierarchy Viewer</a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/performance/hierarchy-viewer/setup.html"><span class="en">Setup</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/performance/hierarchy-viewer/profiling.html"><span class="en">Profiling</span></a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/performance/comparison.html">
+          Memory Profilers</a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/performance/memory-monitor/index.html"><span class="en">Memory Monitor</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/performance/heap-viewer/index.html"><span class="en">Heap Viewer</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/performance/allocation-tracker/index.html"><span class="en">Allocation Tracker</span></a>
+          </li>
+          <li><a href="http://developer.android.com/tools/debugging/debugging-memory.html">
+            <span class="en">Investigating Your RAM Usage</span></a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/debugging/debugging-tracing.html">
+            <span class="en">Traceview</span></a>
+        </div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/performance/traceview/index.html">
+            Walkthrough</a>
+          </li>
+          <li><a href="http://developer.android.com/tools/help/traceview.html">
+            Command Reference</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/debugging/systrace.html">
+          <span class="en">Systrace</span></a>
+        </div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/performance/systrace/index.html">
+            Walkthrough</a></li>
+           <li><a href="http://developer.android.com/tools/help/systrace.html">
+            Command Reference</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="http://developer.android.com/tools/performance/batterystats-battery-historian/index.html">
+          Battery Profilers</a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/performance/batterystats-battery-historian/charts.html"><span class="en">Historian Charts</span></a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li><!-- End Performance Tools menu-->
+
+
+  <!-- Testing Tools menu-->
+
+  <li class="nav-section">
+    <div class="nav-section-header">
+      <a href="http://developer.android.com/tools/testing/testing-tools.html">
+      <span class="en">Testing Tools</span></a></div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/testing/testing_android.html">Testing Concepts</a></li>
+      <li class="nav-section">
+         <div class="nav-section-header">
+         <a href="http://developer.android.com/tools/testing-support-library/index.html"><span class="en">Testing Support Library</span></a></div>
+         <ul>
+            <li><a href="http://developer.android.com/reference/android/support/test/package-summary.html">
+            API Reference</a></li>
+         </ul>
+      </li>
+      <li><a href="http://developer.android.com/training/testing/start/index.html">
+      Testing with Android Studio</a></li>
+      <li><a href="http://developer.android.com/tools/testing/testing_otheride.html">
+      Testing from the Command-Line</a></li>
+      <li><a href="http://developer.android.com/tools/help/monkey.html">monkey</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header"><a href="http://developer.android.com/tools/help/monkeyrunner_concepts.html"><span class="en">monkeyrunner</span></a></div>
+        <ul>
+          <li><a href="http://developer.android.com/tools/help/MonkeyDevice.html"><span class="en">MonkeyDevice</span></a></li>
+          <li><a href="http://developer.android.com/tools/help/MonkeyImage.html"><span class="en">MonkeyImage</span></a></li>
+          <li><a href="http://developer.android.com/tools/help/MonkeyRunner.html"><span class="en">MonkeyRunner</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li><!-- end of testing support library -->
+
+
+<!-- Support Library menu-->
+
+  <li class="nav-section">
+    <div class="nav-section-header"><a href="http://developer.android.com/tools/support-library/index.html"><span class="en">Support Library</span></a></div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/support-library/features.html">Features</a></li>
+      <li><a href="http://developer.android.com/tools/support-library/setup.html">Setup</a></li>
+    </ul>
+  </li><!-- end of support library -->
+
+  <li class="nav-section">
+    <div class="nav-section-header empty"><a href="http://developer.android.com/tools/data-binding/guide.html"><span class="en">Data Binding Library</span></a></div>
+  </li><!-- end of support library -->
+
+
+<!-- Revision menu-->
+
+  <li class="nav-section">
+    <div class="nav-section-header"><a href="http://developer.android.com/tools/revisions/index.html"><span class="en">Revisions</span></a></div>
+    <ul>
+      <li><a href="http://developer.android.com/tools/revisions/studio.html">
+        <span class="en">Android Studio</span>
+      </a></li>
+      <li><a href="http://developer.android.com/tools/sdk/tools-notes.html">
+        <span class="en">SDK Tools</span>
+      </a></li>
+      <li><a href="http://developer.android.com/tools/revisions/build-tools.html">
+        <span class="en">SDK Build Tools</span>
+      </a></li>
+      <li><a href="http://developer.android.com/tools/revisions/gradle-plugin.html">
+        <span class="en">Android Plugin for Gradle</span>
+      </a></li>
+      <li><a href="http://developer.android.com/tools/revisions/platforms.html">
+        <span class="en">SDK Platforms</span></a></li>
+      <li><a href="http://developer.android.com/tools/sdk/eclipse-adt.html">
+        <span class="en">ADT Plugin</span></a></li>
+    </ul>
+  </li>
+
+  <li class="nav-section">
+    <div class="nav-section-header empty">
+      <a href="http://developer.android.com/tools/sdk/ndk/index.html">NDK</a>
+    </div>
+  </li>
+
+<!--  <li class="nav-section">
+    <div class="nav-section-header">
+    <a href="/tools/adk/index.html">
+      <span class="en">ADK</span></a>
+    </div>
+    <ul>
+      <li><a href="/tools/adk/adk2.html">ADK 2012 Guide</a></li>
+      <li><a href="/tools/adk/adk.html">ADK 2011 Guide</a></li>
+    </ul>
+  </li> -->
+
+
+
+        </ul></div><div class="jspVerticalBar"><div class="jspCap jspCapTop"></div><div style="height: 742px;" class="jspTrack"><div style="height: 425px;" class="jspDrag"><div class="jspDragTop"></div><div class="jspDragBottom"></div></div></div><div class="jspCap jspCapBottom"></div></div></div></div>
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      $(document).ready(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="col-13" id="doc-col">
+
+
+  
+
+  
+    
+      
+        <h1 itemprop="name">ProGuard</h1>
+      
+    
+  
+
+
+  
+  <div id="jd-content">
+
+
+    <div class="jd-descr" itemprop="articleBody">
+    <div id="qv-wrapper">
+    <div id="qv">
+      <h2>In this document</h2>
+
+      <ol>
+        <li><a href="#enabling-gradle">Enabling ProGuard (Gradle Builds)</a></li>
+
+        <li><a href="#enabling">Enabling ProGuard (Ant Builds)</a></li>
+
+        <li><a href="#configuring">Configuring ProGuard</a></li>
+
+        <li>
+          <a href="#decoding">Decoding Obfuscated Stack Traces</a>
+
+          <ol>
+            <li><a href="#considerations">Debugging considerations for published
+            applications</a></li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>See also</h2>
+
+      <ol>
+        <li>
+          <a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html">ProGuard
+          Manual »</a>
+        </li>
+        <li>
+          <a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/retrace/introduction.html">ProGuard
+          ReTrace Manual »</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+
+ 
+  <p>The <a href="http://proguard.sourceforge.net/">ProGuard</a> tool shrinks, optimizes, and
+  obfuscates your code by removing unused code and
+  renaming classes, fields, and methods with semantically obscure names. The result is a smaller
+  sized <code>.apk</code> file that is more difficult to reverse engineer. Because ProGuard makes your
+  application harder to reverse engineer, it is important that you use it
+  when your application utilizes features that are sensitive to security like when you are
+  <a href="http://developer.android.com/google/play/licensing/index.html">Licensing Your Applications</a>.</p>
+
+  <p>ProGuard is integrated into the Android build system, so you do not have to invoke it
+  manually. ProGuard runs only when you build your application in release mode, so you do not
+  have to deal with obfuscated code when you build your application in debug mode.
+  Having ProGuard run is completely optional, but highly recommended.</p>
+
+  <p>This document describes how to enable and configure ProGuard as well as use the
+  <code>retrace</code> tool to decode obfuscated stack traces.</p>
+
+
+ <h2 style="margin-bottom: 0px;" id="enabling-gradle">Enabling ProGuard (Gradle Builds)</h2><hr>
+  <p>When you create a project in Android Studio or with the Gradle build system, the
+  <code>minifyEnabled</code> property in the <code>build.gradle</code> file enables and disables
+  ProGuard for release builds. The <code>minifyEnabled</code> property is part of the
+  <code>buildTypes</code> <code>release</code> block that controls the settings applied to
+  release builds. Set the <code>minifyEnabled</code> property to <code>true</code> to enable
+  ProGuard, as shown in this example. </p>
+
+  <pre class="no-pretty-print">  android {
+   ...
+ 
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+            'proguard-rules.pro'
+        }
+    }
+  }
+  </pre>
+
+  <p>The <code>getDefaultProguardFile('proguard-android.txt')</code> method obtains the default
+  ProGuard settings from the Android SDK <code>tools/proguard/</code> folder. The
+  <code>proguard-android-optimize.txt</code> file is also available in this Android SDK
+  folder with the same rules but with optimizations enabled. ProGuard optimizations perform
+  analysis at the bytecode level, inside and across methods to help make your app smaller and run
+  faster. Android Studio adds the <code>proguard-rules.pro</code> file at the root of the module,
+  so you can also easily add custom ProGuard rules specific to the current module. </p>
+
+  <p>You can also add ProGuard files to the <code>getDefaultProguardFile</code>
+  directive for all release builds or as part of the <code>productFlavor</code> settings in the
+  <code>build.gradle</code> file to customize the settings applied to build variants. This example
+  adds the <code>proguard-rules-new.pro</code> to the <code>proguardFiles</code>
+  directive and the <code>other-rules.pro</code> file to the <code>flavor2</code> product flavor. </p>
+
+<pre class="no-pretty-print">    android {
+   ...
+ 
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+            'proguard-rules.pro', 'proguard-rules-new.pro'
+        }
+    }
+ 
+   productFlavors {
+        flavor1 {
+        }
+        flavor2 {
+            proguardFile 'other-rules.pro'
+        }
+    }
+ }
+  </pre>
+
+
+  <h2 style="margin-bottom: 0px;" id="configuring">Configuring ProGuard</h2><hr>
+
+  <p>For some situations, the default configurations in the ProGuard configuration file will
+  suffice. However, many situations are hard for ProGuard to analyze correctly and it might remove
+  code that it thinks is not used, but your application actually needs. Some examples include:</p>
+
+  <ul>
+    <li>a class that is referenced only in the <code>AndroidManifest.xml</code> file</li>
+
+    <li>a method called from JNI</li>
+
+    <li>dynamically referenced fields and methods</li>
+  </ul>
+
+  <p>The default ProGuard configuration file tries to cover general cases, but you might
+  encounter exceptions such as <code>ClassNotFoundException</code>, which happens when ProGuard
+  strips away an entire class that your application calls.</p>
+
+  <p>You can fix errors when ProGuard strips away your code by adding a <code>-keep</code> line in
+  the ProGuard configuration file. For example:</p>
+  <pre class="prettyprint"><span class="pun">-</span><span class="pln">keep </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="pun">&lt;</span><span class="typ">MyClass</span><span class="pun">&gt;</span></pre>
+
+  <p>There are many options and considerations when using the <code>-keep</code> option, so it is
+  highly recommended that you read the
+  <a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/introduction.html">ProGuard
+  Manual</a> for more information about customizing your configuration file. The
+  <em>Overview of Keep options</em> and <em>Examples</em> sections are particularly helpful.
+  The <a href="http://stuff.mit.edu/afs/sipb/project/android/sdk/android-sdk-linux/tools/proguard/docs/index.html#manual/troubleshooting.html">Troubleshooting
+  </a> section of the ProGuard Manual outlines other common problems you might encounter
+  when your code gets stripped away.</p>
+
+  <h2 style="margin-bottom: 0px;" id="decoding">Decoding Obfuscated Stack Traces</h2><hr>
+
+  <p>When your obfuscated code outputs a stack trace, the method names are obfuscated, which makes
+  debugging hard, if not impossible. Fortunately, whenever ProGuard runs, it outputs a
+  <code>mapping.txt</code> file, which shows you the original class, method, and field names
+  mapped to their obfuscated names.</p>
+
+  <p>The <code>retrace.bat</code> script on Windows or the <code>retrace.sh</code> script on Linux
+  or Mac OS X can convert an obfuscated stack trace to a readable one. It is located
+  in the <code>&lt;sdk_root&gt;/tools/proguard/</code> directory. The syntax for executing the
+  <code>retrace</code> tool is:</p>
+  <pre class="prettyprint"><span class="pln">retrace</span><span class="pun">.</span><span class="pln">bat</span><span class="pun">|</span><span class="pln">retrace</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">[-</span><span class="pln">verbose</span><span class="pun">]</span><span class="pln"> mapping</span><span class="pun">.</span><span class="pln">txt </span><span class="pun">[&lt;</span><span class="pln">stacktrace_file</span><span class="pun">&gt;]</span></pre>
+  <p>For example:</p>
+
+  <pre class="prettyprint"><span class="pln">retrace</span><span class="pun">.</span><span class="pln">bat </span><span class="pun">-</span><span class="pln">verbose mapping</span><span class="pun">.</span><span class="pln">txt obfuscated_trace</span><span class="pun">.</span><span class="pln">txt</span></pre>
+
+  <p>If you do not specify a value for <em>&lt;stacktrace_file&gt;</em>, the <code>retrace</code> tool reads
+  from standard input.</p>
+
+  <h3 id="considerations">Debugging considerations for published applications</h3>
+
+  <p>Save the <code>mapping.txt</code> file for every release that you publish to your users.
+  By retaining a copy of the <code>mapping.txt</code> file for each release build,
+  you ensure that you can debug a problem if a user encounters a bug and submits an obfuscated stack trace.
+  A project's <code>mapping.txt</code> file is overwritten every time you do a release build, so you must be
+  careful about saving the versions that you need. The file is stored in the app <code>build/outs/</code> folder. </p>
+
+  <p>For example, say you publish an application and continue developing new features of
+  the application for a new version. You then do a release build using ProGuard soon after. The
+  build overwrites the previous <code>mapping.txt</code> file. A user submits a bug report
+  containing a stack trace from the application that is currently published. You no longer have a way
+  of debugging the user's stack trace, because the <code>mapping.txt</code> file associated with the version
+  on the user's device is gone. There are other situations where your <code>mapping.txt</code> file can be overwritten, so
+  ensure that you save a copy for every release that you anticipate you have to debug.</p>
+
+  <p>How you save the <code>mapping.txt</code> files is your decision. For example, you can rename
+  the files to include a version or build number, or you can version control them along with your
+  source code.</p>
+
+    </div>
+
+    
+
+  </div> <!-- end jd-content -->
+
+<div class="wrap">
+  <div class="dac-footer">
+    <div class="cols dac-footer-main">
+      <div class="col-1of2">
+        <a class="dac-footer-getnews" data-modal-toggle="newsletter" href="javascript:;">Get news &amp; tips <span class="dac-fab dac-primary"><i class="dac-sprite dac-mail"></i></span></a>
+      </div>
+      <div class="col-1of2 dac-footer-reachout">
+        <div class="dac-footer-contact">
+          <a class="dac-footer-contact-link" href="http://android-developers.blogspot.com/">Blog</a>
+          <a class="dac-footer-contact-link" href="http://developer.android.com/support.html">Support</a>
+        </div>
+        <div class="dac-footer-social">
+          <a class="dac-fab dac-footer-social-link" href="https://www.youtube.com/user/androiddevelopers"><i class="dac-sprite dac-youtube"></i></a>
+          <a class="dac-fab dac-footer-social-link" href="https://plus.google.com/+AndroidDevelopers"><i class="dac-sprite dac-gplus"></i></a>
+          <a class="dac-fab dac-footer-social-link" href="https://twitter.com/AndroidDev"><i class="dac-sprite dac-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="dac-footer-separator">
+
+    
+      <p class="dac-footer-copyright">
+        
+  Except as noted, this content is
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and
+  restrictions, see the <a href="http://developer.android.com/license.html">Content
+  License</a>.
+      </p>
+    
+
+    <p class="dac-footer-links">
+      <a href="http://developer.android.com/about/index.html">About Android</a>
+      <a href="http://developer.android.com/auto/index.html">Auto</a>
+      <a href="http://developer.android.com/tv/index.html">TV</a>
+      <a href="http://developer.android.com/wear/index.html">Wear</a>
+      <a href="http://developer.android.com/legal.html">Legal</a>
+
+      <span id="language" class="locales">
+        <select name="language" onchange="changeLangPref(this.value, true)">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="in">Bahasa Indonesia</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="pt-br">Português Brasileiro</option>
+          <option value="ru">Русский</option>
+          <option value="vi">tiếng Việt</option>
+          <option value="zh-cn">中文（简体)</option>
+          <option selected="selected" value="zh-tw">中文（繁體)</option>
+        </select>
+      </span>
+    </p>
+  </div>
+</div> <!-- end footer -->
+
+<div data-modal="newsletter" data-newsletter="" data-swap="" class="dac-modal newsletter">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <button class="dac-modal-header-close" data-modal-toggle=""><i class="dac-sprite dac-close"></i></button>
+        <div class="dac-swap" data-swap-container="">
+          <section class="dac-swap-section dac-active dac-down">
+            <h2 class="norule dac-modal-header-title">Get the latest Android developer news and tips that will help you find success on Google Play.</h2>
+            <p class="dac-modal-header-subtitle">* Required Fields</p>
+          </section>
+          <section class="dac-swap-section dac-up">
+            <h2 class="norule dac-modal-header-title">Hooray!</h2>
+          </section>
+        </div>
+      </header>
+      <div class="dac-swap" data-swap-container="">
+        <section class="dac-swap-section dac-active dac-left">
+          <iframe src="" name="dac-newsletter-iframe" style="display: none;"></iframe><form action="https://docs.google.com/forms/d/1QgnkzbEJIDu9lMEea0mxqWrXUJu0oBCLD7ar23V0Yys/formResponse" class="dac-form" method="post" target="dac-newsletter-iframe">
+            <section class="dac-modal-content">
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-full-name" class="dac-form-floatlabel">Full name</label>
+                      <input class="dac-form-input" name="entry.1357890476" id="newsletter-full-name" required="" type="text">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-email" class="dac-form-floatlabel">Email address</label>
+                      <input class="dac-form-input" name="entry.472100832" id="newsletter-email" required="" type="email">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-company" class="dac-form-floatlabel">Company / developer name</label>
+                      <input class="dac-form-input" name="entry.1664780309" id="newsletter-company" type="text">
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-play-store" class="dac-form-floatlabel">One of your Play Store app URLs</label>
+                      <input class="dac-form-input" name="entry.47013838" id="newsletter-play-store" required="" type="url">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <legend class="dac-form-legend">Which best describes your business:<span class="dac-form-required">*</span>
+                    </legend>
+                    <div class="dac-form-radio-group">
+                      <input value="Apps" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-app" required="" type="radio">
+                      <label for="newsletter-business-type-app" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-app" class="dac-form-label">Apps</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input value="Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-games" required="" type="radio">
+                      <label for="newsletter-business-type-games" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-games" class="dac-form-label">Games</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input value="Apps and Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-appsgames" required="" type="radio">
+                      <label for="newsletter-business-type-appsgames" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-appsgames" class="dac-form-label">Apps &amp; Games</label>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol newsletter-checkboxes">
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input class="dac-form-checkbox" name="entry.732309842" id="newsletter-add" required="" value="Add me to the mailing list for the monthly newsletter and occasional emails about development and Google Play opportunities." type="checkbox">
+                          <label for="newsletter-add" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-add" class="dac-form-label dac-form-aside">Add me to the mailing list for the monthly newsletter and occasional emails about development and Google Play opportunities.<span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input class="dac-form-checkbox" name="entry.2045036090" id="newsletter-terms" required="" value="I acknowledge that the information provided in this form will be subject to Google's privacy policy (https://www.google.com/policies/privacy/)." type="checkbox">
+                          <label for="newsletter-terms" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-terms" class="dac-form-label dac-form-aside">I acknowledge that the information provided in this form will be subject to <a href="https://www.google.com/policies/privacy/">Google's privacy policy</a>.<span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+            <footer class="dac-modal-footer">
+              <div class="cols">
+                <div class="col-2of5">
+                </div>
+              </div>
+              <button type="submit" value="Submit" class="dac-fab dac-primary dac-large dac-modal-action"><i class="dac-sprite dac-arrow-right"></i></button>
+            </footer>
+          </form>
+        </section>
+        <section class="dac-swap-section dac-right">
+          <div class="dac-modal-content">
+            <p class="newsletter-success-message">
+              You have successfully signed up for the latest Android developer news and tips.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end .cols --> 
+</div> <!-- end body-content --> 
+
+
+
+
+
+  <script src="ProGuardAndroidDevelopers_files/ytblogger_lists_unified.json" type="text/javascript"></script>
+  <script src="ProGuardAndroidDevelopers_files/jd_lists_unified.js" type="text/javascript"></script>
+  <script src="ProGuardAndroidDevelopers_files/jd_extras.js" type="text/javascript"></script>
+  <script src="ProGuardAndroidDevelopers_files/jd_collections.js" type="text/javascript"></script>
+  <script src="ProGuardAndroidDevelopers_files/jd_tag_helpers.js" type="text/javascript"></script>
+
+
+
+</body></html>

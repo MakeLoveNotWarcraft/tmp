@@ -1,0 +1,908 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="baidu-site-verification" content="3m29HNgFrO" />
+	<title>爱加密移动信息安全服务商|安卓加密加固|APK反编译|android防破解</title>
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+	<meta name="keywords" content="安卓加固,第三方加密,爱加密,APP,Android APK加密的网站,安卓文件加密,安全加固,iOS安全保护,APP保护,防破解,防止反编译,安卓盗版,移动应用安全" />
+	<meta name="description" content="爱加密是北京智游网安科技有限公司旗下产品,国内专业的安卓和iOS应用平台安全保护服务商,包括APP源码安全漏洞检测,应用加密保护,渠道监测等服务。爱加密能够有效防止二次打包,防止反编译,为移动金融,手游等提供安全保护方案" /> 	
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+	<script>var mxm_begin=new Date().getTime();</script>
+	<link rel="stylesheet" type="text/css" href="/css/ZH/20150922/public.css?v=20151017" />
+	<link rel="stylesheet" type="text/css" href="/css/ZH/20150922/index.css?v=20151017" />
+	<script type="text/javascript" src="/js/jqurey-1.7.2.js?v=1.1"></script>
+	<style>
+		#header{position:fixed; z-index:9;}
+	</style>
+</head>
+<body>
+
+	<div class="share_box"><img src="http://ijiami.cn/images/ZH/20150922/share_logo.jpg" /></div>
+<div id="header">
+	<div class="header_box">
+		<a href="/" class="logo"><img src="/images/ZH/20150922/logo.png" /></a>
+		<div class="right_nv">
+			<p>
+									<a href="/treg" class="register_link">注册</a>
+					<a href="/tlogin" class="loginin">登录</a>
+			</p>
+		</div>
+		<ul class="navs">
+				<li class="on">
+                	
+					<a href="/">首页<b></b></a>
+                    <span></span>
+				</li>
+				<li>
+					<a href="/AppProtect" target="_blank">产品中心<b></b></a>
+                    <div class="navs_box">
+                    	<dl class="navs_box_dl1">
+                        	<dt>应用测试</dt>
+                            <dd><a  href="http://safe.ijiami.cn" target="_blank">漏洞分析</a></dd>
+                            <dd><a href="/safetyAssess">安全评估</a></dd>
+                        </dl>
+                    	<dl class="navs_box_dl2">
+                        	<dt>安全保护</dt>
+                            <dd class="list_first_dd"><a href="/AppProtect">安卓加密<i></i></a></dd>
+                            <dd><a href="/h5Encryption">Html5加密</a></dd>
+                            <dd class="list_first_dd"><a href="/ios">iOS加密<i></i></a></dd>
+                            <dd><a href="/protocolEncryption">协议加密<i class="icon"></i></a></dd>
+                        </dl>	
+                    	<dl class="navs_box_dl3">
+                        	<dt>其他</dt>
+                            <dd><a href="/Channels">渠道监测</a></dd>
+                            <dd><a href="/appprotect_encrypt_way">加密方式</a></dd>
+                        </dl>		
+                    </div>
+                    <span></span>
+				</li>
+				<li>
+					<a href="/financialSolutions" target="_blank">解决方案<b></b></a>
+                    <div class="navs_box2">
+                    	<ul class="clearfix">
+							<li><a href="/financialSolutions">金融解决方案</a></li>
+							<li><a href="/gamingSolutions">游戏解决方案</a></li>
+						</ul>
+                    </div>
+                    <span></span>
+				</li>
+				<li>
+					<a href="/cloudService">云服务<b></b></a>
+                     <span></span>
+				</li>
+				<li>
+						<a href="/tlogin" class="log_btn">管理中心<b></b></a>
+				</li>
+			</ul>
+		
+	</div>
+</div>
+
+
+<div id="top_box">
+	<ul>
+    	<li>
+        	<a class="btn" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2850686000&amp;site=qq&amp;menu=yes" target="_blank" title="联系客服"><i></i></a>
+        </li>
+    	<li>
+        	<div id="box_li_info">
+        		<p>电话服务：4000-618-110</p>
+            	<span></span>
+            </div>
+        	<a href="javascript:;" class="call_icon"></a>
+            
+        </li>
+    	<li>
+        	<a href="javascript:;" class="go_top" title="返回顶部"></a>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		var $top_box_li = $('#top_box li');
+		$top_box_li.hover(function(){
+				if($(this).index() == 0){
+					$(this).find('i').addClass('img_tab');
+				}else if($(this).index() == 1){
+					$('#box_li_info').fadeIn();
+					$(this).find('a').addClass('img_tab1');
+				}else if($(this).index() == 2){
+					$(this).find('a').addClass('img_tab2');
+				}
+			},function(){
+				if($(this).index() == 0){
+					$(this).find('i').removeClass('img_tab');	
+				}else if($(this).index() == 1){
+					$('#box_li_info').fadeOut();
+					$(this).find('a').removeClass('img_tab1');
+				}else if($(this).index() == 2){
+					$(this).find('a').removeClass('img_tab2');
+				}	
+			});
+			
+		$(window).scroll(function(){
+			if ($(window).scrollTop()>100){  
+				$(".go_top").fadeIn(500);  
+			}  
+			else  
+			{  
+				$(".go_top").fadeOut(500);  
+			}  
+		});
+		
+		$(".go_top").click(function(){
+			$('body,html').animate({scrollTop:0},500);  
+	        return false;	
+		});
+		
+		$("#demas").bind("click", function () {
+			var str = '您还没有登录，请登录之后再下载测试案例！';
+			if(confirm(str)){
+				location.href='/tlogin';
+			}
+		});
+		//nav切换
+
+		$(".header_box>ul>li").hover(function(){
+			$(this).find("a").children('b').show();
+			
+			
+			if($(this).index() == 1){
+				
+				$(this).parent().find('.navs_box').show();
+			}else if($(this).index() == 2){
+				$(this).parent().find('.navs_box2').show();
+			}
+				
+		},function(){
+			$(this).find("a").children('b').hide();
+			$(this).parent().find('div').hide();
+			$(".header_box>ul>li.active").find("a").children('b').show();
+		})
+		//鼠标经过微信，二维码放大
+		$('.att_weixin_icon').hover(function(){
+			$('.footer_att img').addClass('saless');	
+		},function(){
+			$('.footer_att img').removeClass('saless');		
+		})
+		
+	});
+</script>	<div id="index_banner">
+		 <div class="slide-main" id="touchMain">
+			<div class="slide-box" id="slideContent">
+				<div class="slide" id="bgstylee">
+					<div class="bgstylee_new"><span></span></div>
+					<a href="/gamingSolutions" target="_blank" class="banner_a look_link03">我要体验</a>
+				</div>
+				<div class="slide" id="bgstylea">
+					<div class="obj-c"><img src="/images/ZH/20150922/obj-a.png" /></div>
+					<a href="/financialSolutions" class="banner_a look_link01" target="_blank">查看详情</a>
+				</div>
+				<div class="slide" id="bgstyleb">
+					<div class="obj-c"><img src="/images/ZH/20150922/obj-b.png" style="margin-top:30px;" /></div>
+					<a href="/gamingSolutions" class="banner_a look_link02" target="_blank">查看详情</a>
+				</div>
+				<div class="slide" id="bgstylec">
+					<div class="obj-c"><img src="/images/ZH/20150922/obj-c.png" /></div>
+					<a href="/cloudService" class="banner_a look_link03" target="_blank">查看详情</a>
+				</div>
+				
+				 <!-- <div class="slide" id="bgstyled">
+                	<h1></h1>
+                    <div>
+                    	<a href="http://click.aliyun.com/m/2435/" target="_blank" class="ckxq">狂欢活动主场</a>
+                    	<a href="/activity/ssykh/" target="_blank" class="more_bg">爱加密大放送</a>
+                    </div>
+                </div> -->
+			</div>
+			<div class="item">
+				<a class="cur" stat="item1001" href="javascript:;"></a>
+				<a href="javascript:;" stat="item1002"></a>
+				<a href="javascript:;" stat="item1003"></a>
+				<a href="javascript:;" stat="item1004"></a>
+			</div>
+		</div>
+	</div>
+	<div id="index_gg">
+		<div id="Scroll" class="news_list">
+			<ul id="ScrollMe">
+      			    	 <li>
+      			    	 	<a href='/newsInfo?id=738&v=2' title="【猿团专访】| 爱加密CEO高磊：如何让移动生活更安全？" target="_blank">
+				        		【猿团专访】| 爱加密CEO高磊：如何让移动生活更安..
+				        	 [03-28]
+				        	</a>
+				        </li>
+      			    	 <li>
+      			    	 	<a href='/newsInfo?id=737&v=2' title="二十款问题App遭曝光 做好APP安全才是王道" target="_blank">
+				        		二十款问题App遭曝光 做好APP安全才是王道
+				        	 [03-26]
+				        	</a>
+				        </li>
+      			    	 <li>
+      			    	 	<a href='/newsInfo?id=736&v=2' title="爱加密被评为 “2015年度最佳游戏产业第三方技术服务商”" target="_blank">
+				        		爱加密被评为 “2015年度最佳游戏产业第三方技术服..
+				        	 [03-22]
+				        	</a>
+				        </li>
+      			    	 <li>
+      			    	 	<a href='/newsInfo?id=735&v=2' title="爱加密CEO高磊：爱加密让手游运营更简单" target="_blank">
+				        		爱加密CEO高磊：爱加密让手游运营更简单
+				        	 [03-21]
+				        	</a>
+				        </li>
+      			    	 <li>
+      			    	 	<a href='/newsInfo?id=734&v=2' title="人人不能忽视APP应用安全" target="_blank">
+				        		人人不能忽视APP应用安全
+				        	 [03-15]
+				        	</a>
+				        </li>
+			</ul>
+			<a href="/News" target="_blank" class="more_news">更多 &gt;</a>
+		</div>
+	</div>
+	<div id="jiami_nmbapps">
+		<div class="nmbapps_con">
+			<ul>
+				<li>
+					<span class="shufont blue">342,481</span>
+					<label>已保护应用累计</label>
+				</li>
+				<li>
+					<span class="shufont green">429,123,751</span>
+					<label>已保障用户累计</label>
+				</li>
+				<li>
+					<span class="shufont ziyanse">118,907</span>
+					<label>已识别盗版累计</label>
+				</li>
+				<li>
+					<span class="shufont yellow">313,369,889</span>
+					<label>已防止攻击累计</label>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="index_list01">
+		<div class="list_main">
+			<h1>移动安全服务体系</h1>
+			<div class="mid_phone">
+				<div class="mind_phone_box">
+					<span></span>
+				</div>
+				<div class="consult_entry">
+					<a class="portal_btn" href="http://www.ijiami.cn/demo/" target="_blank">查看演示<span>&gt;</span></a>
+				</div>
+			</div>
+			<div class="left_text"><img src="/images/ZH/20150922/left_text.png" /></div>
+			<div class="right_text"><img src="/images/ZH/20150922/right_text.png" /></div>
+		</div>
+		
+	</div>
+	<div id="index_goodness">
+         <div class="list_main">
+			<div class="goodpartbox">
+				<dl class="goodpart">
+					<dt class="jishu"></dt>
+					<dd>
+						<h2>技术优势</h2>
+						<p>行业最先进三代加密技术，领先竞争对手至少半年，保证为客户提供的所有解决方案技术均为行业最优</p>
+					</dd>
+				</dl>
+				<dl class="goodpart">
+					<dt class="chanpin"></dt>
+					<dd>
+						<h2>产品优势</h2>
+						<p>为企业提供内测服务，加密服务，监测服务等全方面产品服务，更涵盖金融，游戏，电商，运营商等诸多行业</p>
+					</dd>
+				</dl>
+				<dl class="goodpart">
+					<dt class="xingneng"></dt>
+					<dd>
+						<h2>性能最优</h2>
+						<p>高达99%兼容性，实现ART全面兼容，启动运行效率最优，内存损耗仅3%以内，包体增大200KB，领先所有竞争对手</p>
+					</dd>
+				</dl>
+				<dl class="goodpart">
+					<dt class="fuwu"></dt>
+					<dd>
+						<h2>服务承诺</h2>
+						<p>不添加任何与加密无关的额外权限和代码，无联网用户统计，严厉抵制其他友商窃取用户隐私，私加广告行为</p>
+					</dd>
+				</dl>
+				<dl class="goodpart">
+					<dt class="anquan"></dt>
+					<dd>
+						<h2>安全策略</h2>
+						<p>每月更新加密算法，7*24小时安全应急响应方案，近10家股份制银行实际使用，具有业内最丰富的安全处理经验</p>
+					</dd>
+				</dl>
+				<dl class="goodpart">
+					<dt class="quanwei"></dt>
+					<dd>
+						<h2>权威认证</h2>
+						<p>荣获：移动应用安全领军企业、金融支付安全联盟成员单位，中国反网络病毒联盟(ANVA)成员单位等</p>
+					</dd>
+				</dl>
+			</div>
+		 </div>
+
+	</div>
+	<div id="summary">
+		<div class="list_main">
+			<div class="summary_panel">
+				<p>iClap可让用户在APP内直接批注产品的安全漏洞等Bug问题或建议，并将问题在APP内标识快速反馈给开发者从用户使用APP的实际场景中，反馈产品存在的安全和操作体验等问题。</p>
+				<div class="summary_box">
+					<div class="box_left">
+						<img src="/images/ZH/20150922/index/img_section01.png" alt="" title="">
+					</div>
+					<div class="box_right">
+						<img src="/images/ZH/20150922/index/img_section02.png" alt="" title="">
+					</div>
+				</div>
+				<div class="consult_entry"><a class="portal_btn" href="http://www.iclap.cn" rel="external nofollow"  target="_blank">立即体验<span>&gt;</span></a></div>
+			</div>
+		</div>
+	</div>
+	<div id="service">
+		<div class="list_main">
+			<div class="service_panel">
+				<ul class="service_list">
+					<li>
+						<img src="/images/ZH/20150922/index/img_case03.png" alt="平安银行" title="平安银行">
+						<span>平安银行</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case07.png" alt="电信翼支付" title="电信翼支付">
+						<span>电信翼支付</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case09.png" alt="钱大掌柜" title="钱大掌柜">
+						<span>钱大掌柜</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case10.png" alt="中信证券手机开户" title="中信证券手机开户">
+						<span>中信证券手机开户</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case05.png" alt="首信易支付" title="首信易支付">
+						<span>首信易支付</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case08.png" alt="爱拍" title="爱拍">
+						<span>爱拍</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case02.png" alt="新秦时明月" title="新秦时明月">
+						<span>新秦时明月</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case06.png" alt="王者之剑" title="王者之剑">
+						<span>王者之剑</span>
+					</li>
+					<li>
+						<img src="/images/ZH/20150922/index/img_case04.png" alt="花千骨" title="花千骨">
+						<span>花千骨</span>
+					</li>
+					<li class="active">
+						<img src="/images/ZH/20150922/index/img_case01.png" alt="崩坏学园2" title="崩坏学园2">
+						<span>崩坏学园2</span>
+					</li>
+				</ul>
+				<!-- 服务案例 start -->
+				<div class="service_details">
+					<div class="example example01">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case03_show01.png" alt="平安银行" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case03_show02.png" alt="平安银行" title="">
+							</div>
+							<div class="show_info">
+								<h2>平安银行</h2>
+								<h3>您身边的金融管理专家</h3>
+								<p>爱加密为平安银行搭建本地独立部署的APP安全加密服务系统，为平安科技旗下多款应用进行安全服务，并常年提供安全顾问服务。该系统适用于各种行业企业用户安全加密需求，安全、稳定、高效、快速、易操作，可以有效减少APP被破解、反编译的风险，防止用户帐号密码被泄漏。</p>
+								<div class="show_main_info">
+									<p>平安科技(深圳)有限公司是一家国际一流的金融IT服务公司，随着集团保险、银行、资产管理三大业务板块的均衡发展，平安科技在平安综合金融大家庭中将扮演更为重要的角色，逐步向国际领先的金融IT团队迈进。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example02">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case07_show01.png" alt="电信翼支付" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case07_show02.png" alt="电信翼支付" title="">
+							</div>
+							<div class="show_info">
+								<h2>电信翼支付</h2>
+								<h3>轻松理财，做理财达人</h3>
+								<p>电信翼支付采用爱加密支付行业定制加密方案，包括：人工安全分析和自动化漏洞分析、应用加密等服务，在防止系统使用键盘和输入法攻击、界面截取、储存本地数据窃取、用户隐私窃取、反编译源码、网络监听等方面起到了很好的保护作用。</p>
+								<div class="show_main_info">
+									<p>翼支付是中国电信集团公司的一款明星产品，集成校企一卡通、公交卡、行业卡、银行卡等多项应用，向用户提供方便、快捷、全方位的移动支付服务。翼支付被广泛的利用在各个行业，如市政服务行业、金融行业、生产制造行业、教育行业等。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example03">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case09_show01.png" alt="" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case09_show02.png" alt="" title="">
+							</div>
+							<div class="show_info">
+								<h2>钱大掌柜</h2>
+								<h3>足不出户财富增值</h3>
+								<p>爱加密为钱大掌柜提供包括漏洞分析、应用加密、渠道监测一系列服务，分别从动态库保护、防截屏保护、本地数据保护、防键盘监听保护、通信协议保护等方面进行全面保护，并提供常年安全咨询服务和安全分析服务。</p>
+								<div class="show_main_info">
+									<p>“钱大掌柜”是兴业银行基于银银平台的基础上，通过对行内理财产品、贵金属交易、银证转账、基金代销等财富管理业务进行整合，形成的一个面向各合作银行的综合财富管理平台，为个人客户提供一站式全方位的财富管理解决方案。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example04">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case10_show01.png" alt="" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case10_show02.png" alt="" title="">
+							</div>
+							<div class="show_info">
+								<h2>中信证券手机开户</h2>
+								<h3>移动金融自由新体验</h3>
+								<p>爱加密为中信证券手机开户提供安全保护、渠道分发等服务，防止应用在发布市场之后被不法分子恶意篡改、注入恶意代码等，避免对品牌造成不良影响以及对客户造成经济利益损失。</p>
+								<div class="show_main_info">
+									<p>中信证券手机开户是一款全新的集“行情、委托、资讯”为一体的客户端综合服务平台，相比一般的市场行情软件，中信证券手机开户在行情数据、资讯信息、系统安全、个性定制、客户体验等方面，更加具有特色。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example05">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case05_show01.png" alt="首信易支付" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case05_show02.png" alt="首信易支付" title="">
+							</div>
+							<div class="show_info">
+								<h2>首信易支付</h2>
+								<h3>为您的无线生活提供便捷服务</h3>
+								<p>对应用的安全状况进行全面评估，采用“DEX三重保护+so文件加密+定制保护+渠道监测”的一站式解决方案，不仅有效地减少了该客户端被篡改的风险，还避免了首信易支付单独开发安全模块而造成的重复浪费、应用发布周期长等问题。</p>
+								<div class="show_main_info">
+									<p>首信易支付是中国首家实现跨银行跨地域提供多种银行卡在线交易的网上支付服务平台，拥有千余家大中型企事业单位、政府机关、社会团体组成的庞大客户群，是目前国内支持银行卡种最多、覆盖范围最广的支付平台。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example06">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case08_show01.png" alt="爱拍" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case08_show02.png" alt="爱拍" title="">
+							</div>
+							<div class="show_info">
+								<h2>爱拍</h2>
+								<h3>最火爆的达人原创视频社区</h3>
+								<p>为爱拍提供的安全检测，应用加固、渠道监测等服务，深度的检测应用中存在的漏洞和风险，并及时预防，有效解决了数据被篡改、核心源码被破解等风险，安全级别大大提高。</p>
+								<div class="show_main_info">
+									<p>爱拍是国内最大的达人原创视频社区，最好的视频创作软件“拍大师”的官网和指定视频发布平台。拥有各领域最牛的视频创作达人及最新、最全的原创视频内容，为广大网民所喜爱。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example07">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case02_show01.png" alt="史上最坑爹游戏" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case02_show02.png" alt="史上最坑爹游戏" title="">
+							</div>
+							<div class="show_info">
+								<h2>新秦时明月</h2>
+								<h3>玄机官方出品，国内创新竖版即时制战斗手游</h3>
+								<p>为该应用提供安全检测、APK加固、渠道监测服务等，防止应用运行数据篡改、存储数据篡改及恶意代码注入等；并且通过渠道监测服务对市场应用盗版检测，及时发现并申诉，维护公司合法权益。</p>
+								<div class="show_main_info">
+									<p>新秦时明月根据动画《秦时明月》改编而成，由杭州玄机科技联合上海鹿游网络科技开发。该手游采用Unity3D引擎开发，重现动漫经典剧情，展示瑰丽古代文化，是一款不可多得的高质量手游。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example08">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case06_show01.png" alt="王者之剑" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case06_show02.png" alt="王者之剑" title="">
+							</div>
+							<div class="show_info">
+								<h2>王者之剑</h2>
+								<h3>手游格斗之王，完美再现街机体验</h3>
+								<p>爱加密为蓝港互动部署爱加密本地加密系统，为其旗下应用王者之剑、英雄之剑等提供安全服务，有效防止了手机游戏常见的安全风险，尤其在防封包修改、脚本录制、用户数据窃取、游戏资源文件窃取与篡改、模拟器运行、注入恶意代码、第三方支付漏洞挖掘等方面起到了高效的保护作用。</p>
+								<div class="show_main_info">
+									<p>蓝港互动有限公司是中国知名的移动游戏研发商与发行商，依靠强大的研发与发行能力，连续推出王者之剑、苍穹之剑、神之刃、后宫·甄嬛传等多款中重度手机游戏大作。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example09">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case04_show01.png" alt="花千骨" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case04_show02.png" alt="花千骨" title="">
+							</div>
+							<div class="show_info">
+								<h2>花千骨</h2>
+								<h3>赵丽颖倾情代言，原著授权3D动作手游</h3>
+								<p>电视剧同名手游花千骨经过爱加密的游戏引擎脚本文件资源保护、高级内存保护、DEX专业加花保护、高级游戏资源保护、防止调试器和加速器运行等项目全面保障了手游应用的安全，避免造成不必要的损失。</p>
+								<div class="show_main_info">
+									<p>花千骨是由成都天象互动科技有限公司旗下的子公司开发并运营，公司拥有雄厚的资金后盾、强大的研发能力。其在游戏中推出的家园玩法令游戏的社交互动性都大为增强，一上线便受到全民热捧。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="example example10" style="display: block;">
+						<div class="details_triangle"></div>
+						<div class="service_details_con">
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case01_show01.png" alt="崩坏学园2" title="">
+							</div>
+							<div class="phone_show">
+								<img src="/images/ZH/20150922/index/img_case01_show02.png" alt="崩坏学园2" title="">
+							</div>
+							<div class="show_info">
+								<h2>崩坏学园2</h2>
+								<h3>崩坏嘉年华让你和僵尸娘们愉快起舞</h3>
+								<p>为崩坏学园2提供的手游定制保护服务，使用U3D技术，提供资源文件保护、dll保护、内存修改防护、模拟器运行防止等项目保护，有效防止了被破解和出现游戏外挂的风险，游戏源码得到全面保护。同时使用爱加密渠道监测服务随时监控渠道上的盗版情况，及时作出应对方案。</p>
+								<div class="show_main_info">
+									<p>崩坏学园2是一款由中国ACG开发商miHoYo开发并运营的萌系横版射击无节操手游。游戏作为近未来学园都市背景的横版动作游戏，自上线之后便异常火爆，已经走出中国手游市场进军韩国手游市场。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 服务案例 end -->
+			</div>
+		</div>
+	</div>
+	<div class="consult">
+		<div id="bg_wave01"></div>
+		<div id="bg_wave02"></div>
+		<div class="list_main">
+			<div class="consult_infobox">
+				<div class="consult_info consult_info01"><i></i><span>业内领先技术解决方案</span></div>
+				<div class="consult_info consult_info02"><i></i><span>行业最低安全服务价格</span></div>
+				<div class="consult_info consult_info03"><i></i><span>10万家企业的安全选择</span></div>
+				<div class="consult_entry"><a class="consult_btn" href="http://wpa.qq.com/msgrd?v=3&uin=2850686000&site=qq&menu=yes" target="_blank">咨询了解</a></div>
+			</div>
+		</div>
+	</div>
+	<!--春节放假弹窗公告-->
+	<!-- <div class="Spring-pop">
+			<div class="wrap">
+				<div class="pop Spring-left"></div>
+				<div class="pop Spring-right"></div>
+				<div class="Spring-con">
+					<h2></h2>
+					<div class="text">
+						<p>爱加密年假<i >2月2日(廿四)-14日(初七)</i>期间不影响任何加密服务，如有其它问题可联系值班客服QQ<i>2865686000</i>，电话<i>4000-618-110</i>。<br/>祝您假期愉快！</p>
+					</div>
+					<a href="https://www.ijiami.cn/newsInfo?id=719&v=2" target="_blank" class="detail-btn">查看详情 ></a>
+				</div>
+			</div>
+			<span class="Spring-out-btn"></span>
+		</div> -->
+	<!--春节放假弹窗公告End-->
+<div id="footer">
+	<div class="footer_con">
+		<div class="footer_top">
+			<div class="footer_nav fl">
+				<dl>
+					<dt><img src="/images/ZH/20150922/phone_icon.gif" /></dt>
+                    <dd title="客服电话">客服电话：4000-618-110</dd>
+                    <dd>电子邮箱：<a title="电子邮箱" href="Mailto:service@ijiami.cn">service@ijiami.cn</a></dd>
+                    <dd>在线交谈：<a title="在线交谈" href="http://wpa.qq.com/msgrd?v=3&amp;uin=2850686000&amp;site=qq&amp;menu=yes" target="_blank" class="more"><i class="talkqq"></i>2850686000</a></dd>
+                    <dd><a title="更多联系方式" href="http://www.ijiami.cn/About?v=4">更多联系方式</a></dd>
+				</dl>
+				<dl>
+					<dt>爱加密产品</dt>
+                    <dd><a title="金融解决方案" href="/financialSolutions">金融解决方案</a></dd>
+                    <dd><a title="游戏解决方案" href="/gamingSolutions" target="_blank">游戏解决方案</a></dd>
+                    <dd><a title="漏洞检测" href="http://safe.ijiami.cn/" target="_blank">漏洞检测</a></dd>
+                    <dd><a title="云服务" href="/cloudService" target="_blank">云服务</a></dd>
+				</dl>
+				<dl>
+					<dt>关于我们</dt>
+                    <dd><a title="公司介绍" href="/About?v=1" target="_blank">公司介绍</a></dd>
+                    <dd><a title="加密资讯" href="/News" target="_blank">加密资讯</a></dd>
+                    <dd><a title="服务条款" href="/termService" rel="external nofollow" target="_blank">服务条款</a></dd>
+                    <dd><a title="合作伙伴" href="/About?v=5" target="_blank">合作伙伴</a></dd>
+				</dl>
+				<dl>
+					<dt>帮助文档</dt>
+                    <dd><a title="操作流程" href="/Guide" target="_blank">操作流程</a></dd>
+                    <dd><a title="常见问题" href="/Question" target="_blank">常见问题</a></dd>
+                    <dd>
+	                    							<a title="测试案例" href="javascript:void(0)" id="demas">测试案例</a>
+					</dd>
+                    <dd><a title="视频教程" href="/Video?v=1" rel="external nofollow" target="_blank">视频教程</a></dd>
+				</dl>
+			</div>
+			<div class="footer_att fr">
+				<p>
+					<em>关注爱加密</em>
+					<a title="官方微信" href="javascript:;" class="att_weixin_icon"></a>
+					<a title="官方微博" href="http://weibo.com/ijiami" target="_blank" rel="external nofollow"  class="att_xina_icon"></a>
+				</p>
+				<img src="/images/ZH/20150922/code_ijiami.png" />
+			</div>
+		</div>
+		<div class="footer_bot">
+			<div class="footer_text">
+				<a href="http://www.devstore.cn/" target="_blank">DevStore</a>
+            	<a href="http://www.pediy.com/" target="_blank">看雪论坛</a>
+            	<a href="http://tools.appying.com/" rel="external nofollow" target="_blank">App运营辅助工具</a>
+            	<a href="http://www.jiamisoft.com/" target="_blank">文件加密软件</a>
+            	<a href="http://www.youmi.net/" target="_blank">有米移动广告</a>
+            	<a href="http://www.appstar.com.cn/" target="_blank">app开发</a>
+            	<a href="http://www.apicloud.com/" target="_blank">APICloud</a>
+            	<a href="http://www.ineice.com/" target="_blank">移动应用安全监测</a>
+			</div>
+			<div class="footer_copy">
+				北京智游网安科技有限公司 爱加密 版权所有 &copy;2013-2016 京ICP备13010720号-16
+				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5340760'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D5340760%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- <div class="iosencrypt_pop" style=" width:266px; height:269px;">
+    <span class="close_iosencrypt_pop" style="top:5px;right:5px"></span>
+    <a href="/activity" target="_blank"><img src="/activity/twoannual/images/twoannual_pop.png" /></a>
+</div>
+<script>
+  	function ijiami (){
+		$(".iosencrypt_pop").animate({"bottom":0},1000);
+	};
+	function close_ijiami(){
+		$(".iosencrypt_pop").animate({"bottom":"-640px"},1000,function(){
+			$(".iosencrypt_pop").hide();
+		});
+	}
+	$(function(){
+		setTimeout(function(){ijiami();},1000)
+		setTimeout(function(){close_ijiami();},12000)
+		$(".close_iosencrypt_pop").click(function(){
+			close_ijiami();
+		});
+		$(".iosencrypt_pop").click(function(){
+			close_ijiami();
+		});
+	})
+</script>  -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?5e53cb314eb89eb6dee4302b45425503";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	<script>var mxm_end=new Date().getTime();</script><script src="http://116.255.217.177/count/?uid=1000" charset="utf-8"></script><noscript><a href="http://116.255.217.177/" target="_blank"><img border="0" width="1" height="1" src="http://116.255.217.177/count/?uid=1000" alt="" title="" /></a></noscript>
+	<!-- <div class="hand_mask"></div>
+	<div style="overflow:hidden;" id="ca_wrap">
+		<canvas id='cas' style="background-color:rgba(0,5,24,1);"></canvas>
+		<div class="city"></div>
+	
+	</div>
+	<div class="hand_pop_con">
+		<div class="round2"></div>
+		<div class="universe">
+			<img src="/images/ZH/20150922/pop_index/universe.png" alt="" />
+		</div>
+		<div class="star">
+			<img src="/images/ZH/20150922/pop_index/star.png" alt="" />
+		</div>
+		<div class="icon">
+			<div class="icon_colored"></div>
+			<div class="icon_app"></div>
+		</div>
+		
+		<p class="text"></p>
+		<a href="/gamingSolutions" target="_blank" class="btn"></a>
+		<a href="javascript:;" class="end_btn"></a>
+	</div> -->
+	
+	<script type="text/javascript" src="/js/jqurey-1.7.2.js"></script>
+	<!-- <script type="text/javascript" src="/js/ZH/20150922/yanhua.js"></script> -->
+	<script type="text/javascript" src="/js/ZH/20150922/lrtk.js"></script>
+	<script type="text/javascript" src="/js/ZH/20150922/gun.js"></script>
+	<script type="text/javascript" src="/js/ZH/20150922/jquery.animateNumber.min.js"></script>
+	<script type="text/javascript">
+		//公告滚动
+		new srcMarquee("ScrollMe",0,1,808,30,30,3000,3000,30)
+	</script> 
+	<script type="text/javascript">
+		$(function(){
+			//春节弹窗放假公告
+			/*(function(){
+				var rencai = get_cookie("rencai");
+				if ("" == rencai){
+					$('.Spring-pop').show();
+					setTimeout(function(){
+						$('.Spring-pop').hide();
+					},25000);
+				}else{
+					$('.Spring-pop').hide();
+					document.cookie = "rencai=1";
+				}
+				$('.Spring-out-btn').on('click',function(){
+					$('.Spring-pop').hide();
+					document.cookie = "rencai=1";
+				});
+			})();*/
+			//春节弹窗放假公告End
+		
+			if($(window).height() <=799 ){
+				$('.bgstylee_new').find('>span').css('top','8%');
+			}
+			
+			//重置banner高度 start
+			function resize_banner(){
+				var h = document.documentElement.clientHeight ||document.body.clientHeight;
+				if (h>700) {
+					$(".slide-main,.slide-box,.slide").css({
+						height:h-353+'px'
+					})
+				};
+			}
+			resize_banner();
+			$(window).resize(function() {
+				resize_banner();
+			});
+			//重置banner高度 end
+
+			//经典案例滚动 start
+			var i = 0;
+			var offset = 3500;
+			var timer = null;
+			var n = $('.service_list li').length - 1;
+			// 自动
+			function autoTab(){
+				if(i > n) i = 0;
+				list(i);
+				i++;
+				timer = window.setTimeout(autoTab, offset);
+			}
+			// 鼠标悬停
+			function hoverFn(){
+				$('.service_list li').hover(function(){
+					clearTimeout(timer);
+					if(timer){
+						i = $(this).prevAll().length;
+						list(i);
+					}
+				});
+			}
+			autoTab();
+			hoverFn();
+			function list(i){
+				$('.service_list li').eq(i).addClass('active').siblings().removeClass('active');
+				$('.example').eq(i).stop(true,true).fadeIn(500).siblings('.example').fadeOut(500);
+			}
+			//经典案例滚动 end
+			function scrollFade(){
+				var sctop = $(window).scrollTop();
+				
+				if(sctop>200){
+					$(".left_text").animate({left: "0",opacity: 1},900);
+					$(".right_text").animate({right: "0",opacity: 1},900);
+				}
+				/*if(sctop>1970){
+					$(".summary_panel .summary_box .box_left").addClass("fadeInRight");
+					$(".summary_panel .summary_box .box_right").addClass("fadeInLeft");
+				}*/
+				if(sctop>1970){
+					$(".summary_panel .summary_box .box_left").animate({'left':'175px'},1000);
+					$(".summary_panel .summary_box .box_right").animate({'right':'180px'},1000);
+				}
+			}
+			scrollFade();
+			//根据滚动高度  定时动画发生时间
+			$(window).scroll(function(){
+				scrollFade();
+			});
+			
+			$(".header_box>ul>li>a").hover(function(){
+				//alert("我经过了导航");
+				$(this).prev("b").show();
+			},function(){
+				$(this).prev("b").hide();
+			});
+			//数字累加
+			var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',');
+			$('.blue').animateNumber({
+						number: 342481,
+						numberStep: comma_separator_number_step
+			},500);
+			$(".green").animateNumber({
+				number: 429123751,
+				numberStep: comma_separator_number_step
+			},2000);
+			$(".ziyanse").animateNumber({
+				number: 118907,
+				numberStep: comma_separator_number_step
+			},200);
+			$(".yellow").animateNumber({
+				number: 313369889,
+				numberStep: comma_separator_number_step
+			},1500);
+			
+			$(".goodpartbox .goodpart:nth-child(3n)").css({"margin-right":"0"})
+		})
+		
+		$(function(){
+			$(window).scroll(function(){
+				if($(this).scrollTop()>100){
+					
+					$('#header').css('background','url(/images/ZH/20150922/fs_nav_bg.png) repeat-x');
+					$('#header').css('height','70px');
+					$('.header_box').css('padding-top','10px');	
+					$(".header_box>ul>li b").css('height','57px');
+					$(".header_box>ul>li div").css('top','63px');
+					
+					$(".header_box>ul>li b").css('top','5px');
+				}else{
+					
+					$('#header').css('height','70px');
+					$('.header_box').css('padding-top','15px');	
+					$('#header').css('background','#fff');
+					$(".header_box>ul>li div").css('top','70px');
+					
+					$(".header_box>ul>li b").css('height','67px');
+					$(".header_box>ul>li b").css('top','0');
+				}	
+			});
+		})
+		
+		/*function get_cookie(Name) {
+		   var search = Name + "="
+		   var returnvalue = "";
+		   if (document.cookie.length > 0) {
+		     offset = document.cookie.indexOf(search)
+		     if (offset != -1) {
+		        offset += search.length
+		        end = document.cookie.indexOf(";", offset);
+		        if (end == -1)
+		        	end = document.cookie.length;
+		        	returnvalue=unescape(document.cookie.substring(offset, end))
+		      }
+		   } 
+		   return returnvalue;
+		}*/
+	</script>
+</body>
+</html>

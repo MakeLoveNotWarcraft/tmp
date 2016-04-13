@@ -1,0 +1,38 @@
+(function () {
+    var hdMutex = document.getElementById("$$ee_hdBloggerads");
+    if (!hdMutex) {
+        var newHd = document.createElement('input');
+        newHd.setAttribute('type', 'hidden');
+        newHd.id = "$$ee_hdBloggerads";
+        document.body.appendChild(newHd);
+
+        var baseUrl = "https://wrl.eagleeye.com.tw/Handler/Bloggerads.ashx?pu={pu}&pt={pt}&rf={rf}&pn={pn}&price={price}&bn={brand}&cat={cat}&up={up}&cuid={cuid}&t={t}&on={on}";
+        var pu = encodeURIComponent(document.location.href);
+        var pt = encodeURIComponent(document.title);
+        var rf = encodeURIComponent(document.referrer);
+
+        var tag = document.getElementById('$$ee_jsBloggerads');
+        if (!tag)
+            tag = document.getElementById('$$ee_js');
+
+        var pn = tag.attributes['ee_pn'] ? tag.attributes['ee_pn'].value : '';
+        var price = tag.attributes['ee_price'] ? tag.attributes['ee_price'].value : '';
+        var bn = tag.attributes['ee_bn'] ? tag.attributes['ee_bn'].value : '';
+        var cat = tag.attributes['ee_cat'] ? tag.attributes['ee_cat'].value : '';
+        var up = tag.attributes['ee_up'] ? tag.attributes['ee_up'].value : '';
+        var cuid = tag.attributes['ee_cuid'] ? tag.attributes['ee_cuid'].value : '';
+        var on = tag.attributes['ee_on'] ? tag.attributes['ee_on'].value : '';
+        var url = baseUrl.replace(/{pu}/g, pu).replace(/{pt}/g, pt).replace(/{rf}/g, rf).replace(/{pn}/g, pn).replace(/{price}/g, price).replace(/{brand}/g, bn).replace(/{cat}/g, cat).replace(/{up}/g, up).replace(/{cuid}/g, cuid).replace(/{t}/g, (new Date()).getTime()).replace(/{on}/g, on);
+
+        var img = document.createElement("img");
+        img.src = url;
+
+        (function () {
+    var imgK = document.createElement('img');
+    imgK.src = '//dmp.tenmax.io/ecm?id=eagleeye&r=https%3A%2F%2Fwrl.eagleeye.com.tw%2Fim%2Ftenmax%3Ftenmax_id%3D';
+})();
+
+
+
+    }    
+})();

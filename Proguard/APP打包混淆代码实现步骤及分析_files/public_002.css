@@ -1,0 +1,18 @@
+/* CSS Document */
+/*public-style*/
+@charset "utf-8";
+/* html{background-color:white;} */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,a{margin:0px;padding:0px;}
+body{ font-family:Arial,"宋体";font-size:12px; min-width:1300px;}
+a{outline:none; text-decoration:none;}
+a:hover{ color: #8dc11e;}
+img{border:0;}
+body input{outline:none;}
+ul li{ list-style:none}
+em,i{ font-style: normal;}
+.clear{clear:both;*display:inline;font-size:1px;overflow:hidden;}
+.clearfix:after {content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height:0;}
+*html .clearfix{zoom:1;} 
+.fl{ float:left;}
+.fr{ float:right;}
+.blank20{ padding-top: 20px;}

@@ -1,0 +1,1436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html itemscope="" itemtype="http://schema.org/Blog" lang="en-US"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/analytics.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ca-pub-2647689032095179.js"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/analytics.js" async=""></script><script async="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/cbgapi.loaded_1"></script><script async="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plusone_002.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/analytics.js" async="" type="text/javascript"></script><script gapi_processed="true" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plusone.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/pi.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/gtm_004.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/gtm_002.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/gtm.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/gtm_003.js" async=""></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ga.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/mixpanel-2.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ca-pub-2484227596375532.js"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ga.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/analytics.js" async=""></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta property="og:site_name" content="資訊園">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="http://fecbob.pixnet.net/blog/post/36288880">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android ProGuard實例教程 @ 資訊園 :: 痞客邦 PIXNET ::">
+<meta property="og:description" content="ProGuard工 具通過移除不用的代碼，用語義上混淆的名字來重命名類、欄位和方法等手段來壓縮、優化和混淆你的代碼。結果是更小的.apk檔，並且更難於被反編譯。由 于ProGuard能夠讓你的程式難於">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="twitter:card" content="summary">
+<meta name="description" content="ProGuard工 具通過移除不用的代碼，用語義上混淆的名字來重命名類、欄位和方法等手段來壓縮、優化和混淆你的代碼。結果是更小的.apk檔，並且更難於被反編譯。由 于ProGuard能夠讓你的程式難於">
+<meta name="twitter:description" content="ProGuard工 具通過移除不用的代碼，用語義上混淆的名字來重命名類、欄位和方法等手段來壓縮、優化和混淆你的代碼。結果是更小的.apk檔，並且更難於被反編譯。由 于ProGuard能夠讓你的程式難於">
+<meta name="twitter:site" content="@pixnet">
+<meta name="author" content="shadow (fecbob)">
+<meta name="author-avatar-20" content="http://s3.pimg.tw/avatar/fecbob/0/0/zoomcrop/20x20.png?v=1311067496">
+<meta name="static-version" content="50b467822b98b0e003a22611c4a27daf">
+<meta name="generator" content="PChoc">
+<meta name="google-site-verification" content="jrEVyrdK25CWxR9Bdljq_3jhRyskilc_zw7is3eTzyA">
+<meta name="keywords" content=",Digital Life,工具類(Tools),Android ProGuard實例教程">
+<link rel="canonical" href="http://fecbob.pixnet.net/blog/post/36288880---android-proguard%e5%af%a6%e4%be%8b%e6%95%99%e7%a8%8b">
+<meta name="twitter:url" content="http://fecbob.pixnet.net/blog/post/36288880">
+<meta name="cover_image" content="">
+<meta name="twitter:image" content="">
+<link rel="prev" href="http://fecbob.pixnet.net/blog/post/36288844">
+<link rel="next" href="http://fecbob.pixnet.net/blog/post/36367196">
+<link rel="alternate" type="application/json+oembed" href="http://api.pixnet.cc/oembed?url=http%3A%2F%2Ffecbob.pixnet.net%2Fblog%2Fpost%2F36288880&amp;format=json" title="PIXNET oEmbed Profile">
+<link rel="alternate" type="text/xml+oembed" href="http://api.pixnet.cc/oembed?url=http%3A%2F%2Ffecbob.pixnet.net%2Fblog%2Fpost%2F36288880&amp;format=xml" title="PIXNET oEmbed Profile">
+<link rel="search" type="application/opensearchdescription+xml" href="http://fecbob.pixnet.net/blog/opensearch" title="資訊園">
+<title>Android ProGuard實例教程 @ 資訊園 :: 痞客邦 PIXNET ::</title>
+<meta name="twitter:title" content="Android ProGuard實例教程 @ 資訊園 :: 痞客邦 PIXNET ::">
+<!-- base href="http://fecbob.pixnet.net/blog/post/36288880" -->
+<style type="text/css">
+#links-row-1 .yc0e0aa-miB-ad-sidebar-v2-yc0e0aa {display: block !important; min-width: 160px !important; min-height: 270px !important; margin-top: 0; z-index:100;}
+.yc0e0aa-miB-ad-sidebar-v2-yc0e0aa * { padding: 0 ; margin: 0 ; border: 0; vertical-align: baseline; display: block; line-height: 1; }
+.yc0e0aa-miB-ad-sidebar-v2-yc0e0aa .box-text { overflow:hidden; padding:0; margin:0; }
+.yc0e0aa-miB-ad-sidebar-v2-yc0e0aa .box-text a {height: auto;}
+.yc0e0aa-miB-border-yc0e0aa { padding: 0; min-width: 180px; min-height: 280px; margin: 12px auto; overflow: hidden; text-align:center; }
+.yc0e0aa-miB-border-yc0e0aa img, .yc0e0aa-miB-border-yc0e0aa div { margin:0 auto; display:inline-block; min-width:160px; min-height:240px; }
+.yc0e0aa-miB-border-yc0e0aa_1080 {padding: 0; width: 180px; height: 280px; margin: 12px auto; overflow: hidden;}
+.yc0e0aa-miB-border-yc0e0aa div {position: relative;}
+</style>
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/lang-css.css" type="text/css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/iframe-popup.css" type="text/css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plugins.css" type="text/css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/openid-comment.css" type="text/css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/style.css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/blogtopbar.css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/normal.css" type="text/css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/falcon-ad.css">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/iframe-popup.css" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feed.pixnet.net/blog/posts/rss/fecbob">
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="http://feed.pixnet.net/blog/posts/atom/fecbob">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://api.pixnet.cc/blog/xmlrpc?rsd=fecbob">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://api.pixnet.cc/static/blog/wlwmanifest.xml">
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/atrk.js" async="" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/checklogin.js"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/analytics.js" async=""></script><script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/jquery.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/jquery_002.js"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/json2.js" type="text/javascript"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/angular.js" crossorigin="anonymous"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/spin.js" type="text/javascript"></script><style type="text/css"></style>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/angular-spinner.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+var pix = pix || {};
+pix.panelsite = 'panel.pixnet.cc';
+pix.apisite = 'api.pixnet.cc';
+pix.login_name = '20a030f7c814fc29ce469f50a6d0f4c9';
+pix.visitor = "YzI4YjA0YjI4ZmQ1Mjg4N2M5MmQzY2JhMDBkYzA5MTE=";
+pix.openid = "YzI4YjA0YjI4ZmQ1Mjg4N2M5MmQzY2JhMDBkYzA5MTE=";
+pix.owner = 'fecbob';
+pix.is_owner = false;
+pix.server_name = 'fecbob.pixnet.net';
+pix.sToken = "8e6244afb136703ee2b2cbb20480f1e5";
+pix.pixfssite = 's.pixfs.net';
+pix.falconsite = 'falcon.pixanalytics.com';
+pix.checklogin_version = 2;
+// timezone: null;
+//-->
+</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/checklogin.php" type="text/javascript"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/checklogin_002.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+jQuery.noConflict();
+var pix = pix || {};
+pix.ab_testing_seed = 1701359196;
+dataLayer = window.dataLayer || [];
+//-->
+</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/en_US.js" type="text/javascript"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/pix.js" type="text/javascript" crossorigin="anonymous"></script><script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/tools.js"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/pix-addon.js" crossorigin="anonymous"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/all.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/blog.js" type="text/javascript" crossorigin="anonymous"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/search_selection.js" type="text/javascript"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ad-full-page.js" type="text/javascript" crossorigin="anonymous"></script>
+<meta itemprop="name" content="Android ProGuard實例教程 @ 資訊園 :: 痞客邦 PIXNET ::">
+<meta itemprop="description" content="ProGuard工 具通過移除不用的代碼，用語義上混淆的名字來重命名類、欄位和方法等手段來壓縮、優化和混淆你的代碼。結果是更小的.apk檔，並且更難於被反編譯。由 于ProGuard能夠讓你的程式難於">
+
+<script type="text/javascript">
+<!--
+var pix = pix || {};
+pix.js_error_type = pix.js_error_type || 'frontblog';
+//-->
+</script>
+<script async="" type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/pixlogger.js"></script>
+<script type="text/javascript">
+<!--
+(function(){
+    if (window.size().height > 10 && window.size().width > 10) {
+        var i = new Image(1,1);
+        i.src = '//counter.pixplug.in/count.php?timestamp=1460167230&random=1810461022&check=715410067&data[blog]=%7B%22blogid%22%3A%22882653%22%7D&data[blogarticle]=%7B%22blogid%22%3A%22882653%22%2C%22articleid%22%3A%2236288880%22%7D&height=' + window.size().height + '&width=' + window.size().width + '&referer=' + encodeURI(document.referrer);
+        i.onload = function() { return; }
+    }
+})();
+//-->
+</script>
+<!-- Head Modified: 1460167230 -->
+<!-- async script -->
+<script type="text/javascript">
+<!--
+jQuery(document).ready(function () {
+    jQuery.ajaxSetup({ cache: true });
+    jQuery.getScript("//js.pixplug.in/addon/11/production.js?v=1459926407", function(data, textStatus) { jQuery.ajaxSetup({cache: true});jQuery.pixAddonRelatedArticle({"blog_relatedarticleshow":"post","blog_relatedarticle":"site","blog_relatedtemplate":"system","addon_username":"fecbob","addon_expired_at":0,"addon_ismobile":false,"addon_isvip":false,"ab_testing_seed":1701359196});jQuery.ajaxSetup({cache: false}); });
+    jQuery.ajaxSetup({ cache: false });
+});
+//-->
+</script>
+
+<!-- load sync script -->
+
+<!-- execute sync addon -->
+<script type="text/javascript">
+<!--
+var pix = pix || {};
+pix.visitor_url = "http://fecbob.pixnet.net/blog";
+pix.visitor_timestamp = "1460167230";
+pix.visitor_nonce = "2235683410";
+pix.visitor_public = "LumrRMVHhADdttHSeUhMM8S3";
+pix.visitor_sig = "7e767c7c3ddae82f8da2d5465353d2b9";
+pix.user_name = null;
+pix.avatar_version = 0;
+(function() {
+    var js = document.createElement('script');
+    js.src = "\/\/s.pixfs.net\/visitor.pixplug.in\/checklogin.min.js?v=50b467822b98b0e003a22611c4a27daf";
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(js, s);
+})();
+//-->
+</script>
+    <script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/checkloop.js"></script>
+<script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/swfobject.js"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/getdata.php"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/mib_falcon.js" crossorigin="anonymous"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/checklogin"></script><link href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ba.css" type="text/css" rel="stylesheet"><script defer="defer" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ba.js" type="text/javascript"></script><script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/Bloggerads" ee_cuid="" id="$$ee_jsBloggerads" type="text/javascript"></script><script defer="defer" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/getads.aspx" type="text/javascript"></script><script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ada.js"></script><link href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/desktop.css" type="text/css" rel="stylesheet"><script async="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/rta_002.js" type="text/javascript"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:25px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:15px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:19px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:13px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:13px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:17px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script async="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/rta.js" type="text/javascript"></script><script async="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/rta_003.js" type="text/javascript"></script></head>
+
+<body id="article-main" data-showing-advertisement="yep" data-adsense-state="" data-blog-site-category-id="15" data-dfp-slot-id="" data-mobile-mode="none" data-article-id="36288880" class="category_1807027 article_36288880 folder_1388358">
+
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"H00Mh1aIE700wg", domain:"pixnet.net",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=H00Mh1aIE700wg" style="display:none" height="1" width="1" alt="" /></noscript>
+
+
+<style>
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: -220px;
+    bottom: 0;
+    float: left;
+    width: 220px;
+
+    /* reset */
+    font: normal 100 100% / 1 Arial;
+    font-variant: normal;
+    text-align: left;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-indent: 0;
+    word-spacing: 0;
+    letter-spacing: 0;
+
+    background: #e6e6e6;
+    overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+    .sidebar {
+        position: relative;
+    }
+}
+
+/* 顯示 sidebar */
+.show-sidebar .sidebar { left: 0; }
+.show-sidebar .main-container { margin-left: 220px; }
+.show-sidebar .topbar--fixed { left: 220px; }
+
+/* fixed 的狀態 */
+.sidebar--fixed {
+    position: fixed;
+}
+
+.sidebar--fixed > .keyword-articles-container,
+.sidebar--fixed .keyword-articles {
+    position: absolute;
+}
+
+.keyword-header {
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    text-align: center;
+    background: #3161dd;
+}
+
+.keyword-tags {
+    box-sizing: border-box;
+    padding: 5px 10px 10px;
+    background: #f3f3f3;
+}
+
+.keyword-tag {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-top: 7px;
+    border: 1px solid #3161dd;
+    padding: 5px 15px 3px 7px;
+    color: #3161dd;
+    font-size: 12px;
+    line-height: 15px;
+    background: #fff url('//front.pixfs.net/images/icon-arrow--blue.png') no-repeat right 6px top 8px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.keyword-tag:hover,
+.keyword-tag.active {
+    color: #fff;
+    background-color: #3161dd;
+    background-image: url('//front.pixfs.net/images/icon-arrow--white.png');
+}
+
+.keyword-articles-container {
+    top: 120px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0;
+    white-space: nowrap;
+}
+
+.keyword-articles {
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    width: 220px;
+    white-space: normal;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.keyword-articles:nth-of-type(2) { left: 220px; }
+.keyword-articles:nth-of-type(3) { left: 440px; }
+
+.keyword-article {
+    display: block;
+    margin: 5px 10px;
+    border-left: 3px solid transparent;
+    padding: 8px 10px 8px 7px;
+    background: #fff;
+}
+
+.keyword-article-min70 {
+    min-height: 70px;
+}
+
+.keyword-article:hover {
+    text-decoration: none;
+}
+
+.keyword-article:visited {
+    background: #eee;
+}
+
+.keyword-article.active,
+.keyword-article:hover {
+    border-color: #3161dd;
+    background: #fff;
+}
+
+.keyword-article__title {
+    color: #333;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.keyword-article:hover > .keyword-article__title {
+    color: #3161dd;
+    text-decoration: underline;
+}
+
+.keyword-article__desc {
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.keyword-article span {
+    color: #f00;
+}
+
+.keyword-article:not(.active):visited span {
+    color: currentColor;
+}
+
+.keyword-article:visited:hover span {
+    color: #f00;
+}
+
+.keyword-article + iframe {
+    margin-bottom: -14px;
+    min-height: 15px;
+}
+</style>
+
+<div class="sidebar sidebar--fixed" data-obstruct="" data-search="search">
+    <div class="keyword-header">依據 Google 關鍵字搜尋結果</div>
+    <div class="keyword-tags"></div>
+    <div class="keyword-articles-container"></div>
+</div>
+
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ypa-resize-pixnet.js"></script>
+
+<div class="main-container">
+
+        
+    
+    
+    <div class="topbar-placeholder" data-in-test="">
+        
+<div id="topbar" class="topbar  cssanimations borderradius boxshadow cssgradients">
+    <h2 class="topbar__logo"><a href="http://www.pixnet.net/" title="痞客邦 PIXNET">痞客邦 PIXNET</a></h2>
+
+            <form class="topbar__search" id="topbar__search" action="//www.pixnet.net/searcharticle" target="_search">
+        <input name="q" class="topbar__search__input" id="topbar__search__input" placeholder="哈囉～你今天想搜尋什麼關鍵字呢？" maxlength="32" tabindex="1" autocomplete="off" type="text">
+        <button type="reset" class="topbar__search__reset">×</button>
+
+        <div class="topbar__search__btns">
+            <button class="topbar__search__submit" name="search" type="submit" title="找文章" value="searcharticle" tabindex="2" data-counterlink="//counter.pixplug.in/count.php?timestamp=1460167230&amp;random=748028148&amp;check=543164488&amp;no_timeout=1&amp;data[counter]=%7B%22tag_id%22%3A30%2C%22id%22%3A%22search-articles-click%22%2C%22no_timeout%22%3Atrue%7D">找文章</button>
+            <button class="topbar__search__submit" name="search" type="submit" title="找部落客" value="searchblog" tabindex="3" data-counterlink="//counter.pixplug.in/count.php?timestamp=1460167230&amp;random=3147737195&amp;check=1981552211&amp;no_timeout=1&amp;data[counter]=%7B%22tag_id%22%3A30%2C%22id%22%3A%22search-bloggers-click%22%2C%22no_timeout%22%3Atrue%7D">找部落客</button>
+        </div>
+
+        <ul class="topbar__search__suggestion"></ul>
+    </form>
+
+    <div class="topbar__announce">
+        <a href="http://admin.pixnet.net/blog/post/43345138-%5b%e5%85%ac%e5%91%8a%5d-%e7%97%9e%e5%ae%a2%e9%82%a6-pixnet-mib-%28money-in-blog%29-%e9%83%a8%e8%90%bd%e6%a0%bc%e5%bb%a3" class="topbar__announce__item topbar__announce__item--hide" title="[公告] 痞客邦 PIXNET MIB (MONEY IN BLOG) 部落格廣告分潤計劃新增／調整" target="_announce" tabindex="-1">[公告] 痞客邦 PIXNET MIB (MONEY IN BLOG) 部落格廣告分潤計劃新增／調整</a><a href="http://admin.pixnet.net/blog/post/43342759-%5b%e5%85%ac%e5%91%8a%5d-2016%e5%b9%b4%e5%ba%a6%e8%be%b2%e6%9b%86%e6%98%a5%e7%af%80%e6%9c%9f%e9%96%93%e6%9c%8d%e5%8b%99%e5%85%ac%e5%91%8a" class="topbar__announce__item" title="[公告] 2016年度農曆春節期間服務公告" target="_announce" tabindex="-1">[公告] 2016年度農曆春節期間服務公告</a><a href="http://admin.pixnet.net/blog/post/43158973-%5b%e5%85%ac%e5%91%8a%5d-%e7%97%9e%e5%ae%a2%e9%82%a6%e3%80%8c%e5%bc%95%e7%94%a8%e3%80%8d%e5%8a%9f%e8%83%bd%e5%b0%87%e6%96%bc-2016-%e5%b9%b4-1-%e6%9c%88-11" class="topbar__announce__item topbar__announce__item--hide" title="[公告] 痞客邦「引用」功能將於 2016 年 1 月 11 日正式終止" target="_announce" tabindex="-1">[公告] 痞客邦「引用」功能將於 2016 年 1 月 11 日正式終止</a><a href="http://admin.pixnet.net/blog/post/43145044-%5b%e5%85%ac%e5%91%8a%5d-%e7%95%99%e8%a8%80%e6%9d%bf%e5%b0%87%e6%96%bc-2016-%e5%b9%b4-1-%e6%9c%88-4-%e6%97%a5%e8%bd%89%e6%8f%9b%e7%82%ba%e6%87%89%e7%94%a8" class="topbar__announce__item topbar__announce__item--hide" title="[公告] 留言板將於 2016 年 1 月 4 日轉換為應用市集「留言板」APP 服務" target="_announce" tabindex="-1">[公告] 留言板將於 2016 年 1 月 4 日轉換為應用市集「留言板」APP 服務</a><a href="http://admin.pixnet.net/blog/post/42929975-%5b%e5%85%ac%e5%91%8a%5d-%e7%97%9e%e5%ae%a2%e9%82%a6%e7%ac%ac%e4%ba%8c%e5%b1%86%e9%87%91%e9%bb%9e%e8%b3%9e%e7%99%bb%e5%a0%b4%ef%bc%81%e5%85%a8%e5%8f%b0%e6%9c%80%e5%85%b7%e5%85%ac" class="topbar__announce__item topbar__announce__item--hide" title="[公告] 痞客邦第二屆金點賞登場！全台最具公信力的社群內容年度大賞" target="_announce" tabindex="-1">[公告] 痞客邦第二屆金點賞登場！全台最具公信力的社群內容年度大賞</a>    </div>
+    
+        
+    <div class="topbar__nav">
+
+        
+            <div class="topbar__user ">
+            <a class="topbar__user__login" id="topbar__user__login" href="https://www.pixnet.net/?done=http%3A%2F%2Ffecbob.pixnet.net%2Fblog%2Fpost%2F36288880---android-proguard%25E5%25AF%25A6%25E4%25BE%258B%25E6%2595%2599%25E7%25A8%258B">登入</a>
+        </div>
+            <div class="topbar__lang ">
+            <a href="###" class="topbar__lang__switcher topbar__dropdown-btn" title="語系">EN</a>
+
+            <ul class="topbar__lang__lists topbar__dropdown-lists">
+                                <li class="topbar__lang__list"><a href="###" data-lang="zh_TW">繁中</a></li>
+                                <li class="topbar__lang__list"><a href="###" data-lang="zh_CN">簡中</a></li>
+                                <li class="topbar__lang__list"><a href="###" data-lang="ja_JP">日語</a></li>
+                            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+    
+  <div id="body-div">
+  <a name="top"></a>
+  <div id="container">
+    <div id="container2">
+      <div id="container3">
+          <div id="header">
+            <div id="banner">
+		<h1><a href="http://fecbob.pixnet.net/blog">資訊園</a></h1>
+              <p class="skiplink"><a href="#article-area" title="skip the page header to the main content">Skip to article</a></p>
+              <h2>本部落格的文章和圖片大多來自網路，如有侵權請告知，以便刪除</h2>
+	      <p id="blog-category">Global blog category: <a href="http://www.pixnet.net/blog/bloggers/category/15" target="_blank">Digital Life</a></p>
+            </div>
+            <ul id="navigation">
+              <li id="link-album"><a href="http://fecbob.pixnet.net/album" title="go to gallery page of this user">Album</a></li>
+              <li id="link-blog"><a href="http://fecbob.pixnet.net/blog" title="go to index page of this blog">Blog</a></li>
+              <li id="link-guestbook">
+                                <a id="guestbook" data-msg="尚未安裝留言板，無法進行留言" data-action="none" href="#" title="go to guestbook page of this user">Guestbook</a>
+                            </li>
+              <li id="link-profile"><a href="http://www.pixnet.net/blog/profile/fecbob" title="go to profile page of this user">Profile</a></li>
+            </ul>
+          </div><!-- #header//-->
+          <div id="main">
+            <div id="content">
+				<div id="article-area">
+    <div id="article-box">
+    		<div class="article">
+	    <ul class="article-head">
+		<li class="publish"><span class="month">Dec </span><span class="date">01 </span><span class="day">Thu </span><span class="year">2011 </span><span class="time">14:51</span></li>
+		<li class="title" id="article-36288880" data-hot-link="//www.pixnet.net/blog/articles/category/0" data-site-category="Digital Life" data-site-category-id="24" data-article-link="http://fecbob.pixnet.net/blog/post/36288880"><h2><a href="http://fecbob.pixnet.net/blog/post/36288880">	 Android ProGuard實例教程</a></h2></li>
+	    </ul>
+	    <div class="article-body">
+	    		<div class="bookmark"><span style="position:relative;top:-7px;">分享:</span>&nbsp;<a title="喀嚓到7Headlines" href="javascript:(function(){var%20pixheadlines=document.createElement('script');pixheadlines.setAttribute('language','javascript');pixheadlines.setAttribute('src','http://www.7headlines.com/static/js/clip.min.js?random=768.2566974948219');document.getElementsByTagName('head')[0].appendChild(pixheadlines);})();"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/7headlines.gif" title="7Headlines" alt="7Headlines" style="height:20px;width:55px;" border="0"></a>&nbsp;<a title="分享至facebook" data-bookmark-type="facebook"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/facebook.gif" title="facebook" alt="facebook" style="width:18px;height:20px;" border="0"></a>&nbsp;<a title="分享至PLURK" data-bookmark-type="plurk"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plurk.gif" title="PLURK" alt="PLURK" style="width:18px;height:20px;" border="0"></a>&nbsp;<a title="分享至twitter" data-bookmark-type="twitter"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/twitter.gif" title="twitter" alt="twitter" style="width:18px;height:20px;" border="0"></a>&nbsp;<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/fastbutton.html" name="I0_1460167244927" id="I0_1460167244927" vspace="0" tabindex="0" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div>&nbsp;<iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/like.html" scrolling="no" style="border:none; overflow:hidden; width:90px; height:21px;" allowtransparency="true" frameborder="0"></iframe></div><div class="article-content">
+		    
+		    <div class="article-content-inner">
+		    <div id="sina_keyword_ad_area2" class="articalContent  ">
+<div>
+<div class="force_dir"><span><span lang="zh-cht">ProGuard工 具通過移除不用的代碼，用語義上混淆的名字來重命名類、欄位和方法等手段來壓縮、優化和混淆你的代碼。</span><span lang="zh-cht">結果是更小的.apk檔，並且更難於被反編譯。</span><span lang="zh-cht">由 于ProGuard能夠讓你的程式難於被反編譯，因此，當你的程式使用了一些機密的資訊的時，使用它就顯得更加重要。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span><span lang="zh-cht">ProGuard已經集成到Android的編譯環境中，因此，用不著手動來觸發它。</span><span lang="zh-cht">ProGuard只在release模式下編譯應用程式才會運行，所以，在debug模式下編譯，你就不必處理混淆的代碼。</span><span lang="zh-cht">是否運行ProGuard是完全可選的，但強烈推薦使用。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">啟用ProGuard</span></div>
+<div class="force_dir"><span><span lang="zh-cht">當你創建Android工 程時，proguard.cfg檔會在工程的根目錄自動創建。</span><span lang="zh-cht">這個檔定義了ProGuard如何優化和混淆代碼，因此，理解如何定制它是非常重要的。 </span><span lang="zh-cht">預設的設定檔只是覆蓋了一些通用的情況，所以，基本上你需要編輯它來滿足你的需求。</span><span lang="zh-cht">參考後面的“配置ProGuard”章節來瞭解如何定制 ProGuard的相關資訊。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span><span lang="zh-cht">啟用ProGuard讓它跟隨Ant或Eclipse編譯時一起運行，你需要在&lt;project_root&gt;/default.properties檔中設置proguard.config屬性。</span><span lang="zh-cht">路徑可以是絕對路徑或是工程根目錄的相對路徑。 </span><span lang="zh-cht">如果你把proguard.cfg檔放在預設的位置（工程的根目錄），你可以像這樣來指定它的位置： proguard.config=proguard.cfg</span></span></div>
+<div class="force_dir"><span lang="zh-cht">你還可以把該檔移到任何你想放的位置，然後指定絕對路徑：proguard.config=/path/to/proguard.cfg</span></div>
+<div class="force_dir"><span><span lang="zh-cht">當你在release模式下編譯你的程式，不管是用ant release還是用Eclipse的匯出嚮導，編譯系統都會自動檢查proguard.config屬性是否設置。</span><span lang="zh-cht">如果設置了，ProGuard就會在 打包成.apk檔之前，自動處理應用程式的位元組碼。</span><span lang="zh-cht">Debug模式編譯，不會觸發ProGuard，因為它會使得調試更加複雜累贅。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">ProGuard運行結束後，輸出以下檔： dump.txt</span></div>
+<div class="force_dir"><span lang="zh-cht">描述.apk檔中所有類檔間的內部結構</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">mapping.txt</span></div>
+<div class="force_dir"><span><span lang="zh-cht">列出了原始的類，方法和欄位名與混淆後代碼間的映射。</span><span lang="zh-cht">這個檔很重要，當你從release版本中收到一個bug報告時，可以用它來翻譯被混淆的代碼。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">seeds.txt</span></div>
+<div class="force_dir"><span lang="zh-cht">列出了未被混淆的類和成員</span></div>
+<div class="force_dir"><span lang="zh-cht">usage.txt</span></div>
+<div class="force_dir"><span lang="zh-cht">列出了從.apk中刪除的代碼</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">這些檔放在以下資料夾中：</span></div>
+<div class="force_dir"><span lang="zh-cht">Ant：&lt;project_root&gt;/bin/proguard</span></div>
+<div class="force_dir"><span lang="zh-cht">Eclipse: &lt;project_root&gt;/proguard</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span><span lang="zh-cht">注意：每當你在release模式下編譯時，這些檔都會被覆蓋重寫，當然，是被ProGuard工具生成的最新的檔所覆蓋。</span><span lang="zh-cht">每次你發佈你的程式時，都應該保存一份，為了將來能夠解碼bug報告。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">配置 ProGuard</span></div>
+<div class="force_dir"><span><span lang="zh-cht">一些情況下，proguard.cfg檔中的預設配置就足夠了。</span><span lang="zh-cht">然而，有些情況ProGuard也很難正確分析，它可能會刪除它認為不用的代碼，但實際上正是你的程式所需要的。</span><span lang="zh-cht">例如：</span></span></div>
+<div class="force_dir"><span lang="zh-cht">只在AndroidManifest.xml檔中引用的類</span></div>
+<div class="force_dir"><span lang="zh-cht">由JNI調用的方法</span></div>
+<div class="force_dir"><span lang="zh-cht">動態引用的欄位和方法</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">預設的proguard.cfg檔努力去覆蓋通用的情況，但有可能你會遇到如ClassNotFoundException這樣的異常，而這正好是由於ProGuard移除了整個類造成的。</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span><span lang="zh-cht">你可以修正由於ProGuard移除代碼造成的錯誤，只需要在proguard.cfg檔中添加一行“-keep”。</span><span lang="zh-cht">例如：</span></span></div>
+<div class="force_dir"><span lang="zh-cht">-keep public class &lt;MyClass&gt;</span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span><span lang="zh-cht">使用-keep選項時，有一些選項和建議，因此，強烈建議你閱讀ProGuard手冊來瞭解更多關於定制設定檔的資訊。</span><span lang="zh-cht">“Overview of Keep options”和“Examples section”將非常有用。</span></span></div>
+<span style="font-family: Arial,宋体;"><span style="font-family: Arial,宋体;"><span style="line-height: 26px;"><br></span></span></span>
+<div class="force_dir"><span lang="zh-cht">轉自</span><span style="font-family: Arial,宋体;"><span style="line-height: 26px;">：</span></span><a href="http://android.tgbus.com/Android/tutorial/201107/358743.shtml">http://android.tgbus.com/Android/tutorial/201107/358743.shtml</a></div>
+</div>
+</div>
+                        
+
+		    </div>
+		</div><div class="pix-related-post pix-related-post-showed"><div class="demo recommended-posts recommended-posts3"><h5><span>您可能會有興趣的文章</span></h5><ul class="demo"><li><a href="http://mrmad.pixnet.net/blog/post/211185490" class="source-emmahot" target="_blank"><div class="article-image-box"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/100x100.png" class="article-image"></div><span class="article-text">[iPhone/iPad教學]免越獄也能讓iOS9.0~iOS9.3.x達成螢幕錄影功能「airshou」</span></a></li><li><a href="http://falcon.pixanalytics.com/ad/r?i=0bfda0274443ea1058f8394f0f5bb29c&amp;p=1013&amp;u=9c1b203f3108444f99f40e5f5e12ad3c&amp;c=CgEBflb0mcJSU39fFWFuAg%3D%3D" class="source-ec_ad" target="_blank"><div class="article-image-box"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/0bfda0274443ea1058f8394f0f5bb29c-82522b77521cfb4c.png" class="article-image"></div><span class="article-text">SHOPBOP開台慶 3.1 Philip Lim免費送！</span></a></li><li><a href="http://falcon.pixanalytics.com/ad/r?i=c1e316a2deae8dece3694d96488c6315&amp;p=673&amp;u=777e1edeb2c64396bf186a323dbc323b&amp;c=CgEBflb0mcJSU39fFWFuAg%3D%3D" class="source-ad" target="_blank"><div class="article-image-box"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/c1e316a2deae8dece3694d96488c6315-8fcf71fbe1b8df35.jpg" class="article-image"></div><span class="article-text">有了它！讓你看盡天下事！</span></a></li></ul></div></div> <!-- .article-content //-->
+
+				<p class="author">
+		    Posted by shadow at <a href="http://www.pixnet.net/">痞客邦 PIXNET</a>                    <a href="http://fecbob.pixnet.net/blog/post/36288880#comments">Guestbook</a>(0) <span class="author-views">人氣(<span id="BlogArticleCount-36288880">7904</span>)</span>
+		    		</p> <!-- .author //-->
+		<div class="forward"><form method="POST" id="0rz-form" action="http://0rz.tw/create" target="_blank"><input name="url" value="http://fecbob.pixnet.net/blog/post/36288880" type="hidden"> </form><a href="#" data-0rz-url="true"><img style="" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/push_0rz_icon.gif">產生短網址</a>
+		    		</div> <!-- .forward //-->
+		<br>
+<div style="position: static !important; display:block !important;visibility: visible !important; float: none !important; text-align: center">
+<div style="width: 620px; height: 250px; padding-bottom: 10px;">
+    <div id="s02f8609fb50c4484b7981077" style="width: 300px; height: 250px; float: left; padding-right: 1px;">                <div id="pixad1077d"><iframe marginwidth="0" marginheight="0" framespacing="0" scrolling="NO" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ad.html" frameborder="0" height="250" width="300"></iframe></div>
+    </div>
+    <div id="s02f8609fb50c4484b7981032" style="width: 300px; height: 250px; float: left;">
+    </div>
+</div>
+<script type="text/javascript">
+(function($) {
+    var w = $('.article-content:first').width();
+    if (w >= 600) {
+                jQuery.getScript('//falcon.pixanalytics.com/ad/js?blog_category=15&article_category=24&fields[]=s02f8609fb50c4484b7981032,1032')    } else if (w >= 550 && w <= 599) {
+                jQuery.getScript('//falcon.pixanalytics.com/ad/js?blog_category=15&article_category=24&fields[]=s02f8609fb50c4484b7981032,1603')    } else {
+                jQuery.getScript('//falcon.pixanalytics.com/ad/js?blog_category=15&article_category=24&fields[]=s02f8609fb50c4484b7981032,1606')    }
+})(jQuery);
+</script>
+</div>
+	    </div> <!-- .article-body //-->
+	    <div class="article-footer">
+		<ul class="refer">
+		    <li>全站分類：<a href="http://www.pixnet.net/blog/articles/category/24">Digital Life</a></li>		    <li>Personal Category:<a href="http://fecbob.pixnet.net/blog/category/1807027">工具類(Tools)</a></li>		    <li>Previous post in this category:  <a class="quick-nav--cat-pre" href="http://fecbob.pixnet.net/blog/post/36194517">	 優化APK的新工具zipalign</a></li>
+<li>Next post in this category:  <a class="quick-nav--cat-next" href="http://fecbob.pixnet.net/blog/post/36422002">Pocket Ubuntu:安裝</a></li>
+		    <li>上一篇： <a class="quick-nav--pre" rel="prev" href="http://fecbob.pixnet.net/blog/post/36288844" data-public-at="1322722074" data-thumb="http://s.pixfs.net/mobile/images/blog/article-image.png">	 Android launcher 的平滑和立體翻頁效果(轉)</a></li>
+<li>下一篇： <a class="quick-nav--next" rel="next" href="http://fecbob.pixnet.net/blog/post/36367196" data-public-at="1322723700" data-thumb="http://s.pixfs.net/mobile/images/blog/article-image.png">VS.NET讀取純真IP資料庫(VB)</a></li>
+		</ul>
+		<div class="history">
+<h6>Posts on this date</h6>
+<ul>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/37143010">[Android]  ArrayAdapter 警聲 </a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36290426">	 	 nmap掃描小技巧</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36289954">IPHONE 防止螢幕暗掉鎖屏</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36289940">	 [轉載]ipa打包</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36289866">android POST、GET 操作類</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36373874">VB.NET實現PC與掌上型電腦PPC的雙向通信</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36289554">iPad3螢幕有望 東芝液晶螢幕超越視網膜(轉)</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36367196">VS.NET讀取純真IP資料庫(VB)</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36288844">	 Android launcher 的平滑和立體翻頁效果(轉)</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36288826">android平板上的GridView視圖緩存優化</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36288748">	 	 Android自帶的人臉識別(轉)</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36287896">	 [轉]Java OCR 圖像智慧字元識別技術，可識別中文</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36287856">	 Android中利用commons-email.jar和 mail.jar 發送和接受郵件</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36287790">android 資料備份恢復的一種實現(轉)</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36287760">android 檔案上傳</a></li>
+<li>2011: <a href="http://fecbob.pixnet.net/blog/post/36287612">	 Android 獲取麥克風音量</a></li>
+</ul>
+</div>
+	    		<div class="back-to-top"><a href="#top" title="back to the top of the page">▲top</a></div>
+	    </div> <!-- .article-footer //-->
+        </div>
+
+<script>
+// track 上下篇點擊
+(function ($) {
+    'use strict';
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-408650-10', 'auto', {'name': 'quickNavTracker'});
+
+    var referBlock = $('.refer'),
+        quickNav = {
+            catPre: {
+                selector: '.quick-nav--cat-pre',
+                name: '此分類上一篇',
+            },
+            catNext: {
+                selector: '.quick-nav--cat-next',
+                name: '此分類下一篇',
+            },
+            pre: {
+                selector: '.quick-nav--pre',
+                name: '上一篇',
+            },
+            next: {
+                selector: '.quick-nav--next',
+                name: '下一篇',
+            }
+        },
+
+        trackEvent = function (action, label) {
+            ga('quickNavTracker.send', 'event', 'blog-related-article', action, label, { nonInteraction: ('imps' === action) });
+        },
+
+        bindClick = function (selector, label) {
+            referBlock.on('click', selector, function () {
+                trackEvent('click', label);
+            });
+        };
+
+    for (var key in quickNav) {
+        var obj = quickNav[key];
+        if (referBlock.find(obj.selector).length) {
+            // 記錄曝光
+            trackEvent('imps', obj.name);
+
+            // 點擊時紀錄
+            bindClick(obj.selector, obj.name);
+        }
+    }
+})(jQuery);
+</script>
+	</div> <!-- #article-box //-->
+		  <div id="user-post">
+    <div id="comment-box" class="user-post-box">
+      <a name="comments"></a>
+      <h3 id="comment-title" class="user-post-title" onclick="pix.commentSwitch('comment-text','comment-text-switch');" style="cursor:hand;cursor:pointer;"><img id="comment-text-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/minus.gif"> <span>留言列表 (0)</span></h3>
+      <div class="post-comment"><a href="http://fecbob.pixnet.net/blog/post/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B#comment-form">Post Comment</a></div>
+
+      <div id="comment-text" class="user-post-text">
+            </div> <!-- #comment-text //-->
+      <div id="comment_form"><a name="comment-form"></a>
+<form class="json-form" target="_blank" method="POST" action="http://fecbob.pixnet.net/blog/postcomment/36288880">
+    <input name="sToken" value="8e6244afb136703ee2b2cbb20480f1e5" type="hidden">
+    <div id="comment-area">
+        <div id="comment-area-2">
+            <iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/blogarticle.html" marginheight="0" marginwidth="0" scrolling="no" border="0" frameborder="0"></iframe>
+                        <div class="comment-identity identity-logout">
+                <div class="choose-identity">
+                    <a href="https://www.pixnet.net/?done=http%3A%2F%2Ffecbob.pixnet.net%2Fblog%2Fpost%2F36288880%23comment-form" class="openid-pixnet"><span class="invisible">PIXNET</span></a>
+                    <a href="https://panel.pixnet.cc/login/facebooklogin?done=http%3A%2F%2Ffecbob.pixnet.net%2Fapi%2Fpopuplogin%3Fdone%3Dhttp%253A%252F%252Ffecbob.pixnet.net%252Fblog%252Fpost%252F36288880%2523comment-form&amp;without_signup=1&amp;without_full_perm=1" class="openid-facebook" onclick="window.open(this.href, 'login', config='height=650,width=650,scrollbars=1,resizable=0'); return false; "><span class="invisible">Facebook</span></a>
+                    <a href="https://panel.pixnet.cc/login/openid?done=http%3A%2F%2Ffecbob.pixnet.net%2Fapi%2Fpopuplogin%3Fdone%3Dhttp%253A%252F%252Ffecbob.pixnet.net%252Fblog%252Fpost%252F36288880%2523comment-form&amp;openid=https%3A%2F%2Fme.yahoo.com%2F&amp;without_signup=1" class="openid-yahoo" onclick="window.open(this.href, 'login', config='height=500,width=450,scrollbars=1,resizable=0'); return false; "><span class="invisible">Yahoo!</span></a>
+                    <a href="https://panel.pixnet.cc/login/googlepluslogin?done=http%3A%2F%2Ffecbob.pixnet.net%2Fapi%2Fpopuplogin%3Fdone%3Dhttp%253A%252F%252Ffecbob.pixnet.net%252Fblog%252Fpost%252F36288880%2523comment-form&amp;without_signup=1" class="openid-google" onclick="window.open(this.href, 'login', config='height=500,width=450,scrollbars=1,resizable=0'); return false; "><span class="invisible">Google</span></a>
+                    <a href="https://panel.pixnet.cc/login/livelogin?done=http%3A%2F%2Ffecbob.pixnet.net%2Fapi%2Fpopuplogin%3Fdone%3Dhttp%253A%252F%252Ffecbob.pixnet.net%252Fblog%252Fpost%252F36288880%2523comment-form&amp;without_signup=1" class="openid-msn" onclick="window.open(this.href, 'login', config='height=500,width=470,scrollbars=1,resizable=0'); return false; "><span class="invisible">MSN</span></a>
+                </div>
+            </div>
+                        <div class="comment-body">
+                                                        <p>You haven’t logged in yet, please use<b> guest </b> status to leave message. You can also log in with above service account and leave message</p>
+                    <input name="blogcommenttext_name" id="comment_showname" class="comment-name" placeholder="您的暱稱 ..." type="text">                                    <div class="comment-textarea">
+                    <textarea name="blogcommenttext_body" id="comment_text" placeholder="留個言吧 ..."></textarea>                                        <div class="private-message"><label><input name="blogcomment_open" id="comment_open" value="0" type="checkbox">Private Comment</label></div>
+                                        <div id="nologin_hidden_msg" class="private-notice" style="display: none">Visitor’s comment is unable for viewing moderator reply. We recommend you to log in and then post comment.</div>
+                                                        </div><!-- .comment-textarea -->
+
+                                <div id="comment-area-ad" style="display:none">
+                                    </div>
+                <div class="captcha" style="display:none" id="captcha">
+                    <a id="authcode-link-url" href="#" target="_blank"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/200x50.jpeg" id="authcode-url" class="authcode-url"></a>
+                    <div>Please input verification code on left:<input name="authCode" class="text-input" type="text"><a class="reload-captcha" href="#">Cannot understand, change to another image</a></div>
+                </div>
+                
+                <div class="comment-extra">
+                    <div id="unfold-comment-extra"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/comment-unfold.jpg"> other options</div>
+                    <button type="submit"><span>submit message</span></button>
+                </div>
+
+                <div id="comment-extra" class="extra" style="display:none"><input name="blogcommenttext_mail" class="text-input" id="comment_mail" placeholder="電子郵件 ..." type="text"><input name="blogcommenttext_url" class="text-input" id="comment_url" placeholder="個人網頁 ..." type="text"></div>
+                            </div><!--.comment-middle-->
+        </div><!-- #comment-area-2-->
+    </div><!-- #comment-area -->
+</form>
+
+
+</div>
+    </div> <!--  #comment-box //-->
+  </div> <!-- #user-post //-->
+<script type="text/javascript">
+<!--
+jQuery(function() {
+    //#40294 用ajax接postcommentAction產生的comment form
+    var action = location.href;
+    action = action.replace('/post/', '/postcomment/');
+    jQuery.ajaxSetup({ cache: true });
+    jQuery.ajax({
+        type:     'GET',
+        url:      action,
+        data:     {"getForm": 1, "isMobile": 0},
+        dataType: 'json',
+        success:  function(data)
+                  {
+                      jQuery('#comment_form').html(data.form);
+
+                      setTimeout(function () {
+                      if (jQuery.pixQuestionary && 'function' === typeof jQuery.pixQuestionary) {
+                          jQuery.pixQuestionary(pix.user_name);
+                      }
+                      }, 1000);
+
+                      // 用來判斷是否有安裝'留言插入表情符號' App
+                      if (jQuery.pixAddonCommentEmotion && 'function' === typeof jQuery.pixAddonCommentEmotion) {
+                          // 裝了App 但沒表情符號可選, 須重新call function
+                          if (! document.getElementById('comment-emotion')) {
+                              jQuery.pixAddonCommentEmotion();
+                          }
+                      }
+                  },
+        error:    function(error)
+                  {
+                      console.log(error);
+                  }
+    });
+    jQuery.ajaxSetup({ cache: false });
+
+    jQuery('.comment-icon').attr('style', 'vertical-align:middle;');
+});
+// -->
+</script>
+
+
+	    </div> <!-- #article-area //-->
+            </div> <!-- #content //-->
+            <div id="links">
+              <div id="links-row-1">
+                                    <div class="hslice box yc0e0aa-miB-ad-sidebar-v2-yc0e0aa">
+    <div class="box-text entry-content">
+        <div class="yc0e0aa-miB-border-yc0e0aa">
+            <div class="yc0e0aa-siTemajidr-yc0e0aa" model="180x280"><a href="http://falcon.pixanalytics.com/mib/adc?a=8c6fc22389502a7f1ab218451877f156&amp;s=1&amp;h=863f4ce89bc9b2f0d6179aa696419409&amp;u=1dc11bb687414b0b89fffcef90f87d7c&amp;v=4224f3f97b2e54aa76db1c6ac1b10425&amp;c=CgEBflb0mcJSU39fFWFuAg%3D%3D&amp;cate=15&amp;acate=24" target="_blank"><img style="margin:0 auto;display:block;min-width:180px;min-height:280px;" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/8c6fc22389502a7f1ab218451877f156-ab91a129e33e8b3a.jpg"></a><span class="mib--ad-box__icon"><a href="#">痞客邦廣告聯播網</a></span></div>
+        </div><!-- /.mib-border -->
+    </div>
+</div>
+<div class="hslice box folder" id="box1279011">
+    <h4 class="box-title entry-title">
+	BloggerAds	    </h4>
+    <div class="box-text entry-content">
+
+<script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/showads.aspx"></script><ins id="BA_AD" onclick="return false;" align="left"><ins onmouseover="b1596242449.hO()" onmouseout="b1596242449.hC()" class="ba_title" onclick="window.open('http://js1.bloggerads.net/h_click.aspx?b=20110429000035')"></ins><ins class="ba_ad_panel"><ins class="ba_ad_area" id="ba_ad_0" onmouseover="b1596242449.aC(this, 0, 'i')" onmouseout="b1596242449.aC(this, 0, 'o')" style="text-align:center;padding: 6px 0 6px 0;"><iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/BA_s_flv_160224_Expedia.html" border="0" cellspacing="0" allowtransparency="true" scrolling="no" frameborder="0" height="290" width="160"></iframe></ins></ins><ins class="ba_ad_panel"><ins class="ba_ad_area_f" id="ba_ad_1" onmouseover="b1596242449.aC(this, 1, 'i')" onmouseout="b1596242449.aC(this, 1, 'o')"><ins class="ba_ad_title" onclick="b1596242449.aC(this, 1, 'ck')"></ins><ins class="ba_ad_picture" id="ba_ad_01591787769880374" onclick="b1596242449.aC(this, 1, 'ck')" style="height:290px"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/BA_s_flv_160323_TransAsia.gif" height="290" width="160" border="0"></ins><ins class="ba_ad_body" onclick="b1596242449.aC(this, 1, 'ck')"></ins><ins class="ba_ad_more" onclick="b1596242449.aC(this, 1, 'ck')">更多訊息..</ins></ins></ins><ins class="ba_ad_panel"><ins class="ba_ad_area" id="ba_ad_2" onmouseover="b1596242449.aC(this, 2, 'i')" onmouseout="b1596242449.aC(this, 2, 'o')" style="text-align:center;padding: 6px 0 6px 0;"><iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/BA_s_flv_160224_Expedia_002.html" border="0" cellspacing="0" allowtransparency="true" scrolling="no" frameborder="0" height="290" width="160"></iframe></ins></ins><ins class="ba_foot" onclick="window.open('http://js1.bloggerads.net/h_click.aspx?b=20110429000035')"></ins></ins>    </div>
+</div> <!-- #box1279011 //-->
+<div class="hslice box folder" id="box1322994">
+    <h4 class="box-title entry-title">
+	BloggerAds 賺錢	    </h4>
+    <div class="box-text entry-content">
+
+<a href="http://author.bloggerads.net/01_join_read.aspx?refid=20427&amp;id=20110421000043" target="_blank"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/hanakodoll_125x200_pb.jpg" border="0"></a>    </div>
+</div> <!-- #box1322994 //-->
+<div class="hslice box folder" id="box1332713">
+    <h4 class="box-title entry-title">
+	加入網路賺錢一族	    </h4>
+    <div class="box-text entry-content">
+
+<a href="http://author.bloggerads.net/01_join_read.aspx?refid=20071&amp;id=20110421000043" target="_blank"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/MAM_120_60_2.gif" border="0"></a>    </div>
+</div> <!-- #box1332713 //-->
+<div class="hslice box" id="mylink">
+    <h4 class="box-title entry-title">
+	熱門連結	    </h4>
+    <div class="box-text entry-content">
+
+            <div class="inner-box">
+	<ul><!-- ie6bug
+              --><li><a title="" href="http://polcar.epa.gov.tw/public/pub_news.asp" target="_blank">檢舉烏賊車賺獎金</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.ttv.com.tw/videocity/video_play.asp?id=76484" target="_blank">台視影音</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.ctitv.com.tw/news_video_c14v67648.html" target="_blank">中天新聞</a></li><!-- ie6bug
+              --><li><a title="" href="http://gphonefans.net/forum.php?mod=forumdisplay&amp;fid=15&amp;page=1" target="_blank">Android 軟體工具</a></li><!-- ie6bug
+              --><li><a title="BJD娃娃官方網站" href="http://www.as-doll.com/china/" target="_blank">AS天使工房</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.sports-tracker.com/" target="_blank">Sports Tracker</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.azone-int.jp/" target="_blank">Azone日本官網</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.orient-doll.com/" target="_blank">ORIENT 官網</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.obitsu.co.jp/" target="_blank">OBITSU日本官網</a></li><!-- ie6bug
+              --><li><a title="" href="http://www.csto.com/" target="_blank">CSTO全球最大的中文IT專案外包平台</a></li><!-- ie6bug
+        	--></ul>
+    </div>
+        </div>
+</div> <!-- #mylink //-->
+<script type="text/javascript">
+<!--
+jQuery(function($) {
+    $('#mylink h6.expandable').click(function() {
+	var plus_img = "\/\/s.pixfs.net\/blog\/images\/choc\/plus.gif";	
+	var minus_img = "\/\/s.pixfs.net\/blog\/images\/choc\/minus.gif";
+	$(this).siblings('ul').toggle();
+	$img = $('> img', this);
+	if ($img.attr('src') == plus_img) {
+	    $img.attr('src', minus_img);
+	} else {
+	    $img.attr('src', plus_img);
+	}
+    });
+});
+//-->
+</script>
+
+              </div> <!-- #links-row-1 //-->
+              <div id="links-row-2">
+                  <div class="hslice box google-adsense" id="googleadsense2">
+    <h4 class="box-title entry-title">
+	Google ads	    </h4>
+    <div class="box-text entry-content">
+
+<script type="text/javascript">
+    google_ad_client = "ca-pub-2484227596375532";
+    google_ad_host = "ca-host-pub-2647689032095179";
+    google_ad_slot = "2205667126";
+    google_ad_width = 200;
+    google_ad_height = 200;
+</script>
+<!-- ADUNIT002 -->
+<script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="200" width="200"></iframe></ins></ins>    </div>
+</div> <!-- #googleadsense2 //-->
+<div class="hslice box" id="category">
+    <h4 class="box-title entry-title">
+	Categories	    </h4>
+    <div class="box-text entry-content">
+
+<div class="box-more">
+<img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/expand.gif" alt="unfold all categories" style="cursor:hand;cursor:pointer;" onclick="pix.openAllCategory('open');">
+<img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/collapse.gif" alt="fold all categories" style="cursor:hand;cursor:pointer;" onclick="pix.openAllCategory('close');">
+</div>
+
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388354','category-1388354-switch');"><img id="category-1388354-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> iPhone (22)</h6>
+<ul id="category-1388354" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1993762">iOS (107)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1858969">網站類 (18)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1858979">繪圖類 (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1858985">照相類 (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1859009">觸控類 (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854867">遊戲類 (10)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856601">ipad (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817860">地圖類 (17)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817862">通訊類 (22)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1832904">安全類 (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817954">進階類 (86)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1814584">界面類 (97)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817838">安全類 (12)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817868">工具類 (48)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817952">硬體類 (36)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813324">系統類 (167)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1984495">界面設計類 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1774577">IPHONE (124)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813320">網路類 (95)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813322">多媒體類 (99)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1814616">資料庫類 (25)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1832906">最新資訊 (21)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388358','category-1388358-switch');"><img id="category-1388358-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> Android (37)</h6>
+<ul id="category-1388358" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1984459">AppInventor類 (19)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1807025">遊戲類(Game) (83)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/2014465">Corona (11)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/2018036">初學者 (17)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1807005">Map類 (153)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856997">手勢類(gesture) (8)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1967533">NFC類 (9)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1972366">Mindwave Mobile (0)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1978717">TTS類 (32)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1852413">日誌類(Log) (32)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856999">Drivers類 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806973">資料庫類(Databases) (127)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1857015">傳輸類(transfer) (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1843531">應用類 (17)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824574">基礎類 (41)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1843533">繪圖類(Draw) (106)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1807003">進階類 (352)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806975">系統類(System) (715)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1831146">APK 類 (49)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1832900">感測器(Sensing) (54)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1836220">照相類(Take Picture) (108)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1826264">Q&amp;A類 (181)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806979">界面類(Interface) (478)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1807027">工具類(Tools) (228)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817528">收藏類 (44)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1825428">XML類 (12)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806971">網路類(Network) (316)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1826358">網站類(Website) (35)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806989">硬體類(Hardware) (227)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806991">通訊類 (96)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806987">安全類 (79)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806983">藍芽類(Bluetooth) (112)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806995">多媒體類(Multimedia) (322)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1806977">模擬器類(Emulator) (131)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817580">SD記憶卡類 (56)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1793358">免費軟體(Software) (108)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813326">最新資訊(Information) (80)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1396605','category-1396605-switch');"><img id="category-1396605-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> Windows Mobile (5)</h6>
+<ul id="category-1396605" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1856011">PocketPc (35)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856013">Windows Phone7 (375)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856017">Mobile 6.X (0)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1856919">Windows Phone 8 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1774573">Window Mobile (0)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388376','category-1388376-switch');"><img id="category-1388376-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 程式開發 (15)</h6>
+<ul id="category-1388376" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1813378">JAVA (864)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813382">Python (99)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1814862">Perl (299)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813376">C# (435)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1830890">C++ (119)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846383">VB6.0 (234)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813390">VB.NET (207)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845227">Ado.net (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1814058">C (53)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845141">Delphi (71)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1871941">Win8 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815458">Mobile Python (87)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845649">J2ME (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846365">seo (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846665">PowerBuilder (6)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388368','category-1388368-switch');"><img id="category-1388368-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 網頁設計 (17)</h6>
+<ul id="category-1388368" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1774569">PHP (341)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1800567">Java Script (308)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1781675">CSS (255)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1781657">ASP.NET (627)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813392">JSP (182)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845373">ASP (55)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1861525">facebook (35)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1979734">VBScript (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1836576">HTML (36)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846871">SilverLigh (362)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845383">Ajax (107)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846715">IIS (78)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849391">Apache (89)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849399">Tomcat (97)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1974556">WordPress (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813398">手機網頁 (10)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1970989">網頁新資訊 (2)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388360','category-1388360-switch');"><img id="category-1388360-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> Linux (16)</h6>
+<ul id="category-1388360" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/2006707">Fedora (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845027">Shell (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1870519">ANT (12)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1870603">AIX (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1871155">指令類 (78)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845501">Solaris (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813340">系統類 (111)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813342">網路類 (56)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1836218">網站類 (19)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813344">安全類 (16)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813630">BackTrack (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813346">硬體類 (16)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1774575">最新資訊 (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813348">工具類 (32)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813350">程式開發 (44)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813362">通訊類 (5)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388374','category-1388374-switch');"><img id="category-1388374-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> DATABASE (13)</h6>
+<ul id="category-1388374" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1814124">MYSQL (286)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813372">SQL SERVER (479)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813400">Oracle (438)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854093">Google Cloud SQL (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854115">SQLite (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854551">MongoDB (59)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854673">PostgreSQL (21)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1854767">NoSQL (9)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1813460">SQL (34)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845583">DB2 (47)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845587">Sybase (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846477">Access (48)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1848035">Informix (40)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388940','category-1388940-switch');"><img id="category-1388940-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 黑客密碼 (15)</h6>
+<ul id="category-1388940" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1815898">偷窺技術 (6)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815920">入侵技術 (24)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817994">分析工具 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846661">攻擊技術 (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1817366">翻牆工具 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815910">製作工具 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815856">偽裝技術 (0)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815912">掃描技術 (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815860">破解技術 (30)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815864">還原技術 (4)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815866">隱藏技術 (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815870">追蹤技術 (7)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815874">資料辨識 (0)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815876">安全技術 (25)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1815916">後門&amp;木馬 (7)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1390634','category-1390634-switch');"><img id="category-1390634-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> FLASH (22)</h6>
+<ul id="category-1390634" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1831462">模版 (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1831466">組件 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1974568">app (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1974601">工具類 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1835634">XML (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1831468">捲軸類 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824032">文字類 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1831470">多媒體類 (6)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824034">網路類 (14)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1825974">免費資源 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824022">Game (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1823984">AS3 (35)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1823990">3D (23)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1823992">安全類 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824000">AIR (9)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824002">Flex (67)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1823994">動畫效果 (19)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824012">資料庫 (3)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824014">圖表類 (10)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824020">系統類 (22)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824010">mobile (27)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1824018">選單按鈕 (12)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1388366','category-1388366-switch');"><img id="category-1388366-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 美工繪圖 (3)</h6>
+<ul id="category-1388366" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1793266">CorelDRAW (14)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1793288">PHOTOSHOP (86)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1845849">AutoCAD (19)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1397447','category-1397447-switch');"><img id="category-1397447-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> Symbian (2)</h6>
+<ul id="category-1397447" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1797725">Symbian (53)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1859935">S40 (12)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1395001','category-1395001-switch');"><img id="category-1395001-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 商業課程 (9)</h6>
+<ul id="category-1395001" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1846659">CRM (66)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1846663">ERP (38)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1848499">危機管理 (24)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1853687">商品管理 (7)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1847711">SPSS (22)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1808311">Data Mining (42)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1848555">人力資源 (31)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1848559">知識管理 (14)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1847695">資料分析 (1)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1398989','category-1398989-switch');"><img id="category-1398989-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> visual studio 2012 (1)</h6>
+<ul id="category-1398989" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1868553">visual studio 2012 (1)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1405204','category-1405204-switch');"><img id="category-1405204-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 車族世界 (2)</h6>
+<ul id="category-1405204" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1956631">痛車文化 (9)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1956634">改車文化 (2)</a></li><!-- ie6bug --></ul>
+</div>
+<div class="inner-box">
+    <h6 style="cursor:hand;cursor:pointer;" onclick="pix.commentSwitch('category-1395507','category-1395507-switch');"><img id="category-1395507-switch" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/plus.gif" alt="display categorization" border="0"> 電玩動漫 (16)</h6>
+<ul id="category-1395507" style="display: none;"><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1983490">全職獵人 (9)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/2008885">電腦遊戲 (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/2023007">刀塔傳奇 (6)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849893">死神 (103)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1978639">驚爆遊戲 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1978642">第一神拳 (5)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1978648">聖鬥斗士星矢冥王神話 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849889">海賊王 (104)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849891">火影忍者 (96)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1849895">龍狼傳 (27)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1942213">進擊的巨人 (12)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1873777">第一神拳 (1)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1958143">妖精的尾巴 (45)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1973923">強殖裝甲凱普 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1871561">戰場女武神 (2)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1878217">模型調色和配色 (1)</a></li><!-- ie6bug --></ul>
+</div>
+<ul><!-- ie6bug
+--><li><a href="http://fecbob.pixnet.net/blog/category/1774583">隨手拍拍 (487)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1826182">敗家去 (74)</a></li><!-- ie6bug --><li><a href="http://fecbob.pixnet.net/blog/category/1774567">電腦教學 (52)</a></li><!-- ie6bug --></ul>
+    </div>
+</div> <!-- #category //-->
+<div class="hslice box" id="search">
+    <h4 class="box-title entry-title">
+	Search	    </h4>
+    <div class="box-text entry-content">
+
+<form method="post" action="http://fecbob.pixnet.net/blog/search/" id="search-form" data-wording-needkeyword="請輸入關鍵字">
+	<ul>
+	    <li><input name="search-target" id="search-target" type="text"></li>
+	    <li><input id="search-submit" value="搜尋" type="submit"></li>
+	</ul>
+    </form>
+    <script type="text/javascript">//<!--
+    jQuery('#search-form').submit(function(event){
+        if ('' === jQuery('#search-target').val()) {
+            alert(jQuery(this).attr('data-wording-needkeyword'));
+            event.preventDefault();
+        }
+    });
+    //--></script>
+    </div>
+</div> <!-- #search //-->
+<div class="hslice box" id="qrcode">
+    <h4 class="box-title entry-title">
+	QR Code	    </h4>
+    <div class="box-text entry-content">
+
+<div class="qrcode">
+<img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/36288880---android-proguard.png">
+</div>
+    </div>
+</div> <!-- #qrcode //-->
+              </div> <!-- #links-row-2 //-->
+                <div id="ad-mib">
+                    <script type="text/javascript">
+pix.MIB.config = {
+    hosthash: '863f4ce89bc9b2f0d6179aa696419409',
+    dr: {source: 'fecbob'},
+    goldAds: pix.MIB.util.Dom.getElementsByClassName('yc0e0aa-siTemajidr-yc0e0aa'),
+    uniq: '8e7713cc1894969fa37de27787531896c4a6336367231',
+    percentSite: 'http://falcon.pixanalytics.com/mib/vap',
+    falconSite: 'http://falcon.pixanalytics.com',
+    cate: '15',
+    hasMIB: 1,
+    article_cate_id: '24',
+    demo: {
+        hash: '',
+        demoOption: 0    },
+    availablePositions: [{
+        id: 1,
+        name: 'sidebar-1',
+        enable: 1
+    },{
+        id: 1,
+        name: 'sidebar-2',
+        enable: false    },{
+        id: 3,
+        name: 'video',
+        enable: false    },{
+        id: 8,
+        name: 'unfold',
+        enable: false    }],
+    ref: 'http%3A%2F%2Fwww.google.com.tw%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D8%26ved%3D0ahUKEwjAiJ-8uYDMAhUkW6YKHTfLBA4QFghWMAc%26url%3Dhttp%253A%252F%252Ffecbob.pixnet.net%252Fblog%252Fpost%252F36288880---android-proguard%2525E5%2525AF%2525A6%2525E4%2525BE%25258B%2525E6%252595%252599%2525E7%2525A8%25258B%26usg%3DAFQjCNFohyBWVhG0fhTvfJUHr7qL3w433w%26sig2%3DX7STF3y1SiRXHayEPIT_-g'
+};
+
+(function() {
+    var goldAds = pix.MIB.config.goldAds;
+    if (goldAds[0]) {
+        pix.MIB.build.adgen();
+        pix.MIB.build.videoadgen();
+        pix.MIB.build.detectPageScrollPlayback();
+    }
+})();
+</script>
+                </div><!-- #ad-mib //-->
+            </div> <!-- #links //-->
+          </div> <!-- #main //-->
+          <div id="footer">
+	  <p></p>
+            <div id="bottom">
+              <a class="bottom-skiplink" href="http://fecbob.pixnet.net/blog/post/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B/#top" title="back to the top of the page">Back to Top</a>
+              <a class="bottom-skiplink" href="http://fecbob.pixnet.net/blog/post/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B#article-area" title="back to the main cotent of the page">Back to article</a>
+	      <a class="bottom-pixnet" href="http://panel.pixnet.cc/signup/step2">Sign Up</a>
+	      <a target="_blank" class="bottom-pixnet" href="http://help.pixnet.tw/">Service Center</a>
+              <a target="_blank" class="bottom-pixnet" href="http://www.pixnet.net/">PIXNET homepage</a>
+	      © 2003 - 2016 PIXNET
+            </div>
+          </div> <!-- #footer //-->
+        </div> <!-- #container3 //-->
+      <div id="extradiv11"></div>
+      <div id="extradiv10"></div>
+      <div id="extradiv9"></div>
+      <div id="extradiv8"></div>
+    </div> <!-- #container2 //-->
+    <div id="extradiv7"></div>
+    <div id="extradiv6"></div>
+    <div id="extradiv5"></div>
+    <div id="extradiv4"></div>
+  </div> <!-- #container //-->
+  <div id="extradiv3"></div>
+  <div id="extradiv2"></div>
+  <div id="extradiv1"></div>
+  <div id="extradiv0"></div>
+  </div> <!-- #body-div //-->
+
+</div><input id="$$ee_hdBloggerads" type="hidden">
+
+<div id="tipLang" style="display:none;z-index:2147483647" class="barmenu">
+    <ul class="lang-list" id="lang-list">
+	<li><a href="#" onclick="pix.setLocale('zh_TW'); return false;">繁體中文</a></li>
+	<li><a href="#" onclick="pix.setLocale('zh_CN'); return false;">简体中文</a></li>
+	<li><a href="#" onclick="pix.setLocale('en_US'); return false;">English</a></li>
+	<li><a href="#" onclick="pix.setLocale('ja_JP'); return false;">日本語</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+<!--
+jQuery(window).load(function() {
+    //autoImgResize
+  '1';
+      jQuery.settings = jQuery.settings || {};
+    jQuery.settings.autoImgResize = {
+      mode:+'1',
+      resizWidth:+'400',
+      selector:'content'
+    };
+
+    if (2 === jQuery.settings.autoImgResize.mode) {
+      jQuery.settings.autoImgResize.resizWidth = jQuery('.article-content').width();
+    }
+    pix.autoImgResize(jQuery.settings.autoImgResize.resizWidth, jQuery.settings.autoImgResize.selector);
+  
+
+});
+//-->
+</script>
+<script type="text/javascript"><!--
+    jQuery.getScript('//counter.pixplug.in/getcounter.php?now=1460167231&random=1552931423&data[%23BlogArticleCount-36288880]=%7B%22counter%22%3A%5B%22blogarticle%22%2C%22882653%22%2C%2236288880%22%2C%22total%22%5D%2C%22options%22%3A%5B%5D%7D&check=87582518');
+//--></script>
+<script type="text/javascript">
+<!--
+jQuery(function() {
+    pix.fixPixnetPlayerID();
+    jQuery('.article-head').find('.column-star').each(function() {
+        var column_link = jQuery(this).attr('data-column-link');
+        jQuery(this).find('h2').append(' <a title="the star of column" href="' + column_link + '" target="_blank"><img title="the star of column" alt="column star article" src="http://s.pixfs.net/blog/images/choc/column_star.gif"></a>');
+    });
+    jQuery('.article-hot').each(function() {
+	jQuery(this).find('h2').append(' <a class="__dailyhotclass" title="Hot Today" href="' + jQuery(this).attr('data-hot-link') + '" target="_blank"><img title="Hot Articles" alt="hot article today" src="http://s.pixfs.net/blog/images/choc/today_hot.gif"></a>');
+    });
+});
+//-->
+</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/mixpanel.js"></script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/blog-mixpanel.js"></script>
+<script type="text/javascript">
+<!--
+  if (typeof dataLayer === 'undefined') dataLayer = [];
+  dataLayer.push({
+    "is_testing_43400": "false",
+    "is_partner_program":  "false",
+    "is_mobile_mode": "false",
+    "user_name"     : "fecbob",
+    "page_type"     : "blog",
+    "page_view"     : "/blog/",
+    "blog_name"     : "資訊園",
+    "blog_cat"      : "15 - Digital Life",
+    "is_loggedin"   : "false",
+    "is_VIP"        : "false",
+    "is_obstruct"   : "false",
+    "viewer_type"   : "Regular Member",
+    "article_title" : "	 Android ProGuard實例教程",
+    "article_id"    : "36288880",
+    "article_cat"   : "24 - Digital Life"
+  });
+-->
+</script>
+
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KGMWFG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MZ3SPM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script type="text/javascript">
+<!--
+  var _gaq = _gaq || [];
+  _gaq.push(
+    ['_setAccount', 'UA-408650-10'],
+    ['_setDetectTitle', false],
+    ['_setDomainName', 'none'],
+    ['_setAllowLinker', true],
+    ['_setCustomVar', 1, 'member', 'GUEST'],
+    ['_setCustomVar', 2, 'vip', 'nonVIP'],
+    ['_trackPageview', '/blog/']
+
+      );
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KGMWFG');
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-MZ3SPM');
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M9S8TF');
+
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NDN8FB');
+
+
+
+(function($, undefined) {
+$(function() {
+    var _topbar = $('#topbar');
+    _topbar.find('.topbar__logo').on('click', 'a', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-logo', 'GUEST']);
+    });
+    _topbar.find('#topbar__search').on('submit', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-search-button', 'GUEST']);
+    });
+    _topbar.find('.topbar__announce').on('click', '.topbar__announce__item', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-announce', 'GUEST']);
+    });
+
+    _topbar.find('.topbar__notification__counter').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-notification-counter', 'GUEST']);
+    });
+    _topbar.find('.topbar__notification__list--header__link').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-notification-setting', 'GUEST']);
+    });
+    _topbar.find('.topbar__notification__list--footer__link').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-notification-showall', 'GUEST']);
+    });
+
+    _topbar.find('#topbar__user__login').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-login', 'GUEST']);
+    });
+
+    _topbar.find('#topbar__user__list__link--blog').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-myblog', '']);
+    });
+    _topbar.find('#topbar__user__list__link--articlenew').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-articlenew', '']);
+    });
+    _topbar.find('#topbar__user__list__link--panelsite').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-panelsite', '']);
+    });
+    _topbar.find('#topbar__user__list__link--panelapp').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-panelapp', '']);
+    });
+
+    _topbar.find('#topbar__user__list__link--logout').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-logout', '']);
+    });
+
+    _topbar.find('.topbar__lang').on('click', function() {
+        _gaq.push(['_trackEvent', 'blog-bar', 'click-language-switcher', 'GUEST']);
+    });
+});
+})(jQuery);
+
+//-->
+</script>
+<div id="popup-frame" style="display:none">
+    <div id="frame-dimmer"></div>
+    <div id="frame-box">
+       <div id="frame-border"></div>
+       <div id="frame-header">
+           <h3></h3>
+	   <a href="#" class="frame-close" title="Close Window"><span>Close Window</span></a>
+       </div>
+       <div id="frame-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/c.js"></script>
+<script type="text/javascript">
+if ('undefined' === typeof window._uCount) {
+    window._uCount = function () {};
+}
+</script>
+<script type="text/javascript">
+<!--
+var _type = 'front_blog'; _uCount();
+var _type = 'front_blog_byarticlecategory:24'; _uCount();
+var _type = 'front_blog_bysitecategory:15'; _uCount();
+if (document.location.toString().indexOf('/post/') != -1) {
+    var _type = 'front_blog_post'; _uCount();
+    var _type = 'front_blog_post_nonvip'; _uCount();
+}
+
+if (document.location.toString().indexOf('/search/') != -1) {
+    var _type = 'front_blog_search'; _uCount();
+}
+//-->
+</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/r.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+_currentPageUsername = 'fecbob';
+_refererCount();
+//-->
+</script>
+<script>
+var _piq = _piq || [];
+
+_piq.push(
+    ['setCustomVar', 'venue', 'pixnet'],
+    ['setCustomVar', 'author_id', pix.owner],
+        ['setCustomVar', 'article_category_id', "24"],
+        ['setCustomVar', 'nonce', pix.login_name],
+    ['setCustomVar', 'visitor_id', pix.visitor],
+    ['setCustomVar', 'visitor_openid', pix.openid],
+    ['trackPageView']
+);
+(function(d, t, u, f, j) {
+    f = d.getElementsByTagName(t)[0];
+    j = d.createElement(t);
+    j.async = 1;
+    j.src = u;
+    f.parentNode.insertBefore(j, f);
+})(document, 'script', '//s.pixanalytics.com/js/pi.min.js');
+
+(function ($) {
+    $(function () {
+        var _startTime = Math.floor((new Date()).getTime() / 1000),
+            _driveMode = ('none' === $(document.body).data('mobileMode')) ? 'desktop' : 'mobile',
+            _send = false,
+            unload;
+
+        unload = function () {
+            if (_send) {
+                return;
+            }
+
+            var _endTime = Math.floor((new Date()).getTime() / 1000),
+                _isIdleAdClosed = '';
+
+            switch ($.adIdlePopClosed) {
+                case 'hasClosed' :
+                    _isIdleAdClosed = 'close idle ad';
+                    break;
+                case 'neverClosed' :
+                    _isIdleAdClosed = 'not close idle ad';
+                    break;
+                default :
+
+            }
+            _piq.push(['trackEvent', 'article stay time', _isIdleAdClosed, _driveMode, (_endTime - _startTime)]);
+            _send = true;
+        };
+
+        $(window).on({
+            'beforeunload.idlePI': unload,
+            'unload.idlePI':       unload,
+            'pagehide.idlePI':     unload
+        });
+
+        // #41767
+        $('#pixad1032').on('click', 'a', function() {
+            if ('styleme' === $(this).data('source')) {
+                _piq.push(['trackEvent', 'yahoo 大聯盟導購', '金鑽版位點擊']);
+            }
+        });
+
+        var pixad1032ImpTracking = function() {
+            var container = $('#pixad1032');
+
+            if (0 === container.find('a').length) {
+                setTimeout(pixad1032ImpTracking, 500);
+                return;
+            }
+
+            if ('styleme' == container.find('a').data('source')) {
+                _piq.push(['trackEvent', 'yahoo 大聯盟導購', '金鑽版位曝光']);
+            }
+        };
+        pixad1032ImpTracking();
+    });
+})(jQuery);
+</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/pixinsight.js"></script>
+
+        <script type="text/javascript">
+        <!--
+            jQuery(function(){
+                jQuery.getScript('//falcon.pixanalytics.com/ad/js?blog_category=15&article_category=24&fields[]=s02f8609fb50c4484b7981077,1077');
+            });
+        //-->
+        </script>
+        
+<!-- Modified: 1460167231 -->
+<!-- async script -->
+<script type="text/javascript">
+<!--
+jQuery.ajaxSetup({ cache: true });
+jQuery.getScript("//js.pixplug.in/addon/86/production.js?v=1384155619", function(data, textStatus) { jQuery.pixBookmarkButtons({"position":"top","addon_username":"fecbob","addon_expired_at":0,"addon_ismobile":false,"addon_isvip":false,"ab_testing_seed":1701359196}); });
+jQuery.getScript("//js.pixplug.in/addon/96/production.js?v=1380100897", function(data, textStatus) { jQuery.pix0rz({"addon_username":"fecbob","addon_expired_at":0,"addon_ismobile":false,"addon_isvip":false,"ab_testing_seed":1701359196}); });
+jQuery.getScript("//js.pixplug.in/addon/206/production.js?v=1402911599", function(data, textStatus) { jQuery.pixShowTwitter({"addon_username":"fecbob","addon_expired_at":0,"addon_ismobile":false,"addon_isvip":false,"ab_testing_seed":1701359196}); });
+jQuery.ajaxSetup({ cache: false });
+//-->
+</script>
+
+<!-- load sync script -->
+
+<!-- execute sync addon -->
+<script type="text/javascript"></script>
+
+
+
+<script>pix.stylemeTags = [];</script>
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/styleme.js" crossorigin="anonymous"></script>
+
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/blogtopbar.js" crossorigin="anonymous"></script><script id="" type="text/javascript">jQuery("div").find(".article a").find(':contains("1314.ws")').length&&dataLayer.push({event:"spam-detected"});</script><script id="" type="text/javascript">function updateQueryStringParameter(a,b,c){var d=new RegExp("([?\x26])"+b+"\x3d.*?(\x26|$)","i"),e=-1!==a.indexOf("?")?"\x26":"?";return a.match(d)?a.replace(d,"$1"+b+"\x3d"+c+"$2"):a+e+b+"\x3d"+c}
+jQuery(".article-body").on("click","a",function(){var a=this.href;0<=a.toLowerCase().indexOf("klook.com")&&-1==a.toLowerCase().indexOf("aid")?(a=updateQueryStringParameter(a,"aid","11"),jQuery(this).attr("href",a),dataLayer.push({event:"genericEvent",eventUA:"UA-65168598-20",eventCategory:"Klook \u7121AID\u9023\u7d50\u8f49\u63db\uff08\u6b63\u78ba\uff09",eventAction:"Click",eventLabel:"http:\/\/fecbob.pixnet.net\/blog\/post\/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B",eventNonInteraction:"true"})):0<=a.toLowerCase().indexOf("hotelscombined.com")&&-1==a.toLowerCase().indexOf("a_aid")?
+(a=updateQueryStringParameter(a,"a_aid","132653"),a=updateQueryStringParameter(a,"label","link_replace"),jQuery(this).attr("href",a),dataLayer.push({event:"genericEvent",eventUA:"UA-65168598-1",eventCategory:"HotelsCombined \u7121AID\u9023\u7d50\u8f49\u63db",eventAction:"Click",eventLabel:"http:\/\/fecbob.pixnet.net\/blog\/post\/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B",eventNonInteraction:"true"})):0<=a.toLowerCase().indexOf("booking.com")&&-1==a.toLowerCase().indexOf("aid")?(a=updateQueryStringParameter(a,"aid","835804"),a=updateQueryStringParameter(a,
+"label","link_replace"),jQuery(this).attr("href",a),dataLayer.push({event:"genericEvent",eventUA:"UA-65168598-1",eventCategory:"Booking.com \u7121AID\u9023\u7d50\u8f49\u63db",eventAction:"Click",eventLabel:"http:\/\/fecbob.pixnet.net\/blog\/post\/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B",eventNonInteraction:"true"})):0<=a.toLowerCase().indexOf("agoda.com")&&-1==a.toLowerCase().indexOf("cid")&&(a=updateQueryStringParameter(a,"cid","1658048"),jQuery(this).attr("href",a),dataLayer.push({event:"genericEvent",eventUA:"UA-65168598-1",eventCategory:"Agoda.com \u7121AID\u9023\u7d50\u8f49\u63db",
+eventAction:"Click",eventLabel:"http:\/\/fecbob.pixnet.net\/blog\/post\/36288880---android-proguard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B",eventNonInteraction:"true"}))});</script>
+
+<script>
+  var nineyi_group    = "X1";
+  var nineyi_keyindex = "0";
+  var nineyi_match    = "";
+  var nineyi_id       = "pix91_8353d80f1fbe44b2c2eaafc97352e3b8";
+  var nineyi_products = [{"asset":"0104","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126120-4162329176_s.jpg?v=1446126272","title":"MissHana\u82b1\u5a1c\u5c0f\u59d0\u5b8c\u7f8e\u7121\u75d5\u4e09\u8272\u906e\u7455\u818f","oprice":"380","nprice":"299","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/1256490"},{"asset":"0138","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126147-4136062762_s.jpg?v=1446126272","title":"E\u2027Heart \u4f0a\u5fc3 \u6301\u4e45\u96b1\u5f62\u96d9\u9762\u96d9\u773c\u76ae\u8cbc","oprice":"348","nprice":"180","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/344734"},{"asset":"0143","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126150-2749437497_s.jpg?v=1446126272","title":"3CE (3CONCEPT EYES) \u8d85\u986f\u8272\u5507\u818f","oprice":"499","nprice":"399","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/1610019"},{"asset":"0223","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126232-3103690318_s.jpg?v=1446126273","title":"ND \u812b\u6bdb\u871c\u881f\/\u9664\u6bdb\u871c\u881f 220g","oprice":"299","nprice":"299","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/1035850"},{"asset":"0160","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126167-2508883353_s.jpg?v=1446126272","title":"\u97d3\u570b RiRe \u9ed1\u982d\u7c89\u523a\u6e05\u6f54\u5237 \u4e59\u652f\u5165(\u5167\u9644\u6e05\u6f54\u4e7320mL)","oprice":"290","nprice":"290","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/640966"},{"asset":"0109","image":"http:\/\/pic.pimg.tw\/pixnetvisual\/1446126124-168867797_s.jpg?v=1446126272","title":"Miss Hana \u82b1\u5a1c\u5c0f\u59d0 \u6c34\u611f\u63a7\u8272CC\u971c","oprice":"349","nprice":"299","link":"http:\/\/www.86shops.com.tw\/SalePage\/Index\/668815"}];
+</script><script data-jsv-tmpl="_0" id="idleTemplate" type="text/x-jsrender" data-main="//front.pixfs.net/module/idlePop/js/idlePop.min.js?v=50b467822b98b0e003a22611c4a27daf">
+<link rel="stylesheet" href="//front.pixfs.net/module/idlePop/css/idlePop.min.css?v=50b467822b98b0e003a22611c4a27daf">
+<div class="modal idle-pop" tabindex="-1" role="dialog" aria-describedby="dialog">
+  <div class="modal-bg"></div>
+  <div class="modal-dialog">
+    <a class="modal-close" data-close="【 關閉 X 】"></a>
+
+    <div class="modal-content">
+      <div class="modal-header">本網頁已閒置超過 3 分鐘。請點 <kbd>關閉</kbd> 或 <kbd>點擊</kbd>任一空白處，即可回到網頁</div>
+      <div class="modal-body">
+        <div class="blogger-info">
+          <a class="blogger-info__avatar" href="//www.pixnet.net/blog/profile/{{:user.name}}"><img src="{{:user.avatar}}" alt="{{:user.name}} 的大頭貼"></a>
+
+          <div class="blogger-info__profile">
+            <div class="blogger-info__row">
+              <dl>
+                <dt>部落格名稱</dt>
+                <dd><a href="{{:blog.link}}">{{:blog.name}}</a></dd>
+              </dl>
+            </div>
+
+            <div class="blogger-info__row">
+              <dl>
+                <dt>人氣</dt>
+                <dd data-unit="人">{{:blog.hits.total}}</dd>
+
+                <dt>好友數</dt>
+                <dd data-unit="人">{{:user.friends_count}}</dd>
+
+                <dt>文章總數</dt>
+                <dd data-unit="篇">{{:blog.articles_count}}</dd>
+              </dl>
+            </div>
+
+            <div class="blogger-info__row">
+              <a class="blogger-info__follow" href="http://panel.pixnet.cc/pixfront/addsubspopup?fromuser={{:user.name}}&user={{:user.name}}&popup=1" target="pix_add_sub" data-followers="{{:user.subscribers_count}}">加入訂閱</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="idle-adsense">
+        </div>
+
+        <div class="idle-related-posts">
+          {{for posts}}
+          <a class="idle-related-post" href="{{:link}}">
+            <img src="{{:thumb}}" alt="文章縮圖">
+            <div class="idle-related-post__detail">
+              <h4>{{:title}}</h4>
+              <div class="idle-related-post__desc" data-readmore="繼續閱讀">{{:body}}</div>
+            </div>
+          </a>
+          {{/for}}
+        </div>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+</script>
+
+
+<script src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/hide-ad-checker.js" crossorigin="anonymous"></script>
+
+
+<div class=" fb_reset" id="fb-root"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/xd_arbiter.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_http" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_http" frameborder="0"></iframe><iframe src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/xd_arbiter_002.html" style="border: medium none;" tabindex="-1" title="Facebook Cross Domain Communication Frame" aria-hidden="true" id="fb_xdm_frame_https" scrolling="no" allowfullscreen="true" allowtransparency="true" name="fb_xdm_frame_https" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/postmessageRelay.html" id="oauth2relay220007453" name="oauth2relay220007453"></iframe><div class="testA" id="idle-pop">
+<link rel="stylesheet" href="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/idlePop.css">
+<div class="modal idle-pop" tabindex="-1" role="dialog" aria-describedby="dialog">
+  <div class="modal-bg"></div>
+  <div class="modal-dialog">
+    <a class="modal-close" data-close="【 關閉 X 】"></a>
+
+    <div class="modal-content">
+      <div class="modal-header">本網頁已閒置超過 3 分鐘。請點 <kbd>關閉</kbd> 或 <kbd>點擊</kbd>任一空白處，即可回到網頁</div>
+      <div class="modal-body">
+        <div class="blogger-info">
+          <a class="blogger-info__avatar" href="http://www.pixnet.net/blog/profile/fecbob"><img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/90x0.png" alt="fecbob 的大頭貼"></a>
+
+          <div class="blogger-info__profile">
+            <div class="blogger-info__row">
+              <dl>
+                <dt>部落格名稱</dt>
+                <dd><a href="http://fecbob.pixnet.net/blog">資訊園</a></dd>
+              </dl>
+            </div>
+
+            <div class="blogger-info__row">
+              <dl>
+                <dt>人氣</dt>
+                <dd data-unit="人">6778175</dd>
+
+                <dt>好友數</dt>
+                <dd data-unit="人">15</dd>
+
+                <dt>文章總數</dt>
+                <dd data-unit="篇">14704</dd>
+              </dl>
+            </div>
+
+            <div class="blogger-info__row">
+              <a class="blogger-info__follow" href="http://panel.pixnet.cc/pixfront/addsubspopup?fromuser=fecbob&amp;user=fecbob&amp;popup=1" target="pix_add_sub" data-followers="134">加入訂閱</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="idle-adsense"><div id="pixad1186"><iframe marginwidth="0" marginheight="0" framespacing="0" scrolling="NO" src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/ad_002.html" frameborder="0" height="280" width="336"></iframe></div>
+</div>
+
+        <div class="idle-related-posts">
+          
+          <a class="idle-related-post" href="#">
+            <img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/resize.jpeg" alt="文章縮圖">
+            <div class="idle-related-post__detail">
+              <h4>只要1399起，即可享有【宜蘭-自由心向-LoveVilla庭園民宿】自由就是這麼簡單-LoveVilla陪伴你的假期A.雙人/B.四人住宿專案〈含A.(典藏/浪漫)雙人房 / B.浪漫四人套房 住宿一晚 + 早餐 + wifi上網 + 停車場使用〉</h4>
+              <div class="idle-related-post__desc" data-readmore="繼續閱讀"></div>
+            </div>
+          </a>
+          
+          <a class="idle-related-post" href="http://fecbob.pixnet.net/blog/post/37672412">
+            <img src="AndroidProGuard%E5%AF%A6%E4%BE%8B%E6%95%99%E7%A8%8B_files/article-image.png" alt="文章縮圖">
+            <div class="idle-related-post__detail">
+              <h4>隨身碟修復六種方法</h4>
+              <div class="idle-related-post__desc" data-readmore="繼續閱讀">目
+前，隨身碟的使用已經非常普遍，人們經常用隨身碟來備份、攜帶、轉移檔。但是，如果將隨身碟從USB口拔出之前，忘記了執行卸載*作，或者執行卸載*作不
+徹底，或者由於誤*作，而直接將隨身碟從USB口拔了出來，就有可能會導致隨身碟損壞，有時甚至會導致電腦不能識別隨身碟。如果以前沒有處理這種情況的經
+驗，多半會認為隨身碟已經不能使用，該扔進垃圾箱了，但這樣又覺得太可惜了。有沒有辦法恢復隨身碟的功能呢？答案是肯定的，可以按照下面的步驟進行：依次
+打開控制台、管理工具、電腦管理、存儲、磁片管理，就會出現有如圖的介面，在文字「磁片1」上按一下右鍵，選擇「初始化磁片」，直接按一下「確定」。初始
+化完成後，隨身碟的狀態變成為「連線」狀態。注意此時隨身碟的鎖要處於打開狀態，否則會出現如下提示：「由於媒體受防寫，要求的*作無法完
+成。&amp;rdq</div>
+            </div>
+          </a>
+          
+          <a class="idle-related-post" href="http://falcon.pixanalytics.com/ad/r?i=88f762ca43303b286e6c7207fc130c40&amp;p=1091&amp;u=2e5c8475d1e84e94ba30406414ce2ab8&amp;c=CgEBflb0mcJSU39fFWFuAg%3D%3D"><ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:361px;height:84px" data-ad-client="ca-pub-2647689032095179" data-ad-slot="3209376861"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:84px;margin:0;padding:0;position:relative;visibility:visible;width:361px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:84px;margin:0;padding:0;position:relative;visibility:visible;width:361px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="84" width="361"></iframe></ins></ins></ins></a>
+          
+        </div>
+      </div>
+      <div class="modal-footer"><div id="pixad1183"> <ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6865528665029394" data-ad-slot="5407836320"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins> </div>
+</div>
+    </div>
+  </div>
+</div>
+</div></body></html>

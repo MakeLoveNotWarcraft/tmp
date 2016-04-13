@@ -1,0 +1,91 @@
+/* CSS Document */
+body{ font-size:12px; color:#333; margin:0px; background-color:#EAEAEA;font-family:Arial, Helvetica, sans-serif;}
+<!--pre{border:#CCC 1px dashed ; background-color:#F6F6F6; font-family:"Lucida Console", Monaco, monospace; font-size:12px; padding:10px;word-wrap: break-word;}-->
+pre{border:#CCC 1px dashed ; color:#0F0; background-color:#333; font-family:"Consolas"; font-size:14px; padding:10px;word-wrap: break-word;}
+table,td{border:1px solid #cccccc; border-collapse:collapse;font-family:"Lucida Console", Monaco, monospace; font-size:12px; line-height:25px; word-break:break-all;}
+a{color:#C00; text-decoration:none}
+a:hover{text-decoration:underline}
+
+.nowrap{white-space:nowrap;}/*禁止文字换行*/
+#mypage{margin:0px auto 0px auto; width:1100px; border-left:2px #E1E1E1 solid; border-right:2px #E1E1E1 solid; padding:0px 10px 0px 10px; background-color:#FFF; overflow:hidden;}
+.red_text{color:#F00}
+.red_text2{color:#C00; font-weight:bold;}
+.red_text3{color:#F88}
+.header{ overflow:hidden; width:100%; margin:0px 0px 10px 0px;}
+.h_left{float:left; width:370px; font-size:20pt; color:#333; line-height:86px; font-family:"微软雅黑"}
+.h_left a{ color:#333; text-decoration:none;}
+.h_right{float:left; width:730px;}
+.topmenu{font-size:16pt; clear:both;background-color:#006699;}
+.topmenu a{color:#FFF; margin:0px 15px 0px 15px; line-height:48px; text-decoration:none; font-weight:bold;}
+.topmenu a:hover{ color:#C00; background-color:#FFF; font-weight:bold; border-bottom:2px #C00 solid;}
+h2{margin:10px 0px 0px 0px; font-size:14px; font-family:Arial, Helvetica, sans-serif;}
+.main{width:100%; overflow:hidden;}
+/*广告*/
+.index_banner{width:1098px; border:#CCC 1px solid; text-align:center; padding:10px 0px 10px 0px;}
+.top_ad{}
+.content_ad1{ width:310px; height:300px; background-color:#FFF; float:left; padding:8px; margin:10px 10px 10px 0px; overflow:hidden; border:1px #999 solid;}
+.menu_ad1{ width:300px; height:250px; overflow:hidden;}
+/*首页图片*/
+.index_img{ width:1100px; overflow:hidden; list-style:none; display:block; padding:0 0 0 4px; margin:0px;}
+.index_img li{ float:left; width:120px; height:120px; margin:0px 8px 0px 0px; border:1px #CCC solid; background-size:100% 100%;}
+.index_img div{ display:none; background-color:#09F; overflow:hidden; color:#FFF; width:100px; height:100px;}
+/*首页文字列表块*/
+.index_block{ width:1100px; overflow:hidden; position:relative;}
+.index_blist1{ width:350px; float:left; border:#006699 1px solid; padding:0px 0px 10px 0px; margin:10px 21px 10px 0px; }
+.index_blist2{ width:350px; float:left; border:#006699 1px solid; padding:0px 0px 10px 0px; margin:10px 0px 10px 2px;}
+.index_bl_menu{ background-color:#006699; color:#FFF; padding:5px; font-size:16px; line-height:25px; font-weight:bold; text-align:center;}
+.index_bl_menu a{ color:#FFF; text-decoration:none;}
+.index_b_ul{ font-size:14px; list-style:none; margin:0px; padding:0px;}
+.index_b_ul li{ padding:10px 10px 0px 10px;overflow:hidden;width:330px; }
+.index_b_ul a{ text-decoration:none; color:#333; font-family:"微软雅黑";overflow:hidden;width:330px; display:block;}
+.index_b_ul a:hover{ text-decoration:underline; color:#C00}
+
+.main1{float:right; width:300px; background-color:#6699CC;}
+<!-- .main2{float:left; width:720px; padding:0px 10px 10px 10px;height:100%; overflow:hidden;} -->
+.main2{float:left; width:790px; padding:0px 0px 10px 0px;height:100%; overflow:hidden;}
+.main2 h1{ width:100%; border-bottom:3px #CCC solid; padding-bottom:10px;}
+.main2 p{line-height:24px; font-size:14px;word-wrap: break-word;}
+.main3{float:left; width:0px; background-color:#F6F6F6; overflow:hidden;}
+<!-- .main3{float:left; width:180px; background-color:#F6F6F6;}-->
+.temp_list{ overflow:hidden; position:relative;}
+.temp_list li{padding-bottom:10px;}
+.temp_list li a{ font-size:12pt;}
+.left_menu{ list-style:none; padding:0px 10px 0px 10px; margin:0px; overflow:hidden;}
+.left_menu li{ color:#FFF;font-size:12px;}
+.left_menu li a{ color:#FFF; padding:5px 0px 5px 0px; text-decoration:none; display:block; width:280px;}
+.left_menu li a:hover{ color:#6699CC; background-color:#FFF;}
+#cur_left_menu{font-size:12px; color:#C00; background-color:#FFF;}
+.fenlei{ color:#FFF; background-color:#006699; font-size:20px; font-family:"微软雅黑"; line-height:45px; text-align:center}
+.fenlei a{ color:#FFF; display:block;}
+.fenlei a:hover{ background:#FFF; color:#006699}
+.fnav{width:100%; overflow:hidden; margin:10px 0px 10px 0px}
+.fnav_l{ padding:0px 20px 0px 20px; background-color:#F6F6F6; text-align:center; border:1px #CCC solid; line-height:30px;}
+.fnav_r{ padding:0px 20px 0px 20px; background-color:#F6F6F6;text-align:center; border:1px #CCC solid; line-height:30px;}
+
+.top10{ list-style:none; padding:0px; margin:0px;}
+.top10 li{ overflow:hidden; width:100%}
+.top10 li span{ float:left; width:30px; height:30px; line-height:30px; overflow:hidden; text-align:center; color:#FFF; }
+.top10 li div{ float:right; width:250px; margin-right:10px; height:30px; line-height:30px; white-space:nowrap; overflow:hidden;}
+.top10 li div a{ color:#FFF; text-decoration:none; display:block;}
+.top10 li div a:hover{ background-color:#FFF; color:#06C;}
+#no1{ background-color:#F00}
+#no2{ background-color:#FF5328}
+#no3{ background-color:#F60}
+
+#news_comm{padding:10px 10px 0px 10px; background-color:#D7E4FF;}
+#comm_text{width:99%; height:80px; margin:10px 0px 0px 0px;}
+#comm_code_div{line-height:40px; height:40px; float:left; padding-right:20px;}
+#comm_submit{width:100px; float:right; height:40px; background-color:#06C; font-size:16px; color:#FFF;}
+.comm_item{ font-size:14px;padding:20px 0px 20px 0px; border-bottom:1px #CCC dashed }
+.comm_user{ font-weight:bold;}
+.comm_time{ float:right;}
+.comm_text{ padding:10px; background-color:#003482; color:#FFF;}
+
+.xg_list{font-size:14px; font-family:"微软雅黑";}
+.xg_list li{ padding:0px 0px 10px 0px;}
+.xg_list li a{ color:#C00}
+.hu_text{ padding-top:5px; font-size:12px; color:#999;}
+
+.page404{background-color:#000; color:#0C0; font-family:Arial; font-size:48px; font-weight:bold; text-align:center; padding:60px 0px 60px 0px; }
+
+.footer{width:1080px; background-color:#E8E8E8; padding:10px; margin:10px auto 10px auto; }

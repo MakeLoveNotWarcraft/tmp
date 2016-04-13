@@ -1,0 +1,93 @@
+body.freeze-video-ad {
+    padding-top: 320px;
+}
+#mib-video-expander {
+    position: relative;
+    text-align: center;
+    height: 0px;
+    overflow: hidden;
+    background: url('images/linen-bg.png') repeat-x;
+    z-index: 1;
+}
+.vjs-control.vjs-playing,
+.vjs-control.vjs-paused,
+.vjs-control.vjs-progress-control {
+    display: none;
+}
+.mib-video-background {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    margin-left: -512px;
+    width: 1024px;
+    height: 0px;
+    box-shadow: inset 0 0 10px #000000;
+}
+.mib-video-container {
+    padding: 16px;
+    margin-left: 36px;
+    width: 384px;
+    height: 288px;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+.mib-widescreen {
+    width: 512px;
+}
+.mib-left {
+}
+.mib-right{
+    float: right;
+    margin-right: 0px;
+}
+.mib-centered {
+    margin: 0 auto;
+}
+.mib-video-close {
+    border: 1px solid #666;
+    display: none;
+    position: absolute;
+}
+#mib-video-expander .mib-video-close a {
+    top: 0;
+    left: 0;
+    display: block;
+    padding: 7px 10px;
+    font-weight: bold;
+    color: #fff;
+    background: #000;
+    opacity: 0.5;
+}
+#mib-video-expander .mib-video-close a:hover {
+    opacity: 0.8;
+}
+.mib-video-close-top-right {
+    top: 20px;
+    right: 20px;
+}
+.mib-video-close-bottom-right {
+    right: 20px;
+    bottom: 50px;
+}
+.mib-video-close-top-left {
+    top: 20px;
+    left: 20px;
+}
+.mib-video-close-bottom-left {
+    bottom: 50px;
+    left: 20px;
+}
+#mib-video-expander.freeze,
+#mib-video-expander.freeze .mib-video-background {
+    position: fixed;
+    top: 0;
+    z-index: 100000000;
+}
+#mib-video-expander.freeze {
+    overflow: visible;
+    width: 100%;
+}
+#mib-video-expander.freeze .mib-video-background {
+    background-position: fixed;
+}

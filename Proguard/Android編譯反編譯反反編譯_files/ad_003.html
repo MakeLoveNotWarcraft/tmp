@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>criteo ad</title>
+<style>body {margin: 0; padding: 0;}</style>
+</head>
+<body>
+<script>
+var getQueryStringValue = function(key) {
+    return unescape(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + escape(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+};
+document.MAX_ct0 = getQueryStringValue('clickTAG');
+
+var m3_u = (location.protocol=='https:'?'https://cas.criteo.com/delivery/ajs.php?':'http://cas.criteo.com/delivery/ajs.php?');
+var m3_r = Math.floor(Math.random()*99999999999);
+document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+document.write ("zoneid=" + getQueryStringValue('zoneid'));
+document.write ('&amp;cb=' + m3_r);
+if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+document.write ("&amp;loc=" + escape(getQueryStringValue('location')));
+if (document.referrer) document.write ("&amp;referer=" + escape(getQueryStringValue('referer')));
+if (document.context) document.write ("&context=" + escape(getQueryStringValue('context')));
+if ((typeof(document.MAX_ct0) != 'undefined') && (document.MAX_ct0.substring(0,4) == 'http')) {
+   document.write ("&amp;ct0=" + escape(document.MAX_ct0));
+}
+if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+document.write ("'></scr"+"ipt>");
+</script><script type="text/javascript" src="ad_data_003/ajs.php"></script><iframe id="cto_iframe_2e176db058" allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" scrolling="no" vspace="0" frameborder="0" height="280px" width="336px"></iframe>
+
+
+
+</body></html>
