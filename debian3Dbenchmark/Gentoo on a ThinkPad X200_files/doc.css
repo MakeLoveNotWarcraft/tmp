@@ -1,0 +1,83 @@
+/* This file is part of cms.sh.
+ *
+ * cms.sh is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * cms.sh is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * cms.sh. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * (c) 2010-2013 Vitaly Minko <vitaly.minko@gmail.com>
+ */
+
+.doc {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+
+.doc_preview {
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.doc_preview p {
+    margin: 0;
+}
+
+.preview_title {
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+
+.date {
+    font-size: small;
+    color: grey;
+}
+
+pre {
+    background: #d0d0d0;
+    padding: 5px 20px;
+    margin: 0;
+}
+
+code {
+    font-size: large;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+tbody {
+    border: 1px solid;
+}
+
+th {
+    border: 1px solid;
+    padding: 4px;
+}
+
+td {
+    border-width: 0 1px 0 0;
+    border-style: solid;
+    padding: 4px;
+}
+
+img {
+    max-width: 800px;
+}
+

@@ -1,0 +1,1472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link media="screen" rel="stylesheet" href="Gentoo%20on%20a%20ThinkPad%20X200_files/main.css" type="text/css">
+    <link media="screen" rel="stylesheet" href="Gentoo%20on%20a%20ThinkPad%20X200_files/doc.css" type="text/css">
+    <title>Gentoo on a ThinkPad X200</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="menu">
+                <a class="headline" href="http://vminko.org/">Main</a>
+                <a class="headline" href="http://vminko.org/dscuss">Dscuss</a>
+                <a class="headline" href="http://vminko.org/technoblog">TechnoBlog</a>
+                <a class="headline" href="http://vminko.org/blog">Blog</a>
+                    <b>
+                <a class="headline" href="http://vminko.org/gentoo_manuals">Gentoo</a>
+                    </b>
+                <a class="headline" href="http://vminko.org/gallery">Gallery</a>
+                <span class="headline">/</span>
+                <span class="headline">Gentoo on a ThinkPad X200</span>
+                <span class="date">18 Jan 2014</span>
+            <hr>
+            </div>
+<div class="doc"><h1 id="introduction">Introduction</h1>
+
+<p>This manual is intended to help user to configure Gentoo distribution of the
+GNU/Linux operating system for Lenovo ThinkPad X200 notebook. It's supposed
+that user is skilled enough to install bare system from stage, compile kernel
+from source code, apply patches, etc.</p>
+
+<p>Besides X200 users, this manual may also be useful for users of ThinkPads based
+on the same Centrino platform: R400, T400, X200s, X301.</p>
+
+<p>This article and all information and products in it are provided on an "as is"
+basis, without warranty of any kind, either express or implied. <strong>Your use of
+this article is at your own risk.</strong></p>
+
+<h1 id="content">Content</h1>
+
+<ul>
+<li><a href="#hardwareinfo" title="Hardware info">Hardware info</a></li>
+<li><a href="#linuxsupportsummary" title="Linux support summary">Linux support summary</a></li>
+<li><a href="#kernel" title="Kernel">Kernel</a></li>
+<li><a href="#video" title="Video">Video</a></li>
+<li><a href="#sound" title="Sound">Sound</a></li>
+<li><a href="#networking" title="Networking">Networking</a></li>
+<li><a href="#acpi" title="ACPI">ACPI</a></li>
+<li><a href="#hotkeys" title="Hot keys">Hot keys</a></li>
+<li><a href="#suspending" title="Suspending">Suspending</a></li>
+<li><a href="#hdaps" title="HDAPS">HDAPS</a></li>
+<li><a href="#trackpoint" title="TrackPoint">TrackPoint</a></li>
+<li><a href="#fingerprintreader" title="Fingerprint reader">Fingerprint reader</a></li>
+<li><a href="#webcamera" title="Web camera">Web camera</a></li>
+<li><a href="#mediacardsreader" title="Media cards reader">Media cards reader</a></li>
+<li><a href="#thinklight" title="ThinkLight">ThinkLight</a></li>
+<li><a href="#benchmarks" title="Benchmarks">Benchmarks</a></li>
+<li><a href="#references" title="References">References</a></li>
+<li><a href="#historyofchanges" title="History of changes">History of changes</a></li>
+</ul>
+
+<h1 id="hardwareinfo">Hardware info</h1>
+
+<table>
+<colgroup><col>
+<col>
+<col>
+</colgroup><thead>
+<tr>
+	<th>Type</th>
+	<th>Name</th>
+	<th>Technical info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>CPU</td>
+	<td>Intel Core2 Duo</td>
+	<td>CPU clock: 2,4 Ghz; Bus clock: 1066Mhz;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>P8600 (Penryn)</td>
+	<td>Power: 25W; Features: SSE4.1, EM64T, IVT</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>L2 cache: 3MB; <a href="#references" title="References">[1]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>North bridge</td>
+	<td>Intel GM45</td>
+	<td><a href="#references" title="References">[2]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>RAM</td>
+	<td>Lenovo 43R1988</td>
+	<td>Size: 4GB; Type: DDR3; Bus clock: 533 Mhz</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Module name: PC3-8500; <a href="#references" title="References">[3]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>South bridge</td>
+	<td>Intel ICH9-M</td>
+	<td><a href="#references" title="References">[4]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Video</td>
+	<td>Intel GMA</td>
+	<td>Clock speed: 533Mhz; Vertex shader: 4.0;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>4500MHD</td>
+	<td>Pixel shader: 4.0; OpenGL support: 2.1;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>(Cantiga)</td>
+	<td>Decoding acceleration: VC-1, AVC;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Device id: 8086:2a42;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td><a href="#references" title="References">[5]</a>, <a href="#references" title="References">[6]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Storage</td>
+	<td>Samsung</td>
+	<td>Capacity: 128GB;  R/W speed: 90/70 MB/s;</td>
+</tr>
+<tr>
+	<td>device</td>
+	<td>MMCQE28G8MUP</td>
+	<td>Size: 1.8in; <a href="#references" title="References">[7]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Audio</td>
+	<td>Conexant CX20561</td>
+	<td>Device id: 8086:293e</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>(Hermosa)</td>
+	<td> </td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Ethernet</td>
+	<td>Intel 82567LM</td>
+	<td>Speed: 10/100/1000 MB/s;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Device id: 8086:10f5; <a href="#references" title="References">[4]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>WiFi</td>
+	<td>Intel 5100</td>
+	<td>Protocols: 802.11b/g/n;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Security: WEP, WPA, WPA2;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Device id: 8086:1311; <a href="#references" title="References">[8]</a></td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Atheros AR5BHB63</td>
+	<td>Protocols: 802.11b/g;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Security: WEP, WPA, WPA2;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Device id: 168c:001c; <a href="#references" title="References">[9]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>BlueTooth</td>
+	<td>Broadcom BCM2046</td>
+	<td>Device id: 0a5c:2145; <a href="#references" title="References">[11]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>WAN</td>
+	<td>Ericsson F3507g</td>
+	<td>Modes: HSPA/WCDMA/EDGE/GPRS;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>GPS:stand alone and assisted;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Device id: 0bdb:1900; <a href="#references" title="References">[10]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Card reader</td>
+	<td>?</td>
+	<td>Supported formats: MMC, SD, SDHC;</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Fingerprint</td>
+	<td>AuthenTec</td>
+	<td>On-sensor fingerprint matching;</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>AES2810</td>
+	<td>Device id: 08ff:2810; <a href="#references" title="References">[12]</a></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Web camera</td>
+	<td>Lenovo</td>
+	<td>Device id: 17ef:480c</td>
+</tr>
+<tr>
+	<td> </td>
+	<td> </td>
+	<td>Manufacturer: Chicony</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>Accelerometer</td>
+	<td>Analog Devices</td>
+	<td>Dual-axis; <a href="#references" title="References">[13]</a></td>
+</tr>
+<tr>
+	<td> </td>
+	<td>ADXL320</td>
+	<td> </td>
+</tr>
+</tbody>
+</table>
+
+<p>Logs:
+<a href="http://vminko.org/storage/x200/logs/scanpci.log">scanpci -v</a>
+<a href="http://vminko.org/storage/x200/logs/lsusb.log">lsusb -v</a>
+<a href="http://vminko.org/storage/x200/logs/cpuinfo.log">cat /proc/cpuinfo</a>
+<a href="http://vminko.org/storage/x200/logs/smartctl.log">smartctl -a /dev/sda</a></p>
+
+<h1 id="linuxsupportsummary">Linux support summary</h1>
+
+<table>
+<colgroup><col>
+<col>
+<col align="center">
+</colgroup><thead>
+<tr>
+	<th colspan="2">Feature</th>
+	<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><em>UltraBase</em></td>
+	<td>AC adapter</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Battery charger</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>USB ports</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Video out VGA</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>DisplayPort</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Speakers</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Audio out jack</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Audio mic jack</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Disk drive</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Eject handle</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Power button</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>ACPI</em></td>
+	<td>UltraBase insert/eject</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Hot keys</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Brightness control</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Battery</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Fan</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>Power management</em></td>
+	<td>Suspend to RAM</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Suspend to disk</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>CPU frequency scaling</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>Video</em></td>
+	<td>2D graphics</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>3D acceleration</td>
+	<td align="center"><strong>Minor issues</strong></td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Video decoding acceleration</td>
+	<td align="center"><strong>Untested</strong></td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>Audio</em></td>
+	<td>Internal speaker</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Audio out jack</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Audio mic jack</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Headphones mute speaker</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>Networking</em></td>
+	<td>Ethernet</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>BlueTooth</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>WiFi (Intel)</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>WiFi (Atheros)</td>
+	<td align="center"><strong>Minor issues</strong></td>
+</tr>
+<tr>
+	<td> </td>
+	<td>GPRS/EDGE/HSDPA</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>GPS</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td><em>Other</em></td>
+	<td>ThinkLight</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Fingerprint reader</td>
+	<td align="center"><strong>Doesn't work</strong></td>
+</tr>
+<tr>
+	<td> </td>
+	<td>HDAPS</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>TrackPoint</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>SD card reader</td>
+	<td align="center">Works perfectly</td>
+</tr>
+<tr>
+	<td> </td>
+	<td>Web camera</td>
+	<td align="center">Works perfectly</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="kernel">Kernel</h1>
+
+<p>Kernel config for version 3.10.25 is available <a href="http://vminko.org/storage/x200/configs/config-3.10.25">here</a>.
+Few notes regarding the kernel config:</p>
+
+<ul>
+<li>Enable <code>CONFIG_ATH5K</code> instead of <code>CONFIG_IWL5000</code> if you have the Atheros
+WiFi card instead of the Intel card.</li>
+<li>If you have no Ericsson F3507g, you'll probably want to disable
+<code>CONFIG_USB_ACM</code>.</li>
+<li>If you have no UltraBase, you'll probably want to disable <code>CONFIG_ACPI_DOCK</code>.</li>
+<li>If you use ExpressCards, you need to enable <code>CONFIG_HOTPLUG_PCI_PCIE</code> and
+appropriate driver for the card. For example, eSATA cards based on the SiI
+3132 chip require <code>CONFIG_SATA_SIL24</code>.</li>
+</ul>
+
+<p><a href="http://vminko.org/storage/x200/configs/grub.conf">Here</a> is appropriate grub config. Special kernel parameters: </p>
+
+<ul>
+<li><code>rootfstype=ext4</code> - Optional parameter, which avoids error messages on
+startup. Not required for ext2/3.</li>
+<li><code>acpi_sleep=s3_bios</code> - Required to make suspend/resume work.</li>
+<li><code>thinkpad_acpi.fan_control=1</code> - Thinkpad acpi module parameter, described in
+the <a href="#fan" title="Fan">Fan</a> control section.</li>
+<li><code>dock.immediate_undock=0</code> - Dock module parameter, described in the dock
+eject section. Not required for 2.6.31+.</li>
+<li><code>acpi_osi="Linux"</code> - ACPI parameter, described in the <a href="#hotkeys" title="Hot keys">Hot keys</a> section.</li>
+<li><code>i915.modeset=1 video=1280x800</code> - KMS settings, described the <a href="#video" title="Video">Video</a> section.</li>
+<li><code>clocksource=acpi_pm</code> - Hides the annoying <code>tsc: Fast TSC calibration failed</code>
+message during kernel statup.</li>
+</ul>
+
+<p>If you use 2.6.39+ and want to change PCI-E bus policy, for example:</p>
+
+<pre><code>echo powersave &gt; /sys/module/pcie_aspm/parameters/policy
+</code></pre>
+
+<p>then you need to add <code>pcie_aspm=force</code> to the kernele command line.</p>
+
+<p>The following is a list of kernel patches related to X200:</p>
+
+<ul>
+<li><a href="http://vminko.org/storage/x200/patches/ath5k_wifi_led-for-2.6.33.patch">ath5k_wifi_led-for-2.6.33.patch</a> - Fixes led support by atk5k
+module, see <a href="http://bugzilla.kernel.org/show_bug.cgi?id=12841">kernel bug #12841</a> for details. Still required for
+3.10.25.</li>
+<li><a href="http://vminko.org/storage/x200/patches/x200_dock.diff">x200_dock.diff</a> - Fixes audio out on docking station, see
+<a href="https://bugs.launchpad.net/ubuntu/+source/alsa-driver/+bug/285834">alsa-driver (Ubuntu) bug #285834</a> for details. This patch is no
+longer required for kernel version 2.6.30 and later.</li>
+<li><a href="http://vminko.org/storage/x200/patches/drm-i915-ensure-objects-are-allocated-below-4GB-on-PAE.patch">drm-i915-ensure-objects-are-allocated-below-4GB-on-PAE.patch</a> -
+Enables GEM on PAE systems, see <a href="http://patchwork.kernel.org/patch/26047/">this thread</a> for details. This
+patch is useful only for 32-bit systems with 4Gb+ RAM (when <code>CONFIG_X86_32</code>
+and <code>CONFIG_HIGHMEM64G</code> are set).</li>
+<li><a href="http://vminko.org/storage/x200/patches/cdc-acm-fix.patch">cdc-acm-fix.patch</a> - Fixes USB ACM driver (<code>CONFIG_USB_ACM</code>),
+which is required for F3507g. This patch is required for 2.6.31 only, see
+<a href="http://www.spinics.net/lists/linux-usb/msg22102.html">this thread</a> for details.</li>
+<li><a href="http://vminko.org/storage/x200/patches/suppress-e1000e-error.patch">suppress-e1000e-error.patch</a> - Suppresses useless error messages
+coming from e1000e driver. This patch is required for 2.6.31 only, see
+<a href="http://lkml.org/lkml/2009/9/1/345">this thread</a> for details.</li>
+<li><a href="http://tuxonice.net/files/tuxonice-3.2-for-2.6.38.patch.bz2">tuxonice-3.2-for-2.6.38.patch.bz2</a> - <a href="http://www.tuxonice.net/">TuxOnIce</a>
+implements suspend features, described in the <a href="#suspending" title="Suspending">Suspending</a> section.
+<strong>Obsolete!</strong></li>
+</ul>
+
+<p>It's also necessary to compile two additional kernel modules: <code>tp_smapi</code> and
+<code>hdaps</code>, as described in <a href="#hdaps" title="HDAPS">HDAPS</a> section.</p>
+
+<h1 id="video">Video</h1>
+
+<h2 id="dgraphics">2D graphics</h2>
+
+<p>The main config file for intel-video is <a href="http://vminko.org/storage/x200/configs/xorg.conf">xorg.conf</a>. Few notes
+regadring xorg.conf:</p>
+
+<ul>
+<li><code>DisplaySize</code> option is required to set correct DPI of the built-in LCD (96).</li>
+<li>The Virtual parameter specifies the virtual screen resolution to be used. I
+use 1280x800 internal screen and 1920x1200 external display, therefore max
+width is <code>1280 + 1920 = 3200</code> and max height is 1200. See details
+<a href="http://intellinuxgraphics.org/dualhead.html">here</a>.</li>
+</ul>
+
+<p>The <code>VIDEO_CARDS</code> variable should include 'intel', see <a href="http://vminko.org/storage/x200/configs/make.conf">make.conf</a> as
+example.</p>
+
+<p>DisplayPort is now supported by intel driver and works quite well.
+<a href="http://vminko.org/storage/x200/tools/video-out.sh">video-out.sh</a> is updated to use DisplayPort instead of VGA-out.
+Unfortunately the hardware doesn't allow us to enable two external monitors
+when the build-in display is on, because there are only two CRTCs available.</p>
+
+<p>Kernel Mode-Setting (<code>CONFIG_DRM_I915_KMS</code>) works fine except one minor issue
+<a href="https://bugzilla.kernel.org/show_bug.cgi?id=32412">issue</a> (glitchy dark colors). No problems with switching from/to
+VT/Xorg, suspend-to-ram, suspend-to-disk, etc. Besides the parameter mentioned
+above, it's necessary to enable <code>CONFIG_FRAMEBUFFER_CONSOLE</code>,
+<code>CONFIG_FRAMEBUFFER_CONSOLE_DETECT_PRIMARY</code> and add <code>i915.modeset=1
+video=1280x800</code> to your kernel command line. This enables inteldrmfb and sets
+the proper video mode. </p>
+
+<h2 id="dacceleration">3D acceleration</h2>
+
+<p>DRI is not working at maximum speed by default, so you should save <a href="http://vminko.org/storage/x200/configs/drirc">this
+config</a> as <code>~/.drirc</code> to get maximum performance. After that, glxgears
+shows approximately 1300fps.</p>
+
+<p>The current driver (xf86-video-intel-2.17.0) supports only OpenGL-1.4.</p>
+
+<h2 id="videodecodingacceleration">Video decoding acceleration</h2>
+
+<p>VA-API acceleration support for G45 is finally available. <a href="http://www.linuxsystems.it/2012/05/gentoo-g45-gm45-h264-vaapi-video-decoding/">Here</a> is a
+nice manual describing how to make it work on Gentoo. The only minor note I can
+add is that mplayer from the latest ebuild (<code>mplayer-1.0_rc4_p20120116</code>)
+crashes. I recommend to use <code>mplayer-1.0_rc4_p20110322-r51</code>, it works fine.</p>
+
+<h1 id="sound">Sound</h1>
+
+<p>Supported by <code>CONFIG_SND_HDA_INTEL</code>. I recommend to compile alsa-lib with all
+plugins (<code>ALSA_PCM_PLUGINS</code>, see <a href="http://vminko.org/storage/x200/configs/make.conf">make.conf</a> as example).</p>
+
+<p>In general ALSA supports the conexant chip quite well: both internal speaker
+and mic work fine as well as audio in/out jacks. ALSA mutes the speaker when
+headphones are plugged in. The only problem I had with audio is the UltraBase
+audio out, which is already fixed (see kernel section for details).</p>
+
+<p>If you enable <code>CONFIG_SND_HDA_POWER_SAVE</code>, I recommend to disable power saving
+of the sound controller in order to stop skipping of short sounds:</p>
+
+<pre><code>echo N &gt; /sys/module/snd_hda_intel/parameters/power_save_controller
+</code></pre>
+
+<p>But even if you do this, the system may still miss some system beeps (when you
+(dis)connect AC cable, for example).</p>
+
+<h1 id="networking">Networking</h1>
+
+<p>The radio switch toggles all wireless network connections: BlueTooth, WiFi, WAN
+and GPS.</p>
+
+<h2 id="ethernet">Ethernet</h2>
+
+<p>Supported by <code>CONFIG_E1000E</code>. Configured via default gentoo net config.
+<a href="http://vminko.org/storage/x200/configs/net">Here</a> is an example of eth0 definition with static IP. See
+<a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=4">Gentoo Network Configuration</a> for details.</p>
+
+<p><code>ethtool</code> may be used to detect whether ethernet cable is plugged or not.
+However, the <code>Link detected</code> field is reliable only when the <code>eth0</code> interface
+is up.</p>
+
+<h2 id="bluetooth">BlueTooth</h2>
+
+<p>Supported by <code>CONFIG_BT_HCIBTUSB</code>. The card can be turned on/off via
+<code>/proc/acpi/ibm/bluetooth</code>. Note that the card cannot be turned on when it's
+powered off by radio switch.</p>
+
+<p>The radio switch toggles the card and starts bluetooth service by default. If
+you don't want to turn the card on when radio switch is on, do the following:</p>
+
+<ul>
+<li>Remove the udev rule starting bluetooth service from
+<code>/etc/udev/rules.d/70-bluetooth.rules</code>.</li>
+<li>Make the card turned on/off when bluetooth service is started/stopped, see
+<a href="http://vminko.org/storage/x200/tools/bluetooth">bluetooth</a> script for details.</li>
+</ul>
+
+<p>These are examples of configs for pairing with Nokia 6021:
+<a href="http://vminko.org/storage/x200/configs/hcid.conf">hcid.conf</a>, <a href="http://vminko.org/storage/x200/configs/rfcomm.conf">rfcomm.conf</a>. See
+<a href="http://www.gentoo.org/doc/en/bluetooth-guide.xml">Gentoo Linux Bluetooth Guide</a> for details.</p>
+
+<h2 id="wifi">WiFi</h2>
+
+<p><strong>Atheros AR5BHB63</strong></p>
+
+<p><code>lspci</code> shows this card as <em>AR5001</em>, but the actual chipset name is <em>AR5007EG</em> .
+This chipset  is now supported by kernel (<code>CONFIG_ATH5K</code>). So there's no
+need to install madwifi driver. The in-kernel driver works quite well except
+one issue: WiFi led is not working. Apply
+<a href="http://vminko.org/storage/x200/patches/ath5k_wifi_led-for-2.6.33.patch">ath5k_wifi_led-for-2.6.33.patch</a> to your kernel in order to fix
+the bug.</p>
+
+<p>Unfortunately, the driver does not support power management yet. But according
+to <a href="http://linuxwireless.org/en/users/Drivers/ath5k#ath5k_TODO_List">ath5k TODO List</a>, developers are working on it.</p>
+
+<p><strong>Intel 5100</strong> </p>
+
+<p>It is also supported by kernel (<code>CONFIG_IWL5000</code>), but the kernel driver
+requires binary firmware:</p>
+
+<pre><code>echo "net-wireless/iwl5000-ucode ~amd64" &gt;&gt; /etc/portage/package.keywords
+emerge -av iwl5000-ucode
+</code></pre>
+
+<p>This driver does support power management, do the following to enable it on
+startup:</p>
+
+<pre><code>echo "iwconfig wlan0 power on" &gt;&gt; /etc/local.d/baselayout1.start 
+</code></pre>
+
+<p>Regardless of the wifi card model being used, connection should be configured
+via wpa_supplicant, here are config examples: <a href="http://vminko.org/storage/x200/configs/wpa_supplicant.conf">wpa_supplicant.conf</a>,
+<a href="http://vminko.org/storage/x200/configs/net">net</a> (preup function checks whether radio is enabled). See
+<a href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=4&amp;chap=4">Wireless Networking</a> for details.</p>
+
+<h2 id="wwangps">WWAN/GPS</h2>
+
+<p>F3507g is supported by <code>CONFIG_USB_ACM</code>. This driver is broken in 2.6.31, the
+<a href="http://vminko.org/storage/x200/patches/cdc-acm-fix.patch">cdc-acm-fix.patch</a> is required to make it work.</p>
+
+<p>There are three device files assosicated with the card:</p>
+
+<ul>
+<li><code>/dev/ttyACM0</code> - Ericsson F3507g Mobile Broadband Minicard Modem.</li>
+<li><code>/dev/ttyACM1</code> - Ericsson F3507g Mobile Broadband Minicard Modem.</li>
+<li><code>/dev/ttyACM2</code> - Ericsson F3507g Mobile Broadband Minicard GPS Port.</li>
+</ul>
+
+<p>The card needs to be turned on before you start using GPS or GPRS/EDGE/HSDPA.
+The script <a href="http://vminko.org/storage/x200/tools/f3507g">f3507g</a> turns the card on/off. <a href="http://vminko.org/storage/x200/tools/gpsd">Here</a>'s a bit
+modified <code>gpsd</code> script; it configures and turns GPS on/off. This script should
+be dependent on f3507g as well as net.ppp0. Both <code>f3507g</code> and <code>gpsd</code> use the
+same <a href="http://vminko.org/storage/x200/configs/f3507g">config</a>. GPS and WAN connections can be established
+simultaneously, so don't be afraid to start both <code>gpsd</code> and <code>net.ppp0</code>. The
+<a href="http://vminko.org/storage/x200/configs/net">net</a> mentioned above contains ppp0 interface config for GPRS/EDGE
+bearers. According to <a href="http://www.thinkwiki.org/wiki/Extending_battery_life_on_X200#Turning_off_the_wireless_radios">this manual</a>, WWAN eats power even when the 3G
+led is off. Therefore the <code>net</code> scripts automatically turns the power on/off.
+See <a href="http://www.thinkwiki.org/wiki/Ericsson_F3507g_Mobile_Broadband_Module">the ThinkWiki manual</a> for detailed reference how to work
+with F3507g.</p>
+
+<p>There're several GPS clients available in portage. I recommend the TangoGPS, it
+works quite well with F3507g.</p>
+
+<h1 id="acpi">ACPI</h1>
+
+<h2 id="keys">Keys</h2>
+
+<p>First of all, you need to install the ACPI daemon and add it to the boot
+runlevel:</p>
+
+<pre><code>emerge -av acpid
+rc-update add acpid boot
+</code></pre>
+
+<p>In order to enable event reporting for all supported hot heys, you need to set
+correct bit mask:</p>
+
+<pre><code>cat /sys/devices/platform/thinkpad_acpi/hotkey_all_mask &gt; \
+/sys/devices/platform/thinkpad_acpi/hotkey_mask
+</code></pre>
+
+<p>All ACPI keys are configured in the <a href="http://vminko.org/storage/x200/tools/default.sh">default.sh</a>. The main advantage
+of ACPI hot keys is that they're not dependant on WM (which handles multimedia
+keys) and work even in console and SDL programs.</p>
+
+<p>Here is a short description of the ACPI key bindings:</p>
+
+<ul>
+<li><em>Power</em> - Turns the system off.</li>
+<li><em>Lid</em> - Suspends to RAM (via TuxOnIce) if the system is not locked via Fn+F2.
+See <a href="http://vminko.org/storage/x200/tools/lid.sh">lid.sh</a> for details.</li>
+<li><em>Fn+F2 (lock)</em> - Locks the system (via vlock) and starts tp-antitheft tool.
+See <a href="http://vminko.org/storage/x200/tools/lock.sh">lock.sh</a> for details.</li>
+<li><em>Fn+F3 (battery)</em> - Toggles DPMS state of the built-in display (via xset).
+See <a href="http://vminko.org/storage/x200/tools/display.sh">display.sh</a> for details.</li>
+<li><em>Fn+F4 (sleep)</em> - Suspends the system to RAM (via TuxOnIce).</li>
+<li><em>Fn+F5 (radio)</em> - Establishes PPP connection (GPRS/EDGE).</li>
+<li><em>Fn+F7 (video)</em> - Toggles DisplayPort (via xrandr), external screen is
+located to the right of built-in screen. See <a href="http://vminko.org/storage/x200/tools/video-out.sh">video-out.sh</a> for
+details.</li>
+<li><em>Fn+F8 (input)</em> - Does nothing, because X200 has no touchpad.</li>
+<li><em>Fn+F9 (eject)</em> - Tries to eject X200 from UltraBase station. Checks whether
+ultrabay disk drive or any USB devices connected via UltraBase hub are
+mounted. See <a href="http://vminko.org/storage/x200/tools/ultrabase_eject">ultrabase_eject</a> for details. This script should
+not be located in the /etc/acpi/ directory, because it also handles udev
+events. See <a href="#ultrabase" title="UltraBase">UltraBase</a> section for details.</li>
+<li><em>Fn+F12 (hibernate)</em> - Suspends the system to disk (via TuxOnIce).</li>
+<li><em>Fn+Home (brightness up)</em> - Increases brightness level.</li>
+<li><em>Fn+End (brightness down)</em> - Decreases brightness level.</li>
+<li><em>ThinkVantage</em> - Generates scancode XF86Launch0 (183) via <code>acpi_fakekey</code>. The
+scancode is handled by OpenBox and shows a system information dialog.  See
+<a href="#hotkeys" title="Hot keys">Hot keys</a> section for details.</li>
+<li><em>Fn+Space (zoom)</em> - Generates scancode XF86ZoomIn (182) via <code>acpi_fakekey</code>.
+The scancode is handled by WM and toggles windows between built-in and
+external monitors. See <a href="#hotkeys" title="Hot keys">Hot keys</a> section for details.</li>
+<li><em>RF kill switch</em> - Disables all wireless connections if activated and
+disables bluetooth if deactivated. See <a href="http://vminko.org/storage/x200/tools/wireless.sh">wireless.sh</a> for details.</li>
+</ul>
+
+<p>Notes:</p>
+
+<ul>
+<li>Fn+PgUp (thinklight) is handled by kernel.</li>
+<li>AC plug in/out events are handled by cpufreq daemon.</li>
+<li>The source code of <code>acpi_fakekey</code> is available <a href="http://vminko.org/storage/x200/tools/acpi_fakekey.c">here</a>.</li>
+</ul>
+
+<p>All multimedia keys generate scancode and are described in <a href="#hotkeys" title="Hot keys">Hot keys</a> section.</p>
+
+<h2 id="brightness">Brightness</h2>
+
+<p>Brightness is controlled by ThinkPad ACPI driver (<code>CONFIG_THINKPAD_ACPI</code>) via
+<code>/proc/acpi/ibm/brightness</code>:</p>
+
+<ul>
+<li><code>echo up &gt; /proc/acpi/ibm/brightness</code> increases brightness level,</li>
+<li><code>echo down &gt; /proc/acpi/ibm/brightness</code> decreases brightness level</li>
+<li><code>echo "level X" &gt; /proc/acpi/ibm/brightness</code> sets a particular
+brightness level, where X is a number from 1 upto 15.</li>
+</ul>
+
+<h2 id="battery">Battery</h2>
+
+<p>Barrery is supported by default ACPI driver (<code>CONFIG_ACPI_BATTERY</code>), which
+provides some info in <code>/proc/acpi/battery/BAT0/info</code> (capacity, voltage ,etc).
+However, this info is not very useful. I recommend to install <code>tp_smapi</code> kernel
+module (see <a href="#hdaps" title="HDAPS">HDAPS</a> for details), which provides lots of useful info in the
+<code>/sys/devices/platform/smapi/BAT0/</code>, especially <code>remaining_percent</code>,
+<code>remaining_running_time</code> and <code>remaining_charging_time</code>.</p>
+
+<h2 id="temperaturesensors">Temperature sensors</h2>
+
+<p>There are two ways to access sensors: via ACPI driver (<code>CONFIG_THINKPAD_ACPI</code>)
+and <code>tp_smapi</code> module. The first one provides <code>/proc/acpi/ibm/thermal</code> file:</p>
+
+<pre><code>$ cat /proc/acpi/ibm/thermal
+temperatures:   43 48 -128 42 39 -128 37 -128 51 48 -128 -128 -128 ...
+</code></pre>
+
+<p>The second one provides 16 files via /sys interface: <code>ls
+/sys/class/hwmon/hwmon3/device/temp*</code>.Here is a description of the values:</p>
+
+<table>
+<colgroup><col align="center">
+<col>
+</colgroup><thead>
+<tr>
+	<th>Index</th>
+	<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">1</td>
+	<td>CPU 0</td>
+</tr>
+<tr>
+	<td align="center">2</td>
+	<td>HDAPS</td>
+</tr>
+<tr>
+	<td align="center">3</td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td align="center">4</td>
+	<td>CPU 1</td>
+</tr>
+<tr>
+	<td align="center">5</td>
+	<td>Battery (main sensor)</td>
+</tr>
+<tr>
+	<td align="center">6</td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td align="center">7</td>
+	<td>Battery (secondary sensor)</td>
+</tr>
+<tr>
+	<td align="center">8</td>
+	<td>Not available</td>
+</tr>
+<tr>
+	<td align="center">9</td>
+	<td>?</td>
+</tr>
+<tr>
+	<td align="center">10</td>
+	<td>?</td>
+</tr>
+<tr>
+	<td align="center">11-16</td>
+	<td>Not available</td>
+</tr>
+</tbody>
+</table>
+
+<p>Notes:</p>
+
+<ul>
+<li>9 and 10 are supposed to be Northbridge and/or SSD. Unfortunately, smartctl
+can't detect the temperature of Samsung MMCQE28G8MUP yet, therefore we don't
+know this for sure.</li>
+</ul>
+
+<h2 id="fan">Fan</h2>
+
+<p>ThinkPad ACPI driver supports auto fan control:</p>
+
+<pre><code>echo 'level auto' &gt; /proc/acpi/ibm/fan
+</code></pre>
+
+<p>But if you want to tweak, for example, the temperature fan start spinning at,
+then do the following:</p>
+
+<ul>
+<li>Install fancontrol tool: <code>emerge -av lm_sensors</code>.</li>
+<li>Use <code>pwmconfig</code> to create a config file or just use <a href="http://vminko.org/storage/x200/configs/fancontrol">this</a> one,
+which specifies to use CPU core #1 as temperature sensor, to start fan
+spinning at minimum speed at 45° C and to set it at maximum speed at
+60° C.</li>
+<li>Add <code>thinkpad_acpi.fan_control=1</code> to your kernel command line.</li>
+<li>Add this into <code>/etc/conf.d/local.start</code> in order to disable auto fan control:
+<code>echo level 1 &gt; /proc/acpi/ibm/fan</code></li>
+</ul>
+
+<h2 id="ultrabase">UltraBase</h2>
+
+<p>Supported by <code>CONFIG_THINKPAD_ACPI_BAY</code> and <code>CONFIG_ACPI_DOCK</code>. Do the
+following to undock from the UltraBase:</p>
+
+<pre><code>echo 1 &gt;/sys/devices/platform/dock.0/undock
+</code></pre>
+
+<p>The eject button located on the UltraBase doesn't generate ACPI events, it
+generates udev events instead. In order to handle it properly do the following:</p>
+
+<ul>
+<li>Add corresponding udev <a href="http://vminko.org/storage/x200/configs/99-ultrabase.rules">rules</a>. The rules assign
+<a href="http://vminko.org/storage/x200/tools/ultrabase_eject">ultrabase_eject</a> and <a href="http://vminko.org/storage/x200/tools/ultrabase_insert">ultrabase_insert</a> scripts on
+eject/insert events accordingly. The <code>ultrabase_eject</code> is used as ACPI Fn+F9
+handler. The <code>ultrabase_insert</code> establishes eth0 connetion.</li>
+<li>Add <code>dock.immediate_undock=0</code> to your kernel command line.  It will cause the
+driver to wait for userspace to write the undock sysfs file before undocking.</li>
+</ul>
+
+<h2 id="cpufrequency">CPU frequency</h2>
+
+<p>Supported by <code>CONFIG_X86_ACPI_CPUFREQ</code>. There are three CPU frequencies
+available: 2.40 GHz, 1.60 GHz and 800 MHz.</p>
+
+<p>Install cpufreq packages in order to use frequency scaling: <code>emerge -av cpufreqd
+cpufrequtils</code>. cpufreqd is required, cpufrequtils is an optional package and
+provides useful tools like cpufreq-info and cpufreq-set. <a href="http://vminko.org/storage/x200/configs/cpufreqd.conf">Here</a> is an
+example of cpufreqd config file.</p>
+
+<p>Config description:</p>
+
+<table>
+<colgroup><col>
+<col>
+<col align="right">
+<col align="right">
+<col align="right">
+</colgroup><thead>
+<tr>
+	<th>AC</th>
+	<th>Battery, %</th>
+	<th>Brightness level</th>
+	<th>Governor</th>
+	<th>Exec</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>on</td>
+	<td> </td>
+	<td align="right">12</td>
+	<td align="right">ondemand</td>
+	<td align="right"> </td>
+</tr>
+<tr>
+	<td> </td>
+	<td>30-100</td>
+	<td align="right">9</td>
+	<td align="right">conservative</td>
+	<td align="right"> </td>
+</tr>
+</tbody>
+
+<tbody>
+<tr>
+	<td>off</td>
+	<td>3-30</td>
+	<td align="right">6</td>
+	<td align="right">powersave</td>
+	<td align="right"> </td>
+</tr>
+<tr>
+	<td> </td>
+	<td>0-3</td>
+	<td align="right">1</td>
+	<td align="right">powersave</td>
+	<td align="right">hibernate</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="hotkeys">Hot keys</h1>
+
+<p>All multimedia keys except the mute button generate scancode and all we need to
+do is to assign proper symnames via xmodmap. See <a href="http://vminko.org/storage/x200/configs/Xmodmap">.Xmodmap</a> as
+example.</p>
+
+<p>The mute button is handled by firmware by default and doesn't generate
+scancode, add <code>acpi_osi="Linux"</code> to your kernel command line to fix the issue.</p>
+
+<p>The <a href="http://vminko.org/storage/x200/configs/rc.xml">rc.xml</a> is an example of symnames to actions bindings.
+XF86ZoomIn key (Fn+Space) toggles window between external and built-in
+displays. Works only in OpenBox patched with
+<a href="http://vminko.org/storage/x200/patches/openbox-3.4.7.2-nextprev-xinerama.patch">openbox-3.4.7.2-nextprev-xinerama.patch</a>.
+XF86Launch0 shows an information dialog (<a href="http://vminko.org/storage/x200/tools/tray.sh">tray.sh</a>), which contains
+current time and date, battery status and level, brightness, CPU frequencies and
+governors, etc.</p>
+
+<p>ACPI hot keys are described in the <a href="#acpi" title="ACPI">ACPI</a> section.</p>
+
+<h1 id="suspending">Suspending</h1>
+
+<h2 id="suspend-to-ram">Suspend-to-RAM</h2>
+
+<p>Suspend-to-RAM (aka sleep or ACPI S3 state) is supported by <code>CONFIG_SUSPEND</code> and
+works flawlessly.</p>
+
+<h2 id="suspend-to-disk">Suspend-to-disk</h2>
+
+<p>There are two well known ways to suspend-to-disk (aka hibernate):
+1. Native Linux hibernator
+2. TuxOnIce</p>
+
+<p>I used to use TuxOnIce, but the kernels 2.6.39+ make 'OOPS' while hibernating to
+a file, see <a href="http://permalink.gmane.org/gmane.linux.swsusp.general/9864">this thread</a> for details. Unfortunatelly, I could
+resolve this problem. So I gave up and switched to native Linux hibernator.</p>
+
+<h2 id="nativehibernatorpm-utils">Native hibernator / pm-utils</h2>
+
+<p>In order to use native hibernator, you need to enable <code>CONFIG_HIBERNATION</code>
+specify your swap partition either in <code>CONFIG_PM_STD_PARTITION</code> or in the
+<code>resume</code> kernel parameter.</p>
+
+<p>Additionally, you may be interested in the following:</p>
+
+<ul>
+<li><a href="http://vminko.org/storage/x200/patches/1.4.1-fix-inhibit.patch">1.4.1-fix-inhibit.patch</a> - fixes suspend inhibition when one of
+the hooks fails and adds <code>ON_FAILURE</code> <a href="http://vminko.org/storage/x200/configs/pm.config">config</a> parameter, which
+allows to execute commands in this case.</li>
+<li><a href="http://vminko.org/storage/x200/tools/00dpms">00dpms</a> - a hook which inhibits suspend when LCD is turned off,
+requires <a href="http://vminko.org/storage/x200/tools/xrun.sh">xrun.sh</a>.</li>
+<li><a href="http://vminko.org/storage/x200/tools/00fan">00fan</a> - a hook which starts fan at maximum speed and enables
+fancontrol.</li>
+</ul>
+
+<h2 id="tuxonicehibernate-script">TuxOnIce / hibernate-script</h2>
+
+<p><em>Warning!</em>  This paragraph is obsolete. I recommend to use the native Linux
+hibernator.</p>
+
+<p>TuxOnIce seems to be the best implementation of suspend-to-disk
+(aka hibernate). It can be used without initrd and allows you to suspend on a
+regular file (useful feature if you don't use swapping and have an SSD instead
+of an HDD). TuxOnIce comes as hibernate scripts and kernel patch. The patch
+for kernel v2.6.38 is availavle here:
+<a href="http://tuxonice.net/files/tuxonice-3.2-for-2.6.38.patch.bz2">tuxonice-3.2-for-2.6.38.patch.bz2</a>.</p>
+
+<p>In order to install TuxOnIce, you need to:</p>
+
+<ul>
+<li>Apply the patch to your kernel sources.</li>
+<li>Install hibernate-script and s2ram: <code>emerge -av hibernate-script suspend</code></li>
+</ul>
+
+<p>The hibernate scripts deal with both suspend-to-RAM (that's why it requires
+s2ram) and suspend-to-disk. Therefore there're common suspend configs located
+in the <code>/etc/hibernate/</code> directory. The examples of config can be downloaded
+<a href="http://vminko.org/storage/x200/configs/hibernate-configs.tar.bz2">here</a></p>
+
+<p>Here are few notes regarding the config files:</p>
+
+<ul>
+<li><code>Compressor lzo</code> is set, because LZF compression is no longer supported by
+TuxOnIce since LZO is now provided by kernel (2.6.25 and later).</li>
+<li><code>OnResume 00 echo level 1 &gt; /proc/acpi/ibm/fan</code> is required to disable auto
+fan control. Remove this line if you don't use fancontrol.</li>
+<li><code>UnloadModules ehci_hcd</code> is a workaround of a problem with Trendnet TK-207
+switch. You don't need this probably.</li>
+<li><code>VerifyFilewriterResume2 no</code> is no longer required for tuxonice-3.2-rc2 since
+it successfully resumes when the resume device is specified via UUID.</li>
+<li><code>FilewriterLocation /hibernation_file 2048</code> specifies location of the
+hibernation file. 2048 is the amount of disk space reserved for the
+hibernation file. This is used for the file allocator only.</li>
+</ul>
+
+<p>For the file allocator it's also necessary to create a hibernation file:</p>
+
+<pre><code>hibernate --no-suspend
+</code></pre>
+
+<p>The last thing to do is to add the <code>resume</code> kernel parameter in the
+<a href="http://vminko.org/storage/x200/configs/grub.conf">grub.conf</a> or as <code>CONFIG_PM_STD_PARTITION</code> value in the
+<a href="http://vminko.org/storage/x200/configs/config-3.10.25">kernel config</a>. Take a look at the <code>/sys/power/tuxonice/resume</code> to
+figure out its value. If you use TOI 3.0.99.32 or later, you will see something
+like this: <code>UUID=6ebd5055c6694ab8986503d0edcbe2b5:0xe78000</code>.</p>
+
+<p>See the <a href="http://en.gentoo-wiki.com/wiki/TuxOnIce">TuxOnIce - Gentoo Linux Wiki</a> manual for details.</p>
+
+<h1 id="hdaps">HDAPS</h1>
+
+<p>HDAPS (Hard Drive Active Protection System) becomes unnecessary when an SSD is
+used as a storage device. However, there are few other interesting applications
+for the sensor (see below). Moreover, the package with HDAPS drivers (tp_smapi)
+also contains the <a href="http://www.thinkwiki.org/wiki/SMAPI_support_for_Linux">SMAPI</a> (System Management Application Program
+Interface) driver, which provides unique access to some hardware control
+functionality like remaining running time, list <code>/sys/devices/platform/smapi/</code>
+for details.</p>
+
+<p>Don't use in-kernel support of HDAPS (<code>CONFIG_SENSORS_HDAPS</code>), because this
+module is obsolete and does not work with X200. Use the
+<code>app-laptop/tp_smapi-0.40</code> package instead, which provides another <code>hdaps</code>
+module implementing HDAPS support. It works very well with X200. </p>
+
+<p>In order to install the package, you need to do the following:</p>
+
+<ul>
+<li>Unmask the package (<code>echo 'app-laptop/tp_smapi ~amd64' &gt;&gt;
+/etc/portage/package.keywords</code>) and install it (<code>emerge -av tp_smapi</code>)</li>
+<li>Add <code>tp_smapi</code> and <code>hdaps</code> in the <code>/etc/modules.autoload.d/kernel-2.6</code> file
+to make gentoo load both modules automatically.</li>
+<li>Set correct HDAPS axis orientation: <code>echo 'echo 7 &gt;
+/sys/devices/platform/hdaps/invert' &gt;&gt; /etc/conf.d/local.start</code>.</li>
+</ul>
+
+<p>Now HDAPS should be correctly configured. It can be tested using hdaps-gl tool
+(<code>emerge -av hdaps-gl</code>).</p>
+
+<p>There are several programs that use HDAPS, for example, <a href="http://neverball.org/">Neverball</a>
+game (<code>emerge -av neverball</code>). It requires joystick device (<code>/dev/input/js0</code>),
+therefore the <code>CONFIG_INPUT_JOYDEV</code> flag should be enabled in kernel config,
+<code>joystick</code> should be added in the <code>USE</code> variable as well as in <code>INPUT_DEVICES</code>,
+see <a href="http://vminko.org/storage/x200/configs/make.conf">make.conf</a> for details. Joystick can be calibrated using <code>jscal
+/dev/input/js0 -c</code>. It's very fun to play neverball using HDAPS as joystick.
+See these two videos as example: <a href="http://tinyogg.com/watch/R301X/">video1</a>, <a href="http://tinyogg.com/watch/k7jLF/">video2</a>.</p>
+
+<p>Another useful utility which uses HDAPS is tp-antitheft, something like
+<a href="http://tinyogg.com/watch/QVBBa/">this</a>. You can download it <a href="http://vminko.org/storage/x200/tools/tp-antitheft">here</a>. I binded it on Fn+F2
+combination, see the <a href="#acpi" title="ACPI">ACPI</a> section for details.</p>
+
+<h1 id="trackpoint">TrackPoint</h1>
+
+<p>Supported by <code>CONFIG_MOUSE_PS2_TRACKPOINT</code>. You may also want to emulate mouse
+wheel, see example in the TrackPoint section of the <a href="http://vminko.org/storage/x200/configs/10-tracking-ball.fdi">xorg.conf</a>.</p>
+
+<p>If you use HAL, you may find <a href="http://vminko.org/storage/x200/configs/10-tracking-ball.fdi">this config</a> for TrackPoint useful.</p>
+
+<h1 id="fingerprintreader">Fingerprint reader</h1>
+
+<p>Unfortunately, fprint doesn't support AuthenTec AES 2810, according to
+<a href="http://reactivated.net/fprint/wiki/Unsupported_devices">this page</a>. But I hope some day it will.</p>
+
+<h1 id="webcamera">Web camera</h1>
+
+<p>Supported by <code>CONFIG_V4L_USB_DRIVERS</code>. Works fine via V4L2 interface. The
+webcam is capable to capture video in resolution up to 1280x960. MPlayer
+package can be used to capture video (<code>v4l2</code> USE flag is required):</p>
+
+<pre><code>mplayer tv:// -tv driver=v4l2:width=1280:height=800
+</code></pre>
+
+<p>The following command records video into a file (<code>encode</code> USE flag is
+required):</p>
+
+<pre><code>mencoder tv://1 -tv driver=v4l2:width=640:height=480:device=/dev/video0:\
+fps=24:alsa:forceaudio:amode=0:adevice=hw.0,0:audiorate=22050 -oac mp3lame\
+-lameopts vbr=3:br=32:mode=3 -ovc lavc -lavcopts vcodec=mpeg4:\
+vbitrate=1200:keyint=300 -o webcamvideo.avi
+</code></pre>
+
+<p>Options description:</p>
+
+<ul>
+<li><code>tv://1</code> - TV  capture  module</li>
+<li><code>-tv</code> - TV capture mode properties</li>
+<li><code>driver=v4l2</code> - TV input driver</li>
+<li><code>width=640:height=480</code> - output window resolution</li>
+<li><code>device=/dev/video0</code> - device to capture video from</li>
+<li><code>alsa</code> - capture audio from ALSA</li>
+<li><code>forceaudio</code> - capture audio even if there are no audio sources reported by 
+v4l</li>
+<li><code>amode=0</code> - capture mono sound</li>
+<li><code>adevice=hw.0,0</code> - name of device to capture sound from</li>
+<li><code>audiorate=22050</code> - audio capture bitrate</li>
+<li><code>-oac mp3lame</code> - encode audio to MP3 (using LAME)</li>
+<li><code>-lameopts</code> - audio codec properties</li>
+<li><code>vbr=3</code> - average bitrate method</li>
+<li><code>br=32</code> - bitrate in Kbps</li>
+<li><code>mode=3</code> - encode mono sound</li>
+<li><code>-ovc lavc</code> - encode video with a libavcodec codec</li>
+<li><code>-lavcopts</code> - video codec properties</li>
+<li><code>vcodec=mpeg4</code> - encode video to MPEG-4</li>
+<li><code>vbitrate=1200</code> - bitrate in Kbps</li>
+<li><code>keyint=300</code> - maximum interval between IDR-frames (specifies seeking
+precision)</li>
+<li><code>-o webcamvideo.avi</code> - output file name</li>
+</ul>
+
+<p><a href="http://ekiga.org/">Ekiga</a> works fine with video translation using h264 codec. Don't forget
+to load <code>ehci_hcd</code> if it's compiled as module, web camera won't work otherwise.</p>
+
+<h1 id="mediacardsreader">Media cards reader</h1>
+
+<p>Supported by <code>CONFIG_MMC_BLOCK</code>. Works fine with SD and SDHC cards. It should
+also support MMC cards, but do not have an MMC card to verify that.</p>
+
+<h1 id="thinklight">ThinkLight</h1>
+
+<p>Supported by the thinkpad ACPI kernel driver. It is controlled by Fn+PgUp
+combination or via <code>/proc/acpi/ibm/light</code>. Don't forget to set proper
+permissions to the light control file , because it's not accessible for
+ordinary user by default:</p>
+
+<pre><code>echo 'chmod 666 /proc/acpi/ibm/light' &gt;&gt; /etc/conf.d/local.start
+</code></pre>
+
+<p>The ThinkLight is required for th-antitheft utility.</p>
+
+<p>If you use pidgin IM client, you may want to install plugin, which uses
+ThinkLight to signal on new messages. <a href="http://github.com/Sitwon/led-notification">Here</a> is the source code of the
+plugin. TBD: create ebuild.</p>
+
+<h1 id="benchmarks">Benchmarks</h1>
+
+<p>Here are few relevant benchmarks:</p>
+
+<table>
+<colgroup><col>
+<col align="right">
+</colgroup><thead>
+<tr>
+	<th>Test conditions</th>
+	<th>Results</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Bootup (from grub to X11 WM)</td>
+	<td align="right">25 sec</td>
+</tr>
+<tr>
+	<td>Suspend-to-disk aka hibernate (TOI-3.0.99.41, linux-2.6.32)</td>
+	<td align="right">18 sec</td>
+</tr>
+<tr>
+	<td>Resume from suspend-to-disk (from grub, TOI-3.0.99.41, linux-2.6.32)</td>
+	<td align="right">14 sec</td>
+</tr>
+<tr>
+	<td>Suspend-to-disk aka hibernate (native, linux-3.2.12)</td>
+	<td align="right">14 sec</td>
+</tr>
+<tr>
+	<td>Resume from suspend-to-disk (from grub, native, linux-3.2.12)</td>
+	<td align="right">13 sec</td>
+</tr>
+<tr>
+	<td>Suspend-to-RAM (linux-3.2.12)</td>
+	<td align="right">2 sec</td>
+</tr>
+<tr>
+	<td>Resume from suspend-to-RAM (linux-3.2.12)</td>
+	<td align="right">4 sec</td>
+</tr>
+<tr>
+	<td>emerge -eav <a href="http://vminko.org/storage/x200/logs/equery.log">world</a></td>
+	<td align="right">7 h 20 m</td>
+</tr>
+<tr>
+	<td>Quake 3 (1280x800, high quality, xf86-video-intel-2.16.0, xorg-server-1.10.4)</td>
+	<td align="right">104 fps</td>
+</tr>
+<tr>
+	<td>glxgears (linux-3.2.12, xf86-video-intel-2.17.0, xorg-server-1.11.2)</td>
+	<td align="right">1391 fps</td>
+</tr>
+<tr>
+	<td>Idle consumption (SSD, CCFL panel, min brightness, no radios)</td>
+	<td align="right">7.0 W</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="references">References</h1>
+
+<ol>
+<li><a href="http://processorfinder.intel.com/details.aspx?sSpec=SLB3S">Intel® Core™2 Duo Mobile Processor P8600</a></li>
+<li><a href="http://www.intel.com/Products/Notebook/Chipsets/GM45/GM45-overview.htm">Mobile Intel® GM45 Express Chipset</a></li>
+<li><a href="http://www5.pc.ibm.com/europe/products.nsf/$wwwPartNumLookup/_43R1988">Lenovo 2GB PC3-8500 1066MHz DDR3 SODIMM Memory</a></li>
+<li><a href="http://www.intel.com/Assets/PDF/datasheet/316972.pdf">Intel® I/O Controller Hub 9 (ICH9) Family</a></li>
+<li><a href="http://www.intel.com/Assets/PDF/datasheet/320122.pdf">Mobile Intel® 4 Series Express Chipset Family</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Intel_GMA">Intel GMA - Wikipedia, the free encyclopedia</a></li>
+<li><a href="http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=AN&amp;subtype=CA&amp;htmlfid=897/ENUS108-535&amp;appname=lenovous&amp;language=en#h2-obi01">ThinkPad 128 GB Solid State Drive Supplemental information</a></li>
+<li><a href="http://www.intel.com/content/dam/doc/product-brief/wifi-link-5100-brief.pdf">Intel Wi-Fi Link 5100: Product Brief</a></li>
+<li><a href="http://www.wikidevi.com/wiki/Atheros_AR5BHB63">Atheros AR5BHB63</a></li>
+<li><a href="http://www.ericsson.com/solutions/mobile_broadband_modules/docs/mobile_broadband_module_datasheet_print.pdf">Mobile Broadband Module F3507g</a></li>
+<li><a href="http://www.broadcom.com/products/Bluetooth/Bluetooth-RF-Silicon-and-Software-Solutions/BCM2046">Broadcom Corporation - BCM2046 - Single-Chip Bluetooth® EDR HCI Solution</a></li>
+<li><a href="http://www.authentec.com/products-pcsandperipherals-aes2810.cfm">AuthenTec AES2810 Sensor</a></li>
+<li><a href="http://www.analog.com/en/mems-and-sensors/imems-accelerometers/adxl320/products/product.html">Analog Devices ADXL320</a></li>
+</ol>
+
+<h1 id="historyofchanges">History of changes</h1>
+
+<p><strong>18 Jan 2014</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  version 3.10.25. <br>
+  Updated the ultrabase <a href="http://vminko.org/storage/x200/tools/ultrabase_eject">eject script</a> (the dock ID was changed from
+  0 to 2 in linux-3.10). <br>
+  Added binding for the ThinkVantage button (updated OpenBox's
+  <a href="http://vminko.org/storage/x200/configs/rc.xml">rc.xml</a> and <a href="http://vminko.org/storage/x200/configs/Xmodmap">.Xmodmap</a>). <br>
+  Updated <a href="http://vminko.org/storage/x200/configs/make.conf">make.conf</a>. <br>
+  Uploaded proper version of the <code>acpi_fakekey</code> tool, since there is a
+  widespread version of the tool, which does not generate <code>SYN_REPORT</code> event and
+  won't work in linux-3.10.</p>
+
+<p><strong>15 Jun 2012</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  version 3.2.12. <br>
+  Updated and extended <a href="#benchmarks" title="Benchmarks">benchmarks</a>. <br>
+  Fixed error is xorg.conf (DPMS was disabled). <br>
+  Added a note about power saving of the <a href="#sound" title="Sound">audio codec</a>. <br>
+  Added smartctl log (3.5 years of extensive use and my SSD is still not dead -
+  quite surprising). <br>
+  Updated the <a href="#fan" title="Fan">fancontrol</a> config. <br>
+  Added a note about native Linux hibernator in the
+  <a href="#suspending" title="Suspending">suspend-to-disk</a> session. <br>
+  Added VA-API manual in the <a href="#video" title="Video">Video</a> section.</p>
+
+<p><strong>12 Nov 2011</strong> <br>
+  Added few notes about <em>Intel 5100</em> . <br>
+  Updated information regarding the Atheros WiFi card.</p>
+
+<p><strong>01 Sep 2011</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  versions 2.6.38+. <br>
+  Updated the <a href="#fan" title="Fan">fancontrol</a> config. <br>
+  Updated the <a href="#benchmarks" title="Benchmarks">Benchmarks</a> section. <br>
+  Added a note in the <a href="#video" title="Video">Video</a> section regarding VA-API.</p>
+
+<p><strong>01 Apr 2011</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  version 2.6.36. <br>
+  Added few notes regarding power consumption (in the following sections:
+  <a href="#sound" title="Sound">Sound</a>, <a href="#wifi" title="WiFi">WiFi</a>, <a href="#wwangps" title="WWAN/GPS">WWAN/GPS</a>). <br>
+  Added a note in the <a href="#video" title="Video">Video</a> section regarding the kernel bug caused by KMS. <br>
+  Updated the <a href="#webcamera" title="Web camera">Web camera</a> section (there is no more problems with capturing
+  video at 1280x960).</p>
+
+<p><strong>06 Nov 2010</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  version 2.6.35.</p>
+
+<p><strong>26 Aug 2010</strong> <br>
+  Added a note regarding SSD in the <a href="#hdaps" title="HDAPS">HDAPS</a> section. Thanks to Anton Bolshakov.</p>
+
+<p><strong>19 Jul 2010</strong> <br>
+  Added a note regarding ExpressCards in the <a href="#kernel" title="Kernel">Kernel</a> section. Thanks to HK J.</p>
+
+<p><strong>13 Jul 2010</strong> <br>
+  The fancontrol <a href="http://vminko.org/storage/x200/configs/fancontrol">config</a> is updated for lm_sensors-3.1.2.</p>
+
+<p><strong>10 Jul 2010</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section, related patches and configs are updated for the
+  version 2.6.34.</p>
+
+<p><strong>02 May 2010</strong> <br>
+  Added a missing <a href="http://vminko.org/storage/x200/configs/f3507g">config</a> for the F3507g-related scripts. <br>
+  Added a clarification regarding the <code>tp_smapi</code> package in the <a href="#hdaps" title="HDAPS">HDAPS</a>
+  section. <br>
+  Thanks to WOLfgang Schricker.</p>
+
+<p><strong>28 Apr 2010</strong> <br>
+  The <a href="#kernel" title="Kernel">Kernel</a> section and related patches are updated for the version 2.6.33.</p>
+
+<p><strong>19 Mar 2010</strong> <br>
+  Updated the cpufreqd config, because <code>/proc/acpi/ibm/brightness</code> is no longer
+  provided by kernel, now the /sys is used interface instead.</p>
+
+<p><strong>15 Mar 2010</strong> <br>
+  Added a note regarding video decoding acceleration. <br>
+  Small update in the <a href="#ethernet" title="Ethernet">Ethernet</a> section regarding <code>ethtool</code>.</p>
+
+<p><strong>14 Feb 2010</strong> <br>
+  Added a note regarding ACPI daemon in the <a href="#keys" title="Keys">Keys</a> section. Thanks to HK J.</p>
+
+<p><strong>15 Dec 2009</strong> <br>
+  Small update in the <a href="#webcamera" title="Web camera">Web camera</a> section regarding high resolutions.</p>
+
+<p><strong>13 Dec 2009</strong> <br>
+  Added few notes regarding kernel 2.6.32 and KMS.</p>
+
+<p><strong>20 Nov 2009</strong> <br>
+  The article is reformatted in MultiMarkdown syntax.</p>
+
+<p><strong>13 Sep 2009</strong> <br>
+  Added few notes regarding kernel 2.6.31.</p>
+
+<p><strong>16 Jul 2009</strong> <br>
+  Added HAL config for TrackPoint.</p>
+
+<p><strong>06 Jul 2009</strong> <br>
+  Added the
+  <a href="http://vminko.org/storage/x200/patches/drm-i915-ensure-objects-are-allocated-below-4GB-on-PAE.patch">drm-i915-ensure-objects-are-allocated-below-4GB-on-PAE.patch</a>.
+  Thanks to Michael Fritzsch.
+  Added a note in the <a href="#kernel" title="Kernel">Kernel</a> section regarding <a href="http://vminko.org/storage/x200/patches/x200_dock.diff">x200_dock.diff</a>
+  and the latest kernel. <br>
+  Added a note in the <a href="#suspending" title="Suspending">Suspending</a> section about TuxOnIce for 2.6.30. <br>
+  Added a note in the <a href="#video" title="Video">Video</a> section regarding DisplayPort capabilities. <br>
+  Added a note in the <a href="#video" title="Video">Video</a> section regarding DRI2 support. <br>
+  Slightly updated the <a href="http://vminko.org/storage/x200/configs/config-3.10.25">kernel</a>, <a href="http://vminko.org/storage/x200/configs/grub.conf">grub</a>, <a href="http://vminko.org/storage/x200/configs/xorg.conf">xorg</a>
+  configs and the ultrabase <a href="http://vminko.org/storage/x200/tools/ultrabase_eject">eject script</a>. <br>
+  Fixed wrong dates, which were specified in y/d/m format instead of y/m/d.  </p>
+
+<p><strong>13 May 2009</strong> <br>
+  First public release.</p>
+
+</div>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="http://vminko.org/download/media/text/gentoo_manuals/thinkpad_x200.mkd">
+            Download
+        </a>
+        this document in MultiMarkdown format.<br>
+        © 2009-2016&nbsp;
+        &lt;<a href="mailto:%76%69%74%61%6c%79%2e%6d%69%6e%6b%6f%40%67%6d%61%69%6c%2e%63%6f%6d">Vitaly Minko</a>&gt;
+        <br>
+        <a href="http://www.gnu.org/copyleft/fdl.html">
+            <img alt="GNU Free Documentation License" src="Gentoo%20on%20a%20ThinkPad%20X200_files/gnu-fdl.png">
+        </a>
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+            <img alt="Creative Commons License" src="Gentoo%20on%20a%20ThinkPad%20X200_files/cc-by-sa.png">
+        </a><br>
+        Content is available under
+        <a href="http://www.gnu.org/copyleft/fdl.html">
+            GNU Free Documentation License 1.3
+        </a>&nbsp;and
+        <a href="http://creativecommons.org/licenses/by-sa/3.0/">
+            Creative Commons Attribution-Share Alike 3.0 Unported License
+        </a>.
+    </div>
+
+
+</body></html>

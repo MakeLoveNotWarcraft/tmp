@@ -1,0 +1,93 @@
+/* This file is part of cms.sh.
+ *
+ * cms.sh is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * cms.sh is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * cms.sh. If not, see <http://www.gnu.org/licenses/>.
+ *
+ * (c) 2010-2013 Vitaly Minko <vitaly.minko@gmail.com>
+ */
+
+html, body  {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: verdana,arial,helvetica,tahoma,sans-serif;
+    font-size: 14px;
+    color: black;
+    background: white;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration:underline;
+}
+
+.wrapper {
+    min-height: 100%;
+}
+
+.content {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 100px;
+}
+
+.footer {
+    color: grey;
+    width: 100%;
+    text-align: center;
+    margin-top: -100px;
+    font-size: small;
+}
+
+.menu {
+    padding: 5px;
+}
+
+.headline {
+    padding: 0 5px;
+    color: black;
+    font-size: x-large;
+}
+
+.arrow {
+    padding: 0 10px;
+    font-size: x-large;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+.viewer {
+    width: 100%;
+    text-align: center;
+}
+
+.paginator {
+    text-align: center;
+}
+
+.pag_arrow {
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+}
