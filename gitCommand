@@ -1,8 +1,15 @@
-mkdir /repo/project
-cd /repo/project
-git --bare init
+loacal host repo 
+  mkdir /repo/project
+  cd /repo/project
+  git --bare init
 
-cd /project
-git push -u /repo/project master
+  cd /project
+  git push -u /repo/project master
 
-git clone /repo/project
+  git clone /repo/project
+  
+if delete file(s), tell git   
+  git rm gitLocalhostRepoPush
+  
+  
+    
