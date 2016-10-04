@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+<link rel="stylesheet" type="text/css" href="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/alberthsu.css">
+<link rel="icon" href="http://babyface2.com/favicon.png" type="image/png">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="ATA, SATA, RAID, dmraid, Storage, Linux, Fedora"> 
+<meta name="description" content="dmraid 介紹：Linux 上應用 ATA / SATA RAID 技術"> 
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://babyface2.com/alberthsu.rss">
+<title>dmraid 介紹：Linux 上應用 ATA / SATA RAID 技術</title>
+</head>
+<body>
+<div id="container">
+<h1>dmraid 介紹：Linux 上應用 ATA / SATA RAID 技術</h1>
+<div id="nav">
+<div class="cse-branding-bottom" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://babyface.com.tw/google.html" id="cse-search-box">
+      <div>
+        <input name="cx" value="partner-pub-6640470120993101:8m85ty-yicv" type="hidden">
+        <input name="cof" value="FORID:10" type="hidden">
+        <input name="ie" value="UTF-8" type="hidden">
+        <input name="q" size="16" type="text">
+        <input name="sa" value="搜尋" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/poweredby_FFFFFF.gif" alt="Google">
+  </div>
+  <div class="cse-branding-text">
+    自訂搜尋
+  </div>
+</div>
+
+<script src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/ca-pub-6640470120993101.js"></script><script type="text/javascript"><!--
+google_ad_client = "pub-6640470120993101";
+/* 234x60, 已建立 2009/2/24 */
+google_ad_slot = "6287559902";
+google_ad_width = 234;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript" src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:234px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:234px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="60" width="234"></iframe></ins></ins>
+<!-- <ul>
+<li><a href="033Unit3.html">Next</a></li>
+<li><a href="10installation.html">Prev(Installation)</a></li>
+</ul>
+!-->
+</div>
+
+<div id="content">
+<h4>作者：徐秉義（Albert Hsu）</h4>
+<p>本文主要介紹 dmraid 工具：Linux 上使用 ATA / SATA RAID 技術。</p>
+<p>此處所提及的 ATA / SATA RAID 功能，主要是由主機板上的晶片所提供，與往常伺服器常見的 SCSI RAID 不太一樣。</p>
+<h2>「軟體模擬」RAID 對上「硬體運算」RAID 以及「軟硬兼施」BIOS RAID</h2>
+<p> RAID 一般分類成 Software RAID 與 Hardware RAID 說明如下：</p>
+<h3>Software RAID</h3>
+<p>Software RAID 是由作業系統來提供 RAID 功能，此舉會耗用較多 CPU 運算資源來作動，所以要運行軟體模擬 RAID 最好是雙 CPU 以上且高時脈等級主機，不然當遇到大量運算時，整體效能會大打折扣。</p>
+<h4>溫馨提示：Linux 上 Software RAID 技術已是相當成熟，使用裝置 /dev/md0、/dev/md1、/dev/md2 依此類推，MD 是 Mutiple Device 之意。</h4>
+<h3>Hardware RAID</h3>
+<p>Hardware RAID 由專屬 RAID 運算晶片，晶片位於介面卡或直接嵌入在主機板上，這時候作業系統只需要驅動 RAID 晶片即可，如此一來把 RAID 任務分工給 RAID 晶片，CPU 也較為輕鬆，管理上會比較簡便。</p>
+<h4>溫馨提示：Hardware RAID 廠商通常會提供監控 RAID 狀態工具，若是遇到磁碟有故障情形時，主機會閃爍故障燈號或是發出嗶嗶聲。</h4>
+<p>Hardware RAID 以往應用在 SCSI 硬碟較多、使用 ATA/IDE 硬碟較少，近年來因為 SATA 
+硬碟價格低、容量大、效能還不差，廠商紛紛出產使用 SATA 
+硬碟的磁碟陣列卡，購買需考量到價格、效能、功能、連接磁碟數量外，還有是否支援您所使用的作業系統。</p>
+<h4>Note：中、小企業所使用到磁碟陣列卡通常會提供驅動程式支援 Windows、Linux 與 Mac OS X（FreeBSD 核心）</h4>
+<h3>ATA(SATA) RAID / BIOS RAID / Fake RAID</h3>
+<p>這類型 RAID 介於 Software RAID 與 Hardware RAID 之間，算是半個 Hardware RAID，通常由主機板晶片來「幫忙」RAID 運算，因此有 Fake RAID（假 RAID）之稱。</p>
+<p>要啟動這個 RAID 功能，要先在 BIOS 畫面設定以後，再使作業系統能夠正確辨識裝置即可。因為這款 RAID 要在 BIOS 內開啟，所以亦有人稱之為 BIOS RAID。</p>
+<p>Linux 在這方面支援，主要是使用 dmraid 套件搭配 device-mapper 功能，來存取 BIOS RAID 
+磁碟，以下是使用 Fedora Core 5 執行指令「dmraid -l」（參數是小寫 L）內容，可看出 dmraid 支援各大廠商主機板 
+RAID 晶片，像是 Intel、VIA、NVidia 都有包含在其內，括號內是針對某款晶片所支援的 RAID Level（級別）。</p>
+<pre>[root@www ~]# dmraid -l
+hpt37x : Highpoint HPT37X (S,0,1,10,01)
+hpt45x : Highpoint HPT45X (S,0,1,10)
+isw    : Intel Software RAID (0,1)
+lsi    : LSI Logic MegaRAID (0,1,10)
+nvidia : NVidia RAID (S,0,1,10)
+pdc    : Promise FastTrack (S,0,1,10)
+sil    : Silicon Image(tm) Medley(tm) (0,1,10)
+via    : VIA Software RAID (S,0,1,10)
+dos    : DOS partitions on SW RAIDs
+</pre>
+<p>在 dmraid 說明文件中（指令 man dmraid）尋找 list 字眼會找到這一段說明，這裡清楚看出 dmraid 除了支援一般常見的 RAID0、RAID1 以外，尚有 RAID10、RAID01 與 Span</p>
+<pre>       {-l|--list_formats}
+              List all available metadata format handlers with their names and
+              descriptions. Supported RAID levels are listed in parenthesis:
+
+              S: Span (concatination)
+              0: RAID0 (stripe)
+              1: RAID1 (mirror)
+              10: RAID10 (mirror on top of stripes)
+              01: RAID10 (stripe on top of mirrors)
+</pre>
+<p>&nbsp;</p>
+<table border="1">
+<tbody><tr><td>S</td><td>Span<br>concatination</td><td>將磁碟串接在一起並採用循序方式存取<br>（一顆硬碟用完再用下一顆）</td></tr>
+<tr><td>0</td><td>RAID0 Stripe</td><td>也是將磁碟串接在一起<br>但不同於 S 的地方是採用隨機方式存取<br>（立即將資料分散在不同硬碟）</td></tr>
+<tr><td>1</td><td>RAID1 Mirror</td><td>使用鏡像方式使得兩/多顆磁碟資料同步</td></tr>
+<tr><td>10</td><td>RAID10</td><td>10 是上層做 1（鏡像）底下做 0（串接）</td></tr>
+<tr><td>01</td><td>RAID10</td><td>01 是上層做 0（串接）底下做 1（鏡像）</td></tr>
+</tbody></table>
+<h4>Note：RAID10 最少需要四顆硬碟。</h4>
+<h4>您發現了嗎？似乎是沒有支援 RAID5 功能！在筆者截稿前（2006年10月）dmraid 新版（1.0.0.rc11）已經支援 
+Nvidia 晶片 RAID5 功能。因為 Fedora Core 5 內建 dmraid 版本（1.0.0.rc9）較舊，故看不到相關資訊。</h4>
+<h2>實戰應用 dmraid</h2>
+<p>印象中 Linux 對於伺服器等級硬體設備，像是 SCSI 介面卡、SCSI RAID 介面卡、Fibre Channel 
+介面卡這些的驅動支援算是「不遺餘力」，但是遇到這種 BIOS RAID 比較像是桌上型/工作站使用的硬體配備來說，就不見得能夠正常驅動了。</p>
+<p>筆者手邊的這台硬體『ASUS P5LD2 主機板』原本想說內建的 BIOS RAID 於先前查詢測試過好像不支援 
+Linux，在最近機緣巧合下，拿了張 Fedora Core 5 
+安裝片一試，沒想到居然可以使用了耶！於是就索性研究相關技術以及測試驗證，介紹給大家參考，手邊若有類似硬體的讀者朋友們，不妨一同來玩玩吧！</p>
+<h3>測試硬體配備介紹</h3>
+<p>此次所使用的測試主機相關規格如下：華碩（ASUS）P5LD2 主機板，搭配兩顆相同容量大小的 SATA 硬碟，另外備用一顆 IDE 
+硬碟。較值得一提的是，這個內建的 BIOS RAID 主要是由 Intel ICH7R 晶片提供，功能包括 RAID0、RAID1、RAID5 及
+ RAID10，詳細規格說明請至華碩官方網站查詢，網址 
+http://taiwan.asus.com.tw/products4.aspx?modelmenu=2&amp;model=515&amp;l1=3&amp;l2=11&amp;l3=185</p>
+<p>另外在測試部份，一方面因為筆者手邊只有兩顆相同規格的 SATA 硬碟，二方面 dmraid 對於這款晶片暫時只支援到 raid0 與 raid1，所以就只能先測試這部份的功能囉。</p>
+<p>&nbsp;</p>
+<table border="1">
+<tbody><tr><td>設備</td><td>型號/數量</td><td>用途</td></tr>
+<tr><td>主機板</td><td>華碩 P5LD2 主機板</td><td>測試 BIOS RAID</td></tr>
+<tr><td>SATA 硬碟</td><td>兩顆同規格 SATA 硬碟</td><td>測 RAID0 與 RAID1</td></tr>
+<tr><td>IDE 硬碟</td><td>一顆普通 IDE 硬碟</td><td>用來安裝與執行 SLES 10</td></tr>
+</tbody></table>
+<h4>Note：對於無法直接經由安裝程式就抓到 BIOS RAID 磁碟的 Linux Distribution（例如 SLES 10），筆者是先將 SLES 10 裝在 IDE 硬碟上，待更新 dmraid 工具後，就可以使用 BIOS RAID 磁碟。</h4>
+<h3>測試軟體介紹</h3>
+<p>軟體部份筆者準備了包括  Fedora Core 5 / Fedora Core 4 與 SLES 10（SuSE Linux 
+Enterprise Server）與 SLED 10（SuSE Linux Enterprise Desktop）這幾個 Linux 
+Distribution，另外還有將 dmraid 新版從原始碼編譯並執行的整個過程。</p>
+<h2>測試情形</h2>
+<h3>調整 BIOS 內有關 SATA 運作模式</h3>
+<p>在 P5LD2 主機板 BIOS 設定畫面中，找到控制 SATA 運作模式有三種，分別為 Standard IDE、AHCI 與 
+RAID，通常主機板針對 SATA 會有兩到三個選項，大概意思不外乎是『向下相容 IDE』（舊規格）、『當成 SATA』（新規格）或是『做 
+RAID』，這次主要就是測試 SATA RAID 功能，所以當然是選擇「RAID」囉！</p>
+<h4>溫馨提示：AHCI（Advanced Host Controller Interface）是 Intel 針對 SATA 
+介面所開出的一個特殊規格（提供 SATA 介面 NCQ 功能），這款 ICH7R 晶片恰好有這項功能，這也意味著並不是所有 Intel 
+晶片皆提供 AHCI 功能。</h4>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/raid-3.png" alt="raid-3 畫面"></p>
+<p>使用 Linux 觀察磁碟裝置代號來判斷 SATA 運作模式是個不錯的方式，整理如下表：</p>
+<p>&nbsp;</p>
+<table border="1">
+<tbody><tr><td>磁碟裝置代號</td><td>意義</td><td>範例</td></tr>
+<tr><td>hd(IDE hard disk)</td><td>SATA 硬碟被當作 IDE 磁碟（舊規格）</td><td>/dev/hda</td></tr>
+<tr><td>sd(SCSI disk)</td><td>SATA 硬碟被當作 SCSI 磁碟（標準方式）</td><td>/dev/sda</td></tr>
+<tr><td>位於 mapper 底下</td><td>SATA 硬碟被當作 BIOS RAID 磁碟</td><td>/dev/mapper/isw_dcaihbahhd_Volume0</td></tr>
+</tbody></table>
+<h3>BIOS RAID 設定畫面</h3>
+<p>在開啟 BIOS RAID 後，可以進入其設定畫面，通常可以在這邊設定 RAID0、RAID1、RAID5 及 RAID10 等等，筆者先將兩顆硬碟設定成 RAID0（追求效能為主）來做測試。</p>
+<p>按下 Ctrl + i 進入設定之前的畫面</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/raid-2.png" alt="raid-2 畫面"></p>
+<p>Intel ICH7R BIOS RAID  設定畫面</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/raid-1.png" alt="raid-1 畫面"></p>
+<h3>使用 Fedora Core 5 測試</h3>
+<p>測試最順暢的當屬 Fedora Core 5（dmraid 版本 1.0.0.rc9），在放入安裝光碟開機後，配合 Fedora 安裝程式
+ anaconda 導引之下，立即找到 /dev/mapper/isw_dcaihbahhd_Volume0 這個 BIOS RAID 
+磁碟，至於其他安裝步驟則與一般安裝無異。</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/fc5.png" alt="fc5 畫面"></p>
+<p>安裝完成後，在效能方面的表現相當不錯，開機很順暢，使用指令「hdparm -t 
+/dev/mapper/isw_dcaihbahhd_Volume0」測出來磁碟 I/O 速度達到 100 MB/sec 以上，若拿這個主機來當
+ File Server 或是多媒體編輯工作站應該會是個物超所值的選擇。</p>
+<pre>[root@r5-129 ~]# hdparm -t /dev/mapper/isw_dcaihbahhd_Volume0
+
+/dev/mapper/isw_dcaihbahhd_Volume0:
+ Timing buffered disk reads:  316 MB in  3.01 seconds = 105.07 MB/sec
+HDIO_DRIVE_CMD(null) (wait for flush complete) failed: Inappropriate ioctl for device
+[root@r5-129 ~]#
+</pre>
+<p>至於 Fedora Core 4（dmraid 版本 1.0.0.rc8）與 Fedora Core 3（dmraid 版本 
+1.0.0.rc5）這些比較舊版的 Linux Distribution，在安裝時都無法正確抓到 BIOS RAID 所提供的磁碟。</p>
+<p>SLES 10 與 SLED 10 在安裝過程中，也是無法正確抓到 BIOS RAID 磁碟，接著同時按下「Alt + Ctrl + F2」來到安裝時的命令列中，輸入「dmraid -a y」指令，出現錯誤訊息並且依然無法驅動 BIOS RAID。</p>
+<pre># dmraid -a y
+ERROR: isw: volume Volume0 is broken
+ERROR: isw: volume Volume0 is broken
+</pre>
+<h4>Note：SLES 10 與 SLED 10 的 dmraid 版本皆為 1.0.0.rc8</h4>
+<p>測試的結論是，若是要直接使用 BIOS RAID 磁碟開機，就需使用能夠於安裝過程中即驅動 BIOS RAID 磁碟的 Linux 
+Distribution，而能不能夠驅動 BIOS RAID 磁碟，主要與 dmraid 版本夠不夠新、合不合用有關係，並且搭配 
+device-mapper 方式，來驅動 BIOS RAID 磁碟。</p>
+<h3>將 Linux 先安裝在 IDE 硬碟</h3>
+<p>對於那些無法於安裝期間就正常抓到 BIOS RAID 磁碟的 Linux Distribution，筆者的處理方式是先將 Linux 安裝在另一顆 IDE 硬碟上，待正常開機後再補裝新版 dmraid 軟體來辨識 BIOS RAID 裝置。</p>
+<h4>進階學習：也可以嘗試將新版 dmraid 兜進 Distribution 的安裝程式中（網路上有類似的文件），並且安裝程式也能夠支援 BIOS RAID 磁碟的話，其實就不需要先將 Linux 安裝在其他硬碟上了。</h4>
+<h3>使用 SLES 10 + 新版 dmraid 測試</h3>
+<p>Novell / SuSE 與今年（2006）發表 SLES 10 與 SLED 10，筆者手邊剛好有拿到安裝光碟，所以就使用 SLES 10 先裝在備用的 IDE 硬碟上，待安裝完成重新啟動後，再補裝新版的 dmraid 套件來測試。</p>
+<p>在安裝期間 SLES 10 已經有跳出錯誤訊息告訴我們她無法使用 BIOS RAID 而只能認得 /dev/sda 與 /dev/sdb 
+這兩顆硬碟，我們應該先安裝在 /dev/hdg（備用 IDE 硬碟）並且先不要去存取 /dev/sda 與 
+/dev/sdb，待安裝完成後，再來換新版 dmraid 存取 BIOS RAID 磁碟。</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/sles10.png" alt="sles10 圖檔"></p>
+<h4>Note：說實在的 dmraid 軟件工具主要是由 RedHat 主導，Novell SuSE 其實比較建議使用 Software RAID 來取代。</h4>
+<p>SLES 10 使用 /dev/hdg 當主要硬碟畫面</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/sles10hdg.png" alt="sles10hdg 圖檔"></p>
+<p>其他的安裝流程與 Fedora 類似，也是相當的人性化，幾乎沒遇到甚麼困難就安裝完成了。</p>
+<p>在安裝完成重新開機後，使用指令「dmraid -V」來觀看 dmraid 版本（1.0.0.rc8）以及指令「dmraid -a 
+y」來嘗試驅動 BIOS RAID 磁碟（失敗，並有錯誤訊息），在 /dev/mapper/ 底下也只看見預設的 control 連結檔</p>
+<pre>r7-136:~ # dmraid -V
+dmraid version:         1.0.0.rc8 (2005.05.19)
+dmraid library version: 1.0.0.rc8 (2005.05.19)
+device-mapper version:  4.5.0
+r7-136:~ # dmraid -a y
+ERROR: isw: volume Volume0 is broken
+ERROR: isw: volume Volume0 is broken
+r7-136:~ # ls -l /dev/mapper/
+總計 0
+lrwxrwxrwx 1 root root 16 2006-10-14 00:10 control -&gt; ../device-mapper
+r7-136:~ #
+</pre>
+<h3>手動安裝 dmraid 新版</h3>
+<p>第一步：下載 dmraid 原始程式碼</p>
+<p>來到 dmraid 位於 RedHat 網站，網址 http://people.redhat.com/~heinzm/sw/dmraid/src 目錄，下載到的檔案名稱為 dmraid-1.0.0.rc11.tar.bz2</p>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/dmraid.png" alt="dmraid 圖檔"></p>
+<p>第二步：解開包裹</p>
+<p>使用指令「tar jxvf dmraid-1.0.0.rc11.tar.bz2」來解開包裹，會產生 dmraid 目錄及其下 1.0.0.rc11 目錄</p>
+<pre>r7-136:~ # tar jxvf dmraid-1.0.0.rc11.tar.bz2
+...忽略
+dmraid/1.0.0.rc11/CREDITS
+dmraid/1.0.0.rc11/LICENSE_LGPL
+dmraid/1.0.0.rc11/aclocal.m4
+r7-136:~ # ls dmraid
+1.0.0.rc11
+r7-136:~ # ls dmraid/1.0.0.rc11/
+aclocal.m4  config.status  dmraid.spec  lib           Makefile      man
+autoconf    configure      doc          LICENSE       Makefile.in   README
+CHANGELOG   configure.in   include      LICENSE_GPL   make.tmpl     TODO
+config.log  CREDITS        KNOWN_BUGS   LICENSE_LGPL  make.tmpl.in  tools
+r7-136:~ #
+</pre>
+<h4>溫馨提示：tar 指令配合參數 jxvf 可解開 tar.bz2 檔案；配合參數 zxvf 可解開 tar.gz 檔案</h4>
+<p>第三步：切換到相關目錄下並編譯程式</p>
+<p>使用指令「cd dmraid/1.0.0.rc11/」切換到相關目錄下，使用指令「./configure」、「make」與「make install」來編譯與安裝程式</p>
+<pre>r7-136:~ # cd dmraid/1.0.0.rc11/
+r7-136:~/dmraid/1.0.0.rc11 # ./configure
+...忽略
+config.status: creating tools/version.h
+config.status: creating Makefile
+config.status: creating make.tmpl
+r7-136:~/dmraid/1.0.0.rc11 # make
+...忽略
+gcc -o dmraid dmraid.o commands.o toollib.o  -rdynamic -L../lib \
+      -L/lib -ldmraid -ldevmapper
+make[1]: Leaving directory `/root/dmraid/1.0.0.rc11/tools'
+r7-136:~/dmraid/1.0.0.rc11 # make install
+...忽略
+make[1]: Entering directory `/root/dmraid/1.0.0.rc11/tools'
+Installing dmraid in /sbin
+make[1]: Leaving directory `/root/dmraid/1.0.0.rc11/tools'
+r7-136:~/dmraid/1.0.0.rc11 #
+</pre>
+<h4>溫馨提示：若發生找不到 gcc 的情形，在 SuSE 只要使用指令「 yast2 -i gcc」接著放入光碟片即可。</h4>
+<p><img src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/gcc.png" alt="gcc 圖檔"></p>
+<h3>使用 dmraid 新版</h3>
+<p>使用指令「dmraid -V」會發現 dmraid 已經換成新版（1.0.0.rc11）</p> 
+<p>再次使用指令「dmraid -a y」來啟用 BIOS RAID 磁碟，這次就沒有錯誤訊息，並觀察 /dev/mapper/ 目錄下，有著 BIOS RAID 磁碟的裝置檔案 isw_dcaihbahhd_Volume0</p> 
+<pre>r7-136:~ # dmraid -V
+dmraid version:         1.0.0.rc11 (2006.05.15)
+dmraid library version: 1.0.0.rc11 (2006.05.15)
+device-mapper version:  4.5.0
+r7-136:~ # dmraid -a y
+r7-136:~ # ls /dev/mapper/
+control                  isw_dcaihbahhd_Volume01
+isw_dcaihbahhd_Volume0   isw_dcaihbahhd_Volume02
+r7-136:~ #
+</pre>
+<p>使用指令「fdisk -l /dev/mapper/isw_dcaihbahhd_Volume0」（參數是小寫的 
+L），看得出來是我們先前安裝在 BIOS RAID 磁碟的 Fedora Core 5 預設磁碟配置方式，一個是 FC5 的 /boot 
+區、一個是 LVM 區（包括 FC5 的根目錄「/」與 Swap）</p>
+<pre>r7-136:~ # fdisk -l /dev/mapper/isw_dcaihbahhd_Volume0
+
+Disk /dev/mapper/isw_dcaihbahhd_Volume0: 500.1 GB, 500113342464 bytes
+255 heads, 63 sectors/track, 60801 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+
+                              Device Boot      Start         End      Blocks  Id  System
+/dev/mapper/isw_dcaihbahhd_Volume0p1   *           1          13      104391  83  Linux
+/dev/mapper/isw_dcaihbahhd_Volume0p2              14       60801   488279610  8e  Linux LVM
+</pre>
+<p>使用 hdparm 測磁碟 I/O 速度，當然是 100 MB/sec 以上的啦！</p>
+<pre>r7-136:~ # hdparm -t /dev/mapper/isw_dcaihbahhd_Volume0
+
+/dev/mapper/isw_dcaihbahhd_Volume0:
+ Timing buffered disk reads:  350 MB in  3.02 seconds = 116.05 MB/sec
+</pre>
+<p>掛載及使用 Linux 分割區其實還蠻簡單的，底下以 Fedora Core 5 的 /boot 區（裝置為 
+/dev/mapper/isw_dcaihbahhd_Volume01）來做示範。另外較複雜的是包含在 LVM 
+裡面的磁區，所以底下也會介紹「如何掛載及使用 LVM 分割區」</p>
+<p>使用指令「mount /dev/mapper/isw_dcaihbahhd_Volume01 /mnt」就可以將 FC5 /boot 資料，掛載在 /mnt 下</p> 
+<p>看完裡面的內容後，若沒有要再繼續使用，請記得卸載，使用指令「umount /mnt」即可</p>
+<pre>r7-136:~ # mount /dev/mapper/isw_dcaihbahhd_Volume01 /mnt
+r7-136:~ # ls /mnt/
+config-2.6.15-1.2054_FC5smp      lost+found
+grub                             System.map-2.6.15-1.2054_FC5smp
+initrd-2.6.15-1.2054_FC5smp.img  vmlinuz-2.6.15-1.2054_FC5smp
+r7-136:~ # umount /mnt/
+</pre>
+<h3>掛載及使用 LVM 分割區</h3>
+<p>第一步：使用指令「pvscan」來掃描是否有 Physical Volume（PV），結果找到 /dev/dm-2 隸屬於 VolGroup00 群組（VG）</p>
+<h4>Note：在這情形下 /dev/dm-2、/dev/mapper/isw_dcaihbahhd_Volume02、/dev/mapper/isw_dcaihbahhd_Volume0p2 其實都是同一個裝置</h4>
+<pre>r7-136:~ # pvscan
+  /dev/sda2: read failed after 0 of 2048 at 499998195712: 輸入/輸出錯誤
+  PV /dev/dm-2   VG VolGroup00   lvm2 [465.66 GB / 32.00 MB free]
+  Total: 1 [465.66 GB] / in use: 1 [465.66 GB] / in no VG: 0 [0   ]
+</pre>
+<p>第二步：使用指令「vgchange -a y」來啟用 VolGroup00，在 VolGroup00 下有兩個 Logical Volume 被啟用</p>
+<pre>r7-136:~ # vgchange -a y
+  2 logical volume(s) in volume group "VolGroup00" now active
+</pre>
+<h4>溫馨提示：指令「dmraid -a y」、「vgchange -a y」使用方法有些類似，一個是用來啟用 BIOS 
+RAID；一個是用來啟用 LVM Volume Group，您也可以使用指令「dmraid -a n」、「vgchange -a 
+n」來停用相關設備。</h4>
+<p>第三步：使用指令「lvscan」來掃描 Logical Volume（LV），發現兩個 LV 磁區，其中 LogVol00 是 Fedora Core 5 根目錄、LogVol01 是 Swap</p>
+<pre>r7-136:~ # lvscan
+  ACTIVE            '/dev/VolGroup00/LogVol00' [463.69 GB] inherit
+  ACTIVE            '/dev/VolGroup00/LogVol01' [1.94 GB] inherit
+</pre>
+<p>第四步：接下來就是掛載（mount）與卸載（umount）的指令，與一般方式雷同，故不再贅述</p>
+<pre>r7-136:~ # mount /dev/VolGroup00/LogVol00  /mnt/
+r7-136:~ # ls /mnt/
+bin   dev  home  lost+found  misc  opt       proc  sbin     srv  tmp  var
+boot  etc  lib   media       mnt   poweroff  root  selinux  sys  usr
+r7-136:~ # umount /mnt
+</pre>
+<h4>溫馨提示：在先前的指令範例中，許多 /dev 目錄下的這些設備名稱相當的長，甚至小寫的 L「l」與數字的 1、數字零「0」與字母 o 
+的大寫「0」很容易看錯或打錯（例如 VoLGroup零零、LogVoL零零）因此在使用 Linux 文字模式時，建議您在輸入指令時，搭配『TAB
+ 鍵』使用，會幫您「補目錄名稱」，不只節省輸入按鍵的數量，重要的是還可以避免打錯字。</h4>
+<h2>結語 - Linux 對硬體的支援</h2>
+<p>核心（Kernel）主要功能用最平民化的方式來說就是『支援軟體』與『驅動硬體』，撇開軟體的部份不說，以現今情況來看，每當硬體廠商出產新產品
+時，首要之務還是得先使得微軟作業系統能夠驅動（使用），再來幾乎就是 Linux 與 Mac OS X 
+的天下了，這種情形又以伺服器類的硬體更加明顯偏向 Linux（桌上型硬體還沒那麼明顯），所幸 BIOS RAID 在 Linux 
+還是可以使用的。</p>
+<p>在筆者使用 Linux 的這幾年來，早期從顯示卡、音效卡需要自行安裝驅動程式（還不見得能夠正常）到現在大部分的硬體幾乎都能夠被 Linux
+ 內建核心模組（驅動程式）啟用來看，Linux 對於硬體的支援度方面，真的是大大的進步，而且硬體廠商也漸漸的樂意提供 Linux 
+驅動程式（甚至是原始碼）來實現對 Linux 的支援。</p>
+<p>這一次測試 BIOS RAID 其實還不算測試的很詳細，能夠再接著測試的像是設定成 RAID1 或甚至模擬 RAID1 
+其中一顆硬碟故障還原等等。像 BIOS RAID / dmraid 
+這類新一代的硬體/軟體，其實還是很需要藉由群眾實際多加運用來考驗，這方面的技術才會更加實用與穩定，而不只是純粹在價格上優勢而已，像 SLES10
+ 這種專為伺服器量身打造 Linux，雖然當下還沒（或是還不願意）支援最新的 BIOS RAID，其實只要 BIOS RAID 
+未來夠成熟穩定，相信 SLES 以後的版本也會很願意的預設內建 BIOS RAID 支援。</p>
+<h4>Note：Server 版的 Linux 通常追求的是「穩定」所以不像 Fedora 將最新的東西都包含進去。</h4>
+<p>
+	<a href="http://validator.w3.org/check?uri=referer"><img class="w3c_img" src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/valid-xhtml10.png" alt="Valid XHTML 1.0!" height="31" width="88"></a>
+	<a href="http://jigsaw.w3.org/css-validator/check/referer"><img class="w3c_img" src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/vcss.gif" alt="Valid CSS!"></a>
+ <a href="http://getfirefox.com/" title="Get Firefox - Web browsing redefined."><img class="noborder" src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/getfirefox_large2.html" alt="Get Firefox" height="60" width="178"></a> 
+</p>
+<div id="ccfooter">
+<p>
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by/2.5/tw/"><img class="noborder" alt="Creative Commons License" src="dmraid%20Linux%20%E4%B8%8A%E6%87%89%E7%94%A8%20ATA%20_%20SATA%20RAID%20%E6%8A%80%E8%A1%93_files/somerights20.png"></a><br>This site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.5/tw/">Creative Commons Attribution 2.5 Taiwan License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by/2.5/tw/" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by/2.5/tw/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/></License></rdf:RDF> -->
+</p>
+</div>
+</div>
+</div>
+
+
+</body></html>

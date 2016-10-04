@@ -1,0 +1,150 @@
+#rhce000 {
+	margin-top: 2em;
+}
+#rhce000 li {
+	display: inline;
+	font-size: 1.1em;
+	list-style: none;
+}
+#rhce253, #rhce133, #rhce033 {
+	width: 13em;  
+/*	background: yellow; */
+ 	float: left;  
+}
+#rhce253 li, #rhce133 li, #rhce033 li {
+	font-size: 1.1em;
+	list-style: none;
+}
+#container {
+	width:99%;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom:1em;
+/*	background:url(/logo.gif) right top no-repeat;  */
+}
+
+#nav {
+	position: absolute;
+	right: 1em;
+	width: 14em;
+}
+
+#nav2 {
+	position: absolute;
+	right: 1em;
+	top: 7em;
+	width: 14em;
+}
+
+#content {
+	margin-right: 16em;
+}
+table {
+	margin-left: 2%;
+	font-family: DejaVuSansMono, 標楷體, "ar pl kaitim big5", sans-serif;
+	font-size: large;
+	color:maroon;
+	background: white;
+}
+#left {
+	float:left;
+}
+.clear {
+	clear:both;
+}
+#right {
+	margin-left:10pt;
+}
+td {
+	text-align:right;
+}
+body {
+/*	background:url(/logo.gif) 99% 1% no-repeat; */
+}
+.jsit_img {
+	border:0;width:175px;height:33px;
+}
+.w3c_img {
+	border:0;width:88px;height:31px;
+}
+.noborder {
+	border:0;
+}
+h1 {
+	font-family: 標楷體, "ar pl kaitim big5", FZKaiTi, SimHei, sans-serif;
+	border-bottom: 1px solid silver;
+	padding-bottom: 0.02em;
+	margin-bottom: -0.4em;
+}
+h2 {
+	font-family: Bitstream Vera Sans Mono, 標楷體, "ar pl kaitim big5", sans-serif;
+	margin-left: 1%;
+	margin-bottom: -0.6em;
+	color: navy;
+	background: white;
+}
+h3 {
+	font-family: Bitstream Vera Sans Mono, 文鼎PL中楷Uni, 標楷體, "ar pl kaitim big5", sans-serif;
+	margin-left: 1.5%;
+	background-color: white;
+	margin-bottom: -0.6em;
+	color:maroon;
+}
+/*
+h3 {
+	background-color: white;
+	margin-left: 1.5%;
+	margin-bottom: -0.6em;
+font : normal 1.4em georgia italic , 標楷體, sans-serif;
+letter-spacing : 1px;
+	color:maroon;
+}
+*/
+h4 {
+	font-family: 標楷體, "ar pl kaitim big5", sans-serif;
+	background: white;
+	margin-left: 3%;
+	color: purple;
+}
+
+h5 {
+	font-family: 標楷體, "ar pl kaitim big5", sans-serif;
+	margin-left: 4%;
+/*	color: dark; */
+}
+
+p {
+	font-family: bitstream vera sans Mono, DejaVuSansMono, 標楷體, "ar pl kaitim big5", sans-serif;
+	line-height: 1.2em;
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-bottom: -10px;
+	font-size: large;
+/*	word-spacing: 0.1em; */
+}
+ul {
+/*	list-style-type: none;*/
+	font-family: 標楷體, "ar pl kaitim big5", sans-serif;
+	padding-left: 2%;
+	font-size: large;
+}
+pre {
+	font-size: large;
+	font-family: Bitstream Vera Sans Mono, DejaVuSansMono;
+	padding: 0.4em;
+	color: black;
+	background-color: silver;
+}
+form {
+	border: 1px dotted #aaaaaa;
+/*	padding: 3px 6px 3px 6px; */
+}
+input:focus {
+	border: 2px solid #000000;
+}
+#ccfooter p {
+	color:#666;
+	background: white;
+	text-align: center;
+	font-size: small;
+}
