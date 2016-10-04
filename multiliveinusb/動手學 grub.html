@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="alternate" type="application/rss+xml" title="資訊人權貴" href="http://blog.ofset.org/ckhung/index.php?feed/rss2">
+<link type="text/css" rel="stylesheet" href="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/core.css">
+<link type="text/css" rel="stylesheet" title="user-defined Style" href="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/light.css">
+<link rel="icon" type="image/png" href="http://user.frdm.info/ckhung/i/JediTux2.png">
+
+<script type="text/javascript">
+    var top_url = "/ckhung/";
+</script>
+
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/jquery.js" type="text/javascript"></script>
+<!-- script src="/ckhung//i/jq/magnifier.js" type="text/javascript"></script -->
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/shadow.js" type="text/javascript"></script>
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/ifixpng.js" type="text/javascript"></script>
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/fancyzoom.js" type="text/javascript"></script>
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/tools.js" type="text/javascript"></script>
+<script src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/core.js" type="text/javascript"></script>
+<!-- script src="/ckhung//i/blackout.js" type="text/javascript"></script -->
+<!-- script type="text/javascript" src="/ckhung//i/xstooltip.js"></script -->
+
+  <title>動手學 grub</title>
+</head>
+
+<body>
+  <div id="blackout"></div>
+
+<div id="sidebar" class="noprint">
+	<div id="nav" class="noprint">
+	<form action="/ckhung//i/set-style.php" method="post">
+	<select name="style"><option selected="selected" value="light">light</option>
+<option value="dark">dark</option>
+	</select>
+	<input value="變裝" type="submit">
+	</form>
+
+	<p class="noindent">我的部落格:<br>
+	<a href="http://ckhung0.blogspot.com/" title="觀點部落格: 資訊人權貴ㄓ疑">人權</a>
+	<a href="http://ckhung0.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/rss.png" alt="[rss feed 圖案]"></a><br>
+	<a href="http://newtoypia.blogspot.com/">玩具</a>
+	<a href="http://newtoypia.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/rss.png" alt="[rss feed 圖案]"></a>
+	</p>
+	<p class="noindent">快速跳到:<br>
+	<a href="http://penguin.im.cyut.edu.tw/%7Egreg/s/schedule.php">
+	阿貴行程</a><br>
+	<a href="http://www.google.com/calendar/embed?src=p09uh8cg4uvt2ij4obf45cltsk%40group.calendar.google.com">
+	社群活動</a><br>
+	<a href="http://user.frdm.info/ckhung/b/sa/" class="toc">本層目錄</a><br>
+	<a href="http://user.frdm.info/ckhung/b/">上層目錄</a><br>
+	<a href="http://user.frdm.info/ckhung/b/sa/grub.php">此頁@frdm</a><br>
+	<a href="http://v.im.cyut.edu.tw/%7Eckhung/b/sa/grub.php">此頁@資管</a><br>
+	<a href="http://penguin.im.cyut.edu.tw/dokuwiki/u:ckhung:students">學生們</a><br>
+	<a href="http://user.frdm.info/ckhung/index.en.php">English</a><br>
+	</p>
+
+	<a href="http://newtoypia.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/rss.png" alt="[rss feed 圖案]"></a>
+
+	<a href="http://en.wikipedia.org/wiki/Image:Free-speech-flag.svg">
+	<img title="[言論自由旗]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/free-speech-flag.png" alt="[言論自由旗]">
+	</a>
+
+	<a href="http://www.ofset.org/">
+	<img title="[Organization for Free Software in Education and Teaching]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/ofset-banner.png" alt="[Organization for Free Software in Education and Teaching]" height="45"></a>
+
+	<a href="http://blog.ofset.org/ckhung/index.php?post/095a">
+	<img title="[拒絕冏性升級 docx]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/no-docx.png" alt="[拒絕冏性升級 docx]"></a>
+
+	<a href="http://user.frdm.info/ckhung/s/cc.php">
+	<img title="[用創意換取注意力: 認識 CC 授權]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/cc.png" alt="[用創意換取注意力: 認識 CC 授權]"></a>
+
+	<a href="http://www.anybrowser.org/campaign/">
+	<img title="[歡迎使用任何瀏覽器]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/valid_br.png" alt="[歡迎使用任何瀏覽器]">
+	</a>
+
+	<a href="http://validator.w3.org/check/referer">
+	<img title="[(力求維持) 符合 xhtml 1.0]" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/vxhtml10.png" alt="[(力求維持) 符合 xhtml 1.0]"></a>
+
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+	<img title="Valid CSS!" src="%E5%8B%95%E6%89%8B%E5%AD%B8%20grub_files/vcss.png" alt="Valid CSS!"></a>
+
+	<!-- a class="noprint" href = "http://www.cast.org/bobby/">
+	<img src = "/ckhung//i/bobby.png" width="131" height="40" alt=
+	"[(力求維持) 無障礙網頁]" /></a -->
+    </div>
+</div>
+  <div id="content">
+    <h1>動手學 grub (0.97)</h1>
+    <hr>
+
+    <p class="hilight1">[2015 年的今天， grub 0.97
+    已經改稱為 grub-legacy， 幾乎要被淘汰掉了。 我製作的 <a href="http://newtoypia.blogspot.tw/2014/09/chinese-finnix.html">
+    finnix-ckhung15c</a> 還有收納； 新版大概就不會放進去了。
+    現在大部分時候我改用 <a href="http://newtoypia.blogspot.tw/2015/02/extlinux.html">
+    extlinux</a>； 有必要的時候就拿出最強大的 <a href="http://newtoypia.blogspot.tw/2015/06/grub2-iso.html">
+    grub2</a>。]</p>
+
+    <p class="blog-comment"><a href="http://blog.ofset.org/ckhung/index.php?post/2007/06/19/multiple-boot-on-usb-stick-usb">
+    本主題的討論版</a></p>
+
+    <h2 class="sec">術語</h2>
+
+    <p>一部 Linux 電腦開機時, 大概要經過下列程序:</p>
+
+    <ol>
+      <li>BIOS 根據 boot priority 的設定, 挑選某顆硬碟或隨身碟</li>
+
+      <li>這顆碟的 MBR (Master Boot Record)</li>
+
+      <li>開機管理程式 <dfn>boot loader</dfn></li>
+
+      <li>使用者從選單挑一個作業系統</li>
+
+      <li>開機管理員載入 Linux 核心 (通常檔名類似 vmlinuz)
+      及初始的檔案系統 (通常檔名類似 initrd.gz)</li>
+
+      <li>將根目錄切換至某個分割, 進入正常系統</li>
+    </ol>
+
+    <p>常用的 boot loader 有 lilo, syslinux, 及 grub。 不論採用那個
+    boot loader, 當然都要寫一個設定檔 (lilo.conf, syslinux.cfg, 或
+    menu.lst) 將來成為開機時的選單。 開機管理程式特別之處有兩點。 首先,
+    它必須佔據 MBR, 才有機會搶到主控權。 所以任何 boot loader 都有一個
+    「安裝」 的動作, 做完之後, 你原來的 MBR 就被蓋掉了。
+    如果因此而無法開機進入自己熟悉的作業系統, 不要緊張, 其實資料都還在,
+    只是 MBR 指錯地方而已。 把設定檔改好, 重裝一次 boot loader 即可。
+    萬不得已, 也可以將舊的 MBR 還原: 在 dos 底下用 <code>fdisk
+    /mbr</code> 或在 Linux 底下用 <code>lilo -u /dev/sdz</code> 不過把
+    grub 裝好才是正途啦。 第二, boot loader 起來的時候,
+    連作業系統都還沒起來, 它如何認得檔案系統呢?
+    (設定檔裡面所指定的路徑, 它如何翻譯成硬碟的 c/h/s 代碼呢?) 詳見
+    <a href="http://www.novell.com/documentation/suse91/suselinux-adminguide/html/ch07s03.html">
+    這篇文章</a> 所以 lilo 的設定檔每次修改過後,
+    或是它所指定的檔案曾經被刪除又拷貝回來之後, 都必須重新安裝一次
+    lilo。 但是 grub 因為自己本身就認得多種檔案系統,
+    所以沒有這個煩惱。</p>
+
+    <p>總之, 結論就是: (1) 個人推薦 grub (2) boot loader
+    不屬於任何作業系統, 建議不要把它放在某個作業系統的分割,
+    而是放在純粹資料的分割。</p>
+
+    <h2 class="sec">切割</h2>
+
+    <p>以下說明如何在一個 512MB 的隨身碟上面安裝 <a href="http://www.minimalinux.org/ttylinux/">ttylinux</a> (8.0 版解壓後約 16MB),
+    <a href="http://www.damnsmalllinux.org/">Damn Small Linux</a> (約
+    50MB), <a href="http://www.slax.org/?lang=zh-tw">slax</a> (約
+    192MB; 加上中文模組後約 260MB) 等數個版本的 Linux
+    藉此解說開機管理員 grub 的一些重要觀念。 以下的說明, 假設在 ubuntu
+    7.10 底下工作。 (本講義的最早版本, 在 mandriva 2006 底下測試,
+    所以在新的 mandriva 可能也不會差太多。)</p>
+
+    <p>首先瞭解一下 <a href="http://user.frdm.info/ckhung/b/sa/partition.php">硬碟分割的觀念</a> 及
+    <a href="http://user.frdm.info/ckhung/b/sa/usb-boot.php">usb 開機的基本觀念</a>, 本文採用的是 "CD 式"
+    安裝法。</p>
+
+    <p>先用 fdisk 將隨身碟切割如下:</p>
+
+    <ol>
+      <li>第一分割: 主分割區, 將它的 type 設為 win95 fat32 分割。
+      之後將之格式化為 vfat。 這樣 windows 也可使用此分割,
+      可作為正常的隨身碟儲存資料的空間。 如果空間夠的話, 建議在此分割放
+      <a href="http://ntu.csie.org/%7Epiaip/pietty/">pietty</a>, <a href="http://winscp.net/eng/docs/lang:cht">winscp</a> 與 windows 版的
+      <a href="http://user.frdm.info/ckhung/b/sa/crosspf.php#vnc">vnc</a> 以便可以從任何 Windows
+      機器遠端登入自己的主機並傳檔。 也建議挑一套 <a href="http://blog.ofset.org/ckhung/index.php?post/084-linuxers-vista">portable
+      apps</a> 放上去。 使用跨平臺的自由軟體,
+      不論在任何作業系統都可以無入而不自得。</li>
+
+      <li>第二分割: 延申分割區。 進一步切出: 第五分割, 60MB, 放 dsl;
+      第六分割, 300MB, 放 slax。</li>
+
+      <li>第四分割: 主分割區, 24MB, 將它的 type 設為 linux 分割。
+      之後將之格式化為 ext2。 這裡要放 grub 及 ttylinux。 如此安排,
+      是希望掌管開機的最重要部分不受打擾, 不論其他分割如何受到破壞,
+      至少最難製作的開機部分還是可正常進入一個精簡版的 linux。</li>
+    </ol>
+
+    <p><em>注意</em>: (1) 隨身碟上不建議採用 ext3 (超慢)
+    (2) grub 0.97 只認得最舊的 ext2 (inode 大小 128);
+    但很較新的 mkfs.ext2 預設值為 inode 大小 256,
+    所以建立檔案系統時, 記得要用: <code>mkfs -t ext2 <em>-I
+    128</em>...</code>。</p>
+
+    <p>最後在 fdisk 裡面, 下 "p" 查看, 應該得到類似下面的結果:
+</p><pre class="code">	所用裝置 Boot      Start         End      Blocks   Id  System
+	/dev/sdz1               1          11       88326   83  Linux
+	/dev/sdz2              12         118      401561+   5  延伸的
+	/dev/sdz4              58          60       24097+  83  Linux
+	/dev/sdz5              12          20       72261   83  Linux
+	/dev/sdz6              21          58      305203+  83  Linux
+</pre>
+
+    <h2 class="sec">安裝 grub</h2>
+
+    <p>把 grub 裝到 usb 碟之前, 最重要的是弄清楚 grub 怎麼稱呼你的 usb
+    碟。 對於熟悉 Linux 的人來說, IDE 硬碟及光碟是 /dev/hda /dev/hdb
+    等等; 而 SCSI 硬碟或 usb 裝置則是 /dev/sda /dev/sdb 等等。 但 grub
+    服務的對象不只是 Linux, 還包含 *BSD。 它稱呼硬碟為 (hd0) (hd1)
+    等等。 以下假設您已將 /dev/sdz4 掛載在 /mnt/sdz4 底下。</p>
+
+    <p>首先要先在 /mnt/sdz4 的某個目錄上 (就根目錄吧) 建立一個怪怪的,
+    從來沒用過的檔名, 例如叫做 x9k3j8m 好了。 進 grub 之後下指令
+    <code>find /x9k3j8m</code> (必須打 「相對於 usb 碟的完整路徑」)
+    於是 grub 到接上本電腦的所有儲存裝置的每個分割上, find
+    所指定的完整路徑, 逐一去找這個檔案, 然後印出它在何處找到, 例如
+    <code>(hd26,0)</code>。 最後打 quit 回到 shell 底下。</p>
+
+    <p>另一個方法更簡單: <code>rm -f device.map ; echo | grub --batch
+    --device-map=device.map</code> 這樣不必進入 grub,
+    它會直接在目前目錄下, 產生一個對照表, 檔名如我們在命令列上指定的,
+    叫做 device.map。 注意: 一定要先刪除舊的 device.map,
+    不然會變成要求 grub 不分清紅皂白就以 (可能是錯的) device.map
+    來做事。 (結果什麼事都沒做, device.map 也沒改變。)
+    這裡面應該有一列長得像這樣:</p>
+    <pre>    (hd26)   /dev/sdz
+</pre>
+
+    <p>知道兩種稱呼方式在您機器上的對照之後, 安裝 grub 就很簡單了,
+    只要一句話: <code>grub-install --root-directory=/mnt/sdz4
+    '(hd26)'</code> 注意要拿掉 (hd26,0) 後面的 ",0" 不然 grub
+    會裝到一個分割的開頭, 而不是整顆隨身碟的開頭。 順便提醒:
+    這樣你安裝的 grub 是工作版 (例如上述的 mandriva 2006) 裡面的 grub,
+    而不是標的版 (例如 DSL 或 slax) 的 grub。 請注意 /mnt/sdz4
+    底下應該會多出一個 /boot/grub 目錄。 這就是安裝的部分成果;
+    至於安裝在 MBR 的那一部分, 沒有辦法直接檢視是否成功,
+    必須重新開機才知道。</p>
+
+    <h2 class="sec">測試空的 grub</h2>
+
+    <p>事實上, 如果您的系統裝有 qemu 模擬器, 可以不必重開機,
+    直接這樣測試: <code>qemu -usb /dev/sdz</code>。</p>
+
+    <p>不然, 就只好插好 usb 碟, 乖乖重新開機, 進入 BIOS 指定要從 usb
+    碟開機。 有些 BIOS 把 usb 碟歸類在 usb 裝置; 但更常見的是:
+    在硬碟的選單下才會看到你的 usb 碟。 儲存 BIOS 設定, 重新開機, ...
+    緊張一刻來了。 如果出現類似 <code>grub&gt;</code> 的命令提示符號,
+    那麼恭喜你! 最難除錯的步驟已經通過! 請回到工作環境底下,
+    繼續較容易除錯的部分。 如果沒有提示符號... 那就有點糟糕了,
+    很可能是上述 '(hd26)' 參數給錯, 而且可能已經把不該動到的硬碟的 MBR
+    給攻佔下來了... 沒關係, 一不做二不休, 就乾脆改用 grub
+    來管理那顆硬碟吧。 不過請先專心把 usb 開機做完,
+    然後你自然會知道如何處理那顆被意外動到的硬碟。 (查看 grub 手冊, 或
+    google "grub boot windows" 之類的關鍵字)</p>
+
+    <p>另一方面, 在設定檔裡面, grub 一律以 <code>(hd0)</code> 稱呼 usb
+    碟, 因為將來做好以後, <em>當你以 usb 碟開機時</em>, grub 被 BIOS
+    叫起來, 最先看到的當然就是他自己所在的 usb 碟,
+    所以就給它最前面的代號。 請把 <a href="http://user.frdm.info/ckhung/b/sa/menu.lst">menu.lst</a>
+    貼到隨身上剛安裝完的 grub 目錄 (應該在 /boot/grub 底下)。
+    現在可以再次重開機, 測試 「有選單的 grub」,
+    應該出現文字模式的開機選單, 不再是令人不知所措的命令列。 當然,
+    因為尚未複製 iso 檔上面的資料, 自然無法開機; 但至少開機選單出現,
+    剩下來的步驟就簡單了。</p>
+
+    <h2 class="sec">從光碟上複製檔案</h2>
+
+    <p>從 <a href="http://www.minimalinux.org/ttylinux/">ttylinux
+    網站</a> 下載 bootcd-i486-7.0.iso.gz (注意: 是光碟版), 解壓縮,
+    掛載映象檔, 最後拷貝進去:</p>
+    <pre class="code">        gunzip bootcd-i486-7.0.iso.gz
+        mount -o loop /mnt/ttylinux bootcd-i486-7.0.iso
+        cd /mnt/ttylinux
+        mkdir /mnt/sdz4/boot/ttylinux
+        cp -a . /mnt/sdz4/boot/ttylinux
+        cd -
+        umount /mnt/ttylinux
+</pre>
+
+    <p>這裡假設 grub 的相關檔案已先裝入 /dev/sdz4 且 /dev/sdz4 已掛載在
+    /mnt/sdz4 底下, 所以已有一個 boot 子目錄。 為了避免真的燒一張光碟,
+    所以用 -o loop 掛載; 詳見 <a href="http://user.frdm.info/ckhung/b/sa/filesystem.php#loop">loop file
+    system</a>。 注意: 不要用 <code>cp -a /mnt/ttylinux/*
+    /mnt/sdz4</code> 之類的指令, 因為這樣會漏掉隱藏檔。 最後, 必須離開
+    /mnt/ttylinux 子目錄, 才能將它卸載下來。</p>
+
+    <p>如果重開機或用 qemu 測試, 可以正常進入 ttylinux 的話,
+    就恭喜成功了! 登入的帳號密碼都是 root; 可用 <code>halt</code> 關機,
+    或直接暴力關機, 反正它沒去動您的硬碟。</p>
+
+    <p>到這裡, 這已是一顆可開機的隨身碟。 以後要安裝其他版本 (例如 dsl
+    或 slax), 或其他分割被破壞, 也都不會影響到 grub 及 ttylinux。
+    以後安裝其他版本, 只需要 (1) 拷貝檔案 (2) 修改 boot/grub/menu.lst
+    就可以了, 不再需要動到開機管理員。 
+    <!-- <a href="http://wiki.laptop.org/go/LiveCd">OLPC</a> (約
+    300MB), 
+    除了 OLPC 指定必須用 ext3
+    格式之外, 其他都用 ext2 格式, 避免讀寫過於頻繁。 (如果是外接硬碟,
+    有轉速的, 就建議全部用 ext3 格式, 因為它不怕讀寫頻繁) --></p>
+
+    <h2 class="sec">更多設定</h2>
+
+    <p>如何把其他光碟片放進隨身碟呢? 詳見 <a href="http://user.frdm.info/ckhung/b/slax/menu.php">
+    這篇</a>。 這裡面也提到如何把 dsl 與 slax
+    放在同一分割的不同子目錄裡面; 還有如何修改背景圖片 (14 色)。
+    但如果你的 grub 0.97 是 gfxboot 版, 那麼 <a href="http://newtoypia.blogspot.tw/2013/01/grub-gfxboot.html">
+    修改背景圖會稍微麻煩一點</a>, 但可以享用 255 色。
+
+    </p><h2>參考資料</h2>
+
+    <ol>
+      <li><a href="http://www.mayrhofer.eu.org/Default.aspx?pageindex=7&amp;pageid=45">
+      Making a USB Stick bootable with Grub</a></li>
+
+      <li><a href="http://www.linux.com/article.pl?sid=07/06/04/141244">Getting
+      started with GRUB</a></li>
+    </ol>    <hr>
+
+    <ul>
+            <li>本頁最新版網址: <a href="http://user.frdm.info/ckhung/b/sa/grub.php">
+       http://user.frdm.info/ckhung/b/sa/grub.php</a>;
+      您所看到的版本: June 08 2015 09:17:37. </li>
+
+      <li>作者: <a href="http://www.cyut.edu.tw/">朝陽</a>科技大學 <a href="http://www.im.cyut.edu.tw/">資訊管理</a>系 <a href="http://user.frdm.info/ckhung/">洪朝貴</a></li>
+
+      <li><a href="http://gaia.org.tw/">寶貝你我的地球</a>, 請 <a href="http://www.udel.edu/topics/printless/">
+      減少列印</a>, 多用背面, 丟棄時做垃圾分類。</li>
+
+      <li>本文件以 <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">
+      Creative Commons Attribution-ShareAlike License</a>
+      或以 <a rel="license" href="http://user.frdm.info/ckhung//i/fdl.html">
+      Free Document License</a> 方式公開授權大眾自由複製/修改/散佈。</li>
+    </ul>
+
+  </div>
+
+</body></html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 6 November 2007), see www.w3.org">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="alternate" type="application/rss+xml" title="資訊人權貴" href="http://blog.ofset.org/ckhung/index.php?feed/rss2">
+<link type="text/css" rel="stylesheet" href="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/core.css">
+<link type="text/css" rel="stylesheet" title="user-defined Style" href="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/light.css">
+<link rel="icon" type="image/png" href="http://user.frdm.info/ckhung/i/JediTux2.png">
+
+<script type="text/javascript">
+    var top_url = "/ckhung/";
+</script>
+
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/jquery.js" type="text/javascript"></script>
+<!-- script src="/ckhung//i/jq/magnifier.js" type="text/javascript"></script -->
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/shadow.js" type="text/javascript"></script>
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/ifixpng.js" type="text/javascript"></script>
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/fancyzoom.js" type="text/javascript"></script>
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/tools.js" type="text/javascript"></script>
+<script src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/core.js" type="text/javascript"></script>
+<!-- script src="/ckhung//i/blackout.js" type="text/javascript"></script -->
+<!-- script type="text/javascript" src="/ckhung//i/xstooltip.js"></script -->
+
+  <title>把別的 live-cd 置入隨身碟 (如何修改 grub 開機選單 menu.lst)</title>
+</head>
+
+<body>
+  <div id="blackout"></div>
+
+<div id="sidebar" class="noprint">
+<div id="toc" class="noprint">
+<p class="noindent">slax</p>
+
+<ol>
+<li><a href="http://user.frdm.info/ckhung/b/slax/index.php">目錄</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/intro.php">簡介</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/mk-boot-usb.php">隨身碟</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/cyut.php">cyut 版</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/changes.php">客製/隱私</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/module.php">模組</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/deb.php">deb 轉檔</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/menu.php">grub 選單</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/l10n.txt">中文化</a></li>
+<li><a href="http://user.frdm.info/ckhung/b/slax/trouble.php">常見問題</a></li>
+</ol>
+</div>
+	<div id="nav" class="noprint">
+	<form action="/ckhung//i/set-style.php" method="post">
+	<select name="style"><option selected="selected" value="light">light</option>
+<option value="dark">dark</option>
+	</select>
+	<input value="變裝" type="submit">
+	</form>
+
+	<p class="noindent">我的部落格:<br>
+	<a href="http://ckhung0.blogspot.com/" title="觀點部落格: 資訊人權貴ㄓ疑">人權</a>
+	<a href="http://ckhung0.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/rss.png" alt="[rss feed 圖案]"></a><br>
+	<a href="http://newtoypia.blogspot.com/">玩具</a>
+	<a href="http://newtoypia.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/rss.png" alt="[rss feed 圖案]"></a>
+	</p>
+	<p class="noindent">快速跳到:<br>
+	<a href="http://penguin.im.cyut.edu.tw/%7Egreg/s/schedule.php">
+	阿貴行程</a><br>
+	<a href="http://www.google.com/calendar/embed?src=p09uh8cg4uvt2ij4obf45cltsk%40group.calendar.google.com">
+	社群活動</a><br>
+	<a href="http://user.frdm.info/ckhung/b/slax/" class="toc">本層目錄</a><br>
+	<a href="http://user.frdm.info/ckhung/b/">上層目錄</a><br>
+	<a href="http://user.frdm.info/ckhung/b/slax/menu.php">此頁@frdm</a><br>
+	<a href="http://v.im.cyut.edu.tw/%7Eckhung/b/slax/menu.php">此頁@資管</a><br>
+	<a href="http://penguin.im.cyut.edu.tw/dokuwiki/u:ckhung:students">學生們</a><br>
+	<a href="http://user.frdm.info/ckhung/index.en.php">English</a><br>
+	</p>
+
+	<a href="http://newtoypia.blogspot.com/feeds/posts/default">
+	<img title="[rss feed 圖案]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/rss.png" alt="[rss feed 圖案]"></a>
+
+	<a href="http://en.wikipedia.org/wiki/Image:Free-speech-flag.svg">
+	<img title="[言論自由旗]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/free-speech-flag.png" alt="[言論自由旗]">
+	</a>
+
+	<a href="http://www.ofset.org/">
+	<img title="[Organization for Free Software in Education and Teaching]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/ofset-banner.png" alt="[Organization for Free Software in Education and Teaching]" height="45"></a>
+
+	<a href="http://blog.ofset.org/ckhung/index.php?post/095a">
+	<img title="[拒絕冏性升級 docx]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/no-docx.png" alt="[拒絕冏性升級 docx]"></a>
+
+	<a href="http://user.frdm.info/ckhung/s/cc.php">
+	<img title="[用創意換取注意力: 認識 CC 授權]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/cc.png" alt="[用創意換取注意力: 認識 CC 授權]"></a>
+
+	<a href="http://www.anybrowser.org/campaign/">
+	<img title="[歡迎使用任何瀏覽器]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/valid_br.png" alt="[歡迎使用任何瀏覽器]">
+	</a>
+
+	<a href="http://validator.w3.org/check/referer">
+	<img title="[(力求維持) 符合 xhtml 1.0]" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/vxhtml10.png" alt="[(力求維持) 符合 xhtml 1.0]"></a>
+
+	<a href="http://jigsaw.w3.org/css-validator/check/referer">
+	<img title="Valid CSS!" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/vcss.png" alt="Valid CSS!"></a>
+
+	<!-- a class="noprint" href = "http://www.cast.org/bobby/">
+	<img src = "/ckhung//i/bobby.png" width="131" height="40" alt=
+	"[(力求維持) 無障礙網頁]" /></a -->
+    </div>
+</div>
+  <div id="content">
+    <h1>把別的 live-cd 置入隨身碟 (如何修改 grub 開機選單 menu.lst)</h1>
+    <hr>
+
+    <h2 class="sec">Grub 選單的最重要選項</h2>
+
+    <p>第四分割下的 boot/grub/menu.lst 是 grub 的選單。
+    以下是幾個常見的設定</p>
+    <pre class="code">        default  2
+        timeout 10
+        splashimage=/boot/grub/gnu-tux-usb.xpm.gz
+</pre>
+
+    <p><a href="http://user.frdm.info/ckhung/b/slax/gnu-tux-usb.png"><img title="gnu tux 及 usb 碟" src="%E6%8A%8A%E5%88%A5%E7%9A%84live-cd%E7%BD%AE%E5%85%A5%E9%9A%A8%E8%BA%AB%E7%A2%9F%28%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%20grub%20%E9%96%8B%E6%A9%9F%E9%81%B8%E5%96%AE%20menu.lst%29_files/gnu-tux-usb.png" alt="gnu tux 及 usb 碟" width="160" align="right"></a> 開機時若未手動選擇, 10
+    秒後將自動進入第二個選項。 選項從零數起。 第三句指定背景圖片。
+    想拿你喜歡的圖片當做開機畫面? <a href="http://ruslug.rutgers.edu/%7Emcgrof/grub-images/">請看這裡</a>。
+    例如到 <a href="http://su2.info/graphics/gnu_tux/">這裡</a>
+    取得圖片, 並用 gimp 加上 usb 姆指碟的相片, 存檔成 gnu-tux-usb.png。
+    然後安裝 ImageMagick 套件, 下指令: <code>convert -resize 640x480
+    -colors 14 gnu-tux-usb.png gnu-tux-usb.xpm ; gzip
+    gnu-tux-usb.xpm</code> 把 png 或其他圖檔轉成 grub 所需要的 xpm
+    格式, 並加以壓縮, 再放到適當位置。 最後在 menu.lst 裡面加上
+    splashimage=/boot/grub/<a href="http://user.frdm.info/ckhung/b/slax/gnu-tux-usb.xpm.gz">gnu-tux-usb.xpm.gz</a> 即可。</p>
+
+    <p>若要進一步研究 grub, 請參考 <a href="http://user.frdm.info/ckhung/b/sa/grub.php">「動手學
+    grub」</a>。</p>
+
+    <h2 class="sec">例: Ezgo7</h2>
+
+    <p>在 isolinux/isolinux.cfg 裡面看到這段:</p>
+    <pre class="code">        <em>LABEL</em> live
+          <del>menu label ^Try Ubuntu without any change to your computer</del>
+          kernel /casper/vmlinuz1
+          <em>append</em>  file=/cdrom/isolinux/preseed/ubuntu.seed boot=casper <em>initrd=</em>/casper/initrd1.img debian-installer/locale=zh_TW quiet splash --
+</pre>
+
+    <p>其中的 append 及 initrd= 是 isolinux 的語法; 若要換成 grub 的
+    menu.lst, 就進行以下修改:</p>
+
+    <ol>
+      <li>把 LABEL 改成 title; 後面的標題只是顯示用的字串,
+      可以隨意改。</li>
+
+      <li>把 menu 那一列刪掉。</li>
+
+      <li>把 initrd= 那一串獨立出來, 放到最後一列,
+      並且把等號改成空格。</li>
+
+      <li>把剩下的所有東西放在同一列, append 刪掉。</li>
+
+      <li>如果 "KERNEL" 是大寫, 還要將它改成小寫。</li>
+    </ol>
+
+    <p>變成這樣:</p>
+    <pre class="code">        <em>title</em> ezgo 7
+        kernel /casper/vmlinuz1 file=/cdrom/isolinux/preseed/ubuntu.seed boot=casper debian-installer/locale=zh_TW quiet splash --
+        <em>initrd</em> /casper/initrd1.img
+</pre>
+
+    <p>當然, 這只是個起點。 如果測試正常, 還可以再增加更多選項。
+    例如原始的設定和光碟一樣: 不論你做任何修改, 關機後一律消失;
+    下次再開機時, 一切還原。
+    (除非你刻意將檔案存到指定的分割指定的目錄下。) 如果在 kernel
+    那一長串之後, 加上 "persistent", 則開機時 ubuntu 會去尋找一個具有
+    "casper-rw" label 的 ext2 分割, 或是一個名為 "casper-rw" 的
+    <a href="http://user.frdm.info/ckhung/b/sa/filesystem.php#loop">loopback device</a>,
+    把它與唯讀的系統 "聯集" 起來, 這樣你的隨身碟才可正常讀寫。 詳見
+    <a href="https://help.ubuntu.com/community/LiveCD/Persistence#Using%20a%20Loopback%20File">
+    LiveCD Persistence</a>。</p>
+
+    <p>更多開機選項請搜尋 "ubuntu boot options" 及 "linux boot options"
+    。 例如遇到沒有驅動程式的顯示卡, 也許可以試試 xforcevesa 選項。</p>
+
+    <h2 class="sec" id="share-partition">好幾個版本共用一個分割</h2>
+
+    <p>有些版本的 live-cd 擺放的位置彈性很大,
+    不一定要獨自佔用一個分割。 例如想把 slax, dsl, 和 <a href="http://clonezilla.nchc.org.tw/clonezilla-live/">clonezilla</a>
+    三個版本全部放在同一個分割 (假設是 /dev/sda17),
+    分別安置在各自的目錄 ( dsl-4.4.10/ slax-6.1.2/ clonezilla/ ) 裡面,
+    那麼你的 menu.lst 應該類似如下設定:</p>
+    <pre class="code">title           DSL 4.4.10
+kernel          (hd0,16)/<em>dsl-4.4.10/</em>boot/isolinux/linux24 ramdisk_size=100000 init=/etc/init lang=us apm=power-off vga=791 nomce noapic quiet <em>knoppix_dir=dsl-4.4.10/KNOPPIX</em> BOOT_IMAGE=knoppix
+initrd          (hd0,16)/<em>dsl-4.4.10/</em>boot/isolinux/minirt24.gz 
+
+title           slax 6.1.2 work space
+kernel          (hd0,16)/<em>slax-6.1.2/</em>boot/vmlinuz ramdisk_size=6666 root=/dev/ram0 rw autoexec=xconf;telinit~4 <em>from=/slax-6.1.2/</em> <em>changes=/slax-6.1.2/slax/</em>
+initrd          (hd0,16)/<em>slax-6.1.2/</em>boot/initrd.gz
+
+title           Clonezilla live 1.2.7-11-i686
+kernel          (hd0,16)/<em>clonezilla/</em>live/vmlinuz boot=live config noswap nolocales edd=on nomodeset ocs_live_run="ocs-live-general" ocs_live_extra_param="" ocs_live_keymap="" ocs_live_batch="no" ocs_lang="" vga=788 ip=frommedia  nosplash <em>live-media-path=/clonezilla/live</em>
+initrd          (hd0,16)/<em>clonezilla/</em>live/initrd.img 
+</pre>
+
+    <p>也就是說: 除了指定 kernel 和 initrd
+    的位置時需要加上子目錄名稱之外, 每個不同版本的 live-cd
+    可能都還要另外用一兩個選項告訴開機程式系統檔案的位置改變了。
+    請用版本名稱加上 「boot options」 搜尋, 就可找到以下文件。</p>
+
+    <table summary="各個版本的 live-cd 放進子目錄時需要額外指定的選項" align="left" border="1">
+      <tbody><tr>
+        <th>版本</th>
+
+        <th>需設定的選項</th>
+
+        <th>參考文件</th>
+      </tr>
+
+      <tr>
+        <td>dsl</td>
+
+        <td>knoppix_dir=...</td>
+
+        <td><a href="http://www.damnsmalllinux.org/wiki/index.php/Cheat_Codes">dsl
+        cheat codes</a> (可能也適用於整個 knoppix 系列)</td>
+      </tr>
+
+      <tr>
+        <td>slax</td>
+
+        <td>from=..., changes=...</td>
+
+        <td><a href="http://www.slax.org/documentation_boot_cheatcodes.php">slax
+        boot parameters</a></td>
+      </tr>
+
+      <tr>
+        <td>clonezilla</td>
+
+        <td>live-media-path=...</td>
+
+        <td><a href="http://grml.org/online-docs/live-initramfs.en.7.html">Debian
+        Live initramfs boot options</a> (可能也適用整個 debian live
+        系列)</td>
+      </tr>
+    </tbody></table>
+
+    <h2 class="sec">將控制權交給另一個開機管理員</h2>
+
+    <p>我的 eeepc 每次都從內建的 ssd 開機; 但我好寶貝它,
+    總是按 ESC 改從記憶卡開機, 因為記憶卡如果玩壞了,
+    換起來比內建 ssd 便宜簡單。 於是我在 ssd 的 grub
+    設定檔裡面加了這一段:</p>
+    <pre class="code">title   sd card
+root    (hd1)
+chainloader +1
+    </pre>
+    <p>(注意: root 那一句僅指定哪一顆碟， 不指定哪一個分割。)
+    並且把它設為預設開機選項。 這樣每次開機時,
+    ssd 上的 grub 會自動將控制權交給 /dev/sdb4
+    (也就是記憶卡的開機分割) 不必再狂按 ESC 鍵。</p>
+
+        <hr>
+
+    <ul>
+            <li>本頁最新版網址: <a href="http://user.frdm.info/ckhung/b/slax/menu.php">
+       http://user.frdm.info/ckhung/b/slax/menu.php</a>;
+      您所看到的版本: October 02 2013 04:15:54. </li>
+
+      <li>作者: <a href="http://www.cyut.edu.tw/">朝陽</a>科技大學 <a href="http://www.im.cyut.edu.tw/">資訊管理</a>系 <a href="http://user.frdm.info/ckhung/">洪朝貴</a></li>
+
+      <li><a href="http://gaia.org.tw/">寶貝你我的地球</a>, 請 <a href="http://www.udel.edu/topics/printless/">
+      減少列印</a>, 多用背面, 丟棄時做垃圾分類。</li>
+
+      <li>本文件以 <a rel="license" href="http://creativecommons.org/licenses/by-sa/2.5/">
+      Creative Commons Attribution-ShareAlike License</a>
+      或以 <a rel="license" href="http://user.frdm.info/ckhung//i/fdl.html">
+      Free Document License</a> 方式公開授權大眾自由複製/修改/散佈。</li>
+    </ul>
+
+  </div>
+
+</body></html>
