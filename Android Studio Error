@@ -1,0 +1,9 @@
+Cannot launch AVD in emulator 
+
+  libGL error: failed to load driver: nouveau
+  libGL error: unable to load driver: swrast_dri.so
+  libGL error: failed to load driver: swrast
+
+    cd /home/sunrise/Android/Sdk/tools/lib64/libstdc++
+    mv libstdc++.so.6 libstdc++.so.6.bak
+    ln -s /usr/lib64/libstdc++.so.6

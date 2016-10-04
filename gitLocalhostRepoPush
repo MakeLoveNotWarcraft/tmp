@@ -1,0 +1,8 @@
+mkdir /repo/project
+cd /repo/project
+git --bare init
+
+cd /project
+git push -u /repo/project master
+
+git clone /repo/project
