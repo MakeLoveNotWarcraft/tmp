@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+<html><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+  <!-- Start of Baidu Transcode -->
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta name="applicable-device" content="pc,mobile">
+  <meta name="MobileOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+  <meta name="mobile-agent" content="format=html5;url=http://www.jianshu.com/p/ebda27f061e3">
+  <!-- End of Baidu Transcode -->
+
+    <meta name="description" content="之前整了两章关于Android中的Matrix操作，本章来谈一谈Android中的另一个Matrix-ColorMatrix。本文讲述的具体内容如图：Color.jpg如果不喜欢看描述的话，项目的demo地址如下:https://github.com/MartinBZDQSM/MatrixColorMatrix谈到ColorMatrix，那么先聊聊Android中颜色.我们在经常调整布局颜色...">
+
+  <meta name="360-site-verification" content="604a14b53c6b871206001285921e81d8">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb">
+  <meta property="qc:admins" content="104102651453316562112116375">
+  <meta property="qc:admins" content="11635613706305617">
+  <meta property="qc:admins" content="1163561616621163056375">
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4">
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI">
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/ebda27f061e3">
+
+  <!-- Apple -->
+  <meta name="apple-mobile-web-app-title" content="简书">
+
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/4942179">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)" property="twitter:title">
+  <meta content="之前整了两章关于Android中的Matrix操作，本章来谈一谈Android中的另一个Matrix-ColorMatrix。本文讲述的具体内容如图：Color.jpg如果不喜欢看描述的话，项目的demo地址如下:https://github.com/MartinBZDQSM/MatrixColorMatrix谈到ColorMatrix，那么先聊聊Android中颜色.我们在经常调整布局颜色的时候使用的是为八位的十六进制表示法的颜色值，例如：#0xd5d5d5；这种表示法也正对应着Android中使用的ARGB模式，也就是..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/ebda27f061e3" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/ebda27f061e3">
+  <meta property="og:description" content="之前整了两章关于Android中的Matrix操作，本章来谈一谈Android中的另一个Matrix-ColorMatrix。本文讲述的具体内容如图：Color.jpg如果不喜欢看描述的话，项目...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/4942179">
+  <meta property="al:ios:app_store_id" content="888237539">
+  <meta property="al:ios:app_name" content="简书">
+
+  <meta property="al:android:url" content="jianshu://notes/4942179">
+  <meta property="al:android:package" content="com.jianshu.haruki">
+  <meta property="al:android:app_name" content="简书">
+  <!-- End -->
+
+
+    <title>Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改) - 简书</title>
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="i8fkLveFcofwz4/oKGQGcNI275Ib5wEPJlpXTlgFGoXSDNbW1Bca/l7Pr1boF6DA59jXmRvxN+AU+jDownokEQ==">
+
+  <link rel="stylesheet" media="all" href="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/web-a22db2e2e120168cfb83.css">
+  
+  <link rel="stylesheet" media="all" href="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/entry-a22db2e2e120168cfb83.css">
+
+  <link href="http://cdn2.jianshu.io/assets/favicons/favicon-783beb88ed621ceab614de960376ac0c.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/57-47624b2e2161e8eb144462c85db0a5ff.png" sizes="57x57">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/72-c00cde7cf98fc49e50cbb3ee1dcd5804.png" sizes="72x72">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/76-e8af0bdeaf1ba31e303b1fde8b5e66c4.png" sizes="76x76">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/114-f4c78569bbf1977e8382a5fd90c9237a.png" sizes="114x114">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/120-cf10c3711dba269522743729efe66bbc.png" sizes="120x120">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn2.jianshu.io/assets/apple-touch-icons/152-7bd60457b5f3ecbf1343f0e6241be4f8.png" sizes="152x152">
+<link rel="stylesheet" href="blob:http://www.jianshu.com/8a026835-14ad-4528-b37d-6a76fdb25c40"></head>
+
+  <body class="reader-black-font" lang="zh-CN">
+    <!-- 全局顶部导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="width-limit">
+    <!-- 左上方 Logo -->
+    <a class="logo" href="http://www.jianshu.com/"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/logo-58fd04f6f0de908401aa561cda6a0688.png" alt="Logo"></a>
+
+    <!-- 右上角 -->
+      <!-- 未登录显示登录/注册/写文章 -->
+      <a class="btn write-btn" target="_blank" href="http://www.jianshu.com/writer#/">
+        <i class="iconfont ic-write"></i>写文章
+</a>      <a class="btn sign-up" href="http://www.jianshu.com/sign_up">注册</a>
+      <a class="btn log-in" href="http://www.jianshu.com/sign_in">登录</a>
+
+    <!-- 如果用户登录，显示下拉菜单 -->
+
+    <div class="style-mode"><a class="style-mode-btn"><i class="iconfont ic-navigation-mode"></i></a> <div class="popover-modal" style="left: 0px; display: none;"><div class="meta"><i class="iconfont ic-navigation-night"></i><span>夜间模式</span></div> <div class="switch day-night-group"><a class="switch-btn">开</a> <a class="switch-btn active">关</a></div> <hr> <div class="switch font-family-group"><a class="switch-btn font-song">宋体</a> <a class="switch-btn font-hei active">黑体</a></div> <div class="switch"><a class="switch-btn active">简</a> <a class="switch-btn">繁</a></div></div></div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="nav navbar-nav">
+            <li class="">
+              <a href="http://www.jianshu.com/">
+                <span class="menu-text">首页</span><i class="iconfont ic-navigation-discover menu-icon"></i>
+</a>            </li>
+            <li class="">
+              <a class="app-download-btn" href="http://www.jianshu.com/apps"><span class="menu-text">下载App</span><i class="iconfont ic-navigation-download menu-icon"></i></a>
+            </li>
+          <li class="search">
+            <form target="_blank" action="/search" accept-charset="UTF-8" method="get"><input name="utf8" value="✓" type="hidden">
+              <input name="q" id="q" autocomplete="off" placeholder="搜索" class="search-input" type="text">
+              <a class="search-btn" href="javascript:void(null)"><i class="iconfont ic-search"></i></a>
+</form>          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="note">
+  <div class="post">
+    <div class="article">
+        <h1 class="title">Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)</h1>
+
+        <!-- 作者区域 -->
+        <div class="author">
+          <a class="avatar" href="http://www.jianshu.com/u/78f0e5f4a403">
+            <img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/6c2a02cc29ff.png" alt="144">
+</a>          <div class="info">
+            <span class="tag">作者</span>
+            <span class="name"><a href="http://www.jianshu.com/u/78f0e5f4a403">MartinBZDQSM</a></span>
+            <!-- 关注用户按钮 -->
+            <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+            <!-- 文章数据信息 -->
+            <div class="meta">
+              <!-- 如果文章更新时间大于发布时间，那么使用 tooltip 显示更新时间 -->
+                <span class="publish-time" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="最后编辑于 2016.08.03 22:12">2016.08.03 22:11*</span>
+              <span class="wordage">字数 1512</span>
+            <span class="views-count">阅读 725</span><span class="comments-count">评论 4</span><span class="likes-count">喜欢 15</span></div>
+          </div>
+          <!-- 如果是当前作者，加入编辑按钮 -->
+        </div>
+        <!-- -->
+
+        <!-- 文章内容 -->
+        <div data-note-content="" class="show-content">
+          <p><strong>之前整了两章关于Android中的Matrix操作，本章来谈一谈Android中的另一个Matrix-ColorMatrix。</strong></p>
+<p><strong>本文讲述的具体内容如图：</strong><br></p><div class="image-package">
+<img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/2510337-ab25f0157ad9114a.jpg" data-original-src="http://upload-images.jianshu.io/upload_images/2510337-ab25f0157ad9114a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2" style="cursor: zoom-in;"><br><div class="image-caption">Color.jpg</div>
+</div>
+<p><strong>如果不喜欢看描述的话，项目的demo地址如下:<br><a href="https://github.com/MartinBZDQSM/Matrix" target="_blank">https://github.com/MartinBZDQSM/Matrix</a>
+</strong></p>
+<h2>ColorMatrix</h2>
+<p>谈到ColorMatrix，那么先聊聊Android中颜色.<br>我们在经常调整布局颜色的时候使用的是为八位的十六进制表示法的颜色值，例如：#0xd5d5d5；这种表示法也正对应着Android中使用的<strong>ARGB</strong>模式，也就是说颜色和透明度 (alpha) 的值都用以十六进制表示法表示。其首两位代表着透明度剩下的分别对应着红绿蓝三种颜色，其中任何一种颜色的值范围都是 0到 255（00到 ff）。</p>
+<p>而Android支持的颜色模式都有：</p>
+<table>
+<thead>
+<tr>
+<th>颜色模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARGB8888</td>
+<td>四通道高精度(32位)  </td>
+</tr>
+<tr>
+<td>ARGB4444</td>
+<td>四通道低精度(24位)  </td>
+</tr>
+<tr>
+<td>RGB565</td>
+<td>三通道(16位)  </td>
+</tr>
+<tr>
+<td>Alpha8</td>
+<td>透明通道(8位)  </td>
+</tr>
+</tbody>
+</table>
+<p>所以看到这里，我们其实就能猜出来，为什么一张好好的透明PNG图片在某些加载框架中会变黑？正式因为其框架使用的默认通道是RGB565 缺少了一个透明通道，所以当我们修改了图片的颜色模式为ARGB8888或者ARGB4444后会变正常。</p>
+<p>现在我们来看看ColorMatrix 的官方描述：</p>
+<pre class="hljs undefined"><code>/**
+ * 4x5 matrix for transforming the color and alpha components of a Bitmap.　
+ * The matrix can be passed as single array, and is treated as follows:
+ * 下面这个4x5的矩阵可以表达，为一张图的颜色以及透明图信息。
+ *  [ a, b, c, d, e,
+ *    f, g, h, i, j,
+ *    k, l, m, n, o,
+ *    p, q, r, s, t ]
+ *
+ * When applied to a color  颜色分量矩阵
+ *   [R, G, B, A]
+ *  the resulting color is computed as:计算结果如下公式：
+ *
+ *   R’ = a*R + b*G + c*B + d*A + e;
+ *   G’ = f*R + g*G + h*B + i*A + j;
+ *   B’ = k*R + l*G + m*B + n*A + o;
+ *   A’ = p*R + q*G + r*B + s*A + t;
+ *
+ * That resulting color 
+ *  [R’, G’, B’, A’]
+ * then has each channel clamped to the 0 to 255 range.计算出来的结果，每个通道都在0-255之间
+ * 
+ * The sample ColorMatrix below inverts incoming colors by scaling each
+ * channel by -1, and then shifting the result up by
+ * 255 to remain in the standard color space.
+ * 好像用来举例说明的，前四列代表RGBA的偏向成分，第五列代表着颜色偏移量
+ *
+ *   [ -1, 0, 0, 0, 255,
+ *     0, -1, 0, 0, 255,
+ *     0, 0, -1, 0, 255,
+ *     0, 0, 0, 1, 0 ]
+ */</code></pre>
+<p><strong>总得来说就是，一张图可以通过设置 颜色矩阵 来改变它的颜色效果。</strong></p>
+<h2>1.颜色偏向</h2>
+<p>为了测试ColorMatrix能够影响图片的颜色效果，我设置了4个SeekBar,来分别代表着R,G,B,A四个通道，其范围都是0-255.</p>
+<pre class="hljs undefined"><code> @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        //设置偏移量
+        colorMatrix.setScale(caculate(seekBarR.getProgress()), caculate(seekBarG.getProgress()),
+                caculate(seekBarB.getProgress()), caculate(seekBarA.getProgress()));
+
+       //偏向颜色的值
+        colorText.setText("颜色值：#" + Integer.toHexString(seekBarA.getProgress())
+                + Integer.toHexString(seekBarR.getProgress())
+                + Integer.toHexString(seekBarG.getProgress())
+                + Integer.toHexString(seekBarB.getProgress()));
+
+         //用来显示偏向的颜色
+        colorView.setBackgroundColor(Color.argb(seekBarA.getProgress(),
+                seekBarR.getProgress(),
+                seekBarG.getProgress(),
+                seekBarB.getProgress()));
+
+        //为组件设置新的过滤器
+        imageView.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+
+    }</code></pre>
+<p>效果演示如下：<br></p><div class="image-package">
+<img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/2510337-96270f619760d830.gif" data-original-src="http://upload-images.jianshu.io/upload_images/2510337-96270f619760d830.gif?imageMogr2/auto-orient/strip" style="cursor: zoom-in;"><br><div class="image-caption">ColorMartix.gif</div>
+</div>
+<h2>2.色相</h2>
+<p>本来还不是很明白色相指的什么，查查百度才知道：色相是色彩的首要特征，是区别各种不同色彩的最准确的标准。<br>正如PS中使用的的色相/饱和度功能，它可以通过修改颜色的三个基本属性：<strong>色相</strong>、<strong>彩度</strong>、<strong>明度</strong>，来进行调节色彩。<br></p><div class="image-package">
+<img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/2510337-5004ba323b1b4bcd.png" data-original-src="http://upload-images.jianshu.io/upload_images/2510337-5004ba323b1b4bcd.png?imageMogr2/auto-orient/strip%7CimageView2/2" style="cursor: zoom-in;"><br><div class="image-caption">PS_HUE.png</div>
+</div><p><br>那么，在Android中如何做呢？同样 我写了三个SeekBar范围值也分别是0-255。</p>
+<pre class="hljs undefined"><code>  @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+        float mHueValue = (seekBarHue.getProgress() - 128f) * 1.0f / 128f * 180;
+        float mSaturationValue = seekBarSaturation.getProgress() / 128f;
+        float mLightnessValue = seekBarLightness.getProgress() / 128f;
+
+        //设置色相
+        mHueMatrix.reset();
+        mHueMatrix.setRotate(0, mHueValue);
+        mHueMatrix.setRotate(1, mHueValue);
+        mHueMatrix.setRotate(2, mHueValue);
+
+        //设置饱和度
+        mSaturationMatrix.reset();
+        mSaturationMatrix.setSaturation(mSaturationValue);
+
+        //亮度
+        mLightnessMatrix.reset();
+        mLightnessMatrix.setScale(mLightnessValue, mLightnessValue, mLightnessValue, 1);
+
+        colorMatrix.reset();// 效果叠加
+        colorMatrix.postConcat(mLightnessMatrix);
+        colorMatrix.postConcat(mSaturationMatrix);
+        colorMatrix.postConcat(mHueMatrix);
+
+        imageView.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+    }</code></pre>
+<p>效果如下：<br></p><div class="image-package">
+<img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/2510337-9963e5fdf56095d1.gif" data-original-src="http://upload-images.jianshu.io/upload_images/2510337-9963e5fdf56095d1.gif?imageMogr2/auto-orient/strip" style="cursor: zoom-in;"><br><div class="image-caption">ColorHue.gif</div>
+</div>
+<h2>3.简单的颜色滤镜封装</h2>
+<p>通过上方的举例，我们很容易将调节过后的偏移矩阵，封装成一些滤镜使用。<br>我找了一些已经设置好了的偏移矩阵作为滤镜使用，具体效果如图：</p>
+<div class="image-package">
+<img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/2510337-438767521d728c1d.png" data-original-src="http://upload-images.jianshu.io/upload_images/2510337-438767521d728c1d.png?imageMogr2/auto-orient/strip%7CimageView2/2" style="cursor: zoom-in;"><br><div class="image-caption">ColorFilter.png</div>
+</div>
+<p>下面贴出我封装的固定颜色偏向滤镜和固定偏移矩阵滤镜的方法：</p>
+<pre class="hljs undefined"><code> /**
+     * 为imageView设置颜色滤镜
+     *
+     * @param imageView
+     * @param colormatrix
+     */
+    public static void imageViewColorFilter(ImageView imageView, float[] colormatrix) {
+        setColorMatrixColorFilter(imageView, new ColorMatrixColorFilter(new ColorMatrix(colormatrix)));
+    }
+
+    /**
+     * 为imageView设置颜色偏向滤镜
+     *
+     * @param imageView
+     * @param color
+     */
+    public static void imageViewColorFilter(ImageView imageView, int color) {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setScale(Color.alpha(color), Color.red(color), Color.green(color), Color.blue(color));
+        setColorMatrixColorFilter(imageView, new ColorMatrixColorFilter(colorMatrix));
+    }
+
+
+    /**
+     * 生成对应颜色偏向滤镜的图片，并回收原图
+     *
+     * @param bitmap
+     * @param color
+     * @return
+     */
+    public static Bitmap bitmapColorFilter(Bitmap bitmap, int color) {
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.setScale(Color.alpha(color), Color.red(color), Color.green(color), Color.blue(color));
+        return setColorMatrixColorFilter(bitmap, new ColorMatrixColorFilter(colorMatrix), true);
+    }
+
+    /**
+     * 生成对应颜色滤镜的图片，并回收原图
+     *
+     * @param bitmap
+     * @param colormatrix
+     * @return
+     */
+    public static Bitmap bitmapColorFilter(Bitmap bitmap, float[] colormatrix) {
+        return setColorMatrix(bitmap, colormatrix, true);
+    }
+
+    /**
+     * 生成对应颜色滤镜的图片
+     *
+     * @param bitmap
+     * @param colormatrix
+     * @param isRecycle
+     * @return
+     */
+    public static Bitmap setColorMatrix(Bitmap bitmap, float[] colormatrix, boolean isRecycle) {
+        return setColorMatrixColorFilter(bitmap, new ColorMatrixColorFilter(new ColorMatrix(colormatrix)), isRecycle);
+    }
+
+
+    public static void setColorMatrixColorFilter(ImageView imageView, ColorMatrixColorFilter matrixColorFilter) {
+        imageView.setColorFilter(matrixColorFilter);
+    }
+
+    public static Bitmap setColorMatrixColorFilter(Bitmap bitmap, ColorMatrixColorFilter matrixColorFilter, boolean isRecycle) {
+        Bitmap resource = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        Paint paint = new Paint();
+        paint.setAntiAlias(true);
+        paint.setColorFilter(matrixColorFilter);
+        Canvas canvas = new Canvas(resource);
+        canvas.drawBitmap(bitmap, 0, 0, paint);
+        if (isRecycle)
+            BitmapUtils.destroyBitmap(bitmap);
+        return resource;
+    }</code></pre>
+<p>包括之前的Matrix的代码都在Git上的<a href="https://github.com/MartinBZDQSM/Matrix" target="_blank">demo</a>里有详细的举例，就先写到这里把，应该也没有什么好整理的了。过几天会可能会把之前的<a href="http://www.jianshu.com/p/7f354833b941" target="_blank">Android海报制作</a>弄完。<br>喜欢这边文章的话，别忘了点个赞哈。</p>
+
+        </div>
+        <!--  -->
+
+        <div class="show-foot">
+          <a class="notebook" href="http://www.jianshu.com/nb/5189443">
+            <i class="iconfont ic-search-notebook"></i> <span>android 拾遗</span>
+</a>          <div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请联系作者获得授权，并标注“简书作者”。">
+            © 著作权归作者所有
+          </div>
+          <div class="modal-wrap" data-report-note="">
+            <a id="report-modal">举报文章</a>
+          </div>
+        </div>
+    </div>
+
+    <!-- 文章底部作者信息 -->
+      <div class="follow-detail">
+        <div class="info">
+          <a class="avatar" href="http://www.jianshu.com/u/78f0e5f4a403">
+            <img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/6c2a02cc29ff.png" alt="144">
+</a>          <a class="btn btn-success follow"><i class="iconfont ic-follow"></i><span>关注</span></a>
+          <a class="title" href="http://www.jianshu.com/u/78f0e5f4a403">MartinBZDQSM</a>
+        <p>写了 12020 字，被 76 人关注，获得了 162 个喜欢</p></div>
+          <div class="signature">i live life and trust,and I'm working the grind</div>
+      </div>
+
+      <div class="support-author"></div>
+
+    <div class="meta-bottom">
+      <div class="like"><div class="btn like-group"><div class="btn-like"><a href="http://www.jianshu.com/sign_in?utm_source=desktop&amp;utm_medium=not-signed-in-like-button"><i class="iconfont ic-like"></i>喜欢</a></div> <div class="modal-wrap"><a>15</a></div></div> <!----></div>
+      <div class="share-group">
+        <a class="share-circle" data-action="weixin-share" data-toggle="tooltip" data-original-title="分享到微信">
+          <i class="iconfont ic-wechat"></i>
+        </a>
+        <a class="share-circle" data-action="weibo-share" data-toggle="tooltip" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','',%20'%E6%8E%A8%E8%8D%90%20@%E6%8A%A4%E9%99%A2%E5%A7%94%E5%91%98%E9%95%BF%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8AMatrix(%E4%B8%89)%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix(%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9)%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@%E7%AE%80%E4%B9%A6%20%EF%BC%89','http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo','%E9%A1%B5%E9%9D%A2%E7%BC%96%E7%A0%81gb2312|utf-8%E9%BB%98%E8%AE%A4gb2312'));" data-original-title="分享到微博">
+          <i class="iconfont ic-weibo"></i>
+        </a>
+          <a class="share-circle" data-toggle="tooltip" href="http://cwb.assets.jianshu.io/notes/images/4942179/weibo/image_e9fecf277a90.jpg" target="_blank" data-original-title="下载长微博图片">
+            <i class="iconfont ic-picture"></i>
+          </a>
+        <a class="share-circle more-share" tabindex="0" data-toggle="popover" data-placement="top" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="
+          &lt;ul class=&quot;share-list&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone')+'&amp;title='+e('推荐 MartinBZDQSM 的文章《Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)》'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-zone&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter')+'&amp;text='+e('推荐 MartinBZDQSM 的文章《Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)》（ 分享自 @jianshucom ）')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-twitter&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-facebook&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-google&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban')+'&amp;title='+e('Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-douban&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        " data-original-title="" title="">更多分享</a>
+      </div>
+    </div>
+    <div id="vue_comment"></div>
+  </div>
+
+  <div class="side-tool"><ul><li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="回到顶部" style=""><a class="function-button"><i class="iconfont ic-backtop"></i></a></li> <!----> <!----> <li data-placement="left" data-toggle="tooltip" data-container="body" data-original-title="分享文章"><a tabindex="0" role="button" data-toggle="popover" data-placement="left" data-html="true" data-trigger="focus" href="javascript:void(0);" data-content="&lt;ul class='share-list'&gt;
+                &lt;li&gt;&lt;a class=&quot;weixin-share&quot;&gt;&lt;i class=&quot;social-icon-sprite social-icon-weixin&quot;&gt;&lt;/i&gt;&lt;span&gt;分享到微信&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','', '推荐 @护院委员长 的文章《Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)》（ 分享自 @简书 ）','http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weibo','页面编码gb2312|utf-8默认gb2312'));&quot;&gt;&lt;i class='social-icon-sprite social-icon-weibo'&gt;&lt;/i&gt;&lt;span&gt;分享到微博&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=qzone')+'&amp;title='+e('推荐 MartinBZDQSM 的文章《Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)》'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-zone'&gt;&lt;/i&gt;&lt;span&gt;分享到QQ空间&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=twitter')+'&amp;text='+e('推荐 MartinBZDQSM 的文章《Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)》（ 分享自 @jianshucom ）')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-twitter'&gt;&lt;/i&gt;&lt;span&gt;分享到Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=facebook',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-facebook'&gt;&lt;/i&gt;&lt;span&gt;分享到Facebook&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=google_plus'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();&quot;&gt;&lt;i class='social-icon-sprite social-icon-google'&gt;&lt;/i&gt;&lt;span&gt;分享到Google+&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/ebda27f061e3?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=douban')+'&amp;title='+e('Matrix(三) 神奇的ColorMatrix(图片的颜色与色相修改)')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()&quot;&gt;&lt;i class='social-icon-sprite social-icon-douban'&gt;&lt;/i&gt;&lt;span&gt;分享到豆瓣&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;" data-original-title="" title="" class="function-button"><i class="iconfont ic-share"></i></a> <!----></li></ul></div>
+</div>
+<div class="note-bottom">
+  <div><div class="main"><div class="title">被以下专题收入，发现更多相似内容</div> <!----> <div class="include-collection"><!----> <a href="http://www.jianshu.com/c/908d710faefe?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/1458412659.jpg"><div class="name">移动开发</div></a><a href="http://www.jianshu.com/c/bDHhpK?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/a.png"><div class="name">首页投稿</div></a><a href="http://www.jianshu.com/c/d1591c322c89?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/android_002.jpeg"><div class="name">Android开发</div></a><a href="http://www.jianshu.com/c/NEt52a?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/computer_guy.jpg"><div class="name">程序员</div></a><a href="http://www.jianshu.com/c/58b4c20abf2f?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/android_003.jpeg"><div class="name">Android...</div></a><a href="http://www.jianshu.com/c/35155aeb4a7c?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/android.jpeg"><div class="name">安卓知识</div></a><a href="http://www.jianshu.com/c/cf1d3c2ec9c2?utm_source=desktop&amp;utm_medium=notes-included-collection" target="_blank" class="item"><img src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/1469983788.jpg"><div class="name">安桌</div></a> <a class="show-more">
+        展开更多
+        <i class="iconfont ic-show"></i></a></div></div> <!----> <!----></div>
+  <div data-vcomp="recommended-notes" data-note-id="4942179"></div>
+</div>
+
+    <script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/push.js"></script><script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/hm.js"></script><script async="" src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/analytics.js"></script><script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"linux","read_mode":"day","read_font":"font2","note_show":{"is_author":false,"is_following_author":false,"is_liked_note":false,"uuid":"7697946e-5f1c-4421-9780-a6d0f25bd646"},"note":{"id":4942179,"slug":"ebda27f061e3","user_id":2510337,"notebook_id":5189443,"commentable":true,"likes_count":15,"views_count":725,"public_wordage":1512,"comments_count":4,"total_rewards_count":0,"is_author":false,"author":{"nickname":"MartinBZDQSM","total_wordage":12020,"followers_count":76,"total_likes_count":162}}}</script>
+    
+    <script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/babel-polyfill-edd4242643dcecaa8f83.js"></script>
+    <script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/web-base-a22db2e2e120168cfb83.js"></script>
+<script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/web-e6a947579b9bc5d33873.js"></script>
+    
+    <script src="Matrix%28%E4%B8%89%29%20%E7%A5%9E%E5%A5%87%E7%9A%84ColorMatrix%28%E5%9B%BE%E7%89%87%E7%9A%84%E9%A2%9C%E8%89%B2%E4%B8%8E%E8%89%B2%E7%9B%B8%E4%BF%AE%E6%94%B9%29%20-%20%E7%AE%80%E4%B9%A6_files/entry-a466d8549c0df2a450b5.js"></script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?0c0e9d9b1e7d617b3e6842e85b9fb068";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+  
+
+<!----><!----></body></html>

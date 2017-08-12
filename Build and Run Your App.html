@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+  
+
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+
+
+
+
+<script src="Build%20and%20Run%20Your%20App_files/linkid.js" async="" type="text/javascript"></script><script src="Build%20and%20Run%20Your%20App_files/analytics.js" async=""></script><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
+</script>
+
+<meta charset="utf-8">
+
+<meta name="xsrf_token" content="-bFRhWfSw0L2-_CQ6cljzODB8cdkJjyGo63No56DWtE6MTQ4MDY1OTg2MzAwNTA5MA">
+
+
+  <link rel="canonical" href="https://developer.android.com/studio/run/index.html">
+
+
+
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=es-419" hreflang="es-419">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=pt-br" hreflang="pt-br">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=id" hreflang="id">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=ko" hreflang="ko">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=zh-cn" hreflang="zh-cn">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html?hl=ja" hreflang="ja">
+  
+  <link rel="alternate" href="https://developer.android.com/studio/run/index.html" hreflang="en">
+  
+
+
+<link rel="alternate" href="https://developer.android.com/studio/run/index.html" hreflang="x-default">
+
+<link rel="shortcut icon" href="https://developer.android.com/favicon.ico">
+
+
+
+<title>
+
+  Build and Run Your App | Android Studio
+
+</title>
+<meta name="description" content="None">
+
+<!-- STYLESHEETS -->
+<link rel="stylesheet" href="Build%20and%20Run%20Your%20App_files/css_002.css">
+<link rel="stylesheet" href="Build%20and%20Run%20Your%20App_files/css.css" title="roboto">
+
+
+
+
+<link href="Build%20and%20Run%20Your%20App_files/default.css" rel="stylesheet" type="text/css">
+<!-- JAVASCRIPT -->
+<script src="Build%20and%20Run%20Your%20App_files/android_3p-bundle.js" type="text/javascript"></script>
+<script src="Build%20and%20Run%20Your%20App_files/script_foot_closure_android__zh_tw.js"></script>
+
+
+<script type="text/javascript">
+  var toRoot = '/';
+  var useUpdatedTemplates = true;
+  devsite.permissions.init({"044f63022fa45182fb1e55a4cf633f49": true, "5d17cf7d98343d37cdc5bede08b7b28e": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "51470233c56fc1fde50f00b73c52b216": false, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true});
+
+  
+  var useDevsiteMetadata = true;
+
+  var replaceBlog = false;
+  var replaceYouTube = false;
+  var customSearchEnabled = true;
+  var siteDefaultLocale = 'en';
+
+  var ANDROID_LANGUAGES = [
+      'id','en','es','es-419','pt-br','vi','ru','ja','zh-cn','zh-tw','ko'
+  ];
+</script>
+<script src="Build%20and%20Run%20Your%20App_files/docs.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body class="gc-documentation dac-studio no-crumbs guide" itemscope="" itemtype="http://schema.org/Article">
+  
+
+
+  
+    <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Studio&quot;, &quot;dimension5&quot;: &quot;zh-tw&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}" type="hidden">
+  
+    <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Studio&quot;, &quot;dimension5&quot;: &quot;zh-tw&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}" type="hidden">
+  
+
+
+
+  
+  
+    <script>
+      var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "zh-tw", "served": "en"}, "projectName": "Android Studio", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
+    </script>
+  
+
+
+
+  <a href="#top" id="skip-to-main">Skip to content</a>
+  <header id="header-wrapper">
+    <div class="dac-header" id="header">
+      <div class="dac-header-inner">
+        <a class="dac-nav-toggle" data-dac-toggle-nav="" href="" title="Open navigation">
+          <span class="dac-nav-hamburger">
+            <span class="dac-nav-hamburger-top"></span>
+            <span class="dac-nav-hamburger-mid"></span>
+            <span class="dac-nav-hamburger-bot"></span>
+          </span>
+        </a>
+        
+<a class="dac-header-logo" href="https://developer.android.com/studio/index.html">
+  <img class="dac-header-logo-image" src="Build%20and%20Run%20Your%20App_files/studio-icon.png" srcset="https://developer.android.com/studio/images/studio-icon_2x.png 2x" alt="" height="36" width="34"> Android Studio</a>
+<ul class="dac-header-tabs">
+  <li>
+    <a class="dac-header-tab" href="https://developer.android.com/studio/features.html" es-lang="Funciones" id-lang="Fitur" ja-lang="機能" ko-lang="기능" pt-br-lang="Recursos" zh-cn-lang="功能">Features</a>
+  </li>
+  <li>
+    <a class="dac-header-tab selected" href="https://developer.android.com/studio/intro/index.html" es-lang="Guía del usuario" id-lang="Panduan Pengguna" ja-lang="ユーザーガイド" ko-lang="사용자 가이드" pt-br-lang="Guia do usuário" zh-cn-lang="用户指南">User Guide</a>
+  </li>
+</ul>
+<form data-search="" class="dac-header-search">
+  <button class="dac-header-search-close" data-search-close="">
+    <i class="dac-sprite dac-back-arrow"></i>
+  </button>
+
+  <div class="dac-header-search-inner">
+    <i class="dac-sprite dac-search-white dac-header-search-icon"></i>
+    <input id="search_autocomplete" autocomplete="off" name="q" class="dac-header-search-input" placeholder="Search" type="text">
+    <button class="dac-header-search-clear dac-hidden" data-search-clear="">
+      <i class="dac-sprite dac-close-black"></i>
+    </button>
+  </div>
+</form>
+
+
+      </div><!--/.header-wrap.wrap-->
+    </div><!--/.header-->
+
+    
+
+<div id="search-results" class="dac-search-results">
+  <div id="dac-search-results-history" class="dac-search-results-history">
+    <div class="wrap dac-search-results-history-wrap">
+      <div class="cols">
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          <h2 style="padding-bottom: 0px;">Most visited</h2><hr>
+          <div class="resource-flow-layout cols" data-history-query="history:most/visited" data-maxresults="3" data-cardsizes="18x2"><div class="resource-flow-page"><div class="col-6of6"><a href="https://developer.android.com/studio/run/index.html" class="resource resource-card resource-card-18x2 resource-card-android studio"><div style="background-image: url(&quot;/studio/images/buttons/toolbar-run.png&quot;);" class="card-bg"></div><div class="card-info"><div class="section">android studio</div><div class="title">Build and Run Your App</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">To build and run your app, click Run  .
+  Android Studio builds your app with
+  Gradle, asks you to select a deployment target (an emulator or a connected
+  device), and then deploys your app to it. You can customize some of this
+  default behavior,…</div></div></div></a></div><div class="col-6of6"><a href="https://developer.android.com/studio/run/managing-avds.html" class="resource resource-card resource-card-18x2 resource-card-android studio"><div style="background-image: url(&quot;/studio/images/buttons/toolbar-avd-manager.png&quot;);" class="card-bg"></div><div class="card-info"><div class="section">android studio</div><div class="title">Create and Manage Virtual Devices</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">An Android Virtual Device (AVD) definition lets you define the
+  characteristics of an Android phone, tablet, Android Wear, or Android TV
+  device that you want to simulate in the Android Emulator .
+  The AVD Manager helps you easily create and…</div></div></div></a></div><div class="col-6of6"><a href="https://developer.android.com/develop/index.html" class="resource resource-card resource-card-18x2 resource-card-develop"><div style="background-image: url(&quot;/images/develop/hero-layout-editor_2x.png&quot;);" class="card-bg"></div><div class="card-info"><div class="section">develop</div><div class="title">Develop Apps</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">Get Android Studio 2.2 &nbsp;&nbsp;&nbsp;&nbsp; See more features…</div></div></div></a></div></div></div>
+        </div>
+
+        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
+          <h2 style="padding-bottom: 0px;">Recently visited</h2><hr>
+          <div class="resource-flow-layout cols" data-history-query="history:recent" data-allow-duplicates="true" data-maxresults="3" data-cardsizes="18x2"><div class="resource-flow-page"><div class="col-6of6"><a href="https://developer.android.com/studio/run/index.html" class="resource resource-card resource-card-18x2 resource-card-android studio"><div style="background-image: url(&quot;/studio/images/buttons/toolbar-run.png&quot;);" class="card-bg"></div><div class="card-info"><div class="section">android studio</div><div class="title">Build and Run Your App</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">To build and run your app, click Run  .
+  Android Studio builds your app with
+  Gradle, asks you to select a deployment target (an emulator or a connected
+  device), and then deploys your app to it. You can customize some of this
+  default behavior,…</div></div></div></a></div><div class="col-6of6"><a href="https://developer.android.com/distribute/googleplay/index.html" class="resource resource-card resource-card-18x2 resource-card-distribute"><div style="background-image: url(&quot;/images/cards/program-edu_2x.jpg&quot;);" class="card-bg"></div><div class="card-info"><div class="section">google play</div><div class="title">Google Play</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">The
+ premier store for distributing Android apps and games, with global 
+reach and tools to help you gain traction in the marketplace.…</div></div></div></a></div><div class="col-6of6"><a href="https://developer.android.com/distribute/index.html" class="resource resource-card resource-card-18x2 resource-card-distribute"><div style="background-image: url(&quot;/images/distribute/google-play-bg.jpg&quot;);" class="card-bg"></div><div class="card-info"><div class="section">distribute</div><div class="title">Distribute Your Apps</div><div style="height: 20px;" class="description ellipsis"><div style="height: auto;" class="text">The
+ most visited store in the world for Android apps. Cloud-connected and 
+always synced, it's never been easier for users to find and download 
+your apps.</div></div></div></a></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dac-search-results-content" class="dac-search-results-content">
+    <div class="dac-search-results-metadata wrap">
+      <div class="dac-search-results-for">
+        <h2 style="padding-bottom: 0px;">Results for <span id="search-results-for"></span></h2><hr>
+      </div>
+
+      <div id="dac-search-results-hero"></div>
+
+      <div class="dac-search-results-hero cols">
+        <div id="dac-search-results-reference" class="col-3of6 col-tablet-1of2 col-mobile-1of1">
+          <div class="suggest-card reference no-display">
+            <ul class="dac-search-results-reference">
+            </ul>
+          </div>
+        </div>
+        
+        <div id="dac-custom-search-results"></div>
+        
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+  </header>
+
+  <a name="navigation" tabindex="0" class="nav-start-marker">navigation</a>
+  <nav class="dac-nav">
+    <div class="dac-nav-dimmer" data-dac-toggle-nav=""></div>
+    <div class="dac-nav-sidebar" data-swap="" data-dynamic="false" data-transition-speed="300" data-dac-nav="">
+      <div data-swap-container="">
+        
+        <a class="dac-nav-back-button dac-swap-section dac-up dac-active" tabindex="0" data-swap-button="">
+          
+          <i class="dac-sprite dac-nav-back"></i> <span class="dac-nav-back-title">User Guide</span>
+        </a>
+
+        <div class="dac-nav-sub dac-swap-section dac-right dac-active" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          
+          
+            
+            <ul id="nav">
+              <li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/intro/index.html" es-lang="Conocer Android Studio" id-lang="Mengenal Android Studio" ja-lang="Android Studio の概要" ko-lang="Android 스튜디오 만나보기" pt-br-lang="Conheça o Android Studio" zh-cn-lang="探索 Android Studio">Meet Android Studio</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/intro/migrate.html" es-lang="Realizar una migración a Studio" id-lang="Bermigrasi ke Studio" ja-lang="Eclipse から Android Studio への移行" ko-lang="Studio로 마이그레이션" pt-br-lang="Migre para o Studio" zh-cn-lang="迁移至 Studio">Migrate to Studio</a></li><li><a href="https://developer.android.com/studio/intro/studio-config.html" es-lang="Configurar el IDE" id-lang="Mengonfigurasi IDE" ja-lang="Android Studio の設定" ko-lang="IDE 구성" pt-br-lang="Configurar o IDE" zh-cn-lang="配置 IDE">Configure the IDE</a></li><li><a href="https://developer.android.com/studio/intro/keyboard-shortcuts.html">Keyboard Shortcuts</a></li><li><a href="https://developer.android.com/studio/intro/accessibility.html">Accessibility Features</a></li><li><a href="https://developer.android.com/studio/intro/update.html" es-lang="Actualizar el IDE y las herramientas" id-lang="Memperbarui IDE dan Alat" ja-lang="IDE および SDK ツールの更新" ko-lang="IDE 및 도구 업데이트" pt-br-lang="Atualizar IDE e ferramentas" zh-cn-lang="更新 IDE 和工具">Update the IDE and Tools</a></li></ul></li><li class="nav-section"><div class="nav-section-header empty"><a href="https://developer.android.com/studio/workflow.html">Workflow Basics</a></div></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/projects/index.html">Manage Your Project</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/projects/create-project.html">Create a Project</a></li><li><a href="https://developer.android.com/studio/projects/add-native-code.html">Add C and C++ Code</a></li><li><a href="https://developer.android.com/studio/projects/android-library.html">Create an Android Library</a></li><li><a href="https://developer.android.com/studio/projects/continuous-integration.html">Set Up Continuous Integration</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/write/index.html">Write Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/projects/templates.html">Add Code from a Template</a></li><li><a href="https://developer.android.com/studio/projects/add-app-module.html">Add a Module for a New Device</a></li><li><a href="https://developer.android.com/studio/write/create-java-class.html">Create a Java Class or Type</a></li><li><a href="https://developer.android.com/studio/write/add-resources.html">Add App Resources</a></li><li><a href="https://developer.android.com/studio/write/layout-editor.html">Build a UI with Layout Editor</a></li><li><a href="https://developer.android.com/studio/write/theme-editor.html">Design App Themes</a></li><li><a href="https://developer.android.com/studio/write/vector-asset-studio.html">Add Multi-Density Vector Graphics</a></li><li><a href="https://developer.android.com/studio/write/image-asset-studio.html">Create Icons with Image Asset Studio</a></li><li><a href="https://developer.android.com/studio/write/draw9patch.html">Create Resizable Bitmaps (9-Patch)</a></li><li><a href="https://developer.android.com/studio/write/translations-editor.html">Localize the UI</a></li><li><a href="https://developer.android.com/studio/write/app-link-indexing.html">Add URL and App Indexing Support</a></li><li><a href="https://developer.android.com/studio/write/firebase.html">Connect to Firebase</a></li><li><a href="https://developer.android.com/studio/write/lint.html">Improve Your Code with Lint</a></li><li><a href="https://developer.android.com/studio/write/annotations.html">Improve Code Inspection with Annotations</a></li></ul></li><li class="nav-section selected expanded"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/index.html" es-lang="Compilar y ejecutar tu app" id-lang="Membuat dan Menjalankan Aplikasi Anda" ja-lang="アプリをビルドして実行する" ko-lang="앱 빌드 및 실행" pt-br-lang="Compilar e executar seu aplicativo" zh-cn-lang="构建和运行您的应用">Build and Run Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul style="display: block;"><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/emulator.html" es-lang="Ejecutar apps en el emulador" id-lang="Menjalankan Aplikasi pada Emulator" ja-lang="Android Emulator 上でアプリを実行する" ko-lang="Emulator에서 앱 실행" pt-br-lang="Executar aplicativos no emulador" zh-cn-lang="在模拟器上运行应用">Run Apps on the Emulator</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/run/managing-avds.html" es-lang="Crear y administrar dispositivos virtuales" id-lang="Membuat dan Mengelola Perangkat Virtual" ja-lang="仮想端末の作成と管理" ko-lang="가상 기기 생성 및 관리" pt-br-lang="Criar e gerenciar dispositivos virtuais" zh-cn-lang="创建和管理虚拟设备">Create and Manage Virtual Devices</a></li><li><a href="https://developer.android.com/studio/run/emulator-commandline.html">Control the Emulator from the Command Line</a></li><li><a href="https://developer.android.com/studio/run/emulator-acceleration.html">Configure Hardware Acceleration</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/run/device.html" es-lang="Ejecutar apps en un dispositivo de hardware" id-lang="Menjalankan Aplikasi di Perangkat Keras" ja-lang="ハードウェア端末上でアプリを実行する" ko-lang="하드웨어 기기에서 앱 실행" pt-br-lang="Executar aplicativos em um dispositivo de hardware" zh-cn-lang="在硬件设备上运行应用">Run Apps on a Hardware Device</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/run/oem-usb.html" es-lang="Instalar controladores USB de OEM" id-lang="Memasang Driver USB OEM" ja-lang="OEM USB ドライバのインストール" ko-lang="OEM USB 드라이버 설치" pt-br-lang="Instalar drivers USB OEM" zh-cn-lang="安装原始设备制造商 USB 驱动程序">Install OEM USB Drivers</a></li><li><a href="https://developer.android.com/studio/run/win-usb.html" es-lang="Obtener el controlador USB de Google" id-lang="Memperoleh Driver USB Google" ja-lang="Google USB ドライバを入手する" ko-lang="Google USB 드라이버 가져오기" pt-br-lang="Obter o driver USB do Google" zh-cn-lang="获取 Google USB 驱动程序">Get the Google USB Driver</a></li></ul></li><li><a href="https://developer.android.com/studio/run/rundebugconfig.html">Create Run/Debug Configurations</a></li><li><a href="https://developer.android.com/studio/build/building-cmdline.html">Build Your App from the Command Line</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/build/index.html">Configure Your Build</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/build/application-id.html">Set the Application ID</a></li><li><a href="https://developer.android.com/studio/build/build-variants.html">Configure Build Variants</a></li><li><a href="https://developer.android.com/studio/build/configure-apk-splits.html">Configure APK Splits</a></li><li><a href="https://developer.android.com/studio/build/manifest-merge.html">Merge Multiple Manifests</a></li><li><a href="https://developer.android.com/studio/build/manifest-build-variables.html">Inject Build Variables into the Manifest</a></li><li><a href="https://developer.android.com/studio/build/shrink-code.html">Shrink Your Code and Resources</a></li><li><a href="https://developer.android.com/studio/build/multidex.html">Configure Apps with Over 64K Methods</a></li><li><a href="https://developer.android.com/studio/build/apk-analyzer.html">Analyze Your Build with APK Analyzer</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/debug/index.html">Debug Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/debug/am-logcat.html">Write and View Logs</a></li><li><a href="https://developer.android.com/studio/debug/stacktraces.html">Analyze a Stack Trace</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/debug/am-gpu-debugger.html">Examine OpenGL ES Apps</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/debug/am-gpu-debugger-trace.html">Capture a GPU Trace</a></li><li><a href="https://developer.android.com/studio/debug/am-gpu-debugger-analysis.html">Analyze a Trace in the GPU Debugger</a></li></ul></li><li><a href="https://developer.android.com/studio/debug/am-screenshot.html">Take a Screenshot</a></li><li><a href="https://developer.android.com/studio/debug/am-video.html">Record a Video</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/test/index.html">Test Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/test/command-line.html">Test from the Command Line</a></li><li><a href="https://developer.android.com/studio/test/espresso-test-recorder.html">Create UI Tests with Espresso Test Recorder</a></li><li><a href="https://developer.android.com/studio/test/monkey.html">UI/App Exerciser Monkey</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/test/monkeyrunner/index.html">monkeyrunner Reference</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyDevice.html">MonkeyDevice</a></li><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyImage.html">MonkeyImage</a></li><li><a href="https://developer.android.com/studio/test/monkeyrunner/MonkeyRunner.html">MonkeyRunner</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/index.html">Profile Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/android-monitor.html">Android Monitor Overview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/am-basics.html">Begin with Android Monitor Basics</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/am-memory.html">Optimize Memory Use with the Memory Monitor</a></li><li><a href="https://developer.android.com/studio/profile/investigate-ram.html">Investigate Your RAM Usage</a></li><li><a href="https://developer.android.com/studio/profile/am-cpu.html">Tune CPU Use with the CPU Monitor</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/gpu.html">Perfect GPU Use</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/am-gpu.html">Analyze GPU Use with the GPU Monitor</a></li><li><a href="https://developer.android.com/studio/profile/dev-options-overdraw.html">Visualize GPU Overdraw</a></li><li><a href="https://developer.android.com/studio/profile/dev-options-rendering.html">Profile GPU Rendering</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/am-network.html">Track Network Use with the Network Monitor</a></li><li><a href="https://developer.android.com/studio/profile/am-hprof.html">Analyze the Java Heap with the HPROF Viewer and Analyzer</a></li><li><a href="https://developer.android.com/studio/profile/am-allocation.html">Improve Memory Allocation with the Allocation Tracker</a></li><li><a href="https://developer.android.com/studio/profile/am-methodtrace.html">Study the Call Stack with the Method Tracer</a></li><li><a href="https://developer.android.com/studio/profile/am-sysinfo.html">Evaluate dumpsys System Information</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/battery-historian.html">Profile Battery Usage</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/battery-historian-charts.html">Understand Historian Charts</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/monitor.html">Android Device Monitor and DDMS Overview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/ddms.html">Use DDMS</a></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/traceview.html">Trace Your Code Functions with Traceview</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/traceview-walkthru.html">Walk through Traceview</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/systrace.html">Analyze UI Performance with Systrace</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/systrace-walkthru.html">Walk through Systrace</a></li><li><a href="https://developer.android.com/studio/profile/systrace-commandline.html">Systrace Command Reference</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/profile/hierarchy-viewer.html">Profile Your Layout with Hierarchy Viewer</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/profile/optimize-ui.html">Optimize Your UI</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-walkthru.html">Walk through Hierarchy Viewer</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-setup.html">Set Up Devices for Hierarchy Viewer</a></li><li><a href="https://developer.android.com/studio/profile/hierarchy-viewer-results-walkthru.html">Interpret Hierarchy Viewer Results</a></li></ul></li><li><a href="https://developer.android.com/studio/profile/heap-viewer-walkthru.html">Inspect the Memory Heap with Heap Viewer</a></li><li><a href="https://developer.android.com/studio/profile/allocation-tracker-walkthru.html">Track Memory Allocation with Allocation Tracker</a></li><li><a href="https://developer.android.com/studio/profile/gltracer.html">Trace OpenGL Code</a></li></ul></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/publish/index.html">Publish Your App</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/publish/preparing.html" zh-cn-lang="准备发布">Prepare for Release</a></li><li><a href="https://developer.android.com/studio/publish/versioning.html">Version Your App</a></li><li><a href="https://developer.android.com/studio/publish/app-signing.html">Sign Your App</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/command-line/index.html">Command Line Tools</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/command-line/adb.html">adb</a></li><li><a href="https://developer.android.com/studio/command-line/apksigner.html">apksigner</a></li><li><a href="https://developer.android.com/studio/command-line/bmgr.html">bmgr</a></li><li><a href="https://developer.android.com/studio/command-line/etc1tool.html">etc1tool</a></li><li><a href="https://developer.android.com/studio/command-line/jobb.html">jobb</a></li><li><a href="https://developer.android.com/studio/command-line/logcat.html">logcat</a></li><li><a href="https://developer.android.com/studio/command-line/mksdcard.html">mksdcard</a></li><li><a href="https://developer.android.com/studio/command-line/sdkmanager.html">sdkmanager</a></li><li><a href="https://developer.android.com/studio/command-line/zipalign.html">zipalign</a></li></ul></li><li class="nav-section"><div class="nav-section-header"><a href="https://developer.android.com/studio/releases/index.html">Release Notes</a><span class="toggle-icon" tabindex="0"></span></div><ul><li><a href="https://developer.android.com/studio/releases/sdk-tools.html">SDK Tools</a></li><li><a href="https://developer.android.com/studio/releases/build-tools.html">SDK Build Tools</a></li><li><a href="https://developer.android.com/studio/releases/gradle-plugin.html">Android Plugin for Gradle</a></li><li><a href="https://developer.android.com/studio/releases/platforms.html">SDK Platform</a></li></ul></li>
+            </ul>
+            
+          
+        </div>
+        
+        
+  
+<ul id="dac-main-navigation" class="dac-nav-list dac-swap-section dac-left">
+  <li class="dac-nav-item">
+    <a class="dac-nav-back-button back-to-dev" tabindex="0" es-lang="Volver al sitio para desarrolladores" id-lang="Kembali ke Pengembang" ja-lang="開発トップページに戻る" ko-lang="개발자로 돌아가기" pt-br-lang="Voltar aos Desenvolvedores" zh-cn-lang="返回到开发者主页" href="https://developer.android.com/develop/index.html">
+      <i class="dac-sprite dac-nav-back"></i>Back to Developers
+    </a>
+  </li>
+  <li class="dac-nav-item download">
+    <a class="dac-nav-link" href="https://developer.android.com/studio/index.html" es-lang="Descargar" id-lang="Unduh" ja-lang="ダウンロード" ko-lang="다운로드" pt-br-lang="Download" zh-cn-lang="下载">Download</a>
+  </li>
+  <li class="dac-nav-item features">
+    <a class="dac-nav-link" href="https://developer.android.com/studio/features.html" es-lang="Funciones" id-lang="Fitur" ja-lang="機能" ko-lang="기능" pt-br-lang="Recursos" zh-cn-lang="功能">Features</a>
+  </li>
+  <li class="dac-nav-item guide">
+    <a class="dac-nav-link selected" href="https://developer.android.com/studio/intro/index.html" es-lang="Guía del usuario" id-lang="Panduan Pengguna" ja-lang="ユーザーガイド" ko-lang="사용자 가이드" pt-br-lang="Guia do usuário" zh-cn-lang="用户指南">User Guide</a><span tabindex="0" class="dac-nav-link-forward"><i class="dac-sprite dac-nav-forward"></i></span>
+  </li>
+</ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+  <a name="top" tabindex="0"></a>
+  
+  <div style="padding-bottom: 41px;" class="wrap clearfix" id="body-content">
+  
+    
+      
+      <div class="content-header">
+        <ul class="dac-header-crumbs dac-has-content"><li class="dac-header-crumbs-item"><a href="https://developer.android.com/studio/intro/index.html" class="dac-header-crumbs-link">User Guide</a></li></ul>
+        <!-- Breadcrumb Setup -->
+        <script>$('.dac-nav-list').dacCurrentPage().dacCrumbs();</script>
+        <h1 itemprop="name">Build and Run Your App</h1>
+        
+      </div>
+      
+    
+    <div class="jd-descr" itemprop="articleBody">
+      
+
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+      <ol>
+        <li>
+          <a href="#build-module">Select and build a different module</a>
+        </li>
+        <li>
+          <a href="#run-configuration">Change the run/debug configuration</a>
+        </li>
+        <li>
+          <a href="#changing-variant">Change build variants</a>
+        </li>
+        <li>
+          <a href="#generating-apks">Generate APKs</a>
+        </li>
+        <li>
+          <a href="#gradle-console">Monitor the build process</a>
+        </li>
+        <li>
+          <a href="#instant-run">About Instant Run</a>
+          <ol>
+            <li>
+              <a href="#set-up-ir">Configure and optimize your project for Instant Run</a>
+            </li>
+
+            <li>
+              <a href="#submit-feedback">Report an Instant Run issue</a>
+            </li>
+
+            <li>
+              <a href="#ir-limitations">Limitations of Instant Run</a>
+            </li>
+            <li><a href="#disable-ir">Disable Instant Run</a></li>
+          </ol>
+        </li>
+      </ol>
+
+    <h2>See also</h2>
+      <ol>
+        <li><a href="https://developer.android.com/studio/build/index.html">
+          Configure Your Build</a></li>
+        <li><a href="https://developer.android.com/studio/run/emulator.html">
+          Run Apps on the Android Emulator</a></li>
+        <li><a href="https://developer.android.com/studio/run/device.html">
+          Run Apps on a Hardware Device</a></li>
+      </ol>
+  </div>
+</div>
+
+<p>
+  By default, Android Studio sets up new projects to deploy to the Emulator or
+  a physical device with just a few clicks. With Instant Run, you can push
+  changes to methods and existing app resources to a running app without
+  building a new APK, so code changes are visible almost instantly.
+</p>
+
+<p>
+  To build and run your app, click <strong>Run</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-run.png" alt="" class="inline-icon">.
+  Android Studio builds your app with
+  Gradle, asks you to select a deployment target (an emulator or a connected
+  device), and then deploys your app to it. You can customize some of this
+  default behavior, such as selecting an automatic deployment target, by
+  <a href="#run-configuration">changing the run configuration</a>.
+</p>
+
+<p>
+  If you want to <a href="https://developer.android.com/studio/run/emulator.html">use the Android
+  Emulator</a> to run your app, you need to have an Android Virtual Device
+  (AVD) ready. If you haven't already created one, then after you click
+  <strong>Run</strong>, click <strong>Create New Emulator</strong> in the
+  <strong>Select Deployment Target</strong> dialog. Follow the Virtual Device
+  Configuration wizard to define the type of device you want to emulate. For
+  more information, see <a href="https://developer.android.com/studio/run/managing-avds.html">Create and Manage Virtual Devices</a>.
+</p>
+
+<p>
+  If you're using a physical Android device, you need to enable USB debugging
+  on the device. For more information, see <a href="https://developer.android.com/studio/run/device.html">Run Apps on a Hardware Device</a>.
+</p>
+
+<p class="note">
+  <strong>Note:</strong> You can also deploy your app in debug mode by clicking
+  <strong>Debug</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-debug.png" alt="" class="inline-icon">.
+  Running your app in debug mode
+  allows you to set breakpoints in your code, examine variables and evaluate
+  expressions at run time, and run debugging tools. To learn more, see
+  <a href="https://developer.android.com/studio/debug/index.html">Debug Your App</a>.
+</p>
+
+<h3 id="build-module">
+  Select and build a different module
+</h3>
+
+<p>
+If your project has multiple modules beyond the default app module, you can build
+a specific module as follows:
+</p>
+
+<ul>
+  <li>Select the module in the <strong>Project</strong>
+panel, and then click <strong>Build &gt; Make Module <var>module-name</var></strong>.</li>
+</ul>
+
+<p>
+Android Studio builds the module using Gradle. Once the module is built, you
+can run and debug it if you've built a module for a new app or new device, or
+use it as a dependency if you've built a library or Google Cloud module.
+</p>
+
+<p>To run a built app module:</p>
+
+<ul>
+  <li>Click <strong>Run &gt; Run</strong> and select the module from the Run dialog.</li>
+</ul>
+
+<h3 id="run-configuration">
+  Change the run/debug configuration
+</h3>
+
+<p>
+  The run/debug configuration specifies the module
+  to run, package to deploy,
+  activity to start, target device, emulator settings, logcat options, and more. The
+  default run/debug configuration launches the default project activity and uses the
+  <strong>Select Deployment Target</strong> dialog for target device selection. If the default
+  settings don't suit your project or module, you can customize the run/debug
+  configuration, or even create a new one, at the project, default, and module
+  levels. To edit a run/debug configuration, select <strong>Run</strong> &gt;
+  <strong>Edit Configurations</strong>. For more information, see
+  <a href="https://developer.android.com/studio/run/rundebugconfig.html">Create and Edit Run/Debug Configurations</a>.
+</p>
+
+
+<h3 id="changing-variant">
+  Change the build variant
+</h3>
+
+<p>
+  By default, Android Studio builds the debug version of your app, which is
+  intended only for testing, when you click <strong>Run</strong>. You
+  need to build the release version to <a href="https://developer.android.com/studio/publish/preparing.html">prepare your app for public
+  release</a>.
+</p>
+<p>
+  To change the build variant Android Studio uses, select <strong>Build</strong>
+  &gt; <strong>Select Build Variant</strong> in the menu bar (or click
+  <b>Build Variants</b> <img src="Build%20and%20Run%20Your%20App_files/window-monitor.png" class="inline-icon" alt=""> in the windows bar), and then select a build variant from
+  the drop-down menu. By default, new projects are set up with a debug and
+  release build variant.
+</p>
+
+<p>
+  Using <em>product flavors</em>, you can create additional build variants for
+  different versions of your app, each having different features or device
+  requirements. To find out more about build variants and product
+  flavors, see <a href="https://developer.android.com/studio/build/index.html">Configure Your Build</a>.
+</p>
+
+
+<h3 id="generating-apks">
+  Generate APKs
+</h3>
+
+<p>To create an APK for your app, follow these steps:</p>
+<ol>
+<li>Select the build variant you want to build from the
+<b>Build Variants</b> <img src="Build%20and%20Run%20Your%20App_files/window-monitor.png" class="inline-icon" alt=""> window.</li>
+<li>Click <b>Build &gt; Build APK</b> in the menu bar.
+  <p>To instead build the APK and immediately run it on a device,
+  click <b>Run</b> <img src="Build%20and%20Run%20Your%20App_files/toolbar-run.png" class="inline-icon" alt=""> in the toolbar.</p>
+</li>
+</ol>
+
+<p>All built APKs are saved in
+<code><var>project-name</var>/<var>module-name</var>/build/outputs/apk/</code>.
+You can also locate the generated APKs by clicking the link in the
+pop-up dialog that appears once the build is complete, as shown in figure 2.</p>
+
+<img src="Build%20and%20Run%20Your%20App_files/as-find-apk.png" alt="">
+<p class="img-caption">
+  <strong>Figure 2.</strong> Click the link to locate the generated APK files.
+</p>
+
+<p class="note"><b>Note:</b> Before you can generate a release version of your app for public
+distribution, you must <a href="https://developer.android.com/tools/publishing/app-signing.html">sign your
+APK</a>.</p>
+
+
+
+<h3 id="gradle-console">
+  Monitor the build process
+</h3>
+
+<p>
+  You can view details about the build process by clicking <b>View &gt; Tool
+  Windows &gt; Gradle Console</b> (or by clicking <b>Gradle Console</b>
+  <img src="Build%20and%20Run%20Your%20App_files/window-gradle_console.png" alt="" class="inline-icon"> in the tool window bar). The console displays each task that
+  Gradle executes in order to build your app, as shown in figure 1.
+</p>
+
+<img src="Build%20and%20Run%20Your%20App_files/studio-gradle-console.png" alt="">
+<p class="img-caption">
+  <strong>Figure 1.</strong> The Gradle Console in Android Studio.
+</p>
+
+<p>
+  If your build variants use product flavors, Gradle also invokes tasks to
+  build those product flavors. To view the list of all available build tasks,
+  click <b>View &gt; Tool Windows &gt; Gradle</b> (or click <b>Gradle</b>
+  <img src="Build%20and%20Run%20Your%20App_files/window-gradle.png" alt="" class="inline-icon"> in the tool window bar).
+</p>
+
+<p>
+  If an error occurs during the build process, the <em>Messages</em> window
+  appears to describe the issue. Gradle may recommend some command-line
+  options to help you resolve the issue, such as <code>--stacktrace</code> or
+  <code>--debug</code>. To use command-line options with your build process:
+</p>
+
+<ol>
+  <li>Open the <strong>Settings</strong> or <strong>Preferences</strong>
+  dialog:
+    <ul>
+      <li>On Windows or Linux, select <strong>File</strong> &gt;
+      <strong>Settings</strong> from the menu bar.
+      </li>
+
+      <li>On Mac OSX, select <strong>Android Studio</strong> &gt;
+      <strong>Preferences</strong> from the menu bar.
+      </li>
+    </ul>
+  </li>
+
+  <li>Navigate to <strong>Build, Execution, Deployment</strong> &gt;
+  <strong>Compiler</strong>.
+  </li>
+
+  <li>In the text field next to <em>Command-line Options</em>, enter your
+  command-line options.
+  </li>
+
+  <li>Click <strong>OK</strong> to save and exit.
+  </li>
+</ol>
+
+<p>
+  Gradle will apply these command-line options the next time you try building
+  your app.
+</p>
+
+
+<h2 style="padding-bottom: 0px;" id="instant-run">About Instant Run</h2><hr>
+
+<iframe src="Build%20and%20Run%20Your%20App_files/StqAZ1OQbqA.html" allowfullscreen="" style="float: right; margin: 0 0 20px 20px;" frameborder="0" height="252" width="448"></iframe>
+
+<p>
+  Introduced in Android Studio 2.0, Instant Run is a behavior for the
+  <strong>Run</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-run.png" alt="" class="inline-icon"> and <strong>Debug</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-debug.png" alt="" class="inline-icon"> commands that significantly reduces the
+  time between updates to your app. Although your first build may take longer
+  to complete, Instant Run pushes subsequent updates to your app without
+  building a new APK, so changes are visible much more quickly.
+</p>
+
+<p>
+  Instant Run is supported only when you deploy the debug build variant, use
+  Android plugin for Gradle version 2.0.0 or higher, and set
+  <code>minSdkVersion</code> to 15 or higher in your app's module-level
+  <code>build.gradle</code> file. For the best performance, set
+  <code>minSdkVersion</code> to 21 or higher.
+</p>
+
+<p>
+  After deploying an app, a small, yellow thunderbolt icon appears within the
+  <strong>Run</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-instant-run.png" alt="" class="inline-icon"> button (or <strong>Debug</strong>
+  <img src="Build%20and%20Run%20Your%20App_files/toolbar-instant-debug.png" alt="" class="inline-icon"> button), indicating that Instant Run is
+  ready to push updates the next time you click the button. Instead of building
+  a new APK, it pushes just those new changes and, in some cases, the app
+  doesn't even need to restart but immediately shows the effect of those code
+  changes.
+</p>
+
+<p>
+  Instant Run pushes updated code and resources to your connected device or
+  emulator by performing a <em>hot swap</em>, <em>warm swap</em>, or <em>cold
+  swap</em>. It automatically determines the type of swap to perform based on
+  the type of change you made. The video above provides interesting detail
+  about how this all works under the hood. For a quick summary of how Instant
+  Run behaves when you push certain code changes to a target device, however,
+  see the following table.
+</p>
+
+<table id="ir-table">
+  <colgroup><col width="40%">
+  </colgroup><tbody><tr>
+    <th scope="col">
+      Code Change
+    </th>
+    <th scope="col">
+      Instant Run Behavior
+    </th>
+  </tr>
+
+  <tr id="hot-swap">
+    <td>
+      <ul>
+        <li>Change implementation code of an existing method
+        </li>
+      </ul>
+    </td>
+    <td>
+      <p>
+        Supported with <strong>hot swap</strong>: This is the
+        fastest type of swap and makes changes visible much more quickly. Your
+        application keeps running and a stub method with the new implementation is used
+        the next time the method is called.
+      </p>
+
+      <p>
+        Hot swaps do not re-initialize objects in your running app. You may need to
+        restart the current activity, or <a href="#rerun">restart the app</a>, before
+        you see certain updates. By default, Android Studio automatically restarts the
+        current activity after performing a hot swap. If you do not want this behavior,
+        you can <a href="#activity-restart">disable automatic activity restarts</a>.
+      </p>
+    </td>
+  </tr>
+
+  <tr id="warm-swap">
+    <td>
+      <ul>
+        <li>Change or remove an existing resource
+        </li>
+      </ul>
+    </td>
+    <td>
+      Supported with <strong>warm swap</strong>: This swap
+      is still very fast, but Instant Run must restart the current activity when it
+      pushes the changed resources to your app. Your app keeps running, but a small
+      flicker may appear on the screen as the activity restarts—this is normal.
+    </td>
+  </tr>
+
+  <tr id="cold-swap">
+    <td>
+      Structural code changes, such as:
+      <ul>
+        <li>Add, remove, or change:
+          <ul>
+            <li>an annotation
+            </li>
+
+            <li>an instance field
+            </li>
+
+            <li>a static field
+            </li>
+
+            <li>a static method signature
+            </li>
+
+            <li>an instance method signature
+            </li>
+          </ul>
+        </li>
+
+        <li>Change which parent class the current class inherits from
+        </li>
+
+        <li>Change the list of implemented interfaces
+        </li>
+
+        <li>Change a class's static initializer
+        </li>
+
+        <li>Reorder layout elements that use dynamic resource IDs
+        </li>
+      </ul>
+    </td>
+    <td>
+      <p>
+        Supported with <strong>cold swap</strong> (API level 21 or higher): This swap
+        is a bit slower because, although a new APK is not required, Instant Run must
+        restart the whole app when it pushes structural code changes.
+      </p>
+
+      <p>
+        For target devices running API level 20 or lower, Android Studio
+        deploys a full APK.
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <ul>
+        <li>Change the app manifest
+        </li>
+
+        <li>Change resources referenced by the app manifest
+        </li>
+
+        <li>Change an Android system UI element, such as a widget or
+        notification (requires a <a href="#rerun">Clean and Rerun</a>)
+        </li>
+      </ul>
+    </td>
+    <td>
+      <p>
+        When making changes to the app's manifest or resources referenced by
+        the manifest, Android Studio automatically <strong>deploys a new
+        build</strong> in order to apply these changes. This is because certain
+        information about the app, such as its name, app icon resources, and
+        intent filters, are determined from the manifest when the APK is
+        installed on the device.
+      </p>
+
+      <p>
+        If your build process automatically updates any part of the app
+        manifest, such as automatically iterating <code>versionCode</code> or
+        <code>versionName</code>, you will not be able to benefit from the full
+        performance of Instant Run. When using Instant Run, you should disable
+        automatic updates to any part in the app manifest in your debug build
+        variants.
+      </p>
+
+      <p>
+        When updating an Android system UI element, such as a widget or
+        notification, you need to perform a <a href="#rerun">Clean and
+        Rerun</a> to see your changes. Alternatively, because performing clean
+        builds may take longer while using Instant Run, you can temporarily
+        <a href="#disable-ir">disable Instant Run</a> while making updates to
+        your widget UI or notification.
+      </p>
+    </td>
+  </tr>
+</tbody></table>
+
+<p class="note">
+  <strong>Note:</strong> If you need to restart your app after a crash, do not
+  launch it from your target device. Restarting your app from your target
+  device does not apply any of your code changes since the last cold swap or
+  <em>incremental build</em>. To launch your app with all your recent changes,
+  click <strong>Run</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-run.png" alt="" class="inline-icon"> (or <strong>Debug</strong>
+  <img src="Build%20and%20Run%20Your%20App_files/toolbar-debug.png" alt="" class="inline-icon">) from Android Studio.
+</p>
+
+<h4 id="rerun">
+  Use Rerun
+</h4>
+
+<p>
+  When pushing code changes that affect certain initializers, such as changes
+  to an app's <a href="https://developer.android.com/reference/android/app/Application.html#onCreate%28%29"><code>onCreate()</code></a>
+  method, you need to restart your app for the changes to take effect. To
+  perform an <em>incremental build</em> and restart the app, click
+  <strong>Rerun</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-rerun.png" alt="" class="inline-icon">.
+</p>
+
+<p>
+  If you need to deploy a <em>clean build</em>, select <strong>Run</strong>
+  &gt; <strong>Clean and Rerun</strong> from the menu bar, or hold down the
+  <strong>Shift</strong> key while clicking <strong>Rerun</strong> <img src="Build%20and%20Run%20Your%20App_files/toolbar-rerun.png" alt="" class="inline-icon">. This action stops the running app,
+  performs a full clean build, and deploys the new APK to your target device.
+</p>
+
+<h4 id="activity-restart">
+  Disable automatic activity restart
+</h4>
+
+<p>
+  When performing a hot swap, your app keeps running but Android Studio
+  automatically restarts the current activity. To disable this default setting:
+</p>
+
+<ol>
+  <li>Open the <strong>Settings</strong> or <strong>Preferences</strong>
+  dialog:
+    <ul>
+      <li>On Windows or Linux, select <strong>File</strong> &gt;
+      <strong>Settings</strong> from the menu bar.
+      </li>
+
+      <li>On Mac OSX, select <strong>Android Studio</strong> &gt;
+      <strong>Preferences</strong> from the menu bar.
+      </li>
+    </ul>
+  </li>
+
+  <li>Navigate to <strong>Build, Execution, Deployment</strong> &gt;
+  <strong>Instant Run</strong>.
+  </li>
+
+  <li>Uncheck the box next to <strong>Restart activity on code
+  changes</strong>.
+  </li>
+</ol>
+
+<p>
+  If automatic activity restart is disabled, you can manually restart the current
+  activity from the menu bar by selecting <strong>Run</strong> &gt; <strong>Restart
+  Activity</strong>.
+</p>
+
+<h3 id="set-up-ir">
+  Configure and optimize your project for Instant Run
+</h3>
+
+<p>
+  Android Studio enables Instant Run by default for projects built using
+  Android plugin for Gradle 2.0.0 and higher.
+</p>
+
+<p>
+  To update an existing project with the latest version of the plugin:
+</p>
+
+<ol>
+  <li>Open the <strong>Settings</strong> or <strong>Preferences</strong>
+  dialog.
+  </li>
+
+  <li>
+    <p>
+      Navigate to <strong>Build, Execution, Deployment</strong> &gt;
+      <strong>Instant Run</strong> and click <strong>Update Project</strong>,
+      as shown in figure 3.
+    </p>
+
+    <p>
+      If the option to update the project does not appear, it’s already
+      up-to-date with the latest Android plugin for Gradle.
+    </p>
+
+    <img src="Build%20and%20Run%20Your%20App_files/update-project-dialog.png" alt="" height="51">
+
+    <p class="img-caption">
+      <strong>Figure 3.</strong> Updating the Android plugin for Gradle for an
+      existing project.
+    </p>
+  </li>
+</ol>
+
+<p>
+  You also need to <a href="#changing-variant">change the build variant</a> to
+  a debug version of your app to start using Instant Run.
+</p>
+
+<h4 id="configure-dexoptions">
+  Improve build times by configuring DEX resources
+</h4>
+
+<p>
+  When you deploy a clean build, Android Studio instruments your app to allow
+  Instant Run to push code and resource updates. Although updating the running
+  app happens much more quickly, the first build may take longer to complete.
+  You can improve the build process by configuring a few <a class="external-link" href="http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.DexOptions.html">
+  <code>DexOptions</code></a> settings:
+</p>
+
+<dl>
+  <dt>
+    <a class="external-link" href="http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.DexOptions.html#com.android.build.gradle.internal.dsl.DexOptions:maxProcessCount">
+    <code>maxProcessCount</code></a>
+  </dt>
+
+  <dd>
+    Sets the maximum number of DEX processes that can be started concurrently.
+    If the Gradle daemon is already running, you need to stop the process
+    before initializing it with a new maximum process count. You can terminate
+    the Gradle daemon by calling one of the following from the
+    <em>Terminal</em> window:
+    <ul>
+      <li>On Windows, call <code>gradlew --stop</code>
+      </li>
+
+      <li>On Linux/Mac OSX, call <code>./gradlew --stop</code>
+      </li>
+    </ul>
+  </dd>
+
+  <dt>
+    <a class="external-link" href="http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.DexOptions.html#com.android.build.gradle.internal.dsl.DexOptions:javaMaxHeapSize">
+    <code>javaMaxHeapSize</code></a>
+  </dt>
+
+  <dd>
+    Sets the maximum memory allocation pool size for the dex operation. When
+    passing a value, you can append the letter 'k' to indicate kilobytes, 'm'
+    to indicate megabytes, or 'g' to indicate gigabytes.
+  </dd>
+</dl>
+
+<p>
+  The following example sets <code>maxProcessCount</code> to 4 and
+  <code>javaMaxHeapSize</code> to "2g" in the module-level
+  <code>build.gradle</code> file:
+</p>
+
+<pre class="prettyprint"><span class="pln">android </span><span class="pun">{</span><span class="pln"><br>&nbsp; </span><span class="pun">...</span><span class="pln"><br>&nbsp; dexOptions </span><span class="pun">{</span><span class="pln"><br>&nbsp; &nbsp; maxProcessCount </span><span class="lit">4</span><span class="pln"> </span><span class="com">// this is the default value</span><span class="pln"><br>&nbsp; &nbsp; javaMaxHeapSize </span><span class="str">"2g"</span><span class="pln"><br>&nbsp; </span><span class="pun">}</span><span class="pln"><br></span><span class="pun">}</span></pre>
+
+<p>
+  You should experiment with these settings by incrementing their values and
+  observing the effect on your build times. You could experience a negative
+  impact to performance if you allocate too many resources to the dexing process.
+</p>
+
+<h4>
+  Enable dexing-in-process and incremental Java compilation
+</h4>
+
+<p>
+  <a href="https://developer.android.com/studio/releases/gradle-plugin.html#revisions">Android
+  Plugin for Gradle version 2.1.0</a> and higher features additional build
+  process improvements, including incremental Java compilation and
+  dexing-in-process. Incremental Java compilation is enabled by default and
+  reduces compilation time during development by only recompiling portions of
+  the source that have changed or need to be recompiled.
+</p>
+
+<p>
+  Dexing-in-process performs dexing within the build process rather than in a
+  separate, external VM process. This not only makes incremental builds much
+  faster, but also significantly speeds up full builds. To enable this feature,
+  you need to set the Gradle daemon's maximum heap size to at least 2048 MB. You
+  can do this by including the following in your project's
+  <code>gradle.properties</code> file:
+
+</p><pre class="prettyprint"><span class="pln">org</span><span class="pun">.</span><span class="pln">gradle</span><span class="pun">.</span><span class="pln">jvmargs </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="typ">Xmx2048m</span></pre>
+
+<p></p>
+
+<p>
+  If you have defined a value for <a class="external-link" href="http://google.github.io/android-gradle-dsl/current/com.android.build.gradle.internal.dsl.DexOptions.html#com.android.build.gradle.internal.dsl.DexOptions:javaMaxHeapSize">
+  <code>javaMaxHeapSize</code></a> in your module-level <code>build.gradle</code>
+  file, you need to set the daemon's max heap size to the value of
+  <code>javaMaxHeapSize</code> + 1024 MB. For example, if you have set
+  <code>javaMaxHeapSize</code> to "2g", you need to add the following to your
+  project's <code>gradle.properties</code> file:
+
+</p><pre class="prettyprint"><span class="pln">org</span><span class="pun">.</span><span class="pln">gradle</span><span class="pun">.</span><span class="pln">jvmargs </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="typ">Xmx3072m</span></pre>
+
+<p></p>
+
+<h4 id="windows-defender">
+  Exclude your project from Windows Defender
+</h4>
+
+<p>
+  On Windows systems, Windows Defender may cause slowdowns while using Instant
+  Run. If you are using Windows Defender, you should <a class="external-link" href="http://answers.microsoft.com/en-us/protect/wiki/protect_defender-protect_scanning/how-to-exclude-a-filefolder-from-windows-defender/f32ee18f-a012-4f02-8611-0737570e8eee">
+  exclude your Android Studio project folder from Windows Defender malware
+  scans</a>.
+</p>
+
+<h4 id="crashlytics">
+  Improve build times when using Crashlytics
+</h4>
+
+<p>
+  If your version of the Fabric Gradle plugin is lower than 1.21.6, Crashlytics
+  may cause slower build times. To improve build performance while developing
+  your app, you can either <a class="external-link" href="https://fabric.io/kits/android/crashlytics/install">update the plugin to the
+  latest version</a> or <a class="external-link" href="https://docs.fabric.io/android/crashlytics/build-tools.html#disabling-crashlytics-for-debug-builds">
+  disable Crashlytics for your debug build variant</a>.
+</p>
+
+<h3 id="submit-feedback">
+  Report an Instant Run issue
+</h3>
+
+<p>
+  You can help the Android Studio team fix issues you encounter while using
+  Instant Run by submitting feedback about your experience. To report an issue,
+  you need to follow these basic steps:
+</p>
+
+<ol>
+  <li>Enable Android Studio to log extra information about your Instant Run
+  session.
+  </li>
+
+  <li>If you want to submit feedback about an issue you encountered before
+  completing the previous step, try to recreate the issue.
+  </li>
+
+  <li>Submit a report immediately after you encounter an Instant Run issue.
+  </li>
+</ol>
+
+<h4>
+  What we collect
+</h4>
+
+<p>
+  Enabling the IDE to log the following information about your Instant
+  Run session helps the Android Studio team better understand the issue you
+  encountered and is <a href="https://www.google.com/policies/privacy/">only
+  ever used for that purpose</a>:
+</p>
+
+<ul>
+  <li>
+    <b>idea.log</b>: This log captures detailed information about Android
+    Studio and its SDK tools as they perform their various actions. You can
+    view this log for yourself by selecting <b>Help &gt; Show Log in
+    Explorer</b> (or <b>Show Log in Finder</b> on Mac).
+  </li>
+
+  <li>
+    <b>build-info.xml</b>: This is an intermediate file that Android Studio
+    uses to coordinate Instant Run features with the Android plugin for Gradle.
+  </li>
+
+  <li>
+    <b>build.log</b>: This log captures build information from Gradle. This is
+    similar to the output you see when you run Gradle with the
+    <code>--info</code> command line option and click <b>View &gt; Tool Windows
+    &gt; Gradle Console</b> (or click <b>Gradle Console</b> <img src="Build%20and%20Run%20Your%20App_files/window-gradle_console.png" alt="" class="inline-icon"> in the tool window bar).
+  </li>
+
+  <li>
+    <b>Logcat output</b>: captures Instant Run runtime events (that is, events
+    with the <code>InstantRun</code> tag) from the target device or emulator
+    while the app is running. To learn more about logcat outputs, read <a href="https://developer.android.com/studio/debug/am-logcat.html">Write and View Logs with Logcat</a>.
+  </li>
+
+  <li>
+    <b>profile.log</b>: This log provides a profile of how quickly Gradle
+    progressed through each build task.
+  </li>
+
+  <li>
+    <b>TARGET-*</b>: This is an empty file that Android Studio names after your
+    target device (for example, <code>TARGET-MOTOROLA-NEXUS6</code>).
+  </li>
+</ul>
+
+<h4>
+  Enable extra logging
+</h4>
+
+<p>
+  To grant Android Studio permission to capture and send this information,
+  follow these steps:
+</p>
+
+<ol>
+  <li>Open the <b>Settings</b> or <b>Preferences</b> dialog.
+  </li>
+
+  <li>Navigate to <b>Build, Execution, Deployment &gt; Instant Run</b>.
+  </li>
+
+  <li>Check the <b>Log extra info</b> checkbox. You can disable this
+  option at any time.
+  </li>
+
+  <li>Click <b>OK</b>.
+  </li>
+</ol>
+
+<h4>
+  Report an issue
+</h4>
+
+<p>
+  After you enable extra logging, recreate any Instant Run issue you previously
+  experienced. Immediately after you reproduce an issue, submit a report as follows:
+</p>
+
+<ol>
+  <li>Select <b>Help &gt; Report Instant Run Issue</b> from the menu bar. A
+  dialog appears, similar to the one shown in figure 4. <img src="Build%20and%20Run%20Your%20App_files/report-ir-issue-dialog_2-2-1.png" alt="">
+    <p class="img-caption">
+      <strong>Figure 4.</strong> You can provide extra details in the text
+      field and review the logs Android Studio will send along with your
+      report.
+    </p>
+  </li>
+
+  <li>Provide some additional information in the text field to describe your
+  experience, such as steps to reproduce the issue or how actual behavior
+  differed from your expectations.
+  </li>
+
+  <li>When you are done, click <b>OK</b>.
+  </li>
+</ol>
+
+<h3 id="ir-limitations">
+  Limitations of Instant Run
+</h3>
+
+<p>
+  Instant Run is designed to speed up the build and deploy process in most
+  situations. However, there are some aspects to using Instant Run that might
+  affect its behavior and compatibility with your app. If you experience any
+  other issues while using Instant Run, please <a class="external-link" href="http://tools.android.com/filing-bugs">file a bug</a>.
+</p>
+
+<h4 id="multiple-devices">
+  Deploying to multiple devices
+</h4>
+
+<p>
+  Instant Run uses different techniques to perform hot, warm, and cold swaps
+  that are specific to the API level of the target device. For this reason,
+  while deploying an app to multiple devices at once, Android Studio
+  temporarily turns off Instant Run.
+</p>
+
+<h4 id="ir-multidex">
+  Multidexing your app
+</h4>
+
+<p>
+  If your project is configured for <a href="https://developer.android.com/studio/build/multidex.html#mdex-pre-l">Legacy Multidex</a>—that
+  is, when <code>build.gradle</code> is configured with <code>multiDexEnabled
+  true</code> and <code>minSdkVersion 20</code> or lower—and you deploy to
+  target devices running Android 4.4 (API level 20) or lower, Android Studio
+  disables Instant Run.
+</p>
+
+<p>
+  If <code>minSdkVersion</code> is set to 21 or higher, Instant Run
+  automatically configures your app for multidex. Because Instant Run only
+  works with the debug version of your app, you may need to <a href="https://developer.android.com/studio/build/multidex.html#mdex-gradle">configure your app for
+  multidex</a> when deploying your release build variant.
+</p>
+
+<h4 id="instrumented-tests">
+  Running instrumented tests and performance profilers
+</h4>
+
+<p>
+  Instrumented tests load both the debug APK and a test APK into the same
+  process on a test device, allowing control methods to override the normal
+  lifecycle of the app and perform tests. While running or debugging
+  instrumented tests, Android Studio does not inject the additional methods
+  required for Instant Run and turns the feature off.
+</p>
+
+<p>
+  While profiling an app, you should disable Instant Run. There is a small
+  performance impact when using Instant Run and a slightly larger impact when
+  overriding methods with a hot swap. This performance impact could interfere
+  with information provided by performance profiling tools. Additionally, the
+  stub methods generated with each hot swap can complicate stack traces.
+</p>
+
+<h4 id="plugins">
+  Using third-party plugins
+</h4>
+
+<p>
+  Android Studio temporarily disables the Java Code Coverage Library (JaCoCo)
+  and ProGuard while using Instant Run. Because Instant Run only works with
+  debug builds, this does not affect your release build.
+</p>
+
+<p>
+  Certain third-party plugins that perform bytecode enhancement may cause
+  issues with how Instant Run instruments your app. If you experience these
+  issues, but want to continue using Instant Run, you should disable those
+  plugins for your debug build variant. You can also help improve compatibility
+  with third-party plugins by <a class="external-link" href="http://tools.android.com/filing-bugs">filing a bug</a>.
+</p>
+
+<h4 id="multi-process-apps">
+  Pushing changes to multi-process apps
+</h4>
+
+<p>
+  Instant Run only instruments your app's main process in order to perform hot
+  swaps and warm swaps. When pushing code changes to other app processes, such
+  as changes to a method implementation or an existing resource, Instant Run
+  performs a <a href="#cold-swap">cold swap</a>.
+</p>
+
+<h4 id="ir-work-profile">
+  Launching your app in a Work profile
+</h4>
+
+<p>If you run your app with Instant Run and open your app using a
+<a href="https://developer.android.com/work/overview.html">Work profile</a> (or other secondary profile),
+your app will crash because the instrumented DEX files used by Instant Run are
+accessible only from the primary profile's user space.</p>
+
+<p>If you want to continue using Instant Run, just avoid opening your app with
+the Work profile and be sure your <a href="https://developer.android.com/studio/run/rundebugconfig.html">run
+configuration</a> does not use the <code>--user <var>user_id</var></code> flag.
+</p>
+
+<p>If you need to use your app with the Work profile, we recommend you create a
+new <a href="https://developer.android.com/studio/run/rundebugconfig.html">run configuration</a> that
+includes the <code>--user <var>user_id</var></code> flag, specifying the Work
+profile user ID. You can find the user ID by executing <code>adb shell pm list
+users</code> from command line. When you use the <code>--user</code> flag,
+Android Studio disables Instant Run for only that deployment; Instant Run will
+work again when you switch to a configuration <em>without</em> the
+<code>--user</code> flag.</p>
+
+
+
+<h3 id="disable-ir">
+  Disable Instant Run
+</h3>
+
+<p>
+  To disable Instant Run:
+</p>
+
+<ol>
+  <li>Open the <strong>Settings</strong> or <strong>Preferences</strong>
+  dialog.
+  </li>
+
+  <li>Navigate to <strong>Build, Execution, Deployment</strong> &gt;
+  <strong>Instant Run</strong>.
+  </li>
+
+  <li>Uncheck the box next to <strong>Enable Instant Run</strong>.
+  </li>
+</ol>
+
+
+    </div>
+
+    
+
+    
+    
+
+
+
+<div class="wrap">
+  <footer class="dac-footer ">
+    <div class="cols dac-footer-main">
+      <div class="col-1of2">
+        <a class="dac-footer-getnews" id="newsletter" data-modal-toggle="newsletter" title="Sign up for the newsletter">
+          Get news &amp; tips <span class="dac-fab dac-primary"><i class="dac-sprite dac-mail"></i><span class="hide-text">Sign up for the newsletter</span></span>
+        </a>
+      </div>
+      <div class="col-1of2 dac-footer-reachout">
+        <div class="dac-footer-contact">
+          <a class="dac-footer-contact-link" href="http://android-developers.blogspot.com/" title="Blog">Blog</a>
+          <a class="dac-footer-contact-link" href="https://developer.android.com/support.html" title="Support">Support</a>
+        </div>
+        <div class="dac-footer-social">
+          <a class="dac-button-social dac-youtube dac-footer-social-link" href="https://www.youtube.com/user/androiddevelopers" title="Android Developers on YouTube"><i class="dac-sprite dac-youtube"></i><span class="hide-text">Android Developers on YouTube</span></a>
+          <a class="dac-button-social dac-gplus dac-footer-social-link" href="https://plus.google.com/+AndroidDevelopers" title="Android Developers on Google+"><i class="dac-sprite dac-gplus"></i><span class="hide-text">Android Developers on Google+</span></a>
+          <a class="dac-button-social dac-twitter dac-footer-social-link" href="https://twitter.com/AndroidDev" title="Android Developers on Twitter"><i class="dac-sprite dac-twitter"></i><span class="hide-text">Android Developers on Twitter</span></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="dac-footer-separator">
+      
+      <p class="dac-footer-copyright">
+        Except as noted, this content is
+        licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+        Creative Commons Attribution 2.5</a>. For details and
+        restrictions, see the <a href="https://developer.android.com/license.html">Content
+        License</a>.
+      </p>
+    
+
+    <p class="dac-footer-links">
+      <a href="https://developer.android.com/about/android.html" title="About Android">About Android</a>
+      <a href="https://developer.android.com/auto/index.html" title="Auto">Auto</a>
+      <a href="https://developer.android.com/tv/index.html" title="TV">TV</a>
+      <a href="https://developer.android.com/wear/index.html" title="Wear">Wear</a>
+      <a href="https://developer.android.com/legal.html" title="Legal">Legal</a>
+    </p>
+
+    <!-- TODO(akassay) Update all DAC js to use the class instead of the id b/30368561 -->
+    <form class="devsite-utility-footer-language" id="setlang" action="/i18n/setlang/" method="post">
+      <input name="xsrf_token" value="-bFRhWfSw0L2-_CQ6cljzODB8cdkJjyGo63No56DWtE6MTQ4MDY1OTg2MzAwNTA5MA" type="hidden">
+      <input name="next" value="/studio/run/index.html" type="hidden">
+      <span id="language" class="locales">
+        <select class="devsite-utility-footer-language-select" name="language">
+          
+          <option value="id">
+            Bahasa Indonesia
+          </option>
+          
+          <option value="en">
+            English
+          </option>
+          
+          <option value="es">
+            español
+          </option>
+          
+          <option value="es-419">
+            Español (América Latina)
+          </option>
+          
+          <option value="pt-br">
+            Português Brasileiro
+          </option>
+          
+          <option value="vi">
+            Tiếng Việt
+          </option>
+          
+          <option value="ru">
+            Русский
+          </option>
+          
+          <option value="ja">
+            日本語
+          </option>
+          
+          <option value="zh-cn">
+            简体中文
+          </option>
+          
+          <option value="zh-tw" selected="selected">
+            繁體中文
+          </option>
+          
+          <option value="ko">
+            한국어
+          </option>
+          
+        </select>
+      </span>
+    </form>
+  </footer>
+</div><!--/.wrap -->
+
+
+<div class="dac-toast-group">
+  <div class="dac-toast dac-visible" data-toast="">
+    <div class="dac-toast-wrap">
+      This site uses cookies to store your preferences for site-specific language and display options.
+    <button class="dac-toast-close-btn"><span class="dac-button dac-raised dac-primary">OK</span></button></div>
+  </div>
+</div>
+
+<div data-modal="newsletter" data-newsletter="" data-swap="" class="dac-modal newsletter">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <div class="dac-swap" data-swap-container="">
+          <section class="dac-swap-section dac-active dac-down">
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.title">獲得 Android 開發人員的最新消息和各項秘訣，讓您在 Google Play 上輕鬆邁向成功之路。</h2>
+            <p class="dac-modal-header-subtitle" data-t="newsletter.requiredHint">* 必要欄位</p>
+          </section>
+          <section class="dac-swap-section dac-up">
+            <h2 class="norule dac-modal-header-title" data-t="newsletter.successTitle">太棒了！</h2>
+          </section>
+        </div>
+      </header>
+      <div class="dac-swap" data-swap-container="">
+        <section class="dac-swap-section dac-active dac-left">
+          <iframe src="" name="dac-newsletter-iframe" style="display: none;"></iframe><form action="https://docs.google.com/forms/d/1QgnkzbEJIDu9lMEea0mxqWrXUJu0oBCLD7ar23V0Yys/formResponse" class="dac-form" method="post" target="dac-newsletter-iframe">
+            <input value="Traditional Chinese (繁體中文)" name="entry.935454734" data-newsletter-language="" type="hidden">
+            <section class="dac-modal-content">
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-full-name" class="dac-form-floatlabel" data-t="newsletter.name">全名</label>
+                      <input class="dac-form-input" name="entry.1357890476" id="newsletter-full-name" required="" type="text">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-email" class="dac-form-floatlabel" data-t="newsletter.email">電子郵件地址</label>
+                      <input class="dac-form-input" name="entry.472100832" id="newsletter-email" required="" type="email">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol">
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-company" class="dac-form-floatlabel" data-t="newsletter.company">公司/開發人員名稱</label>
+                      <input class="dac-form-input" name="entry.1664780309" id="newsletter-company" type="text">
+                    </div>
+                    <div class="dac-form-input-group">
+                      <label for="newsletter-play-store" class="dac-form-floatlabel" data-t="newsletter.appUrl">您其中一個 Play 商店應用程式的網址</label>
+                      <input class="dac-form-input" name="entry.47013838" id="newsletter-play-store" required="" type="url">
+                      <span class="dac-form-required">*</span>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="dac-form-fieldset">
+                <div class="cols">
+                  <div class="col-1of2 newsletter-leftCol">
+                    <legend class="dac-form-legend"><span data-t="newsletter.business.label">為您的商家選取最合適的產品類別。</span><span class="dac-form-required">*</span>
+                    </legend>
+                    <div class="dac-form-radio-group">
+                      <input value="Apps" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-app" required="" type="radio">
+                      <label for="newsletter-business-type-app" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-app" class="dac-form-label" data-t="newsletter.business.apps">應用程式</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input value="Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-games" required="" type="radio">
+                      <label for="newsletter-business-type-games" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-games" class="dac-form-label" data-t="newsletter.business.games">遊戲</label>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <input value="Apps and Games" class="dac-form-radio" name="entry.1796324055" id="newsletter-business-type-appsgames" required="" type="radio">
+                      <label for="newsletter-business-type-appsgames" class="dac-form-radio-button"></label>
+                      <label for="newsletter-business-type-appsgames" class="dac-form-label" data-t="newsletter.business.both">應用程式和遊戲</label>
+                    </div>
+                  </div>
+                  <div class="col-1of2 newsletter-rightCol newsletter-checkboxes">
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input class="dac-form-checkbox" name="entry.732309842" id="newsletter-add" required="" value="Add me to the mailing list for the monthly newsletter and occasional emails about development and Google Play opportunities." type="checkbox">
+                          <label for="newsletter-add" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-add" class="dac-form-label dac-form-aside"><span data-t="newsletter.confirmMailingList">我想加入 Google Play 的郵寄清單，以便接收每月電子報和 Google Play 不定期寄送的電子郵件，瞭解關於開發和 Google Play 商機的資訊。</span><span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dac-form-radio-group">
+                      <div class="dac-media">
+                        <div class="dac-media-figure">
+                          <input class="dac-form-checkbox" name="entry.2045036090" id="newsletter-terms" required="" value="I acknowledge that the information provided in this form will be subject to Google's privacy policy (https://www.google.com/policies/privacy/)." type="checkbox">
+                          <label for="newsletter-terms" class="dac-form-checkbox-button"></label>
+                        </div>
+                        <div class="dac-media-body">
+                          <label for="newsletter-terms" class="dac-form-label dac-form-aside"><span data-t="newsletter.privacyPolicy" data-t-html="">我瞭解，我在這張表單中提供的資訊將受到 <a href="https://www.google.com/intl/zh-TW/policies/privacy/" target="_blank">Google</a> 隱私權政策.</span><span class="dac-form-required">*</span></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </section>
+            <footer class="dac-modal-footer">
+              <div class="cols">
+                <div class="col-2of5">
+                </div>
+              </div>
+              <button type="submit" value="Submit" class="dac-fab dac-primary dac-large dac-modal-action"><i class="dac-sprite dac-arrow-right"></i></button>
+            </footer>
+          </form>
+        </section>
+        <section class="dac-swap-section dac-right">
+          <div class="dac-modal-content">
+            <p class="newsletter-success-message" data-t="newsletter.successDetails">您已經成功訂閱 Android 開發人員的最新消息和各項秘訣。</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div><!--/.dac-modal.newsletter-->
+
+
+<div data-modal="langform" class="dac-modal" id="langform">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">Browse this site in Traditional Chinese (繁體中文)?</h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+            <fieldset class="dac-form-fieldset">
+              <div class="cols">
+                <div class="col-2of2 langform-leftCol">
+                  <p id="resetLangText">You requested a page in Traditional Chinese (繁體中文), but your language preference for this site is Traditional Chinese (繁體中文).</p>
+                  <p id="resetLangCta">Would you like to change your language preference and browse this site in Traditional Chinese (繁體中文)? If you want to change your language preference later, use the language menu at the bottom of each page.</p>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="#" class="yes" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang yes" data-t="newsletter.resetLangButtonYes" data-modal-toggle="">Change Language</button>
+            </a>
+            <a href="#" class="" onclick="return false;">
+              <button class="button dac-primary dac-modal-action lang no" data-t="newsletter.resetLangButtonNo" data-modal-toggle="">Not Now</button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal-->
+
+
+<div data-modal="api-unavailable" class="dac-modal" id="api-unavailable">
+  <div class="dac-modal-container">
+    <div class="dac-modal-window">
+      <header class="dac-modal-header">
+        <div class="dac-modal-header-actions">
+          <button class="dac-modal-header-close" data-modal-toggle=""></button>
+        </div>
+        <section class="dac-swap-section dac-active dac-down">
+          <h2 class="norule dac-modal-header-title">
+            This class requires API level <span class="api-level"></span>
+            or higher
+          </h2>
+        </section>
+      </header>
+      <section class="dac-swap-section dac-active dac-left">
+          <section class="dac-modal-content">
+
+      <p>This doc is hidden because your selected API level for the
+      documentation is <span class="selected-level"></span>. You can change the
+      documentation API level with the selector above the left navigation.</p>
+
+      <p>For more information about specifying the API level your app requires,
+      read <a href="https://developer.android.com/training/basics/supporting-devices/platforms.html">Supporting
+      Different Platform Versions</a>.</p>
+
+          </section>
+          <footer class="dac-modal-footer" id="langfooter">
+            <div class="cols">
+              <div class="col-2of5">
+              </div>
+            </div>
+            <a href="#" class="ok" onclick="return false;">
+              <button class="button dac-primary dac-modal-action ok" data-modal-toggle="">
+                OK, make this page visible
+              </button>
+            </a>
+          </footer>
+        
+      </section>
+    </div>
+  </div>
+</div><!--/.dac-modal#api-unavailable-->
+
+    
+  </div><!--/#body-content-->
+
+  <!-- Nav Setup -->
+  <script>$('[data-dac-nav]').dacNav();</script>
+  <script type="text/javascript">
+    $('.slideshow-container').dacSlideshow({
+        btnPrev: '.slideshow-prev',
+        btnNext: '.slideshow-next',
+        btnPause: '#pauseButton'
+    });
+
+    $(".feed").dacTabbedList({
+      nav_id: '.feed-nav',
+      frame_id: '.feed-frame'
+    });
+  </script>
+  
+  <script src="Build%20and%20Run%20Your%20App_files/ytblogger_lists_unified.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/android_metadata_en.js" defer="defer"></script>
+  
+  <script src="Build%20and%20Run%20Your%20App_files/lists_003.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/gcm_lists.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/gms_lists.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/lists_004.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/lists.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/lists_002.js" defer="defer"></script>
+  <script src="Build%20and%20Run%20Your%20App_files/a"></script>
+  <script>
+    // Load localized metadata.
+    (function(lang) {
+      if (lang === 'en') { return; }
+      document.write('<script src="/android_metadata_' + lang + '.js?v=2016120206" defer></' + 'script>');
+    })(getLangPref())
+
+    // Add skip to content for accessibility.
+    $('#skip-to-main').click(function() {
+      $('a[name=top]').focus();
+    });
+
+    $('.devsite-utility-footer-language-select').each(function() {
+      $(this).change(function() {
+        changeLangPref(this.value, true)
+        $('.devsite-utility-footer-language').submit();
+      });
+    });
+  </script><script src="Build%20and%20Run%20Your%20App_files/android_metadata_zh-tw.js" defer="defer"></script>
+
+  <script>
+    (function($) {
+      devsite.analytics.InitAnalytics();
+    })(jQuery);
+  </script>
+
+  
+
+<div id="survey-box-wrapper">
+  <div class="material-dialog" style="width:270px">
+    <div class="material-dialog-title">
+      Take a one-minute survey?
+    </div>
+    <div class="material-dialog-description">
+      Help us improve Android tools and documentation.
+    </div>
+    <div class="material-button-bar">
+      <a class="dac-button dac-primary dac-raised" target="_blank" href="https://goo.gl/forms/kV7MoyD2dvcWkd5N2">Sure</a>
+      <a class="dac-button" href="#">No thanks</a>
+    </div>
+  </div>
+</div>
+
+
+
+</body></html>

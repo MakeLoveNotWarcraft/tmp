@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!-->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style=""><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1255494d3a" type="text/javascript"></script><script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/nr-998.js"></script><script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/push.js"></script><script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/analytics.js" async=""></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"15702971","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":0,"applicationTime":114,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="description" content="AndroidStudio（以下均简称为AS）是Google在2013年5月16日的I/0大会上推出的Android开发环境。从最初的AS1.5（我是从这个版本开始使用）到现在的AS2.1，这款开发工具有了很大的进步，而且更新频率也是非常高。相较于Eclipse+ADT的开发环境；在某些方面，对开发者来说的确是方便了许多。我待AS如初恋，AS虐我千百遍但是，这样一个开发环境，毕竟还很“年轻”，所以自身也会存在很多或大或小的bug,加上我们对它不是很熟悉（尤其是Gradle语法），给我们日常开发带来了很多坑爹的问题，在此做个记录，方便以后遇到时可以快速找到解决...">
+  <meta property="wb:webmaster" content="294ec9de89e7fadb">
+  <meta property="qc:admins" content="104102651453316562112116375">
+  <meta property="qc:admins" content="11635613706305617">
+  <meta property="qc:admins" content="1163561616621163056375">
+  <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4">
+  <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI">
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/e4d966e433f5">
+    <!--  Meta for Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=888237539, app-argument=jianshu://notes/4635165">
+  <!-- End -->
+
+  <!--  Meta for Twitter Card -->
+  <meta content="summary" property="twitter:card">
+  <meta content="@jianshucom" property="twitter:site">
+  <meta content="使用Android Studio 遇到的坑爹问题及解决方法（持续更新中）" property="twitter:title">
+  <meta content="AndroidStudio（以下均简称为AS）是Google在2013年5月16日的I/0大会上推出的Android开发环境。从最初的AS1.5（我是从这个版本开始使用）到现在的AS2.1，这款开发工具有了很大的进步，而且更新频率也是非常高。相较于Eclipse+ADT的开发环境；在某些方面，对开发者来说的确是方便了许多。我待AS如初恋，AS虐我千百遍但是，这样一个开发环境，毕竟还很“年轻”，所以自身也会存在很多或大或小的bug,加上我们对它不是很熟悉（尤其是Gradle语法），给我们日常开发带来了很多坑爹的问题，在此做个记录，方便以后遇到时可以快速找到解决..." property="twitter:description">
+  <meta content="http://www.jianshu.com/p/e4d966e433f5" property="twitter:url">
+  <!-- End -->
+
+  <!--  Meta for OpenGraph -->
+  <meta property="fb:app_id" content="865829053512461">
+  <meta property="og:site_name" content="简书">
+  <meta property="og:title" content="使用Android Studio 遇到的坑爹问题及解决方法（持续更新中）">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="http://www.jianshu.com/p/e4d966e433f5">
+  <meta property="og:description" content="AndroidStudio（以下均简称为AS）是Google在2013年5月16日的I/0大会上推出的Android开发环境。从最初的AS1.5（我是从这个版本开始使用）到现在的AS2.1，这款...">
+  <!-- End -->
+
+  <!--  Meta for Facebook Applinks -->
+  <meta property="al:ios:url" content="jianshu://notes/4635165">
+  <meta property="al:ios:app_store_id" content="888237539">
+  <meta property="al:ios:app_name" content="简书">
+
+  <meta property="al:android:url" content="jianshu://notes/4635165">
+  <meta property="al:android:package" content="com.jianshu.haruki">
+  <meta property="al:android:app_name" content="简书">
+  <!-- End -->
+
+  <title>使用Android Studio 遇到的坑爹问题及解决方法（持续更新中） - 简书</title>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="UetAAeDcLgJfbRbqWizQqcDjU/Lr6sS/ERFjgNwW5zAk8Q8NfU04cmvQ99I6x3WNoCsCZpC6Y7GO0qhJRI7PRw==">
+  <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" media="all" href="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/base-00828532d00225531ad20ff45bf311ea.css">
+
+    <link rel="stylesheet" media="all" href="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/reading-note-a4d1e4bd26d83f631d58a76778118af6.css">
+  <link rel="stylesheet" media="all" href="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/base-read-mode-5f4051bc94fc595e8bc00821aae6c3e1.css">
+  <script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/modernizr-613ea63b5aa2f0e2a1946e9c28c8eedb.js"></script>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+  <!--[if IE 8]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://cdn-qn0.jianshu.io/assets/scaffolding/for_ie-7f1c477ffedc13c11315103e8787dc6c.css" /><![endif]-->
+  <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/57-b426758a1fcfb30486f20fd073c3b8ec.png" sizes="57x57">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/72-feca4b183b9d29fd188665785dc7a7f1.png" sizes="72x72">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/76-ba757f1ad3421192ce7192170393d2b0.png" sizes="76x76">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/114-8dae53b3bcea3f06bb139e329d1edab3.png" sizes="114x114">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/120-fa315ee0177dba4c55d4f66d4129b47f.png" sizes="120x120">
+      <link rel="apple-touch-icon-precomposed" href="http://cdn-qn0.jianshu.io/assets/apple-touch-icons/152-052f5799bec8fb3aa624bdc72ef5bd1d.png" sizes="152x152">
+
+<style type="text/css"></style></head>
+
+<body class="post output zh cn linux mozilla reader-day-mode reader-font2" data-js-module="note-show" data-locale="zh-CN">
+  
+  <div style="" class="navbar navbar-jianshu shrink">
+  <div class="dropdown">
+    <a class="dropdown-toggle logo" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0)">
+      简
+    </a>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li><a href="http://www.jianshu.com/"><i class="fa fa-home"></i> 首页</a></li>
+      <li><a href="http://www.jianshu.com/collections"><i class="fa fa-th"></i> 专题</a></li>
+    </ul>
+  </div>
+</div>
+<div class="navbar-user">
+    <a class="app-download-btn" href="http://www.jianshu.com/apps/download?utm_medium=top-sugg-down&amp;utm_source=web-other-page">App下载</a>
+    <a class="login" data-signup-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_up">
+      <i class="fa fa-user"></i> 注册
+</a>    <a class="login" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+      <i class="fa fa-sign-in"></i> 登录
+</a>    <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+</div>
+<div class="navbar navbar-jianshu expanded">
+  <div class="dropdown">
+      <a class="active logo" role="button" data-original-title="个人主页" data-container="div.expanded" href="http://www.jianshu.com/">
+        <b>简</b><i class="fa fa-home"></i><span class="title">首页</span>
+</a>      <a data-toggle="tooltip" data-placement="right" data-original-title="专题" data-container="div.expanded" href="http://www.jianshu.com/collections">
+        <i class="fa fa-th"></i><span class="title">专题</span>
+</a>    <a class="ad-selector" href="http://www.jianshu.com/apps">
+      <i class="fa fa-mobile"></i><span class="title">下载手机应用</span>
+</a>    <div class="ad-container ">
+      <div class="ad-pop">
+        <img class="ad-logo" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/228-0765f118055a1d942fc286fb55f37773.png" alt="228">
+        <p class="ad-title">简书</p>
+        <p class="ad-subtitle">交流故事，沟通想法</p>
+        <img class="ad-qrcode" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/download-app-qrcode-053849fa25f9b44573ef8dd3c118a20f.png" alt="Download app qrcode">
+        <div>
+          <a class="ad-link" href="https://itunes.apple.com/cn/app/jian-shu/id888237539?ls=1&amp;mt=8">iOS</a>·
+          <a class="ad-link" href="http://downloads.jianshu.io/apps/haruki/JianShu-1.11.5.apk">Android</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-user">
+      <a href="#view-mode-modal" data-toggle="modal"><i class="fa fa-font"></i><span class="title">显示模式</span></a>
+
+      <a class="signin" data-signin-link="true" data-toggle="modal" data-placement="right" data-original-title="登录" data-container="div.expanded" href="http://www.jianshu.com/sign_in">
+        <i class="fa fa-sign-in"></i><span class="title">登录</span>
+</a>    </div>
+  </div>
+
+  
+      <div class="popover-wrap">
+       <div title="" data-original-title="" class="fixed-btn note-fixed-download" data-toggle="popover" data-placement="left" data-html="true" data-trigger="hover" data-content="&lt;img src=&quot;http://cdn-qn0.jianshu.io/assets/app-page/note-qrcode-599086b03613e4f65dce8698fe9bcc99.png&quot; alt=&quot;Note qrcode&quot; /&gt;">
+        <a class="qrcode" href="javascript:void(0)">
+          <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/icon_qrcode-1f27688ec77df5a8c6c6ea70aa181874.png" alt="Icon qrcode">
+          <div>简书手机版下载</div>
+</a>      </div>
+    </div>
+    <div class="fixed-btn">
+      <a class="go-top hide-go-top" href="#"> <i class="fa fa-angle-up"></i></a>
+      <a data-original-title="写篇文章" class="writer" href="http://www.jianshu.com/writer#/" data-toggle="tooltip" data-placement="left" title=""><i class="fa fa-pencil"></i></a>
+    </div>
+
+
+  <div class="imagebubble-container imagebubble-mode-off" id="show-note-container">
+    
+<div class="post-bg" id="flag">
+  <div style="top: -1px;" class="wrap-btn">
+    <!-- Notebook and collections button upper left -->
+      <div class="article-related pull-left">
+          <a class="collection-menu-btn" data-toggle="modal" data-target="#collection-menu" href="javascript:void(null);">
+            <i class="fa fa-th"></i>
+</a>          <a class="notebooks-menu-btn" data-toggle="modal" data-target="#notebooks-menu" href="javascript:void(null);"><i class="fa fa-list-ul"></i></a>
+        <div class="related-avatar-group activities"></div>
+      </div>
+    <!-- ******* -->
+
+      <a class="app-download-btn" href="http://www.jianshu.com/apps/download?utm_medium=top-sugg-down&amp;utm_source=note-show">App下载</a>
+  <a class="login" data-signup-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_up">
+    <i class="fa fa-user"></i> 注册
+</a>  <a class="login" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+    <i class="fa fa-sign-in"></i> 登录
+</a>
+
+    <!-- Buttons upper right -->
+    <!-- ******* -->
+  </div>
+
+  <div class="container">
+    <!-- Article activities for width under 768px -->
+    <div class="related-avatar-group activities"></div>
+      <div class="article">
+        <div class="preview">
+          <div class="author-info">
+              <div class="btn btn-small btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in"><i class="fa fa-plus"></i>  <span>添加关注</span></a>
+  </div>
+
+            <a class="avatar" href="http://www.jianshu.com/users/c6f7cfa366d9">
+              <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/17d78044457c.jpeg" alt="100">
+</a>            <span class="label">
+                作者
+            </span>
+            <a class="author-name blue-link" href="http://www.jianshu.com/users/c6f7cfa366d9">
+              <span>IAM四十二</span>
+</a>              <span data-toggle="tooltip" data-original-title="最后编辑于 2016.07.27 16:12">2016.07.02 21:50*</span>
+            <div>
+              <span>写了74139字</span>，<span>被312人关注</span>，<span>获得了788个喜欢</span>
+            </div>
+          </div>
+          <h1 class="title">使用Android Studio 遇到的坑爹问题及解决方法（持续更新中）</h1>
+          <div class="meta-top">
+            <span class="wordage">字数2998</span>
+            <span class="views-count">阅读753</span>
+            <span class="comments-count">评论5</span>
+            <span class="likes-count">喜欢30</span>
+          </div>
+
+          <!-- Collection/Bookmark/Share for width under 768px -->
+          <div class="article-share"><a class="bookmark" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in"> <i class="fa fa-bookmark-o"></i><span>收藏文章</span></a><span> <a href="javascript:void(null)" data-toggle="dropdown"><i class="fa fa-share-square-o"></i> 分享</a> <ul class="dropdown-menu arrow-top"> <li> <a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','http://cwb.assets.jianshu.io/notes/images/4635165/weibo/image_897cf8a2630e.jpg',%20'%E6%8E%A8%E8%8D%90%20@IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@%E7%AE%80%E4%B9%A6%20%EF%BC%89','http://www.jianshu.com/p/e4d966e433f5','%E9%A1%B5%E9%9D%A2%E7%BC%96%E7%A0%81gb2312|utf-8%E9%BB%98%E8%AE%A4gb2312'));"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/weibo.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/douban.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@jianshuio%20%EF%BC%89'),x=function(){if(!window.open(r,'tweibo','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/tweibo.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/qzone.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;text='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@jianshucom%20%EF%BC%89')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/twitter.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/e4d966e433f5',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/facebook.png"> </a> </li> <li> <a href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/e4d966e433f5'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/google_plus.png"> </a> </li> <li> <a href=""> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/renren.png"> </a> </li> </ul></span></div>
+          <!-- -->
+
+          <div class="show-content"><p>Android Studio（以下均简称为AS）是Google在2013年5月16日的I/0大会上推出的Android开发环境。</p>
+<p>从最初的AS 1.5（我是从这个版本开始使用） 到现在的AS 2.1，这款开发工具有了很大的进步，而且更新频率也是非常高。相较于Eclipse+ADT的开发环境；在某些方面，对开发者来说的确是方便了许多。</p>
+<blockquote><p>我待AS如初恋，AS虐我千百遍</p></blockquote>
+<p>但是，这样一个开发环境，毕竟还很“年轻”，所以自身也会存在很多或大或小的bug,加上我们对它不是很熟悉（尤其是Gradle语法），给我们日
+常开发带来了很多坑爹的问题，在此做个记录，方便以后遇到时可以快速找到解决方法，同时分享给遇到同样问题的同学一些解决思路。</p>
+<blockquote>
+<p>操作环境：Windows10 + Android Studio 2.1</p>
+<p>这里只列举解决方有共性的问题，有时候会遇到一种AS重启（或者电脑重启）之后就没有问题的问题，这里不再列出。重启大法，真是时时刻刻都有用啊。</p>
+</blockquote>
+<h2>Gradle sync/building/refreshing 很长时间</h2>
+<p>相信大部分人和我一样，第一次使用AS的体验并不是很好，一方面它很占内存，导致自己电脑特别卡，尤其是在构建过程中，另一方面，对Gradle构建方式及其语法的陌生，导致初次用AS创建工程费了很大劲，所以对他并不是很看好。</p>
+<p>我们选择的AS的原因无非就是几乎所有的人都开始用了，你在Github或者是一些论坛上找到的源码，几乎都是AS版本的。而且有些很棒的三方库，在AS上引入也许就是一行代码的事情，可是在Eclipse上几乎是无法实现的，即便实现也得费很大的功夫。</p>
+<p>有时候，我们从github上clone了一份大神的源码，想去解读一下，结果导入AS后就一直在哪里building，也许等待很长一段时间后，可以building完成，但是我们完全可以省下这部分时间。</p>
+<p>AS长时间的building，一般来说是去下载gradle文件，也许你会说，我电脑文件里有gradle啊，就在下面这个目录。</p>
+<p>C:\Users\username\.gradle\wrapper\dists</p>
+<p>的确，如果我们用AS正常的构建并编译运行过一个工程的话，那么这个文件夹下至少会有一个gradle-xx-all或gradle-xx-bin的文件夹，这个文件下的内容其实就是AS用来构建工程所用到的东西。</p>
+<p>所以，当我们clone到一份AS版本的源码时，不应该急着打开，而是应该先去预览一下两个文件：</p>
+<h4>build.gradle（这个是整个项目的gradle文件）</h4>
+<p>这个文件里有一行很重要的配置代码：</p>
+<pre class="hljs scala"><code class="scala">dependencies {
+
+        classpath <span class="hljs-symbol">'com</span>.android.tools.build:gradle:<span class="hljs-number">2.1</span><span class="hljs-number">.2</span>'
+
+        <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> Do not place your application dependencies here; they belong</span>
+        <span class="hljs-comment">// in the individual module build.gradle files</span>
+    }</code></pre>
+<p>这个指定了我们整个项目要构建所需的Android Plugin版本。</p>
+<p>这个地方我的经验是，<strong>如果你clone到的源码里所使用到的版本比这里低，建议改成当前最新的版本</strong>。当然，如果你使用AS2.0及以上版本，它会自动提示你将Plugin版本升级为最新的。</p>
+<h4>gradle-wrapper.properties</h4>
+<p>这个文件，位于你所创建项目</p>
+<p><strong>XXApplication\gradle\wrapper</strong></p>
+<p>这个目录下，我们可以看一下这个文件</p>
+<pre class="hljs ruby"><code class="ruby">distributionBase=<span class="hljs-constant">GRADLE_USER_HOME</span>
+distributionPath=wrapper/dists
+zipStoreBase=<span class="hljs-constant">GRADLE_USER_HOME</span>
+zipStorePath=wrapper/dists
+distributionUrl=https\<span class="hljs-symbol">://services</span>.gradle.org/distributions/gradle-<span class="hljs-number">2.10</span>-all.zip</code></pre>
+<p>最重要的就是最后一行配置，他决定了你整个项目构建时所需要用到的gradle文件的版本，到这里你应该明白了，当我们使用AS打开clone到的源码时，他会按照这里的配置gradle-2.10-all.zip，去之前所说的</p>
+<p>C:\Users\username\.gradle\wrapper\dists</p>
+<p>这个目录下寻找gradle文件，如果刚好找到了，那么很幸运，你的项目不会build很长时间。如果没有找到，那么就得去下载gradle-
+wrapper.properties里所配置的gradle版本了，这就解释了我们第一次用AS创建Hello 
+Wrold时为什么等待了那么长时间，因为要去下载一个文件（而且得是翻墙）。</p>
+<p>明白这些，这个问题就很好解决了。第一种办法，很简单，提前从<a href="http://services.gradle.org/distributions" target="_blank">这里</a>下
+载gradle-wrapper.properties里所指定的gradle版本文件，解压后放在\dists\目录下；这也是一种比较乖的方法，因为
+大神总是走在我们之前，他们当时写下这些源码时候，所使用的gradle文件版本可能比较老，所以为了保持源码不被更改，只能这样做了。</p>
+<p>第二种，比较讨巧，你可以修改gradle-wrapper.properties的配置内容，将最后一行gradle版本修改
+为.gradle\wrapper\dists这个目录下包含的版本，或者是你可以打开你手头正常运行的项目文件，看看它的这个gradle-
+wrapper.properties是如何配置的，可做参考。</p>
+<p><em>对于gradle-wrapper.properties里所用到的gradle文件和build.gradle中所依赖的gradle版本是否有严格的对于关系，尚不明确。</em></p>
+<h2>关于Instant Run的使用</h2>
+<p>Instant Run 是AS 2.0之后提供的一种<strong>一边修改代码，一边在模拟器或者实际设备上看到 修改代码后的结果</strong>的高大上功能。</p>
+<p>说白了，就是Activity可以不用重新启动，而你代码修改的内容就可以直接呈现出来，就是最近很火的热更新。关于他的运行原理，可以看看<a href="http://www.jianshu.com/p/2e23ba9ff14b" target="_blank">这篇文章</a>，已经做了很详细的解释。</p>
+<p>其实，对于这个功能来说真是又爱又恨。爱是因为，这种Instant Run的确是可以节省一点时间，毕竟AS 
+编译运行速度还是有点长，即便你的电脑是8G内存，i5处理器也是枉然。而恨，也恰恰是因为这种所谓的Instant Run，在刚开始使用AS 
+2.0的那段时间，常常有这样一种体验，代码明明改了为什么不生效，TextView的颜色明明代码里已经改成了绿色，为什么一运行还是黑色。甚至，有时
+候导致我们开始怀疑自己代码的逻辑性，所以在很长一段时间里都不能适应这个所谓的Instant Run，觉得完全就是添乱的。</p>
+<p>但是，用的时间久了，当你渐渐熟悉了他的规律，理解了他的原理，你还是会觉得这个功能挺好的。</p>
+<p>你可以通过设置，开启或者关闭这个功能</p>
+<div widget="ImageBubble" class="image-package imagebubble">
+<img class="imagebubble-image" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-a513e8d7b388977d_002.png" data-original-src="http://upload-images.jianshu.io/upload_images/1115031-a513e8d7b388977d.png?imageMogr2/auto-orient/strip%7CimageView2/2"><br><div class="image-caption">instant run.png</div>
+</div>
+<h2>布局文件无法预览Exception raised during rendering</h2>
+<p>有时候，我们会遇到layout下xml 布局文件无法查看的情况，而出现的提示也是很简单，就是一句话Exception raised during rendering。</p>
+<p>这种AS无法渲染出视图，而且xml代码没有错误，无论怎样修改，就是绘制不出布局文件的视图。<br>这个一般是由于选择的Android SDK 版本不稳定所导致的问题 ，切换成低版本即可。</p>
+<div widget="ImageBubble" class="image-package imagebubble">
+<img class="imagebubble-image" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-de961c9fae721f80_002.png" data-original-src="http://upload-images.jianshu.io/upload_images/1115031-de961c9fae721f80.png?imageMogr2/auto-orient/strip%7CimageView2/2"><br><div class="image-caption">xml无法渲染.png</div>
+</div>
+<h2>Element layer-list must be declared问题</h2>
+<blockquote><p>这个问题的解决方法源自网络</p></blockquote>
+<p>项目从Eclipse转到Android 
+Studio。项目中使用了环信demo中的一些xml资源，转换后发现color资源文件夹下诸如layer-list或者shape等标签报
+Element xxx must be declared错误，大意就是layer-list或者shape这些标签没有定义。<br>layer-list或者shape等这些标签是常用的标签，Android Studio居然报没有定义错误，在Eclipse中却没有这个问题。网上不少人说这是Android Studio的一个bug，事实正相反，这是Android Studio的优点。</p>
+<p>对于这个问题，首先要了解layer-list、shape等这些标签是什么东西。每一种标签都有对应的资源类，layer-list、shape
+等等标签代表的其实是个drawable资源。layer-list最终会解析为LayerDrawable，shape会解析为
+ShapeDrawable，其它的标签类似。由此可以看出layer-list或者shape等资源是drawable资源，应该放到drawable
+资源文件夹下。color资源不包括drawable资源，当然没有定义drawable类型的标签。<br>Eclipse不像Android Studio，对资源类型的检查没有那么严格，所以没有报错误。我觉得这倒是Android Studio的优点，是什么资源就应该放到什么位置，不容易让人产生疑惑。</p>
+<p><strong>所以在Android Studio下的解决方法就是把这些资源文件移动到drawable资源文件夹下</strong></p>
+<h2>Duplicate file copy in apk</h2>
+<p>出现这个问题，一般是由于引用了重复的jar包，而且会在报错日志中提示两个重复类的路径。这种情况在引用了外部工程（在Android 
+Studio中就是新建了Module），或者是导入的第三方（如友盟）的SDK时很容易出现，因为外部引用的工程，一般是Github 
+上大神们写的一些库，方便我们使用。不同的外部工程中，使用了相同的jar包，这个情况时很有肯能发生的，列如support-v4的jar包，这个
+jar包几乎成了应用的标配，这个时候我们只需删掉其中的一个工程中的jar包即可。</p>
+<h2>Error:failed to find Build Tools revision xx.x.x</h2>
+<p>我们从网络上clone一份源码，Sync时会提示这种问题。这个问题，其实很简单就是app的<br>build.gradle 所声明的编译项目的SDK 版本我们没有通过SDK Manager 下载，这个时候，你当然可以按照他给出的提示<br>Install
+ Build Tools xx.x. and sync project 
+安装所需的SDK版本，进行下载安装，但这样一般都会耗时，所以最简单的方法就是修改app的build.gradle 
+中的buildToolsVersion 
+的内容，改成我们已经安装过的SDK版本，如果不知道怎么写具体的版本号，完全可以参考电脑里可以正常运行项目的这个配置信息。</p>
+<p>或者是如图所示，在Project Structure 菜单中选择可用的SDK.</p>
+<div widget="ImageBubble" class="image-package imagebubble">
+<img class="imagebubble-image" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-5721e2a4d73c59ac_002.png" data-original-src="http://upload-images.jianshu.io/upload_images/1115031-5721e2a4d73c59ac.png?imageMogr2/auto-orient/strip%7CimageView2/2"><br><div class="image-caption">build tool select.png</div>
+</div>
+<p>2016年7月27日更新</p>
+<h2>SSL peer shut down incorrectly</h2>
+<p>这个问题的原因也很简单，和之前提到的第一种情况是一样的，就是下载gradle.xxx.zip文件失败了，这个时候，如果条件允许的话，就直接翻墙下载，如果条件不允许，可以考虑之前的办法，从<a target="_blank">这里</a>手动下载gradle-wrapper.properties里所指定的gradle版本文件，解压后放在\dists\目录下，或者是直接修改gradle-wrapper.properties的内容。</p>
+</div>
+        </div>
+      </div>
+
+      <div class="visitor_edit">
+        <!-- further readings -->
+        <div id="further-readings" data-user-slug="" data-user-nickname="">
+          <div id="further-reading-line" class="hide further-reading-line"></div>
+          <ul id="further-readings-list" class="reading-list unstyled"></ul>
+          <div id="further-reading-new" class="reading-edit">
+              <a data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+                <i class="fa fa-plus-circle"></i> 推荐拓展阅读
+</a>            <div id="further-reading-form"></div>
+          </div>
+        </div>
+        <div class="pull-right">
+          <!-- copyright -->
+          <div data-original-title="转载请联系作者获得授权，并标注“简书作者”。" class="author-copyright pull-right" data-toggle="tooltip" data-html="true" title="">
+            <a><i class="fa fa-copyright"></i> 著作权归作者所有</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reward / Support Author -->
+        <div class="support-author">
+          <p>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</p>
+            <a class="btn btn-pay" data-toggle="modal" href="#pay-modal">¥ 打赏支持</a>
+          <div class="avatar-list"></div>
+        </div>
+
+      <!-- article meta bottom -->
+      <div class="meta-bottom clearfix">
+        <!--  Like Button -->
+        <div class="like ">
+            <div class="like-button">
+              <a id="like-note" class="like-content" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+                <i class="fa fa-heart-o"></i>  喜欢
+</a></div>          <span data-original-title="查看所有喜欢的用户" id="likes-count" data-toggle="tooltip" data-placement="right" title="">30</span>        </div>
+        <!--  share group -->
+        <div class="share-group pull-right">
+          <a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=1881139527',u=z||d.location,p=['&amp;url=',e(u),'&amp;title=',e(t||d.title),'&amp;source=',e(r),'&amp;sourceUrl=',e(l),'&amp;content=',c||'gb2312','&amp;pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','http://cwb.assets.jianshu.io/notes/images/4635165/weibo/image_897cf8a2630e.jpg',%20'%E6%8E%A8%E8%8D%90%20@IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@%E7%AE%80%E4%B9%A6%20%EF%BC%89','http://www.jianshu.com/p/e4d966e433f5','%E9%A1%B5%E9%9D%A2%E7%BC%96%E7%A0%81gb2312|utf-8%E9%BB%98%E8%AE%A4gb2312'));" data-name="weibo">
+            <i class="fa fa-weibo"></i><span>分享到微博</span>
+          </a>
+          <a data-toggle="modal" href="#share-weixin-modal" data-name="weixin">
+            <i class="fa fa-weixin"></i><span>分享到微信</span>
+          </a>
+          <div class="more">
+            <a href="javascript:void(0)" data-toggle="dropdown">更多分享<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu arrow-top">
+                <li><a href="http://cwb.assets.jianshu.io/notes/images/4635165/weibo/image_897cf8a2630e.jpg" target="_blank" data-name="changweibo"><i class="fa fa-arrow-circle-o-down"></i> 下载长微博图片</a></li>
+                <li>
+                  <a data-name="tweibo" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@jianshuio%20%EF%BC%89'),x=function(){if(!window.open(r,'tweibo','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/tweibo.png" alt="Tweibo"> 分享到腾讯微博
+</a>                </li>
+                <li>
+                  <a data-name="qzone" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B'),x=function(){if(!window.open(r,'qzone','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/qzone.png" alt="Qzone"> 分享到QQ空间
+</a>                </li>
+                <li>
+                  <a data-name="twitter" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://twitter.com/share?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;text='+e('%E6%8E%A8%E8%8D%90%20IAM%E5%9B%9B%E5%8D%81%E4%BA%8C%20%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%8A%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89%E3%80%8B%EF%BC%88%20%E5%88%86%E4%BA%AB%E8%87%AA%20@jianshucom%20%EF%BC%89')+'&amp;related='+e('jianshucom'),x=function(){if(!window.open(r,'twitter','toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/twitter.png" alt="Twitter"> 分享到Twitter
+</a>                </li>
+                <li>
+                  <a data-name="facebook" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://www.facebook.com/dialog/share?app_id=483126645039390&amp;display=popup&amp;href=http://www.jianshu.com/p/e4d966e433f5',x=function(){if(!window.open(r,'facebook','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/facebook.png" alt="Facebook"> 分享到Facebook
+</a>                </li>
+                <li>
+                  <a data-name="google_plus" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,r='https://plus.google.com/share?url='+e('http://www.jianshu.com/p/e4d966e433f5'),x=function(){if(!window.open(r,'google_plus','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/google_plus.png" alt="Google plus"> 分享到Google+
+</a>                </li>
+                <li>
+                  <a data-name="douban" href="javascript:void(function(){var%20d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e('http://www.jianshu.com/p/e4d966e433f5')+'&amp;title='+e('%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%EF%BC%88%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89')+'&amp;sel='+e(s)+'&amp;v=1',x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330'))location.href=r+'&amp;r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()">
+                    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/douban.png" alt="Douban"> 分享到豆瓣
+</a>                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div id="share-weixin-modal" class="modal hide fade share-weixin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div title="http://www.jianshu.com/p/e4d966e433f5?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=reader_share&amp;utm_source=weixin" class="modal-body">
+    <h5>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</h5>
+  <canvas style="display: none;" height="170" width="170"></canvas><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKoAAACqCAYAAAA9dtSCAAAHjUlEQVR4nO2YQbJDKQwDc/9Lz2xmlWQAWTLw8ttVrMC2ZPfLIq/X6/XPjjMK5e1KvlNrta7j163dqWuk8bCH8wMCVEAFVCMA9VJQk+GA2vkRJOFSejnzUT05kZxHSgegAuqwtqojGYAKqMu1VR3JAFRAXa6t6kiGBKqz5CRMTu1ZpPwnPzbXX+pjVPsoOgq5gAqoa/OY9VF0AKoYgLo+j1kfRQegigGo6/OY9VF0/CSoYcNlCJxeyT5OJD0AKqACKqACKqAKJqp9ANULQBVNKJGE3um767g6ujypewFU4S2g5jypewFU4S2g5jype9kGqhPp4VcXod4rGpPzcHQk5+PoSgagAiqgjhotCAHUog5ADTZaEAKoRR1/DtTOMxKiDmB0fyo36emp82g+gJrITXp66jwA9dLFdHl66jwA9dLFdHl66jxaz0f3C6Lrg/h27+jqynU1n5pPZ1ypDFAB9T2uVAaogPoeVyoDVEB9j5cicmTKAWjWpxPcrtxbjrJDdS/qvROACqjlvaj3TgAqoJb3ot47MQTVWdxC4yOAJCMJiOLX0ehEJw8LtQC1GoC6rtvtBahGAOq6brcXoBoBqOu63V5tf5wpw3Yh7wrnI+jM3enJ0eHUAlQhABVQh2/V2l0BqIA6fKvW7gpA/RFQrcbFt+rAlF7JcOBKAuLodnVGa8lOFot3vQVUQLVMAarWV8kFVEAFVCN3K6gKMCnR77Vck46uqt/Ke0WXA0HX26SnQm1ArfitvFd0AepHbUCt+K28V3QB6kdtQK34rbxXdAHqW+1RI0WYaiL1dqYj+cF01krGro+tMz5mNLpUiqmNU29nOgB1/S2girUB1Ys/B6oz6FtrScMxdM5qO7m74Lppb4DatJhZbScXUC+FC1ABFVCbFjOr7eT+SVBTxW6B7ZZQPewCwtWZ6qvqANSmAFRAfUQAKqA+IgB1I6iOsFNgOrXdpaY8ds5D0Zzu5dQC1EGuew+oOd2AOsh17wE1pxtQB7nuPaDmdL+SwpRazgdSrTvrlVyU6mHXPBwPnZ4WegFqpc+st+oBUKe9ALXSZ9Zb9QCo0153AJMcUEqXo8OpnZ7Xqub3ezccBr4cQAXU7/duACqgAiqgAuqVoFZNpAfUNYBkH0dX0kMSts6P3qn1cS89BtSyrqQHQAVUSzOgAuqwFqD+/33ao+LBqfVxnxRWPbaJ0MfV5U+dwc7Z7pqB2vfj/idMACqgPsIEoALqI0wA6u+D6jRLDUQVvVp3pfYuCE7lOpGEXu315QAqoPb0BVTB8OweUPv6AqpgeHYPqH19HwFqMjcJU+pteh7Vt2p0znJ07+QCKqACKqBq86i+VeMnQHVMJQfWOZBRLVeH4ld5m/xgujSrPtRegFrsA6h6PqAC6vI8ujSrPtRegFrsA6h6vrVj6bE4wC7IR7rkAQg6uvynwX1i32lOdamA+pvAnOoLqID6iL6ACqiP6CuBOkse3Z+M1ECUt+mln8pVaqnh1AVUQAXUUwGo9VxA3RiAWs/9SVCdJVsiN9VylxZdTHD2iq6undueToh2h9VVC1ABdTogpW9XLUC9GFQneVWkOhB1eCldSUDU6AJzJ1xKrcI8AHW1D6ACKqAC6qw3oK72AdSDoHYNMwnTrlpXLaZpHslZqr0ANVQLUOt9VnoBaqgWoNb7rPQC1FAtQK33Wel1DNQuU8lcF76uk9TZFe5eRnfyfFLCARVQAdXIPQ0koH6/A1ThLaBqc3beB+aTMdw53FuWeGvflGZ3L27vyQHUDh07+6Y0AyqgtvZNaQZUQG3tm9L8GFCTA1FEdxo8VXsWDiyde3FyOz0BKqAC6qopZwCACqjWYlzhignRcLlW5wdSfTvTrbx1Z5fc05f3gLpaC1ABNWYKUAF12EwZAKACquypasKFzVlqEqBR36SnnXFqHslaH1qlx4Ba9rQzABVQy552BqACatnTzvhzoCrFpo02LdIZSGctpbY7q9SPgJOb9ACo/wAqoAJqWSegAurwfWctpTagTkDdKSQZKR1Jjw7kro4oIJtqTe9XCwMqoHbWAtRiHUC9DNTUMJW36iKUe0dH0oPjeWffW3V8OYDa4eGpgNyi48sB1A4PTwXkFh1fDqB2eHgqILfo+DhTOptiF0COJvXe8evockIB1amt6gBUQZN67/h1dDkBqK4wQI30VXUl+wIqoMbiMaAqS3dOdVjqQDphUkBWPTpLTeqo9lm5d/YEqIt1ABVQAXWSm6wFqIAKqJP7GKjJSA7TGYiqM7VkNTfZN+Up+QPiaP7vACqgAiqgLuYCKqBKOgG13lfxpGiegrqQHBmuA6I7TEVX8ii9kh52enQ8AaoQgAqobcNMBqACatrEcSBmfTo9ODoUXZ25C7UBFVDXdHXmLtQGVEBd09WZu1AbUAF1TVdn7kLt+4aZXHInjElPTu3RfVK3kxvYKaB2BKACKqACal9jx6CjC1Bzup3cVlCdcEB176sDc6F/wgdzqparA1CNOo6OXQGoQWGA2heAGhQGqH3xk6B2npHwgug22BwdDsTVt64OVWfXbBd0AWo1ABVQy6YAFVABdaIDUPtA/RcSmWYI10ImZwAAAABJRU5ErkJggg==" style="display: block;"></div>
+</div>
+
+      
+      <div id="notebooks-menu" class="panel notebooks-menu arrow-top modal hide fade"><img class="loader-tiny" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/tiny.gif" alt="Tiny"></div>
+      <div id="collection-menu" class="panel collection-menu arrow-top modal hide fade"><img class="loader-tiny" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/tiny.gif" alt="Tiny"></div>
+      
+      <div id="likes-modal" class="modal modal_new support_list-modal fullscreen hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>喜欢的用户</h3>
+      </div>
+      <div class="modal-body">
+        <ul class="unstyled users">
+        <li data-user-id="3693276"> <a class="avatar" href="http://www.jianshu.com/users/cfe7a6cfa4f6"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/3-575b6d78d8c89400d30e4ed72c2675bf.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/cfe7a6cfa4f6">萝神赋</a> <span class="time">2016.11.20 11:11</span></li><li data-user-id="2277817"> <a class="avatar" href="http://www.jianshu.com/users/9da2503e17b8"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/c83cbb26e7d9.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/9da2503e17b8">Ching2016</a> <span class="time">2016.11.06 11:03</span></li><li data-user-id="2546238"> <a class="avatar" href="http://www.jianshu.com/users/4a99c9554afc"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/84eb81b0f106.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/4a99c9554afc">Angle0o</a> <span class="time">2016.10.29 16:36</span></li><li data-user-id="2311435"> <a class="avatar" href="http://www.jianshu.com/users/49f33485bb94"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/15-57a3e97082943073824a3529187f31f9.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/49f33485bb94">刘吉顺</a> <span class="time">2016.10.19 22:51</span></li><li data-user-id="1918976"> <a class="avatar" href="http://www.jianshu.com/users/e00314d25e86"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/13-8072fce67829ce128ba5df823205516c.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/e00314d25e86">愤怒的力量</a> <span class="time">2016.10.07 14:52</span></li><li data-user-id="3003138"> <a class="avatar" href="http://www.jianshu.com/users/5ea5e11f4ca7"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/62aa1f1fa5c6.png"> </a> <a class="blue-link" href="http://www.jianshu.com/users/5ea5e11f4ca7">Catch222</a> <span class="time">2016.10.01 22:06</span></li><li data-user-id="80578"> <a class="avatar" href="http://www.jianshu.com/users/4d793e30c794"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/c9b5145ccf9e.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/4d793e30c794">专注APP开发</a> <span class="time">2016.09.27 15:58</span></li><li data-user-id="2085471"> <a class="avatar" href="http://www.jianshu.com/users/9ccf39af8df7"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/947d51a65682.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/9ccf39af8df7">Hellozhongxin</a> <span class="time">2016.09.14 10:08</span></li><li data-user-id="2326934"> <a class="avatar" href="http://www.jianshu.com/users/722772b60002"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/a70f43e52fc0.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/722772b60002">Li_js</a> <span class="time">2016.09.09 00:49</span></li><li data-user-id="2459621"> <a class="avatar" href="http://www.jianshu.com/users/262c6a8218b8"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/80313d5c98ee.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/262c6a8218b8">Cc郑满彬</a> <span class="time">2016.09.07 03:04</span></li><li data-user-id="1458338"> <a class="avatar" href="http://www.jianshu.com/users/ece3fc82ad9f"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/0fb0507f498f.JPG"> </a> <a class="blue-link" href="http://www.jianshu.com/users/ece3fc82ad9f">CrazyLeaf</a> <span class="time">2016.09.05 14:18</span></li><li data-user-id="1797440"> <a class="avatar" href="http://www.jianshu.com/users/333753b257a4"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/21fcae2dd008.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/333753b257a4">快乐就好czl</a> <span class="time">2016.07.28 09:23</span></li><li data-user-id="1018039"> <a class="avatar" href="http://www.jianshu.com/users/470afcb80dc2"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/69a8172ab14d.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/470afcb80dc2">r17171709</a> <span class="time">2016.07.28 07:34</span></li><li data-user-id="1998443"> <a class="avatar" href="http://www.jianshu.com/users/a2c65a148e3c"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/c6d5363d9519.jpg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/a2c65a148e3c">鱼人孑</a> <span class="time">2016.07.21 10:02</span></li><li data-user-id="699769"> <a class="avatar" href="http://www.jianshu.com/users/e132b0ddb9da"> <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/ed1c4b810446.jpeg"> </a> <a class="blue-link" href="http://www.jianshu.com/users/e132b0ddb9da">登山协会主席</a> <span class="time">2016.07.08 18:34</span></li><a class="more hidden" data-max-id="23679465" href="javascript:void(null);"><i class="fa fa-ellipsis-h"></i></a></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Comments -->
+    <div id="comments" class="comment-list clearfix">
+        <div class="comment-head clearfix">
+          5条评论
+          <span class="order">
+            （
+            <a data-order="asc" class="active" href="javascript:void(0)">按时间正序</a>·
+            <a data-order="desc" href="javascript:void(0)">按时间倒序</a>·
+            <a data-order="likes_count" href="javascript:void(0)">按喜欢排序</a>
+            ）
+          </span>
+            <a class="goto-comment pull-right" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+              <i class="fa fa-pencil"></i>添加新评论
+</a>        </div>
+        <div id="comment-list">
+
+
+<div class="note-comment clearfix" id="comment-2972996">
+  <div class="content">
+      <div class="meta-top">
+        <a class="avatar" href="http://www.jianshu.com/users/45a7c2df732d">
+          <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/c193ae701f1f.jpeg" alt="100">
+</a>        <p>
+          <a class="author-name" href="http://www.jianshu.com/users/45a7c2df732d">什雨</a>
+        </p>
+        <span class="reply-time">
+          <small>2 楼 · </small>
+          <a href="http://www.jianshu.com/p/e4d966e433f5/comments/2972996#comment-2972996">2016.07.02 23:45</a></span>
+      </div>
+      <p>写得很好，支持</p>
+      <div class="comment-footer clearfix text-right">
+        <a data-id="2972996" class="like pull-left" href="javascript:void(0)">
+          <i class="fa fa-heart-o"></i>喜欢<span>(0)</span>
+</a>        
+
+        <a data-id="2972996" data-nickname="什雨" class="reply" href="javascript:void(0)">回复</a>
+        
+        
+      </div>
+    <div class="child-comment-list ">
+        <div class="child-comment" id="comment-2975117" data-id="2975117">
+    <p>
+      <a class="blue-link" href="http://www.jianshu.com/users/c6f7cfa366d9">IAM四十二</a>：
+      <a href="http://www.jianshu.com/users/45a7c2df732d" class="maleskine-author" target="_blank" data-user-slug="45a7c2df732d">@什雨</a> 谢谢你的支持 <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/smile.png" alt=":smile:" title=":smile:" class="emoji" height="20" width="20"> 
+    </p>
+    <div class="child-comment-footer text-right clearfix">
+      
+      <a data-id="2972996" data-nickname="IAM四十二" class="reply" href="javascript:void(null)">回复</a>
+      
+      
+      <span class="reply-time pull-left">
+        <a href="http://www.jianshu.com/p/e4d966e433f5/comments/2975117#comment-2975117">2016.07.03 08:51</a></span>
+      
+    </div>
+  </div>
+
+      <div data-state="remaining-child-comments"></div>
+        <div class="comment-toolbar clearfix">
+          <span class="pull-right">
+            <a data-id="2972996" class="reply" href="javascript:void(null)"><i class="fa fa-pencil"></i> 添加新回复</a>
+          </span>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="note-comment clearfix" id="comment-3008331">
+  <div class="content">
+      <div class="meta-top">
+        <a class="avatar" href="http://www.jianshu.com/users/a4c1bcbbe237">
+          <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/2-65a6e6d032559f3c53475eb61d7ea573.jpg" alt="2">
+</a>        <p>
+          <a class="author-name" href="http://www.jianshu.com/users/a4c1bcbbe237">Waikey</a>
+        </p>
+        <span class="reply-time">
+          <small>3 楼 · </small>
+          <a href="http://www.jianshu.com/p/e4d966e433f5/comments/3008331#comment-3008331">2016.07.05 22:20</a></span>
+      </div>
+      <p>2.0以上的as编译其实非常慢，不知道楼主怎么破解？</p>
+      <div class="comment-footer clearfix text-right">
+        <a data-id="3008331" class="like pull-left" href="javascript:void(0)">
+          <i class="fa fa-heart-o"></i>喜欢<span>(0)</span>
+</a>        
+
+        <a data-id="3008331" data-nickname="Waikey" class="reply" href="javascript:void(0)">回复</a>
+        
+        
+      </div>
+    <div class="child-comment-list hide">
+      
+      <div data-state="remaining-child-comments"></div>
+    </div>
+  </div>
+</div>
+
+<div class="note-comment clearfix" id="comment-3312881">
+  <div class="content">
+      <div class="meta-top">
+        <a class="avatar" href="http://www.jianshu.com/users/c6f7cfa366d9">
+          <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/17d78044457c.jpeg" alt="100">
+</a>        <p>
+          <a class="author-name" href="http://www.jianshu.com/users/c6f7cfa366d9">IAM四十二</a>
+        </p>
+        <span class="reply-time">
+          <small>4 楼 · </small>
+          <a href="http://www.jianshu.com/p/e4d966e433f5/comments/3312881#comment-3312881">2016.07.27 16:05</a></span>
+      </div>
+      <p>同事的MAC+固态硬盘 笔记本 比我同等配置的台式机还快，只因我硬盘还是机械的 <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/disappointed_relieved.png" alt=":disappointed_relieved:" title=":disappointed_relieved:" class="emoji" height="20" width="20"> </p>
+      <div class="comment-footer clearfix text-right">
+        <a data-id="3312881" class="like pull-left" href="javascript:void(0)">
+          <i class="fa fa-heart-o"></i>喜欢<span>(0)</span>
+</a>        
+
+        <a data-id="3312881" data-nickname="IAM四十二" class="reply" href="javascript:void(0)">回复</a>
+        
+        
+      </div>
+    <div class="child-comment-list hide">
+      
+      <div data-state="remaining-child-comments"></div>
+    </div>
+  </div>
+</div>
+
+<div class="note-comment clearfix" id="comment-3864723">
+  <div class="content">
+      <div class="meta-top">
+        <a class="avatar" href="http://www.jianshu.com/users/35a6a1b1602d">
+          <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/14-75d944a989bbbd5b92a639698c9b4a3c.jpg" alt="14">
+</a>        <p>
+          <a class="author-name" href="http://www.jianshu.com/users/35a6a1b1602d">慕鸣</a>
+        </p>
+        <span class="reply-time">
+          <small>5 楼 · </small>
+          <a href="http://www.jianshu.com/p/e4d966e433f5/comments/3864723#comment-3864723">2016.08.27 09:46</a></span>
+      </div>
+      <p>支持，很棒</p>
+      <div class="comment-footer clearfix text-right">
+        <a data-id="3864723" class="like pull-left" href="javascript:void(0)">
+          <i class="fa fa-heart-o"></i>喜欢<span>(0)</span>
+</a>        
+
+        <a data-id="3864723" data-nickname="慕鸣" class="reply" href="javascript:void(0)">回复</a>
+        
+        
+      </div>
+    <div class="child-comment-list hide">
+      
+      <div data-state="remaining-child-comments"></div>
+    </div>
+  </div>
+</div>
+
+
+  <p class="load-more">
+    <a class="blue-link" data-type="html" data-action="load-comments" data-remote="true" href="http://www.jianshu.com/notes/4635165/comments?max_id=3864723&amp;order=asc&amp;page=2">加载更多 <i class="fa fa-arrow-down"></i></a>
+  </p>
+</div>
+          <p class="signout-comment">
+    <a class="btn btn-info" data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in">
+      登录后发表评论
+</a>  </p>
+
+    </div>
+    <!-- -->
+
+  </div>
+
+  <script type="application/json" data-name="note">
+    {"id":4635165,"abbr":"AndroidStudio（以下均简称为AS）是Google在2013年5月16日的I/0大会上推出的Android开发环境。从最初的AS1.5（我是从这个版本开始使用）到现在的AS2.1，这款开发工具有了很大的进步，而且更新频率也是非常高。相较于Eclipse+ADT的开发环境；在某些方面，对开发者来说的确是方便了许多。我待AS如初恋，AS虐我千百遍但是，这样一个开发环境，毕竟还很“年轻”，所以自身也会存在很多或大或小的bug,加上我们对它不是很熟悉（尤其是Gradle语法），给我们日常开发带来了很多坑爹的问题，在此做个记录，方便以后遇到时可以快速找到解决...","slug":"e4d966e433f5","url":"http://www.jianshu.com/p/e4d966e433f5","image_url":"http://cwb.assets.jianshu.io/notes/images/4635165/weibo/image_897cf8a2630e.jpg","wordage":2998,"has_further_readings":false,"views_count":753,"likes_count":30,"comments_count":5,"rewards_total_count":0}
+  </script>
+
+  <script type="application/json" data-name="uuid">
+    {"uuid":"e14d43a5-987b-4304-82ca-0c929a485f64"}
+  </script>
+
+  <script type="application/json" data-name="author">
+    {"id":1115031,"nickname":"IAM四十二","slug":"c6f7cfa366d9","public_notes_count":41,"followers_count":312,"total_likes_count":788,"is_current_user":false,"is_signed_author":false}
+  </script>
+
+
+  <div class="include-collection">
+    <div class="content">
+
+      
+        <h5>被以下专题收入，发现更多相似内容：</h5>
+        <ul id="all-collections" class="unstyled collections-list">
+            <li>
+              <a class="avatar" href="http://www.jianshu.com/collection/NEt52a"><img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/computer_guy.jpg" alt="180"></a>              <div class="collections-info">
+                <h5>
+                  <a href="http://www.jianshu.com/collection/NEt52a">程序员</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>248.2K</span>
+  </div>
+
+                <p class="description">如果你是程序员，或者有一颗喜欢写程序的心，喜欢分享技术干货、项目经验、程序员日常囧事等等，欢迎投稿《程序员》专题。
+
+专题主编：小...</p>
+                <p>
+                  <a class="blue-link" href="http://www.jianshu.com/collection/NEt52a">29320篇文章</a> · 248299人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="http://www.jianshu.com/collection/V2CqjW"><img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/6249340_194140034135_2.jpg" alt="180"></a>              <div class="collections-info">
+                <h5>
+                  <a href="http://www.jianshu.com/collection/V2CqjW">@IT·互联网</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>242.3K</span>
+  </div>
+
+                <p class="description">@IT 专题 由 IT大分类，转定位于IT·互联网行业观察与思考，数码产品极客体验。
+
+主编：向右奔跑 http://www.ji...</p>
+                <p>
+                  <a class="blue-link" href="http://www.jianshu.com/collection/V2CqjW">12076篇文章</a> · 242375人关注
+                </p>
+              </div>
+            </li>
+            <li>
+              <a class="avatar" href="http://www.jianshu.com/collection/58b4c20abf2f"><img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/android.jpeg" alt="180"></a>              <div class="collections-info">
+                <h5>
+                  <a href="http://www.jianshu.com/collection/58b4c20abf2f">Android技术知识</a>
+                </h5>
+                
+  <div class="btn btn-success follow">
+    <a data-signin-link="true" data-toggle="modal" href="http://www.jianshu.com/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+    <span>5.1K</span>
+  </div>
+
+                <p class="description">Android深入理解、基础详解及各种Library使用介绍。认真做技术，好好享受人生。。</p>
+                <p>
+                  <a class="blue-link" href="http://www.jianshu.com/collection/58b4c20abf2f">5365篇文章</a> · 5113人关注
+                </p>
+              </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+
+  <!-- Modal -->
+    <div class="modal pay-modal text-center hide fade" id="pay-modal">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <form id="new_reward" class="new_reward" target="_blank" action="/notes/4635165/rewards" accept-charset="UTF-8" method="post"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="UetAAeDcLgJfbRbqWizQqcDjU/Lr6sS/ERFjgNwW5zAk8Q8NfU04cmvQ99I6x3WNoCsCZpC6Y7GO0qhJRI7PRw==" type="hidden">
+    <div class="modal-body">
+      <a href="http://www.jianshu.com/users/c6f7cfa366d9">
+        <div class="avatar"><img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/17d78044457c.jpeg" alt="100"></div>
+</a>      <p><i class="fa fa-quote-left pull-left"></i>如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作！<i class="fa fa-quote-right pull-right"></i></p>
+      <div class="main-inputs text-left">
+        <div class="control-group">
+          <label for="reward_amount">打赏金额</label><i class="fa fa-yen"></i>
+          <input value="2.00" name="reward[amount_in_yuan]" id="reward_amount_in_yuan" type="text">
+        </div>
+        <div class="control-group message">
+          <textarea placeholder="给Ta留言" name="reward[message]" id="reward_message"></textarea>
+        </div>
+      </div>
+      <div class="choose-pay text-left">
+        <h5>选择支付方式：</h5>
+        <div>
+          <label for="reward_channel_alipay">
+            <div style="position: relative;" class="iradio_minimal checked"><input style="position: absolute; opacity: 0;" value="alipay" checked="checked" name="reward[channel]" id="reward_channel_alipay" type="radio"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>
+            <span class="alipay-bg"></span>
+</label>
+          
+          <label for="reward_channel_wx_pub_qr">
+            <div style="position: relative;" class="iradio_minimal"><input style="position: absolute; opacity: 0;" value="wx_pub_qr" name="reward[channel]" id="reward_channel_wx_pub_qr" type="radio"><ins style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;" class="iCheck-helper"></ins></div>
+            微信支付
+</label>        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button name="button" type="submit" class="btn btn-large btn-pay">立即支付</button>
+    </div>
+</form></div>
+
+    <div class="modal success-pay text-center hide fade" id="success-pay">
+  <div class="modal-header clearfix">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  </div>
+  <div class="modal-body">
+    <h3><i class="icon-ok"></i>打赏成功</h3>
+    <img src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/complete-pay-25426877089eb23bd76d9d0e6aad89c1.png" alt="Complete pay">
+  </div>
+  <div class="modal-footer">
+    
+  </div>
+</div>
+
+</div>
+
+  <div style="z-index: 1000;" class="imagebubble-backmask image-package"><div class="image-caption">instant run.png</div><div class="image-caption">xml无法渲染.png</div><div class="image-caption">build tool select.png</div><img style="top: 5639.72px; left: 300px; width: 620px; height: 333px;" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-5721e2a4d73c59ac.png" class="imagebubble-ghost"><img style="top: 3479.6px; left: 300px; width: 620px; height: 270px;" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-a513e8d7b388977d.png" class="imagebubble-ghost"><img style="top: 4052.32px; left: 329.483px; width: 561px; height: 346px;" src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/1115031-de961c9fae721f80.png" class="imagebubble-ghost"></div></div>
+  <div id="flash" class="hide"></div>
+  
+  <div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false" data-js-module="view-mode-modal">
+    <div class="btn-group change-background" data-toggle="buttons-radio">
+      <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
+        <i class="fa fa-sun-o"></i>
+</a>      <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
+        <i class="fa fa-moon-o"></i>
+</a>    </div>
+    <div class="btn-group change-font" data-toggle="buttons-radio">
+      <a class="btn font " data-font="font1" href="javascript:void(null);">宋体</a>
+      <a class="btn font hei active" data-font="font2" href="javascript:void(null);">黑体</a>
+    </div>
+    <div class="btn-group change-locale" data-toggle="buttons-radio">
+      <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
+      <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
+    </div>
+  </div>
+
+  
+
+  <script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/base-ded41764c207f7ff545c28c670922d25.js"></script>
+  
+  <script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/reading-base-0028299ec0c770293c0f07e2f338b48f.js"></script>
+  <script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/note_show-cc5c20512664aad53acca20308dd4d1c.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-35169517-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<div style="display:none">
+  <script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/z_stat.js" language="JavaScript"></script><script src="%E4%BD%BF%E7%94%A8Android%20Studio%20%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95_files/core.js" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1258679142" target="_blank" title="站长统计">站长统计</a>
+</div>
+
+<script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+</body></html>

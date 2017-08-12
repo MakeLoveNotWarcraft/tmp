@@ -1,0 +1,27 @@
+Drop all tables whose names begin with a certain string
+
+1.
+SELECT CONCAT( 'DROP TABLE ', GROUP_CONCAT(table_name) , ';' )  
+AS statement FROM information_schema.tables  
+WHERE table_schema = 'fight' AND table_name LIKE 'battleprocess%';
+
+This will generate a DROP statement which you can than copy and execute to drop the tables.
+
+2.
+declare @cmd varchar(4000)
+declare cmds cursor for 
+select 'drop table [' + Table_Name + ']'
+from INFORMATION_SCHEMA.TABLES
+where Table_Name like 'prefix%'
+
+open cmds
+while 1=1
+begin
+    fetch cmds into @cmd
+    if @@fetch_status != 0 break
+    exec(@cmd)
+end
+close cmds;
+deallocate cmds
+
+TRUNCATE TABLE battle;

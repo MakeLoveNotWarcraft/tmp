@@ -7,3 +7,6 @@ Cannot launch AVD in emulator
     cd /home/sunrise/Android/Sdk/tools/lib64/libstdc++
     mv libstdc++.so.6 libstdc++.so.6.bak
     ln -s /usr/lib64/libstdc++.so.6
+    
+    
+rm -r ~/Android/Sdk/emulator/lib64/libstdc++    
